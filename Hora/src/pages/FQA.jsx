@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import DemoModal from "./components/DemoModal";
 
 const faqs = [
   {
@@ -80,12 +81,14 @@ const faqs = [
 export default function FQA() {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   return (
     <>
-    <Header handleColor={'bg-primary/20'}/>
+    <Header handleColor={'bg-primary/40'}  onDemoClick={() => setShowDemoModal(true)}/>
     <section className="bg-gradient-to-br from-primary to-primary/30 text-secondary min-h-screen py-[200px] px-4">
       <div className="max-w-4xl mx-auto">
+        <DemoModal show={showDemoModal===true} onClose={() => setShowDemoModal(false)} />
         <h1 className="text-4xl font-bold text-accent text-center mb-12">FAQ</h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => (

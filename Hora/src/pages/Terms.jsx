@@ -2,8 +2,10 @@ import React, { useState,useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer'
 import ReactMarkdown from "react-markdown";
+import DemoModal from './components/DemoModal';
 
 export default function Terms() {
+    const [showDemoModal, setShowDemoModal] = useState(false)
     
 
     const [content, setContent] = useState("");
@@ -17,9 +19,10 @@ export default function Terms() {
 
     return (
         <>
-        <Header handleColor={'bg-primary/20'}/>
+        <Header handleColor={'bg-primary/40'} onDemoClick={()=>setShowDemoModal(true)}/>
         <div className='bg-gradient-to-br from-primary to-primary/50 py-[150px] px-4'>
         <div className="max-w-7xl mx-auto ">
+            <DemoModal show={showDemoModal === true} onClose={()=>setShowDemoModal(false)}/>
             <div className='flex flex-col justify-center items-start pt-8 mx-8 md:mx-20 lg:mx-30 text-accent'>
              <ReactMarkdown components={{
                     h1: (props) => (
