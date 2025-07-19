@@ -37,7 +37,7 @@ export default function Footer() {
                 <div className='pt-5 w-full md:w-1/3 '>
                     <ul className='flex flex-col items-start justify-start gap-4'>
                     <li className='text-accent/30 text-lg' data-aos="fade-down"> Resources</li>
-                    <li className='text-accent hover:text-secondary text-sm'> <Link to="">FAQ</Link></li>
+                    <li className='text-accent hover:text-secondary text-sm'> <Link to="/FQA">FAQ</Link></li>
                     <li className='text-accent hover:text-secondary text-sm'> <Link to="">Partner with Hora </Link></li>
                     <li className='text-accent hover:text-secondary text-sm'> <Link to="">Press Resourcea</Link> </li>
                     </ul>

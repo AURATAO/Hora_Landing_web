@@ -37,7 +37,7 @@ func main() {
 
 // ✅ 設定 CORS headers
 
-func setupCORS(w *http.ResponseWriter, r *http.Request) {
+func setupCORS(w *http.ResponseWriter, _ *http.Request) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 	(*w).Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 	(*w).Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")

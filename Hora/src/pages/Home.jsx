@@ -58,16 +58,6 @@ export default function Home({ secondsElapsed  } ) {
     duration: 1
   }, "-=0.5");
 
-  gsap.from(h2Ref.current, {
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    scrollTrigger: {
-      trigger: h2Ref.current,
-      start: "top 90%",
-      toggleActions: "play none none none",
-    }
-  });
 
   gsap.from([...paragraphs.current], {
     opacity: 0,
@@ -160,17 +150,7 @@ useEffect(() => {
     duration: 1
   }, "-=0.5")
 
-   // h2 單獨 scrollTrigger
-  gsap.from(h2Ref.current, {
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    scrollTrigger: {
-      trigger: h2Ref.current,
-      start: "top bottom", // 保證一進 viewport 就觸發
-     // 加上 debug markers 看位置
-    }
-  })
+
 
   // paragraphs 用 batch 處理
   ScrollTrigger.batch(paragraphs.current, {
