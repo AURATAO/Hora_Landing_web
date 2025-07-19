@@ -5,7 +5,6 @@ import Mission from "./pages/Mission";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact"
-
 import { useEffect, useState } from "react";
 
 
@@ -19,6 +18,8 @@ const [secondsElapsed, setSecondsElapsed] = useState(0);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+
   return (
     <>
       <BrowserRouter>

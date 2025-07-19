@@ -4,22 +4,86 @@ import DemoModal from './components/DemoModal.jsx';
 import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import pb from '../lib/pb';  
 
 
-
-export default function Contact( {secondsElapsed}  ){
-    const [showModal, setShowModal] = useState(false);
+export default function Contact( {secondsElapsed} ){
+  const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [errors, setErrors]= useState('');
+  const token = pb.authStore.token;
 
    const hours = Math.floor(secondsElapsed / 3600);
    const minutes = Math.floor((secondsElapsed % 3600) / 60);
    const seconds = secondsElapsed % 60;
    const earned = (secondsElapsed * (16.50/3600)).toFixed(4);
 
+
+   const handleSubmit = async(e)=>{
+    e.preventDefault();
+    console.log('submit:', {name, email, message})
+    if ( !name || !email || !message) {
+        console.warn('Form not complete', { name, email, message });
+        setErrors('Please complete all fields and agree to the terms.');
+        return;
+    }
+
+    setErrors('');
+    console.log("Form data ready to submit:", { name, email, message });
+
+    const payload = {
+        full_name: name,
+        email: email,
+        message:message,
+    };
+
+    try {
+        const res = await fetch("http://localhost:8080/submit-contact",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }, 
+            body: JSON.stringify(payload)});
+
+            if (!res.ok) {
+            const error = await res.json();
+            alert("We're sorry, your submission could not be completed. (" + error.message + ")");
+
+            setName('');
+            setEmail('');
+            setMessage('');
+            return;
+            }
+            if (!token) {
+            alert("Error: No token available. Please refresh the page.");
+            return;
+            }
+
+            alert("Thank you! We've received your message and will get back to you shortly.");
+            setName('');
+            setEmail('');
+            setMessage('');
+        
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An unexpected error occurred. Please try again later.");
+    }
+
+   }
+
+     useEffect(() => {
+    
+    }, []);
+
     useEffect(() => {
        AOS.init({
          duration: 1200,
        });
     }, []);
+
+
 
     return(
         <>
@@ -38,11 +102,13 @@ export default function Contact( {secondsElapsed}  ){
                 Whether you’re interested in partnership, press, or just want to say hi — we’d love to connect.
                 </p>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                     <input
                     type="text"
                     placeholder="Name"
+                    value={name}
+                    onChange={(e)=>setName(e.target.value)}
                     className="w-full px-4 py-3 border border-primary/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary transition"
                     />
                 </div>
@@ -50,6 +116,8 @@ export default function Contact( {secondsElapsed}  ){
                     <input
                     type="email"
                     placeholder="Email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
                     className="w-full px-4 py-3 border border-primary/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary transition"
                     />
                 </div>
@@ -57,9 +125,14 @@ export default function Contact( {secondsElapsed}  ){
                     <textarea
                     placeholder="Message"
                     rows="4"
+                    value={message}
+                    onChange={(e)=>setMessage(e.target.value)}
                     className="w-full px-4 py-3 border border-primary/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary transition"
                     ></textarea>
                 </div>
+                {errors && (
+                <div className="text-red-500 text-sm text-center">{errors}</div>
+                )}
                 <button
                     type="submit"
                     className="w-full py-3 button-tech font-secondary"

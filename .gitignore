@@ -16,3 +16,4 @@ pocketbase/pb_migrations/
 .DS_Store
 .vscode/
 .idea/
+.env

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { X } from 'lucide-react';
-import { Await, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function DemoModal({ show, onClose, }){
@@ -9,8 +9,6 @@ export default function DemoModal({ show, onClose, }){
     const [email, setEmail] = useState('');
     const [agree, setAgree] = useState(false);
     const [errors, setErrors]= useState('');
-   
-   
 
 useEffect(()=>{
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -29,7 +27,7 @@ return () => {
 
 useEffect(()=>{
     if(show){
-        setCompany('');
+    setCompany('');
     setName('');
     setEmail('');
     setAgree(false);
@@ -65,29 +63,30 @@ const handleSubmit =async(e)=>{
             email: email,
         };
        
-            try {
-                const res = await fetch("http://localhost:8080/submit-demo", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(payload)
-                });
-    
-                if (!res.ok) {
-                const error = await res.json();
-                alert("送出失敗：" + error.message);
-                return;
-                }
-    
-                alert("✅ 已成功送出！");
-                setName("");
-                setEmail("");
-            } catch (err) {
-                console.error("錯誤：", err);
-                alert("連線失敗");
+        try {
+            const res = await fetch("http://localhost:8080/submit-demo", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+            });
+
+            if (!res.ok) {
+            const error = await res.json();
+            alert("We're sorry, your submission could not be completed. (" + error.message + ")");
+
+            return;
             }
-     
+
+            alert("Thanks! Your request has been received — we'll be in touch with your demo access.");
+            setName("");
+            setEmail("");
+        } catch (err) {
+            console.error("Error:", err);
+            alert("An unexpected error occurred. Please try again later.");
+        }
+    
 
         onClose(); // 成功後關閉 modal
     };

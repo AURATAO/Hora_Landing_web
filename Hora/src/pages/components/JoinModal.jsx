@@ -7,17 +7,61 @@ export default function JoinModal({ role, onClose }) {
   const [email, setEmail] = useState("");
   const [city, setCity] = useState('');
   const [agree, setAgree] = useState(false);
+  const [errors, setErrors] = useState('');
 
   const isSupporter = role === "supporter";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log("Submit:", { name, email, role, city });
     // TODO: send to backend or service
-    onClose(); // close after submit
+
+    if(!name || !email || !city || !agree){
+       console.warn('Form not complete', { name, email, city, agree });
+       setErrors('Please complete all fields and agree to the terms.');
+       return;
+    }
+
+    const payload = {
+        full_name: name,
+        email: email,
+        city:city,
+        role: role,
+    };
+
+    try {
+      const res = await fetch('http://localhost:8080/submit-join', {
+        method:"POST",
+        headers: {
+          "Content-Type": "application/json"
+        },  body: JSON.stringify(payload)}
+      )
+
+      if(!res.ok){
+         const error = await res.json();
+           alert("We're sorry, your submission could not be completed. (" + error.message + ")");
+
+            setName('');
+            setEmail('');
+            setCity('');
+            setAgree(false);
+            return;
+
+      }
+
+      alert("Thank you! We’ll notify you when Hora launches in your city.");
+      setName('');
+      setEmail('');
+      setCity('');
+      setAgree(false);
+      onClose();
+    } catch (error) {
+       console.error("錯誤：", error);
+       alert("An unexpected error occurred. Please try again later.");
+    }
   };
 
-    useEffect(() => {
+  useEffect(() => {
   const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
   const originalOverflow = document.body.style.overflow;
   const originalPaddingRight = document.body.style.paddingRight;
@@ -30,6 +74,7 @@ export default function JoinModal({ role, onClose }) {
     document.body.style.paddingRight = originalPaddingRight;
   };
   }, []);
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -54,7 +99,7 @@ export default function JoinModal({ role, onClose }) {
             required
           />
         <input
-            type="city"
+            type="text"
             placeholder="City"
             className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
             value={city}
@@ -80,6 +125,9 @@ export default function JoinModal({ role, onClose }) {
                     I have read and agree to the <Link to="/privacy" className="underline text-secondary)]">Privacy Policy</Link> and <Link to="/terms" className="underline text-[var(--color-secondary)]">Terms of Use</Link>.
                     </span>
                 </div>
+            {errors && (
+          <div className="text-red-500 text-sm text-center">{errors}</div>
+          )}
           <button
             type="submit"
             className={`w-full py-2 rounded-lg text-white transition ${
