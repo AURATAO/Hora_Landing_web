@@ -336,19 +336,17 @@ useEffect(() => {
       <div className="w-full max-w-7xl mx-auto px-6 pb-4 flex flex-col items-center justify-center  ">
         <h2 className="text-4xl text-primary pb-4 font-secondary font-semibold">QuickRequest (Instant Match)</h2>
         <h3 className="text-xl text-primary font-secondary pb-10"> Best for urgent tasks — platform auto-matches supporters nearby.</h3>
-        <div className='flex-col flex justify-center items-center lg:w-full lg:flex-row lg:gap-8 lg:items-start' >
-        <div className='flex flex-col items-center justify-center'>
+        <div className='flex-col flex justify-center items-center lg:w-full lg:flex-row lg:gap-8 lg:items-start' >    
         {/* Step 1 */}
-        <div className="flex flex-col items-start pb-12">
+        <div className="flex flex-col items-start pb-12 w-full lg:w-1/4">
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">01</h2>
           <h3 className="text-2xl   font-semibold text-primary mb-4">Create profile & verified</h3>
           <p className="text-lg text-primary font-secondary max-w-lg">
           Instant access with ID verification
           </p>
         </div>
-        </div>
         {/* Step 2 */}
-        <div className="flex flex-col items-start pb-12   ">
+        <div className="flex flex-col items-start pb-12 w-full lg:w-1/4 ">
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">02</h2>
           <h3 className="text-2xl  font-semibold text-primary mb-4">Tap QuickRequest</h3>
           <p className="text-lg text-primary font-secondary max-w-lg ">
