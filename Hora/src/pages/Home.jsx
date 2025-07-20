@@ -422,7 +422,7 @@ useEffect(() => {
    
     </div>
     {/*Section 3*/}
-    <div className="py-20 bg-accent w-full mt-20 z-40">
+    <div className="py-20 bg-accent w-full mt-20 ">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-semibold text-primary  mb-4"  data-aos="fade-up">Who uses Hora?</h2>
         <p className="text-primary/70 font-secondary mb-12">

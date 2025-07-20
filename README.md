@@ -33,3 +33,9 @@ npm run dev
 
 Visit http://localhost:5173 to test the form
 ```
+
+# backend/.env.example
+
+EMAIL_FROM=your_email@gmail.com
+EMAIL_TO=team@example.com
+EMAIL_PASS=your_app_password

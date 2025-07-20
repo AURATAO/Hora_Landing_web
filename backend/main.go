@@ -4,6 +4,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"horaweb-backend/backup"
 	"io"
 	"log"
 	"net/http"
@@ -30,9 +31,21 @@ func main() {
 	http.HandleFunc("/submit-demo", handleSubmitDemo)
 	http.HandleFunc("/submit-join", handleSubmitJoin)
 	http.HandleFunc("/submit-contact", handleSubmitContact)
+	// 🚀 新增這一行：馬上手動備份用
+	http.HandleFunc("/backup-now", func(w http.ResponseWriter, r *http.Request) {
+		err := backup.BackupAndSend()
+		if err != nil {
+			http.Error(w, "Backup failed: "+err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Write([]byte("✅ Backup sent successfully!"))
+	})
+
+	backup.StartBackupScheduler()
 
 	log.Println("🚀 Server running at http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
+
 }
 
 // ✅ 設定 CORS headers
