@@ -43,31 +43,31 @@ All rights not expressly granted herein are reserved by Hora.
 
 By accessing or using the Platform, you represent and warrant that you:
 
-- `1.` will comply in full with these Terms, the Acceptable Use Policy, and any applicable Supplemental Terms;
+1. will comply in full with these Terms, the Acceptable Use Policy, and any applicable Supplemental Terms;
 
-- `2.` are at least the minimum legal age in your jurisdiction of residence and are otherwise legally capable of entering into binding contracts;
-- `3.` have the authority and capacity to enter into this Agreement, including on behalf of any organization you represent;
-- `4.` will only request or perform Tasks in jurisdictions where the Platform is legally available;
+2. are at least the minimum legal age in your jurisdiction of residence and are otherwise legally capable of entering into binding contracts;
+3. have the authority and capacity to enter into this Agreement, including on behalf of any organization you represent;
+4. will only request or perform Tasks in jurisdictions where the Platform is legally available;
 
-- `5.` will respect the privacy, property, and data protection rights of other Users and will not record any interaction or Task without the prior written consent of Hora and/or the relevant User;
-- `6.` will act professionally and responsibly in your interactions with other Users, including by communicating clearly and arriving or being available at the agreed-upon time;
-- `7.` will make or receive payment for Tasks exclusively through the authorized third-party payment service provider (“PSP”), as described in the Fees and Payments section;
-- `8.` will use your legal name or legal business name, as per your government-issued identification and registration documents, and maintain an accurate, up-to-date profile photo;
-- `9.` will comply with all applicable local, state, and federal laws and regulations in your use of the Platform;
-- `10.` will not use the Platform for the purchase or delivery of alcohol, tobacco, controlled substances, or other regulated items, unless expressly authorized by Hora in specific jurisdictions and in full compliance with applicable law; -`1.` will ensure that all communications related to Tasks—including those about task scope, payment, and follow-up—remain on the Platform at all times.
+5. will respect the privacy, property, and data protection rights of other Users and will not record any interaction or Task without the prior written consent of Hora and/or the relevant User;
+6. will act professionally and responsibly in your interactions with other Users, including by communicating clearly and arriving or being available at the agreed-upon time;
+7. will make or receive payment for Tasks exclusively through the authorized third-party payment service provider (“PSP”), as described in the Fees and Payments section;
+8. will use your legal name or legal business name, as per your government-issued identification and registration documents, and maintain an accurate, up-to-date profile photo;
+9. will comply with all applicable local, state, and federal laws and regulations in your use of the Platform;
+10. will not use the Platform for the purchase or delivery of alcohol, tobacco, controlled substances, or other regulated items, unless expressly authorized by Hora in specific jurisdictions and in full compliance with applicable law; -`1.` will ensure that all communications related to Tasks—including those about task scope, payment, and follow-up—remain on the Platform at all times.
 
 ## E. Additional Supporter Representations and Warranties
 
 If you are a Supporter, you additionally represent and warrant that you:
 
-- 1. are operating as a sole proprietor, partnership, limited liability company, limited liability partnership, corporation, or other business entity when using the Platform;
-- 2. are customarily engaged in an independently established business of the same nature as the services performed for Supporters through the Platform, and maintain an independent Supporterele;
-- 3. have the legal right to work in the jurisdiction(s) where you perform Tasks;
-- 4. have and will maintain, at your own expense, all licenses, permits, and registrations required under applicable laws to perform your services (including, as applicable, a business license, contractor’s license, or business tax registration);
-- 5. have and will maintain all insurance necessary to operate your business and perform Tasks in a safe and lawful manner;
-- 6. will respond to invitations promptly; will only offer and perform Tasks for which you possess the necessary expertise; and will deliver services professionally, safely, and as agreed with the Supporter through the Chat Thread;
-- 7. will promptly disclose to Hora in writing any potentially relevant criminal convictions (excluding minor traffic or parking violations) that arise during your use of the Platform;
-- 8. acknowledge and agree that, as a condition of accessing and using the Platform as a Supporter, you must complete identity verification and, where applicable, background checks conducted by third-party service providers, including but not limited to Stripe Identity and Checkr. You authorize Hora and its third-party providers to collect, process, and retain your personal information for the purposes of verifying your identity and determining your eligibility to perform Tasks. Failure to complete or pass any required verification or background check may result in the suspension or termination of your access to the Platform.
+1.  are operating as a sole proprietor, partnership, limited liability company, limited liability partnership, corporation, or other business entity when using the Platform;
+2.  are customarily engaged in an independently established business of the same nature as the services performed for Supporters through the Platform, and maintain an independent Supporterele;
+3.  have the legal right to work in the jurisdiction(s) where you perform Tasks;
+4.  have and will maintain, at your own expense, all licenses, permits, and registrations required under applicable laws to perform your services (including, as applicable, a business license, contractor’s license, or business tax registration);
+5.  have and will maintain all insurance necessary to operate your business and perform Tasks in a safe and lawful manner;
+6.  will respond to invitations promptly; will only offer and perform Tasks for which you possess the necessary expertise; and will deliver services professionally, safely, and as agreed with the Supporter through the Chat Thread;
+7.  will promptly disclose to Hora in writing any potentially relevant criminal convictions (excluding minor traffic or parking violations) that arise during your use of the Platform;
+8.  acknowledge and agree that, as a condition of accessing and using the Platform as a Supporter, you must complete identity verification and, where applicable, background checks conducted by third-party service providers, including but not limited to Stripe Identity and Checkr. You authorize Hora and its third-party providers to collect, process, and retain your personal information for the purposes of verifying your identity and determining your eligibility to perform Tasks. Failure to complete or pass any required verification or background check may result in the suspension or termination of your access to the Platform.
 
 # 2. Use of the Platform
 
@@ -77,9 +77,9 @@ _To access and use the Platform, all Users—whether acting as a Supporter or a 
 
 _As a condition of registration and continued use of the Platform, all Users are required to complete identity verification through a third-party service provider, which may include, without limitation:_
 
-- **(a)** Uploading a valid government-issued photo ID;
-- **(b)** Completing a real-time facial recognition scan (selfie check);
-- **(c)** Providing additional supporting documents, biometric data, or verification steps as required by our verification partner.
+**(a)** Uploading a valid government-issued photo ID;
+**(b)** Completing a real-time facial recognition scan (selfie check);
+**(c)** Providing additional supporting documents, biometric data, or verification steps as required by our verification partner.
 
 _By registering, you authorize Hora and its designated third-party providers (such as Stripe Identity and Checkr) to collect, process, and retain your personal information for the purposes of identity verification, fraud prevention, and determining your eligibility to use the Platform._
 
@@ -134,9 +134,9 @@ _Where approved in advance by the Requester through the Chat Thread, Supporters 
 
 _Supporters are solely responsible for the conduct and performance of their Supporter Assistants. This includes, without limitation:_
 
-- **(a)** the lawful payment of compensation, benefits, and expenses;
-- **(b)** any applicable tax withholdings or reporting obligations; and
-- **(c)** ensuring that all Supporter Assistants comply with Platform policies and are registered as Supporters.
+**(a)** the lawful payment of compensation, benefits, and expenses;
+**(b)** any applicable tax withholdings or reporting obligations; and
+**(c)** ensuring that all Supporter Assistants comply with Platform policies and are registered as Supporters.
 
 _Hora is not responsible for any acts or omissions of Supporter Assistants._
 
@@ -159,13 +159,13 @@ _Unless expressly stated otherwise, all fees paid on the Platform — including,
 
 _By using the Platform, Users agree to the following general principles, subject to more detailed terms in the Supplemental Terms:_
 
-- **(a)** Minimum Booking Requirement: _All Tasks must meet the Platform’s minimum billing threshold, which is currently one hour. Rates begin at €12/hour unless otherwise specified._
-- **(b)** Prepayment: _Once a Task is matched and confirmed by a Supporter, the Requester is required to prepay for the initial agreed duration._
-- **(c)** Time Adjustments: _If the Task is completed early, remaining time is credited to the Requester's account in the form of time credits (based on minutes), which may be applied to future bookings. If the Task exceeds the original booking time, additional charges will apply and a supplemental invoice will be issued._
-- **(d)** Disbursement Timing: _Supporters are paid 24 hours after the Task is completed, provided that no disputes have been filed._
-- **(e)** Optional Add-Ons: _Requesters may purchase enhanced support features (such as insurance coverage, priority dispute handling, or refund eligibility) during checkout for an additional fee._
-- **(f)** Subscription Services: _Users may choose to enroll in a subscription plan offering premium features; such fees are billed separately._
-- **(g)** Cancellations and No-Shows: _Requesters and Supporters are subject to specific cancellation and no-show penalties, which may include flat-rate fees, partial refunds in platform credit, or forfeiture of time credits. Exceptions (e.g., first-time forgiveness) may apply._
+**(a)** Minimum Booking Requirement: _All Tasks must meet the Platform’s minimum billing threshold, which is currently one hour. Rates begin at €12/hour unless otherwise specified._
+**(b)** Prepayment: _Once a Task is matched and confirmed by a Supporter, the Requester is required to prepay for the initial agreed duration._
+**(c)** Time Adjustments: _If the Task is completed early, remaining time is credited to the Requester's account in the form of time credits (based on minutes), which may be applied to future bookings. If the Task exceeds the original booking time, additional charges will apply and a supplemental invoice will be issued._
+**(d)** Disbursement Timing: _Supporters are paid 24 hours after the Task is completed, provided that no disputes have been filed._
+**(e)** Optional Add-Ons: _Requesters may purchase enhanced support features (such as insurance coverage, priority dispute handling, or refund eligibility) during checkout for an additional fee._
+**(f)** Subscription Services: _Users may choose to enroll in a subscription plan offering premium features; such fees are billed separately._
+**(g)** Cancellations and No-Shows: _Requesters and Supporters are subject to specific cancellation and no-show penalties, which may include flat-rate fees, partial refunds in platform credit, or forfeiture of time credits. Exceptions (e.g., first-time forgiveness) may apply._
 
 _Hora reserves the right to determine the form of any refund — whether to the original payment method or as platform credit — unless otherwise required by law._
 
@@ -183,10 +183,10 @@ _The Platform may include community features such as forums, chat threads, publi
 
 _By using Public Areas, you agree to:_
 
-- **(a)** _Share only lawful, respectful, and appropriate content related to the intended use of the Platform;_
-- **(b)** _Refrain from posting content that is abusive, misleading, harassing, obscene, exploitative, or otherwise inappropriate;_
-- **(c)** _Acknowledge that your username or account name may be publicly associated with any content you post;_
-- **(d)** _Understand that content posted in these areas may be visible to other Users and, in some cases, the public._
+**(a)** _Share only lawful, respectful, and appropriate content related to the intended use of the Platform;_
+**(b)** _Refrain from posting content that is abusive, misleading, harassing, obscene, exploitative, or otherwise inappropriate;_
+**(c)** _Acknowledge that your username or account name may be publicly associated with any content you post;_
+**(d)** _Understand that content posted in these areas may be visible to other Users and, in some cases, the public._
 
 **Content Moderation:**  
 _To help ensure a safe and positive experience for all Users, Hora reserves the right, but is not obligated, to review, monitor, filter, or remove content posted in Public Areas at its sole discretion. This may include future use of automated tools or other content moderation technologies._
@@ -201,8 +201,8 @@ _To help ensure the safety, trust, and proper functioning of the Platform, Hora 
 
 _In such cases, Hora may, at its sole discretion:_
 
-- **(a)** _Temporarily suspend your access to the Platform while investigating the issue; and/or_
-- **(b)** _Permanently deactivate your account or restrict your use of certain Platform features if a breach is confirmed._
+**(a)** _Temporarily suspend your access to the Platform while investigating the issue; and/or_
+**(b)** _Permanently deactivate your account or restrict your use of certain Platform features if a breach is confirmed._
 
 _Where required by applicable law, Hora will provide you with written notice of its determination, and you may submit an appeal within 14 days of receiving such notice by contacting us at the address provided in Section 17 (Contact Information), including your reasons and any supporting information._
 
@@ -222,9 +222,9 @@ _Hora may terminate this Agreement and your access to the Platform at any time, 
 **Effect of Termination:**  
 _Upon termination of this Agreement:_
 
-- **(a)** _Your right to use the Platform will immediately cease;_
-- **(b)** _Certain provisions of this Agreement—such as those relating to intellectual property, limitations of liability, disclaimers, dispute resolution, and indemnification—will survive termination;_
-- **(c)** _Hora reserves the right to retain and use account data as permitted by law and its Privacy Policy, and to pursue any legal remedies available._
+**(a)** _Your right to use the Platform will immediately cease;_
+**(b)** _Certain provisions of this Agreement—such as those relating to intellectual property, limitations of liability, disclaimers, dispute resolution, and indemnification—will survive termination;_
+**(c)** _Hora reserves the right to retain and use account data as permitted by law and its Privacy Policy, and to pursue any legal remedies available._
 
 _Termination of this Agreement does not affect any Service Agreements previously entered into between Users unless otherwise agreed by the parties to such agreements._
 
@@ -238,9 +238,9 @@ _You retain ownership of your User Generated Content, but by posting it on the P
 
 _You are solely responsible for your User Generated Content. You represent and warrant that:_
 
-- **(a)** _You have all rights and permissions to post the content._
-- **(b)** _The content is lawful and does not violate any third-party rights or any applicable laws._
-- **(c)** _The content does not contain false, defamatory, discriminatory, or harmful material, including malware or impersonation._
+**(a)** _You have all rights and permissions to post the content._
+**(b)** _The content is lawful and does not violate any third-party rights or any applicable laws._
+**(c)** _The content does not contain false, defamatory, discriminatory, or harmful material, including malware or impersonation._
 
 **(iii) Platform Rights**  
 _Hora does not claim ownership over User Generated Content but reserves the right (though not the obligation) to monitor, remove, or restrict any content that violates our Terms or applicable law. We may use automated tools, including AI moderation systems, to assist in this effort._
@@ -396,9 +396,9 @@ _Hora reserves the right to, at any time, review, improve, modify, update, upgra
 **(C) Mobile App Updates and Upgrades**  
 _By installing the App(s), you consent to the installation of the App(s) and any updates or upgrades that are released through the Platform. The App (including any updates or upgrades) may:_
 
-- **(i)** _cause your device to automatically communicate with Hora’s servers to deliver the App functionality and to record usage metrics,_
-- **(ii)** _affect App-related preferences or data stored on your device, and/or_
-- **(iii)** _collect personal information as set out in our Privacy Policy._
+**(i)** _cause your device to automatically communicate with Hora’s servers to deliver the App functionality and to record usage metrics,_
+**(ii)** _affect App-related preferences or data stored on your device, and/or_
+**(iii)** _collect personal information as set out in our Privacy Policy._
 
 _You can uninstall the App(s) at any time._
 
@@ -418,10 +418,10 @@ _If you have any questions about these Terms of Service or about the Platform, p
 
 _By using the Platform, you agree:_
 
-- **(a)** _to transact electronically through the Platform;_
-- **(b)** _your electronic signature is the legal equivalent of your manual signature and has the same legal effect, validity and enforceability as a paper-based signature;_
-- **(c)** _your use of a keypad, mouse or other device to select an item, button, icon or similar act/action, constitutes your signature as if actually signed by you in writing; and_
-- **(d)** _no certification authority or other third party verification is necessary to validate your electronic signature, and the lack of such certification or third party verification will not in any way affect the enforceability of your electronic signature._
+**(a)** _to transact electronically through the Platform;_
+**(b)** _your electronic signature is the legal equivalent of your manual signature and has the same legal effect, validity and enforceability as a paper-based signature;_
+**(c)** _your use of a keypad, mouse or other device to select an item, button, icon or similar act/action, constitutes your signature as if actually signed by you in writing; and_
+**(d)** _no certification authority or other third party verification is necessary to validate your electronic signature, and the lack of such certification or third party verification will not in any way affect the enforceability of your electronic signature._
 
 # 21. Governing Law
 
@@ -456,15 +456,15 @@ _This Agreement (including any terms linked to in, and incorporated by reference
 **(c) Severability; Waiver**  
 _Except for the “Agreement Prohibiting Class Actions and Non-Individualized Relief” (if applicable), in the event any provision is found to be partially or wholly invalid, illegal, or unenforceable:_
 
-- **(i)** _such provision shall be modified or restructured to the extent and in the manner necessary to render it valid, legal, and enforceable, or_
-- **(ii)** _if such provision cannot be so modified or restructured, it shall be excised from the Agreement without affecting the validity, legality, or enforceability of any of the remaining provisions._
+**(i)** _such provision shall be modified or restructured to the extent and in the manner necessary to render it valid, legal, and enforceable, or_
+**(ii)** _if such provision cannot be so modified or restructured, it shall be excised from the Agreement without affecting the validity, legality, or enforceability of any of the remaining provisions._
 
 _Failure by Hora to enforce any provision(s) of this Agreement shall not be construed as a waiver of any provision or right._
 
 _You acknowledge and agree that we may assign or transfer this Agreement without your consent. In such case, notice will be provided to you, and if required by law, you may terminate the Agreement and stop using the Platform. Upon the effective date of such assignment:_
 
-- **(i)** _Hora shall be released from all obligations related to your use of the Platform arising after that date, and_
-- **(ii)** _the assignee shall assume and perform the Agreement in place of Hora._
+**(i)** _Hora shall be released from all obligations related to your use of the Platform arising after that date, and_
+**(ii)** _the assignee shall assume and perform the Agreement in place of Hora._
 
 _You may not assign or transfer the Agreement without our prior written approval. Any such unauthorized assignment will be deemed null and void. This Agreement will bind and inure to the benefit of Hora, its successors, and permitted assigns._
 

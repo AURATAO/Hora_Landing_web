@@ -51,7 +51,7 @@ export default function Privacy(){
                         <a href="#7-your-rights-and-choices"  className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                             Your Rights and Choices
                         </a>
-                        <a href="#8-Contacting-Us"  className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
+                        <a href="#8-contacting-us"  className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                             Contacting Us
                         </a>
                         <a href="#9-jurisdiction-specific-provisions"  className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">

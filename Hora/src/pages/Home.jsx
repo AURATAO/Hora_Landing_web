@@ -19,7 +19,7 @@ import 'aos/dist/aos.css';
 export default function Home({ secondsElapsed  } ) {
   const [handleColor, sethandleColor] = useState('bg-accent');
   const [activeAnimated, setActiveAnimated] = useState(false);
-  const [isSupporter, setIsSupporter] = useState(false);
+  const [isQuickRequest, setIsQuickRequest] = useState(false);
   const [flipped, setFlipped] = useState(false);
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [showJoinModal, setShowJoinModal]=useState(null);
@@ -272,16 +272,16 @@ useEffect(() => {
     {/* Section 2 */}
     <div className=" bg-accent w-full mx-auto flex flex-col items-center justify-center max-w-7xl py-[100px] md:py-[150px] lg:py-[90px]">
       <div className='flex flex-col font-semibold justify-center items-center mx-4 w-full lg:flex-row lg:justify-between lg:py-8'>
-        <div className='flex flex-col justify-center items-center lg:items-start'>
-         <h1 className="text-5xl  text-primary pb-4">How to request a support</h1>
+        <div className='flex flex-col justify-center items-center mx-4 lg:items-start'>
+         <h1 className="text-5xl  text-primary pb-4 ">How to request a support</h1>
          <h3 className="text-xl text-primary font-secondary pb-10">One app. Two ways to request Support — instant or pre-scheduled.</h3>
         </div>
       <label className="label flex  pt-5 mx-5 lg:pt-0" >
         <div className="toggle" >
-          <input className="toggle-state" type="checkbox" name="check" value="check" checked={isSupporter}  onChange={() => setIsSupporter(!isSupporter)}/>
+          <input className="toggle-state" type="checkbox" name="check" value="check" checked={isQuickRequest}  onChange={() => setIsQuickRequest(!isQuickRequest)}/>
            <div className="labels" >
-              <span className="icon-left text-sm text-primary/30">Supporter</span>
-              <span className="icon-right text-sm text-primary/30">Requester</span>
+              <span className="icon-left text-xs text-primary/30">QickRequest</span>
+              <span className="icon-right text-xs text-primary/30">Scheduled</span>
             </div>
           <div className="indicator">
           </div>
@@ -289,9 +289,9 @@ useEffect(() => {
       </label>
       </div>
        {/* Section requester */}
-    <div className= {`w-full mx-auto pt-8 flex-col items-center justify-center lg:flex-row-reverse lg:py-4 ${isSupporter ? "flex":"hidden"}`}>
+    <div className= {`w-full mx-auto pt-8 flex-col items-center justify-center lg:flex-row-reverse lg:py-4 ${isQuickRequest ? "flex":"hidden"}`}>
       <div className=" max-w-3xl mx-auto px-6 pb-4 flex flex-col items-center justify-center">
-        <h2 className="text-4xl text-primary pb-4 font-secondary font-semibold text-nowrap">Scheduled Post (Pick your Supporter)</h2>
+        <h2 className="text-4xl text-primary pb-4 font-secondary font-semibold ">Scheduled Post (Pick your Supporter)</h2>
         <h3 className="text-xl  text-primary pb-10 font-secondary">Best for pre-planned needs/  — choose who to work with.</h3>
         {/* Step 1 */}
         <div className="flex flex-col w-full items-start py-12">
@@ -307,7 +307,7 @@ useEffect(() => {
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">02</h2>
           <h3 className="text-2xl  font-semibold text-primary mb-4">Post a task & set time</h3>
           <p className="text-lg text-primary font-secondary max-w-lg ">
-            Define exactly what you need. We match you with top supporters.
+            Define task details and schedule
           </p>
         </div>
 
@@ -316,7 +316,7 @@ useEffect(() => {
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">03</h2>
           <h3 className="text-2xl  font-semibold text-primary mb-4">Chat, negotiate & agree</h3>
           <p className="text-lg text-primary font-secondary max-w-lg">
-            Approve when satisfied. Pay seamlessly.
+           Confirm terms directly with supporter
           </p>
         </div>
         {/*step 4*/}
@@ -324,7 +324,7 @@ useEffect(() => {
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">04</h2>
           <h3 className="text-2xl  font-semibold text-primary mb-4">Track time & pay for minutes used</h3>
           <p className="text-lg text-primary font-secondary max-w-lg">
-            Approve when satisfied. Pay seamlessly.
+            Pay only for the time actually used
           </p>
         </div>
       </div>
@@ -332,50 +332,50 @@ useEffect(() => {
       <div className='w-full md:w-1/2'data-aos="fade-right" ><Iphone_01/></div>
     </div>
        {/* Section supporter */}
-    <div className={`w-full mx-auto pt-4 flex-col items-center justify-center lg:p-4 ${isSupporter ? "hidden":"flex"}`}>
+    <div className={`w-full mx-auto pt-4 flex-col items-center justify-center lg:p-4 ${isQuickRequest? "hidden":"flex"}`}>
       <div className="w-full max-w-7xl mx-auto px-6 pb-4 flex flex-col items-center justify-center  ">
         <h2 className="text-4xl text-primary pb-4 font-secondary font-semibold">QuickRequest (Instant Match)</h2>
         <h3 className="text-xl text-primary font-secondary pb-10"> Best for urgent tasks — platform auto-matches supporters nearby.</h3>
-        <div className='flex-col flex justify-center items-center lg:flex-row gap-8'>
+        <div className='flex-col flex justify-center items-center lg:w-full lg:flex-row lg:gap-8 lg:items-start' >
         <div className='flex flex-col items-center justify-center'>
         {/* Step 1 */}
-        <div className="flex flex-col items-start pb-12 ">
+        <div className="flex flex-col items-start pb-12">
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">01</h2>
           <h3 className="text-2xl   font-semibold text-primary mb-4">Create profile & verified</h3>
           <p className="text-lg text-primary font-secondary max-w-lg">
-          Register and complete ID checks. Join a network built on trust and quality.
+          Instant access with ID verification
           </p>
         </div>
         </div>
         {/* Step 2 */}
-        <div className="flex flex-col items-start pb-12">
+        <div className="flex flex-col items-start pb-12   ">
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">02</h2>
           <h3 className="text-2xl  font-semibold text-primary mb-4">Tap QuickRequest</h3>
           <p className="text-lg text-primary font-secondary max-w-lg ">
-            Browse requests and choose engagements aligned with your time and expertise.
+            Send task request in one tap
           </p>
         </div>
 
         {/* Step 3 */}
-        <div className="flex flex-col items-start pb-12">
+        <div className="flex flex-col items-start pb-12 w-full lg:w-1/4 ">
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">03</h2>
           <h3 className="text-2xl font-semibold text-primary mb-4"> Auto-match with nearby supporter</h3>
           <p className="text-lg text-primary  font-secondary max-w-lg">
-            Complete tasks confidently. Turn free hours into secure earnings. 
+            System auto-matches based on location
           </p>
         </div>
          {/* Step 4 */}
-        <div className="flex flex-col items-start pb-12">
+        <div className="flex flex-col items-start pb-12 w-full lg:w-1/4 ">
           <h2 className="text-[80px] font-semibold text-primary leading-none mb-4">04</h2>
           <h3 className="text-2xl font-semibold text-primary mb-4"> Track time & pay for minutes used</h3>
           <p className="text-lg text-primary  font-secondary max-w-lg">
-            Complete tasks confidently. Turn free hours into secure earnings. 
+            Real-time tracking and minute-based billing
           </p>
         </div>
         </div>
       </div>
       {/* <div className=" bg-[url(/img/supporter_1.png)] w-full h-[400px] bg-cover bg-top md:h-[700px] lg:h-lvh lg:m-8 transition-transform duration-500 hover:scale-105 " /> */}
-       <div className="relative flex justify-center items-center py-12">
+       <div className="relative flex justify-center items-center py-12 ">
           <div className='w-1/2'><div data-aos="fade-left" className="flex justify-center items-center">
               <img src="/img/pinkIphone.png" alt="" style={{width:'700px'}}/>
                   </div>
@@ -424,7 +424,7 @@ useEffect(() => {
    
     </div>
     {/*Section 3*/}
-    <div className="py-20 bg-accent w-full">
+    <div className="py-20 bg-accent w-full mt-20 z-40">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-semibold text-primary  mb-4"  data-aos="fade-up">Who uses Hora?</h2>
         <p className="text-primary/70 font-secondary mb-12">
@@ -475,7 +475,7 @@ useEffect(() => {
 
 
     {/*team*/}
-    <div className='bg-primary w-full py-[90px] z-40 '>
+    <div className='bg-primary w-full py-[90px]  '>
       <div className='max-w-7xl mx-auto px-10'>
       <div className="flex items-center gap-4 px-30">
           <div className="flex-1 h-px bg-gray-300 "></div>

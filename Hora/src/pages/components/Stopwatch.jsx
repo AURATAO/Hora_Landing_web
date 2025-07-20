@@ -4,7 +4,7 @@ export default function Stopwatch( { secondsElapsed }) {
  
 
    // 紐約最低工資：$16.50 / hr
-  const hourlyRate = 16.50;
+  const hourlyRate = 30;
   const perSecondRate = hourlyRate / 3600;
   const earned = (secondsElapsed * perSecondRate).toFixed(4);
 
