@@ -1,11 +1,9 @@
-# Hora Global Terms of Service
-
 _Last updated: July 13, 2025_
 
 These Terms of Use (“Terms”) govern your access to and use of the Hora platform (the “Platform”), which is owned and operated by Arcodiax LLC (“Arcodiax”, “we”, “our”, or “us”).
 By accessing or using the Platform, you agree to be bound by these Terms and to enter into a legally binding agreement with Arcodiax LLC.
 
-# Platform
+# 1. Platform
 
 ## A. Online Marketplace
 

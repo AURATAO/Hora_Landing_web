@@ -187,6 +187,7 @@ useEffect(() => {
     {/* <div className="bg-[url(/img/banner_3.JPG)] bg-cover bg-[position:80%_center] w-full min-h-[844px] md:bg-center"> */}
       <div className="max-w-7xl mx-auto min-h-screen px-6 pb-10 pt-[250px] lg:pt-[350px]">  
           <div className='text-center flex flex-col justify-center items-center  md:items-start md:justify-end md:text-left'>
+           <h3 className='text-gray-500 font-base text-sm pb-2'>🚧 Currently building our MVP. Request a demo to learn more.</h3>
           <h1 className="text-6xl font-bold text-primary leading-tight mb-6 hero" ref={titleRef}>Your Hour, Your Way</h1>
           <div ref={stopwatchRef} style={{ opacity: 0, transform: "translateX(-100px)" }}>
           <Stopwatch  secondsElapsed={secondsElapsed} />
@@ -432,7 +433,7 @@ useEffect(() => {
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {/* Supporter Card */}
-          <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md"  data-aos="fade-right">
+          <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md"  >
             <h3 className="text-xl font-semibold text-[#222831] mb-4">💚 Supporter</h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li><span className="font-medium text-secondary">Who:</span> Students, freelancers, part-timers</li>
@@ -449,7 +450,7 @@ useEffect(() => {
           </div>
 
           {/* Requester Card */}
-          <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md" data-aos="fade-left">
+          <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md" >
             <h3 className="text-xl font-semibold text-[#222831] mb-4">🤝 Requester</h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li><span className="font-medium text-secondary">Who:</span> Busy professionals, families, teams</li>

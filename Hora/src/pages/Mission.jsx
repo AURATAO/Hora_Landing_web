@@ -126,6 +126,8 @@ export default function Mission( {secondsElapsed } ) {
                 <span className="text-sm text-primary/40">${earned} <span className="text-[10px]">at min wage</span></span>
               </div>
               <button className="time-box"  onClick={() => setShowModal(true)}  >  Book Demo </button>
+              <h3 className='text-gray-500 font-base text-sm pt-4'>🚧 MVP in development.</h3>
+
               </div>
             </div>
             <div className="lg:flex-col lg:justify-center lg:items-start lg:text-left"> 
@@ -206,7 +208,7 @@ export default function Mission( {secondsElapsed } ) {
                     className="h-full w-full overflow-hidden rounded transition-opacity duration-700"
                   >
                     <img
-                      src="/img/group3.png"
+                      src="/img/Group9.png"
                       alt=""
                       className="absolute w-full object-cover lg:rounded-2xl lg:w-[700px]  lg:absolute lg:top-[-80px] lg:right-0 "
                     />

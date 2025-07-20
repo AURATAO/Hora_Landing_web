@@ -1,8 +1,4 @@
-# Hora Privacy Policy
-
-_Last updated: July 13, 2025_
-
-## 1. Introduction
+# 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
 
@@ -12,7 +8,7 @@ If you are a resident of California or a data subject located in the European Ec
 
 For any questions or to exercise your rights, please see the “Contact Us” section at the end of this Policy.
 
-## 2. General Terms
+# 2. General Terms
 
 In this Privacy Policy:
 
@@ -24,7 +20,7 @@ In this Privacy Policy:
 
 This Privacy Policy is part of, and governed by, the Hora Terms of Service.
 
-## 3. Information Collection
+# 3. Information Collection
 
 Hora collects certain personally identifiable information about Users ("Personal Information"), meaning information that can identify, relate to, describe, be associated with, or is reasonably capable of being associated with an individual. This includes:
 
@@ -71,7 +67,7 @@ If you access the Hora Platform via a partner organization or co-branded integra
 
 These data exchanges are limited to what is necessary to provide a seamless service and are governed by data-sharing agreements with our partners. You may refer to the partner’s own privacy policy for more information about how they collect and handle your data.
 
-## 4. Use of Personal Information
+# 4. Use of Personal Information
 
 Hora uses your Personal Information for legitimate business and commercial purposes, including but not limited to the following:
 
@@ -91,7 +87,7 @@ Hora uses your Personal Information for legitimate business and commercial purpo
 
 ---
 
-## 5. Disclosure of Personal Information
+# 5. Disclosure of Personal Information
 
 Hora may share your Personal Information with third parties only as necessary and permitted by law, including the following categories and purposes:
 
@@ -142,14 +138,14 @@ If Hora is involved in a merger, acquisition, restructuring, or sale of all or p
 
 ---
 
-## 6. Retention of Personal Information
+# 6. Retention of Personal Information
 
 We retain your Personal Information for as long as necessary to provide you with our products or services and fulfill the purposes described in this Privacy Policy. When we no longer need to use your information and there is no need for us to keep it to comply with our legal obligations or to the extent permitted under applicable laws, we’ll either delete it from our systems or deidentify it so that we can’t use it to reidentify you.  
 Users may also request to delete or access their personal information at any time. Please refer to Section 7, "Your Rights and Choices."
 
 ---
 
-## 7. Your Rights and Choices
+# 7. Your Rights and Choices
 
 Depending on where a user resides, certain privacy rights may apply under local or regional data protection laws. For users located in the European Economic Area (EEA), the United Kingdom (UK), or Switzerland, please refer to the “Additional Disclosures for Data Subjects” section below.
 
@@ -195,7 +191,7 @@ To exercise any of these rights, please submit a request here and select “Cons
 
 ---
 
-## 8. Contacting Us
+# 8. Contacting Us
 
 If you have any questions about our this policy or our privacy practices, you may contact us here or by sending us a letter to:
 
@@ -205,7 +201,7 @@ If you have any questions about our this policy or our privacy practices, you ma
 > Newark, Delaware 19702, USA  
 > Email: info@my-hora.com
 
-## 9. Jurisdiction-Specific Provisions
+# 9. Jurisdiction-Specific Provisions
 
 ### Residents of the United States
 

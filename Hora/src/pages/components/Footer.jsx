@@ -17,7 +17,7 @@ export default function Footer() {
                 <div className='hidden w-full h-[300px] mx-auto flex-col items-start justify-end  lg:flex '>
                 <h2 className='text-5xl text-accent font-heading mb-auto' data-aos="fade-down"><Link to='/'>Hora</Link></h2>
                 <div className="flex flex-col justify-end">
-                    <img src="/img/downloadicon.svg" alt="downloadApple" className="w-[100px] self-start"/>
+                    {/* <img src="/img/downloadicon.svg" alt="downloadApple" className="w-[100px] self-start"/> */}
                     <p className='text-accent text-md'>© 2024 Hora. All rights reserved.</p>
                 </div>
                 </div>
@@ -28,8 +28,8 @@ export default function Footer() {
                     <li>
                         <ul className='flex items-center justify-center gap-2'>
                         <li className='text-accent hover:text-secondary text-sm'><Link to="/contact">Contact</Link></li>
-                        <li className='text-accent hover:text-secondary text-sm'><Link to="/"><img src="./img/logo/linkedin.svg" alt="linkedin logo" className="w-4 h-4 color-accent"/></Link></li>
-                        <li className='text-accent hover:text-secondary text-sm'><Link to="/"><img src="./img/logo/ig.svg" alt="linkedin logo" className="w-6 h-6 color-accent"/></Link></li>
+                        {/* <li className='text-accent hover:text-secondary text-sm'><Link to="/"><img src="./img/logo/linkedin.svg" alt="linkedin logo" className="w-4 h-4 color-accent"/></Link></li>
+                        <li className='text-accent hover:text-secondary text-sm'><Link to="/"><img src="./img/logo/ig.svg" alt="linkedin logo" className="w-6 h-6 color-accent"/></Link></li> */}
                         </ul>
                     </li>
                     </ul>
@@ -38,8 +38,8 @@ export default function Footer() {
                     <ul className='flex flex-col items-start justify-start gap-4'>
                     <li className='text-accent/30 text-lg' data-aos="fade-down"> Resources</li>
                     <li className='text-accent hover:text-secondary text-sm'> <Link to="/FQA">FAQ</Link></li>
-                    <li className='text-accent hover:text-secondary text-sm'> <Link to="">Partner with Hora </Link></li>
-                    <li className='text-accent hover:text-secondary text-sm'> <Link to="">Press Resourcea</Link> </li>
+                    {/* <li className='text-accent hover:text-secondary text-sm'> <Link to="">Partner with Hora </Link></li>
+                    <li className='text-accent hover:text-secondary text-sm'> <Link to="">Press Resourcea</Link> </li> */}
                     </ul>
                 </div>
                 <div className='pt-5 w-full md:w-1/3 '>

@@ -7,6 +7,10 @@
   --font-secondary: "Space Grotesk", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*button*/
 .button-tech {
   background: var(--color-secondary);
