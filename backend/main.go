@@ -4,6 +4,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"horaweb-backend/backup"
 	"io"
 	"log"
@@ -28,6 +29,12 @@ type ContactMessage struct {
 }
 
 func main() {
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("📥 Received request at /")
+		fmt.Fprintln(w, "✅ Hora backend is running!")
+	})
+
 	http.HandleFunc("/submit-demo", handleSubmitDemo)
 	http.HandleFunc("/submit-join", handleSubmitJoin)
 	http.HandleFunc("/submit-contact", handleSubmitContact)
