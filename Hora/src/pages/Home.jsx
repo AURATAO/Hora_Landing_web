@@ -200,10 +200,10 @@ useEffect(() => {
     <div className="py-[100px] pt-10 w-full px-2 flex flex-col items-center justify-center md:py-[150px]">
       <h2 className=" text-5xl text-left font-semibold mb-4 text-primary p-4 md:text-6xl " data-aos="fade-up">What is Hora?</h2>
       <div className="text-lg mb-8 max-w-2xl text-left space-y-3 mx-8 ">
-        <p className=" text-primary font-secondary " ref={el => paragraphs.current[0] = el}>Life’s busy. <br/>
-          Get your time back. <br/>
-          
-          From errands to quiet company — it’s handled.</p>
+        <p className=" text-primary font-secondary " ref={el => paragraphs.current[0] = el}>
+        Hora turns your free time into value — by the minute.<br/>
+        Earn by supporting others, or connect with verified local people for daily tasks.
+        </p>
 
         <p  className=" text-primary  font-secondary " ref={el => paragraphs.current[1] = el}>Your day runs lighter.
           Your mind stays sharp. <br/>
@@ -435,15 +435,15 @@ useEffect(() => {
             <h3 className="text-xl font-semibold text-[#222831] mb-4">💚 Supporter</h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li><span className="font-medium text-secondary">Who:</span> Students, freelancers, part-timers</li>
+              <li><span className="font-medium text-secondary">Why:</span> Use your spare time wisely — support with groceries, clean a backyard, or share an hour at the park. Every task brings value.</li>
               <li><span className="font-medium text-secondary">How to start:</span> Sign up + verify identity</li>
-              <li><span className="font-medium text-secondary">Earn:</span> $30-60/hr</li>
-              <li className="italic text-xs text-gray-500">“Hora fits perfectly between my studies and weekend gigs.”</li>
+              <li className="italic text-xs text-gray-500">“Weekend free? I take a task or two — and turn time into extra income.”</li>
             </ul>
             <button
               className="mt-6 w-full py-2 rounded-lg bg-[#222831] text-white hover:bg-[#333f48] transition"
               onClick={() => setShowJoinModal('supporter')}
             >
-              Become a supporter
+              Offer Your Time
             </button>
           </div>
 
@@ -452,15 +452,15 @@ useEffect(() => {
             <h3 className="text-xl font-semibold text-[#222831] mb-4">🤝 Requester</h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li><span className="font-medium text-secondary">Who:</span> Busy professionals, families, teams</li>
-              <li><span className="font-medium text-secondary">How to start:</span> Quick Request or Schedule a task</li>
-              <li><span className="font-medium text-secondary">Save time:</span> Up to 4 hrs per week</li>
-              <li className="italic text-xs text-gray-500">“Posting a task takes less than 60 seconds. Love it.”</li>
+              <li><span className="font-medium text-secondary">Why:</span> Whether it’s picking up groceries, handling chores, or simply needing company — post what you need and use your time wisely.</li>
+              <li><span className="font-medium text-secondary">How to start:</span> QuickRequest or Schedule a task</li>
+              <li className="italic text-xs text-gray-500">“One tap. Chores done. I’ve got my time back.”</li>
             </ul>
             <button
               className="mt-6 w-full py-2 rounded-lg bg-[#A3C585] text-[#222831] hover:bg-[#91b76e] transition"
               onClick={() => setShowJoinModal('requester')}
             >
-              Post a task
+              Start a Request
             </button>
           </div>
         </div>

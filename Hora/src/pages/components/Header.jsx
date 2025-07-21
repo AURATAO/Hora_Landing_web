@@ -67,27 +67,20 @@ export default function Header({handleColor, secondsElapsed, flipped, onDemoClic
           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
         } lg:hidden` }
       >
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4"
           
         >
           Home
-        </a>
-        <a
-          href="/mission"
+        </Link>
+        <Link
+          to="/mission"
           className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4"
          
         >
           Mission
-        </a>
-        <a
-          href="/about"
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4"
-          
-        >
-          About
-        </a>
+        </Link>
       </div>
         </>
     )

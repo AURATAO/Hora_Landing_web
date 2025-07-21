@@ -140,20 +140,33 @@ export default function Mission( {secondsElapsed } ) {
         <div className="grid grid-rows-2 gap-4 max-w-7xl pb-[64px] mx-8 pt-[200px]  md:mx-8 hero">
           <div className="py-4">
           <h4 className="text-base text-secondary lg:text-xl pb-2" >Hora Today</h4>
-          <p className="text-primary font-secondary text-2xl font-semibold  lg:text-5xl md:w-3/4" data-aos="zoom-in-right">We build simple, meaningful connections, so your time stays yours.</p>
+          <p className="text-primary font-secondary text-2xl font-semibold  lg:text-5xl md:w-3/4" data-aos="zoom-in-right">Simple, trusted connections. Your time, your terms.</p>
           </div>
           <div className="py-4 flex" >
-            <p className="text-primary font-secondary text-2xl font-semibold text-right  md:ml-auto md:w-3/4 lg:text-5xl lg:pt-10 " data-aos="fade-up" >Whether you want to free up your day or turn your time into earnings, we make it seamless. </p>
+            <p className="text-primary font-secondary text-2xl font-semibold text-right  md:ml-auto md:w-3/4 lg:text-5xl lg:pt-10 " data-aos="fade-up" >Free your day. Or earn your way. Hora makes it effortless. </p>
           </div>
         </div>
         </div>
         {/*our value*/}
         <div className="bg-primary w-full py-[80px] ">
+          <div className="max-w-7xl mx-8 py-10 md:mx-auto">
+              <div className="flex items-center justify-center gap-4 px-30">
+              <div className="flex-1 h-px bg-gray-300 hidden md:flex"></div>
+              <div className="text-base font-semibold tracking-widest uppercase text-accent/50 text-center" data-aos="fade-up">
+                Why now
+              </div>
+              <div className="flex-1 h-px bg-gray-300  hidden md:flex"></div>
+            </div>
+               <p className="text-base w-full font-semibold tracking-widest uppercase  text-accent/50   text-center pt-10 px-8" >
+                In a world where trust is rare and time feels scarce, we believe micro-support between real people can rebuild something we've lost — connection, value, and agency.
+              </p>
+              <div className="flex-1 h-px bg-accent/50 my-10 md:hidden" data-aos="fade-up"></div>
+          </div>
           <div className="max-w-7xl mx-8 py-8 md:mx-auto">
             <h4 className="text-base text-secondary py-2 md:pl-8 lg:text-xl ">Our Values</h4>
             <p className="text-5xl text-accent   md:w-4/5  w-full  md:mx-auto lg:w-1/2 lg:mx-8" data-aos="fade-down" >Time. Trust. Fair. Simple.</p>
             <p className="text-lg text-accent font-secondary  pt-[32px]  md:w-4/5 md:mx-auto lg:w-1/2 lg:mx-8">
-              What we stand for, distilled.
+              What we stand for, distilled into what matters most.
               </p>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left mx-4 pt-[72px]">  
                         <div className="flex flex-col items-start justify-center py-8  md:items-center lg:items-start  ">
@@ -632,7 +645,7 @@ export default function Mission( {secondsElapsed } ) {
                         </div>
                         <div className="py-4">
                            <h2 className="text-accent text-2xl font-semibold"> <span  className="relative after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-secondary/50 hover:after:w-full after:transition-all after:duration-300">Emotional Support</span> </h2>
-                           <p className="text-accent font-secondary text-sm py-4 text-left lg:text-base">We’re the first platform where you can seek genuine emotional support — verified people to talk, walk, and build healthy connections with. </p>
+                           <p className="text-accent font-secondary text-sm py-4 text-left lg:text-base">We’re the first platform where real emotional needs are met — not just tasks, but presence. — verified people to talk, walk, and build healthy connections with. </p>
                         </div  >
                         <div className="py-4">
                            <h2 className="text-accent text-2xl font-semibold"> <span  className="relative after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-secondary/50 hover:after:w-full after:transition-all after:duration-300">Every Minute Counts</span> </h2>
@@ -673,34 +686,34 @@ export default function Mission( {secondsElapsed } ) {
                    {/* Supporter Card */}
                    <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md"  >
                      <h3 className="text-xl font-semibold text-[#222831] mb-4">💚 Supporter</h3>
-                     <ul className="space-y-3 text-sm text-gray-700">
-                       <li><span className="font-medium text-secondary">Who:</span> Students, freelancers, part-timers</li>
-                       <li><span className="font-medium text-secondary">How to start:</span> Sign up + verify identity</li>
-                       <li><span className="font-medium text-secondary">Earn:</span> $30-60/hr</li>
-                       <li className="italic text-xs text-gray-500">“Hora fits perfectly between my studies and weekend gigs.”</li>
-                     </ul>
+                      <ul className="space-y-3 text-sm text-gray-700">
+                        <li><span className="font-medium text-secondary">Who:</span> Students, freelancers, part-timers</li>
+                        <li><span className="font-medium text-secondary">Why:</span> Use your spare time wisely — support with groceries, clean a backyard, or share an hour at the park. Every task brings value.</li>
+                        <li><span className="font-medium text-secondary">How to start:</span> Sign up + verify identity</li>
+                        <li className="italic text-xs text-gray-500">“🕒 Weekend free? I take a task or two — and turn time into extra income.”</li>
+                      </ul>
                      <button
                        className="mt-6 w-full py-2 rounded-lg bg-[#222831] text-white hover:bg-[#333f48] transition"
                        onClick={() => setShowJoinModal('supporter')}
                      >
-                       Become a supporter
+                      Offer Your Time
                      </button>
                    </div>
          
                    {/* Requester Card */}
                    <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md" >
                      <h3 className="text-xl font-semibold text-[#222831] mb-4">🤝 Requester</h3>
-                     <ul className="space-y-3 text-sm text-gray-700">
-                       <li><span className="font-medium text-secondary">Who:</span> Busy professionals, families, teams</li>
-                       <li><span className="font-medium text-secondary">How to start:</span> Quick Request or Schedule a task</li>
-                       <li><span className="font-medium text-secondary">Save time:</span> Up to 4 hrs per week</li>
-                       <li className="italic text-xs text-gray-500">“Posting a task takes less than 60 seconds. Love it.”</li>
-                     </ul>
+                       <ul className="space-y-3 text-sm text-gray-700">
+                        <li><span className="font-medium text-secondary">Who:</span> Busy professionals, families, teams</li>
+                        <li><span className="font-medium text-secondary">Why:</span> Whether it’s picking up groceries, handling chores, or simply needing company — post what you need and use your time wisely.</li>
+                        <li><span className="font-medium text-secondary">How to start:</span> QuickRequest or Schedule a task</li>
+                        <li className="italic text-xs text-gray-500">“📱 One tap. Chores done. I’ve got my time back.”</li>
+                      </ul>
                      <button
                        className="mt-6 w-full py-2 rounded-lg bg-[#A3C585] text-[#222831] hover:bg-[#91b76e] transition"
                        onClick={() => setShowJoinModal('requester')}
                      >
-                       Post a task
+                       Start a Request
                      </button>
                    </div>
                  </div>
