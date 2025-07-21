@@ -290,7 +290,7 @@ useEffect(() => {
       </div>
        {/* Section requester */}
     <div className= {`w-full mx-auto pt-8 flex-col items-center justify-center lg:flex-row-reverse lg:py-4 ${isQuickRequest ? "flex":"hidden"}`}>
-      <div className=" max-w-3xl mx-auto px-6 pb-4 flex flex-col items-center justify-center">
+      <div className=" max-w-3xl mx-auto px-4  flex flex-col items-center justify-center">
         <h2 className="text-4xl text-primary pb-4 font-secondary font-semibold ">Scheduled Post (Pick your Supporter)</h2>
         <h3 className="text-xl  text-primary pb-10 font-secondary">Best for pre-planned needs/  — choose who to work with.</h3>
         {/* Step 1 */}
@@ -329,7 +329,7 @@ useEffect(() => {
         </div>
       </div>
       {/* <div className="bg-[url(/img/requester_1.png)] w-full h-[300px] bg-cover bg-top md:w-1/2 md:h-[700px] lg:m-8 lg:h-lvh transition-transform duration-500 hover:scale-105"/> */}
-      <div className='w-full md:w-1/2'data-aos="fade-right" ><Iphone_01/></div>
+      <div className='w-full overflow-hidden pb-45 md:w-1/2'data-aos="fade-right" ><Iphone_01/></div>
     </div>
        {/* Section supporter */}
     <div className={`w-full mx-auto pt-4 flex-col items-center justify-center lg:p-4 ${isQuickRequest? "hidden":"flex"}`}>
@@ -422,7 +422,7 @@ useEffect(() => {
    
     </div>
     {/*Section 3*/}
-    <div className="py-20 bg-accent w-full mt-20 ">
+    <div className="pt-12 pb-20 bg-accent w-full  ">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-semibold text-primary  mb-4"  data-aos="fade-up">Who uses Hora?</h2>
         <p className="text-primary/70 font-secondary mb-12">
@@ -473,7 +473,7 @@ useEffect(() => {
 
 
     {/*team*/}
-    <div className='bg-primary w-full py-[90px]  '>
+    <div className='bg-primary w-full py-[150px]  '>
       <div className='max-w-7xl mx-auto px-10'>
       <div className="flex items-center gap-4 px-30">
           <div className="flex-1 h-px bg-gray-300 "></div>

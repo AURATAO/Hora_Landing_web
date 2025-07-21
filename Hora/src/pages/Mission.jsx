@@ -44,7 +44,7 @@ export default function Mission( {secondsElapsed } ) {
             const y = window.scrollY;
             const width = window.innerWidth;
                 console.log("scrollY:", y);
-               if (y > 264 ) {
+               if (y > 1000 ) {
                  console.log("Trigger animation!");
                  setActiveAnimated(true);
                }
@@ -162,7 +162,7 @@ export default function Mission( {secondsElapsed } ) {
               </p>
               <div className="flex-1 h-px bg-accent/50 my-10 md:hidden" data-aos="fade-up"></div>
           </div>
-          <div className="max-w-7xl mx-8 py-8 md:mx-auto">
+          <div className="max-w-7xl mx-8 py-20 md:mx-auto">
             <h4 className="text-base text-secondary py-2 md:pl-8 lg:text-xl ">Our Values</h4>
             <p className="text-5xl text-accent   md:w-4/5  w-full  md:mx-auto lg:w-1/2 lg:mx-8" data-aos="fade-down" >Time. Trust. Fair. Simple.</p>
             <p className="text-lg text-accent font-secondary  pt-[32px]  md:w-4/5 md:mx-auto lg:w-1/2 lg:mx-8">
