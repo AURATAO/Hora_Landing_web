@@ -64,7 +64,7 @@ const handleSubmit =async(e)=>{
         };
        
         try {
-            const res = await fetch("http://localhost:8080/submit-demo", {
+            const res = await fetch("https://api.my-hora.com/submit-demo", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

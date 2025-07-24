@@ -40,7 +40,7 @@ export default function Contact( {secondsElapsed} ){
     };
 
     try {
-        const res = await fetch("http://localhost:8080/submit-contact",{
+        const res = await fetch("https://api.my-hora.com/submit-contact",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

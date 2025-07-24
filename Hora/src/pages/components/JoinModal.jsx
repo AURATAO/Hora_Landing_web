@@ -30,7 +30,7 @@ export default function JoinModal({ role, onClose }) {
     };
 
     try {
-      const res = await fetch('http://localhost:8080/submit-join', {
+      const res = await fetch('https://api.my-hora.com/submit-join', {
         method:"POST",
         headers: {
           "Content-Type": "application/json"
