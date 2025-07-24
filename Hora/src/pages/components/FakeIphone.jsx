@@ -33,7 +33,7 @@ export default function FakeIphone() {
       }}
     >
       <img
-        src="/img/horaapp.svg"
+        src="/img/homemockup.svg"
         alt="App"
         className="w-full h-full pt-4 object-contain "
         style={{ height: 1500}}

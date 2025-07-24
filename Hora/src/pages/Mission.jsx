@@ -221,7 +221,7 @@ export default function Mission( {secondsElapsed } ) {
                     className="h-full w-full overflow-hidden rounded transition-opacity duration-700"
                   >
                     <img
-                      src="/img/Group9.png"
+                      src="/img/principeimg.png"
                       alt=""
                       className="absolute w-full object-cover lg:rounded-2xl lg:w-[700px]  lg:absolute lg:top-[-80px] lg:right-0 "
                     />

@@ -329,7 +329,51 @@ useEffect(() => {
         </div>
       </div>
       {/* <div className="bg-[url(/img/requester_1.png)] w-full h-[300px] bg-cover bg-top md:w-1/2 md:h-[700px] lg:m-8 lg:h-lvh transition-transform duration-500 hover:scale-105"/> */}
-      <div className='w-full overflow-hidden pb-45 md:w-1/2'data-aos="fade-right" ><Iphone_01/></div>
+       <div className="relative flex justify-center items-center py-12 ">
+          <div className='w-full sm:w-1/2'><div data-aos="fade-left" className="flex justify-center items-center">
+              <img src="/img/greenphone2.png" alt="" className='hidden lg:flex' style={{width:'700px'}}/>
+               <img src="/img/greenphone2-1.png" alt="" className='lg:hidden' style={{width:'700px'}}/>
+            </div>
+          </div>
+                <div className="absolute  top-0 left-2  lg:top-100  lg:left-70
+                    flex items-center gap-3 
+                    px-4 py-2  bg-white/30 backdrop-blur-md rounded-2xl shadow-lg w-80 lg:w-64" data-aos="fade-up">
+                  <span className="text-xl">✅</span>
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold text-gray-700">Hora</span>
+                    <span className="text-xs text-gray-900 leading-tight">Task matched – ready to go</span>
+                </div>
+              </div>
+                {/*note 2*/}
+                <div className="absolute top-15 left-2  lg:top-80 lg:left-70
+                    flex items-center gap-3 
+                    px-4 py-2
+                    bg-white/30 backdrop-blur-md
+                    rounded-2xl shadow-lg
+                    w-80 lg:w-64
+                  " data-aos="fade-up">
+                  <span className="text-xl">🕒</span>
+                  <div className="flex flex-col">
+                    <span className="text-xs font-semibold text-gray-700">Hora</span>
+                    <span className="text-sm text-gray-900 leading-tight">Checked in at 3:14 PM</span>
+                  </div>
+                </div>
+                {/*note 3*/}
+                <div className="absolute top-30 left-2  lg:top-36 lg:right-0
+                    flex items-center gap-3 
+                    px-4 py-2
+                    bg-white/30 backdrop-blur-md
+                    rounded-2xl shadow-lg
+                    w-80 lg:w-64
+                  " data-aos="fade-up">
+                  <span className="text-xl">💸</span>
+                  <div className="flex flex-col">
+                    <span className="text-xs font-semibold text-gray-700">Hora</span>
+                    <span className="text-sm text-gray-900 leading-tight ">Payment Recieved </span>
+                  </div>
+                </div>
+
+         </div>
     </div>
        {/* Section supporter */}
     <div className={`w-full mx-auto pt-4 flex-col items-center justify-center lg:p-4 ${isQuickRequest? "hidden":"flex"}`}>
@@ -374,31 +418,31 @@ useEffect(() => {
       </div>
       {/* <div className=" bg-[url(/img/supporter_1.png)] w-full h-[400px] bg-cover bg-top md:h-[700px] lg:h-lvh lg:m-8 transition-transform duration-500 hover:scale-105 " /> */}
        <div className="relative flex justify-center items-center py-12 ">
-          <div className='w-1/2'><div data-aos="fade-left" className="flex justify-center items-center">
-              <img src="/img/pinkIphone.png" alt="" style={{width:'700px'}}/>
-                  </div>
+          <div className='w-full sm:w-1/2'><div data-aos="fade-left" className="flex justify-center items-center">
+              <img src="/img/greenphone.png" alt="" style={{width:'700px'}}/>
+            </div>
           </div>
-          <div className="absolute top-6  left-12
-              flex items-center gap-3 
-              px-4 py-2  bg-white/30 backdrop-blur-md rounded-2xl shadow-lg w-64" data-aos="fade-up">
-            <span className="text-xl">✅</span>
-          <div className="flex flex-col">
-             <span className="text-xs font-semibold text-gray-700">Hora</span>
-              <span className="text-sm text-gray-900 leading-tight">Task matched successfully</span>
-           </div>
-        </div>
+                <div className="absolute top-6  left-12
+                    flex items-center gap-3 
+                    px-4 py-2  bg-white/30 backdrop-blur-md rounded-2xl shadow-lg w-72 sm:w-64" data-aos="fade-up">
+                  <span className="text-xl">✅</span>
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold text-gray-700">Hora</span>
+                    <span className="text-sm text-gray-900 leading-tight">Match found!</span>
+                </div>
+              </div>
                 {/*note 2*/}
                 <div className="absolute top-20 left-12
                     flex items-center gap-3 
                     px-4 py-2
                     bg-white/30 backdrop-blur-md
                     rounded-2xl shadow-lg
-                    w-64
+                    w-72 sm:w-64
                   " data-aos="fade-up">
                   <span className="text-xl">🕒</span>
                   <div className="flex flex-col">
                     <span className="text-xs font-semibold text-gray-700">Hora</span>
-                    <span className="text-sm text-gray-900 leading-tight">Task checked in</span>
+                    <span className="text-sm text-gray-900 leading-tight">Task Checked in at 3:14 PM</span>
                   </div>
                 </div>
                 {/*note 3*/}
@@ -407,12 +451,12 @@ useEffect(() => {
                     px-4 py-2
                     bg-white/30 backdrop-blur-md
                     rounded-2xl shadow-lg
-                    w-64
+                    w-72 sm:w-64
                   " data-aos="fade-up">
                   <span className="text-xl">💸</span>
                   <div className="flex flex-col">
                     <span className="text-xs font-semibold text-gray-700">Hora</span>
-                    <span className="text-sm text-gray-900 leading-tight">Payment received</span>
+                    <span className="text-sm text-gray-900 leading-tight">Payment confirmed</span>
                   </div>
                 </div>
 
