@@ -9,6 +9,8 @@ import (
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/rs/cors"
 )
 
 type DemoRequest struct {
@@ -50,17 +52,16 @@ func main() {
 
 	backup.StartBackupScheduler()
 
+	handler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"https://my-hora.com"},
+		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
+		AllowedHeaders:   []string{"Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}).Handler(http.DefaultServeMux)
+
 	log.Println("🚀 Server running at http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", handler)
 
-}
-
-// ✅ 設定 CORS headers
-
-func setupCORS(w *http.ResponseWriter, _ *http.Request) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
-	(*w).Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
-	(*w).Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 }
 
 func sendToPocketbase(w http.ResponseWriter, collection string, payload map[string]interface{}) {
@@ -88,14 +89,6 @@ func sendToPocketbase(w http.ResponseWriter, collection string, payload map[stri
 }
 
 func handleSubmitDemo(w http.ResponseWriter, r *http.Request) {
-
-	setupCORS(&w, r)
-
-	// ✅ 處理預檢請求（OPTIONS）時，立刻回應 200，避免錯誤
-	if r.Method == http.MethodOptions {
-		w.WriteHeader(http.StatusOK)
-		return
-	}
 
 	// ✅ 只允許 POST
 	if r.Method != http.MethodPost {
@@ -126,11 +119,6 @@ func handleSubmitDemo(w http.ResponseWriter, r *http.Request) {
 
 func handleSubmitJoin(w http.ResponseWriter, r *http.Request) {
 
-	setupCORS(&w, r)
-	if r.Method == http.MethodOptions {
-		w.WriteHeader(http.StatusOK)
-		return
-	}
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
@@ -157,11 +145,7 @@ func handleSubmitJoin(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleSubmitContact(w http.ResponseWriter, r *http.Request) {
-	setupCORS(&w, r)
-	if r.Method == http.MethodOptions {
-		w.WriteHeader(http.StatusOK)
-		return
-	}
+
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return

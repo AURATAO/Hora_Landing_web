@@ -9,5 +9,6 @@ require (
 
 require (
 	github.com/joho/godotenv v1.5.1 // indirect
+	github.com/rs/cors v1.11.1 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 )
