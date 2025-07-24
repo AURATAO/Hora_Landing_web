@@ -40,6 +40,7 @@ func main() {
 	http.HandleFunc("/submit-demo", handleSubmitDemo)
 	http.HandleFunc("/submit-join", handleSubmitJoin)
 	http.HandleFunc("/submit-contact", handleSubmitContact)
+
 	// 🚀 新增這一行：馬上手動備份用
 	http.HandleFunc("/backup-now", func(w http.ResponseWriter, r *http.Request) {
 		err := backup.BackupAndSend()
@@ -53,7 +54,7 @@ func main() {
 	backup.StartBackupScheduler()
 
 	handler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"https://my-hora.com"},
+		AllowedOrigins:   []string{"https://my-hora.com", "https://www.my-hora.com"},
 		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
 		AllowedHeaders:   []string{"Content-Type", "Authorization"},
 		AllowCredentials: true,
