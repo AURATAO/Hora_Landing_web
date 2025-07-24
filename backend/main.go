@@ -54,10 +54,14 @@ func main() {
 	backup.StartBackupScheduler()
 
 	handler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"https://my-hora.com", "https://www.my-hora.com"},
+		AllowedOrigins:   []string{"https://www.my-hora.com", "https://my-hora.com"},
 		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
-		AllowedHeaders:   []string{"Content-Type", "Authorization"},
+		AllowedHeaders:   []string{"Content-Type"},
 		AllowCredentials: true,
+		AllowOriginFunc: func(origin string) bool {
+			log.Println("🌐 CORS 檢查來源:", origin)
+			return origin == "https://www.my-hora.com" || origin == "https://my-hora.com"
+		},
 	}).Handler(http.DefaultServeMux)
 
 	log.Println("🚀 Server running at http://localhost:8080")
