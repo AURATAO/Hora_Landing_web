@@ -91,6 +91,11 @@ func sendToPocketbase(w http.ResponseWriter, collection string, payload map[stri
 
 func handleSubmitDemo(w http.ResponseWriter, r *http.Request) {
 
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
+
 	// ✅ 只允許 POST
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
@@ -120,6 +125,11 @@ func handleSubmitDemo(w http.ResponseWriter, r *http.Request) {
 
 func handleSubmitJoin(w http.ResponseWriter, r *http.Request) {
 
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
+
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
@@ -146,6 +156,11 @@ func handleSubmitJoin(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleSubmitContact(w http.ResponseWriter, r *http.Request) {
+
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
 
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
