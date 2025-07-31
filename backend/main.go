@@ -9,6 +9,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/rs/cors"
 )
@@ -53,6 +54,12 @@ func main() {
 
 	backup.StartBackupScheduler()
 
+	// ✅ 設定 Render 提供的 PORT
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	handler := cors.New(cors.Options{
 		AllowedOrigins:   []string{"https://www.my-hora.com", "https://my-hora.com"},
 		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
@@ -68,7 +75,16 @@ func main() {
 func sendToPocketbase(w http.ResponseWriter, collection string, payload map[string]interface{}) {
 	jsonData, _ := json.Marshal(payload)
 
-	url := "http://127.0.0.1:8090/api/collections/" + collection + "/records"
+	baseURL := os.Getenv("POCKETBASE_URL")
+	if baseURL == "" {
+		log.Println("❌ 環境變數 POCKETBASE_URL 沒設定")
+		http.Error(w, "Server config error: missing PocketBase URL", 500)
+		return
+	}
+
+	url := baseURL + "/api/collections/" + collection + "/records"
+	log.Println("📤 Sending request to:", url)
+
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
 	if err != nil {
 		http.Error(w, "建立請求失敗", 500)
@@ -78,12 +94,25 @@ func sendToPocketbase(w http.ResponseWriter, collection string, payload map[stri
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
-	if err != nil || resp.StatusCode >= 400 {
-		log.Println("PocketBase Error:", err, resp.StatusCode)
+	if err != nil {
+		log.Println("❌ PocketBase Error:", err)
 		http.Error(w, "PocketBase 寫入失敗", 500)
 		return
 	}
 	defer resp.Body.Close()
+
+	if resp == nil {
+		log.Println("❌ PocketBase response is nil")
+		http.Error(w, "PocketBase response error", 500)
+		return
+	}
+
+	if resp.StatusCode >= 400 {
+		bodyBytes, _ := io.ReadAll(resp.Body)
+		log.Println("❌ PocketBase returned status:", resp.StatusCode, "Body:", string(bodyBytes))
+		http.Error(w, "PocketBase 寫入失敗", 500)
+		return
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	io.Copy(w, resp.Body)
