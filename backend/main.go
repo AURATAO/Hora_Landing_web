@@ -58,10 +58,6 @@ func main() {
 		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
 		AllowedHeaders:   []string{"Content-Type"},
 		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			log.Println("🌐 CORS 檢查來源:", origin)
-			return origin == "https://www.my-hora.com" || origin == "https://my-hora.com"
-		},
 	}).Handler(http.DefaultServeMux)
 
 	log.Println("🚀 Server running at http://localhost:8080")
