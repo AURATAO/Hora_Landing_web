@@ -58,13 +58,13 @@ const handleSubmit =async(e)=>{
 
         // 🚀 這裡可以呼叫你的 API 或其他邏輯
         const payload = {
-            company_name: company,
+            company: company,
             full_name: name,
             email: email,
         };
        
         try {
-            const res = await fetch("https://api.my-hora.com/submit-demo", {
+            const res = await fetch("https://hora-pocketbase.onrender.com/api/collections/demo_requests/records", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

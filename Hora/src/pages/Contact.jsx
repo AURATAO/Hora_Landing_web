@@ -40,7 +40,7 @@ export default function Contact( {secondsElapsed} ){
     };
 
     try {
-        const res = await fetch("https://api.my-hora.com/submit-contact",{
+        const res = await fetch("https://hora-pocketbase.onrender.com/api/collections/contact_us/records",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
