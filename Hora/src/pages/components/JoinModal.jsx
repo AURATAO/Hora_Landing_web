@@ -1,6 +1,7 @@
 // components/JoinModal.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Loader2 } from "lucide-react";
 
 export default function JoinModal({ role, onClose }) {
   const [name, setName] = useState("");
@@ -8,11 +9,14 @@ export default function JoinModal({ role, onClose }) {
   const [city, setCity] = useState('');
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const isSupporter = role === "supporter";
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+     setLoading(true);
+
     console.log("Submit:", { name, email, role, city });
     // TODO: send to backend or service
 
@@ -30,12 +34,16 @@ export default function JoinModal({ role, onClose }) {
     };
 
     try {
-      const res = await fetch('https://api.my-hora.com/submit-join', {
+      console.time("join_request")
+       setLoading(true); 
+      const res = await fetch("https://hora-pocketbase.onrender.com/api/collections/join_requests/records", {
         method:"POST",
         headers: {
           "Content-Type": "application/json"
         },  body: JSON.stringify(payload)}
       )
+      console.timeEnd("join_request");
+
 
       if(!res.ok){
          const error = await res.json();
@@ -58,6 +66,8 @@ export default function JoinModal({ role, onClose }) {
     } catch (error) {
        console.error("錯誤：", error);
        alert("An unexpected error occurred. Please try again later.");
+    }finally {
+       setLoading(false);
     }
   };
 
@@ -130,11 +140,21 @@ export default function JoinModal({ role, onClose }) {
           )}
           <button
             type="submit"
+            disabled={loading}
             className={`w-full py-2 rounded-lg text-white transition ${
               isSupporter ? "bg-secondary hover:bg-[#91b76e]" : "bg-[#222831] hover:bg-[#333f48]"
-            }`}
+            } `}
           >
-            {isSupporter ? "Become a supporter" : "Get notified"}
+           {loading ? (
+              <>
+                  <span className="flex justify-center items-center space-x-2">
+                    <Loader2 className="animate-spin w-4 h-4" />
+                    <span>Processing...</span>
+                  </span>
+              </>
+            ) : (
+              isSupporter ? "Become a supporter" : "Get notified"
+            )}
           </button>
         </form>
       </div>

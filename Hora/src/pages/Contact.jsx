@@ -4,7 +4,7 @@ import DemoModal from './components/DemoModal.jsx';
 import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import pb from '../lib/pb';  
+// import pb from '../lib/pb';  
 
 
 export default function Contact( {secondsElapsed} ){
@@ -13,7 +13,7 @@ export default function Contact( {secondsElapsed} ){
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors]= useState('');
-  const token = pb.authStore.token;
+//   const token = pb.authStore.token;
 
    const hours = Math.floor(secondsElapsed / 3600);
    const minutes = Math.floor((secondsElapsed % 3600) / 60);
@@ -54,10 +54,6 @@ export default function Contact( {secondsElapsed} ){
             setName('');
             setEmail('');
             setMessage('');
-            return;
-            }
-            if (!token) {
-            alert("Error: No token available. Please refresh the page.");
             return;
             }
 

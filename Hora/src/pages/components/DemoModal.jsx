@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { X } from 'lucide-react';
 import { Link } from "react-router-dom";
+import { Loader2 } from 'lucide-react';
 
 
 export default function DemoModal({ show, onClose, }){
@@ -9,6 +10,7 @@ export default function DemoModal({ show, onClose, }){
     const [email, setEmail] = useState('');
     const [agree, setAgree] = useState(false);
     const [errors, setErrors]= useState('');
+    const [loading, setLoading] = useState(false);
 
 useEffect(()=>{
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -45,11 +47,13 @@ const handleClose = () => {
 
 const handleSubmit =async(e)=>{
             e.preventDefault();
+            setLoading(true);
            console.log("Submit button clicked"); 
 
         if (!company || !name || !email || !agree) {
             console.warn('Form not complete', { company, name, email, agree });
             setErrors('Please complete all fields and agree to the terms.');
+            setLoading(false);
             return;
         }
 
@@ -75,7 +79,7 @@ const handleSubmit =async(e)=>{
             if (!res.ok) {
             const error = await res.json();
             alert("We're sorry, your submission could not be completed. (" + error.message + ")");
-
+            setLoading(false);
             return;
             }
 
@@ -85,8 +89,10 @@ const handleSubmit =async(e)=>{
         } catch (err) {
             console.error("Error:", err);
             alert("An unexpected error occurred. Please try again later.");
+        } finally {
+            setLoading(false);
         }
-    
+            
 
         onClose(); // 成功後關閉 modal
     };
@@ -158,8 +164,18 @@ const handleSubmit =async(e)=>{
                 <button 
                     type="submit"
                     className="w-full py-4 button-tech"
+                     disabled={loading}
                 >
-                    Sign Up
+                    {loading ? (
+                        <>
+                           <span className="flex justify-center items-center space-x-2">
+                                <Loader2 className="animate-spin w-4 h-4" />
+                                <span>Processing...</span>
+                            </span>
+                        </>
+                    ) : (
+                        "Sign Up"
+                    )}
                 </button>
                 </form>
             </div>
