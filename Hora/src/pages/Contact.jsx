@@ -4,6 +4,7 @@ import DemoModal from './components/DemoModal.jsx';
 import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Loader2 } from 'lucide-react';
 // import pb from '../lib/pb';  
 
 
@@ -13,6 +14,7 @@ export default function Contact( {secondsElapsed} ){
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors]= useState('');
+  const [loading, setLoading] = useState(false);
 //   const token = pb.authStore.token;
 
    const hours = Math.floor(secondsElapsed / 3600);
@@ -23,10 +25,12 @@ export default function Contact( {secondsElapsed} ){
 
    const handleSubmit = async(e)=>{
     e.preventDefault();
+    setLoading(true);
     console.log('submit:', {name, email, message})
     if ( !name || !email || !message) {
         console.warn('Form not complete', { name, email, message });
         setErrors('Please complete all fields and agree to the terms.');
+        setLoading(false);
         return;
     }
 
@@ -50,6 +54,7 @@ export default function Contact( {secondsElapsed} ){
             if (!res.ok) {
             const error = await res.json();
             alert("We're sorry, your submission could not be completed. (" + error.message + ")");
+            setLoading(false);
 
             setName('');
             setEmail('');
@@ -65,7 +70,9 @@ export default function Contact( {secondsElapsed} ){
     } catch (error) {
         console.error("Error:", error);
         alert("An unexpected error occurred. Please try again later.");
-    }
+    } finally {
+    setLoading(false);
+  }
 
    }
 
@@ -133,7 +140,16 @@ export default function Contact( {secondsElapsed} ){
                     type="submit"
                     className="w-full py-3 button-tech font-secondary"
                 >
-                    Send Message
+                     {loading ? (
+                        <>
+                           <span className="flex justify-center items-center space-x-2">
+                                <Loader2 className="animate-spin w-4 h-4" />
+                                <span>Processing...</span>
+                            </span>
+                        </>
+                    ) : (
+                        "SEND MESSAGE"
+                    )}
                 </button>
                 </form>
 
