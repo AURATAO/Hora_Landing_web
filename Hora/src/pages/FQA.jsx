@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: 'Will I get refunded for unused time?',
-    answer: 'Yes, any unused minutes are automatically refunded after the session ends.',
+    answer: 'Any unused time is automatically refunded to your Hora balance as credit for future tasks. If you prefer a cash refund, just reach out — we’re happy to help.',
   },
   {
     question: 'What if the session goes overtime?',
