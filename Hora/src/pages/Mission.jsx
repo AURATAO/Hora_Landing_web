@@ -443,7 +443,7 @@ export default function Mission( {secondsElapsed } ) {
                             className="!mt-0 !rounded-b-none !shadow-none text-accent"
                           >
                             <div className="px-5 py-4 font-secondary text-sm">
-                            <strong>Only pay for the time you actually use.</strong>  If your session ends early, we automatically refund the unused minutes.
+                            <strong>Only pay for the time you actually use.</strong>  If your session ends early, we’ll automatically refund the unused minutes as credit to your Hora balance — ready for your next task.
                             </div>
                           </TECollapse>
                         </div>
