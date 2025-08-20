@@ -154,7 +154,7 @@ export default function Contact( {secondsElapsed} ){
                 </form>
 
                 <div className="text-center text-primary/50 text-sm mt-6">
-                Or email us directly at <a href="mailto:info@my-hora.com" className="text-secondary hover:underline">info@my-hora.com</a>
+                Or email us directly at <a href="mailto:liang.you@horaapp.co" className="text-secondary hover:underline">liang.you@horaapp.co</a>
                 </div>
              </div>
             </div>

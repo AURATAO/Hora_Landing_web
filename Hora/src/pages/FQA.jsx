@@ -112,7 +112,7 @@ export default function FQA() {
         </div>
       </div>
       <p className="text-center text-xs text-accent mt-12">
-        If you have further questions, feel free to contact us at <a href="mailto:info@my-hora.com" className="text-secondary underline underline-offset-2 hover:text-accent">info@my-hora.com</a>
+        If you have further questions, feel free to contact us at <a href="mailto:info@my-hora.com" className="text-secondary underline underline-offset-2 hover:text-accent">liang.you@horapp.co</a>
        </p>
     </section>
     <Footer/>
