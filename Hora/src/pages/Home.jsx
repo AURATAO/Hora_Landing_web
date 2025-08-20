@@ -522,7 +522,7 @@ useEffect(() => {
       <div className="flex items-center gap-4 px-30">
           <div className="flex-1 h-px bg-gray-300 "></div>
           <div className="text-base font-semibold tracking-widest uppercase text-gray-600" data-aos="fade-up">
-            Team
+            Behind Hora
           </div>
           <div className="flex-1 h-px bg-gray-300"></div>
         </div>
@@ -534,7 +534,7 @@ useEffect(() => {
           alt="Anna"
           className="w-32 h-32 rounded-full object-cover transition-transform duration-300 hover:scale-110 mb-4  filter grayscale"
         />
-        <h3 className="text-sm  text-accent/50 ">co-Founder</h3>
+        <h3 className="text-sm  text-accent/50 ">co-Founder & CEO</h3>
         <h3 className="text-xl text-accent" data-aos="fade-left" >Liang you</h3>
         <div className="flex gap-2 mt-2">
           <a href="https://www.linkedin.com/in/liang-you-tao-658705106/" target="_blank" rel="noopener noreferrer" className='text-accent/30 text-sm'>
@@ -547,7 +547,7 @@ useEffect(() => {
       </div>
 
       {/* Founder 2 */}
-      <div className="flex flex-col items-center">
+      {/* <div className="flex flex-col items-center">
         <img
           src="/img/founder2.jpg"
           alt="Leo"
@@ -560,8 +560,9 @@ useEffect(() => {
             Linkedin
           </a>
         </div>
+      </div> */}
       </div>
-      </div>
+       <p className='text-center text-accent/70 font-secondary'>"I’m building Hora to redefine how the world values time."</p>
       </div>
     </div>
     {/* Section 3 未來補上 */}
