@@ -61,7 +61,7 @@ func main() {
 	}
 
 	handler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"https://www.my-hora.com", "https://my-hora.com"},
+		AllowedOrigins:   []string{"https://www.horaapp.co", "https://horaapp.com"},
 		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
 		AllowedHeaders:   []string{"Content-Type"},
 		AllowCredentials: true,
