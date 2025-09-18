@@ -17,3 +17,17 @@ pocketbase/pb_migrations/
 .vscode/
 .idea/
 .env
+
+# frontend
+app/node_modules
+app/dist
+app/.env
+app/vite.config.js.timestamp-*
+app/*.log
+
+# backend (Go builds)
+server/hora-auth
+server/*.exe
+server/*.out
+server/*.test
+server/.env
