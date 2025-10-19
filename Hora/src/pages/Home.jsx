@@ -547,7 +547,7 @@ useEffect(() => {
       </div>
 
       {/* Founder 2 */}
-      {/* <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <img
           src="/img/founder2.jpg"
           alt="Leo"
@@ -560,9 +560,9 @@ useEffect(() => {
             Linkedin
           </a>
         </div>
-      </div> */}
       </div>
-       <p className='text-center text-accent/70 font-secondary'>"I’m building Hora to redefine how the world values time."</p>
+      </div>
+       <p className='text-center text-accent/70 font-secondary'>"we are building Hora to redefine how the world values time."</p>
       </div>
     </div>
     {/* Section 3 未來補上 */}
