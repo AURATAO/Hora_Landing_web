@@ -534,7 +534,7 @@ useEffect(() => {
           alt="Anna"
           className="w-32 h-32 rounded-full object-cover transition-transform duration-300 hover:scale-110 mb-4  filter grayscale"
         />
-        <h3 className="text-sm  text-accent/50 ">co-Founder & CEO</h3>
+        <h3 className="text-sm  text-accent/50 ">Co-founder, Product & Business</h3>
         <h3 className="text-xl text-accent" data-aos="fade-left" >Liang you</h3>
         <div className="flex gap-2 mt-2">
           <a href="https://www.linkedin.com/in/liang-you-tao-658705106/" target="_blank" rel="noopener noreferrer" className='text-accent/30 text-sm'>
@@ -553,7 +553,7 @@ useEffect(() => {
           alt="Leo"
           className="w-32 h-32 rounded-full object-cover object-left-bottom mb-4 transition-transform duration-300 hover:scale-110  filter grayscale"
         />
-         <h3 className="text-sm  text-accent/50 ">co-Founder</h3>
+         <h3 className="text-sm  text-accent/50 ">Co-founder, Marketing & Growth</h3>
         <h3 className="text-xl text-accent" data-aos="fade-left">Daniele</h3>
         <div className="flex gap-4 mt-2">
           <a href="https://linkedin.com/in/leo" target="_blank" rel="noopener noreferrer" className='text-accent/30  text-sm'>
@@ -562,7 +562,7 @@ useEffect(() => {
         </div>
       </div>
       </div>
-       <p className='text-center text-accent/70 font-secondary'>"we are building Hora to redefine how the world values time."</p>
+       <p className='text-center text-accent/70 font-secondary pt-[30px]'>"We are building Hora to redefine how the world values time."</p>
       </div>
     </div>
     {/* Section 3 未來補上 */}
