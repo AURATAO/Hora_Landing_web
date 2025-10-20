@@ -556,7 +556,7 @@ useEffect(() => {
          <h3 className="text-sm  text-accent/50 ">Co-founder, Marketing & Growth</h3>
         <h3 className="text-xl text-accent" data-aos="fade-left">Daniele</h3>
         <div className="flex gap-4 mt-2">
-          <a href="https://linkedin.com/in/leo" target="_blank" rel="noopener noreferrer" className='text-accent/30  text-sm'>
+          <a href="https://www.linkedin.com/in/daniele-rollo-9898061a5/" target="_blank" rel="noopener noreferrer" className='text-accent/30  text-sm'>
             Linkedin
           </a>
         </div>
