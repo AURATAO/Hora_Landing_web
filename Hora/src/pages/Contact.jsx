@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Loader2 } from 'lucide-react';
+import { postJSON } from "../lib/fetcher";
 // import pb from '../lib/pb';  
 
 
@@ -23,58 +24,48 @@ export default function Contact( {secondsElapsed} ){
    const earned = (secondsElapsed * (16.50/3600)).toFixed(4);
 
 
-   const handleSubmit = async(e)=>{
+const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log('submit:', {name, email, message})
-    if ( !name || !email || !message) {
+
+    // 先驗證，不通過就不要進 loading
+    if (!name || !email || !message) {
         console.warn('Form not complete', { name, email, message });
         setErrors('Please complete all fields and agree to the terms.');
-        setLoading(false);
         return;
     }
 
     setErrors('');
-    console.log("Form data ready to submit:", { name, email, message });
+    setLoading(true);
 
     const payload = {
         full_name: name,
         email: email,
-        message:message,
+        message: message,
     };
 
     try {
-        const res = await fetch("https://hora-pocketbase.onrender.com/api/collections/contact_us/records",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            }, 
-            body: JSON.stringify(payload)});
+        await postJSON("/submit-contact", payload);
 
-            if (!res.ok) {
-            const error = await res.json();
-            alert("We're sorry, your submission could not be completed. (" + error.message + ")");
-            setLoading(false);
+        alert("Thank you! We’ve received your message and will get back to you shortly.");
 
-            setName('');
-            setEmail('');
-            setMessage('');
-            return;
-            }
+        // 清表單
+        setName('');
+        setEmail('');
+        setMessage('');
+    } catch (err) {
+        console.error("contact error:", err);
 
-            alert("Thank you! We've received your message and will get back to you shortly.");
-            setName('');
-            setEmail('');
-            setMessage('');
-        
-    } catch (error) {
-        console.error("Error:", error);
-        alert("An unexpected error occurred. Please try again later.");
+        // 若有做 ServiceBanner，可通知
+        if (err?.status >= 500 || err?.status === 408) {
+        window.__reportServiceFail?.();
+        alert("Service is unstable. Please try again in a moment.");
+        } else {
+        alert(err?.message || "Request failed.");
+        }
     } finally {
-    setLoading(false);
-  }
-
-   }
+        setLoading(false);
+    }
+    };
 
      useEffect(() => {
     

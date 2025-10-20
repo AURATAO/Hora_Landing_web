@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { X } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { Loader2 } from 'lucide-react';
+import { postJSON } from "../../lib/fetcher";
 
 
 export default function DemoModal({ show, onClose, }){
@@ -45,57 +46,51 @@ const handleClose = () => {
   onClose(); // 只負責關閉
 };
 
-const handleSubmit =async(e)=>{
-            e.preventDefault();
-            setLoading(true);
-           console.log("Submit button clicked"); 
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-        if (!company || !name || !email || !agree) {
-            console.warn('Form not complete', { company, name, email, agree });
-            setErrors('Please complete all fields and agree to the terms.');
-            setLoading(false);
-            return;
-        }
+  // 先驗證，不通過就不要進 loading
+  if (!company || !name || !email || !agree) {
+    console.warn('Form not complete', { company, name, email, agree });
+    setErrors('Please complete all fields and agree to the terms.');
+    return;
+  }
 
-        setErrors('');
-        console.log("Form data ready to submit:", { company, name, email, agree });
+  setErrors('');
+  setLoading(true);
 
-        // 🚀 這裡可以呼叫你的 API 或其他邏輯
-        const payload = {
-            company: company,
-            full_name: name,
-            email: email,
-        };
-       
-        try {
-            const res = await fetch("https://hora-pocketbase.onrender.com/api/collections/demo_requests/records", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-            });
+  // 用同一個 payload 物件
+  const payload = {
+    company_name: company,      // 後端已做兼容 company/company_name
+    full_name: name,
+    email: email,
+  };
 
-            if (!res.ok) {
-            const error = await res.json();
-            alert("We're sorry, your submission could not be completed. (" + error.message + ")");
-            setLoading(false);
-            return;
-            }
+  try {
+    await postJSON("/submit-demo", payload);
+    alert("Thanks! Your request has been received — we’ll be in touch with your demo access.");
 
-            alert("Thanks! Your request has been received — we'll be in touch with your demo access.");
-            setName("");
-            setEmail("");
-        } catch (err) {
-            console.error("Error:", err);
-            alert("An unexpected error occurred. Please try again later.");
-        } finally {
-            setLoading(false);
-        }
-            
+    // 清表單
+    setCompany("");
+    setName("");
+    setEmail("");
+    setAgree(false);
 
-        onClose(); // 成功後關閉 modal
-    };
+    onClose(); // 成功後關閉 modal
+  } catch (err) {
+    console.error("demo error:", err);
+
+    // 連續 5xx/逾時時，觸發 Banner（如果你有加）
+    if (err?.status >= 500 || err?.status === 408) {
+      window.__reportServiceFail?.();
+      alert("Service is unstable. Please try again in a moment.");
+    } else {
+      alert(err?.message || "Request failed.");
+    }
+  } finally {
+    setLoading(false);
+  }
+};
 
 
     return (

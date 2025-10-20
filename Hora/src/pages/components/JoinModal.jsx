@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
+import { postJSON } from "../../lib/fetcher";
 
 export default function JoinModal({ role, onClose }) {
   const [name, setName] = useState("");
@@ -20,11 +21,14 @@ export default function JoinModal({ role, onClose }) {
     console.log("Submit:", { name, email, role, city });
     // TODO: send to backend or service
 
-    if(!name || !email || !city || !agree){
-       console.warn('Form not complete', { name, email, city, agree });
-       setErrors('Please complete all fields and agree to the terms.');
-       return;
+      if (!name || !email || !city || !agree) {
+      setErrors('Please complete all fields and agree to the terms.');
+      return;
     }
+
+    
+    setLoading(true); 
+    setErrors('');
 
     const payload = {
         full_name: name,
@@ -34,38 +38,22 @@ export default function JoinModal({ role, onClose }) {
     };
 
     try {
-      console.time("join_request")
-       setLoading(true); 
-      const res = await fetch("https://hora-pocketbase.onrender.com/api/collections/join_requests/records", {
-        method:"POST",
-        headers: {
-          "Content-Type": "application/json"
-        },  body: JSON.stringify(payload)}
-      )
-      console.timeEnd("join_request");
+     await postJSON("/submit-join", payload);
+     alert("Thank you! We’ll notify you when Hora launches in your city.");
 
-
-      if(!res.ok){
-         const error = await res.json();
-           alert("We're sorry, your submission could not be completed. (" + error.message + ")");
-
-            setName('');
-            setEmail('');
-            setCity('');
-            setAgree(false);
-            return;
-
-      }
-
-      alert("Thank you! We’ll notify you when Hora launches in your city.");
+ 
       setName('');
       setEmail('');
       setCity('');
       setAgree(false);
       onClose();
     } catch (error) {
-       console.error("錯誤：", error);
-       alert("An unexpected error occurred. Please try again later.");
+        console.error("join error:", error);
+        if (error?.status >= 500 || error?.status === 408) {
+          alert("Service is unstable. Please try again in a moment.");
+        } else {
+          alert(error?.message || "Request failed.");
+        }
     }finally {
        setLoading(false);
     }
