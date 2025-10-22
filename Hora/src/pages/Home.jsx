@@ -330,7 +330,7 @@ useEffect(() => {
       </div>
       {/* <div className="bg-[url(/img/requester_1.png)] w-full h-[300px] bg-cover bg-top md:w-1/2 md:h-[700px] lg:m-8 lg:h-lvh transition-transform duration-500 hover:scale-105"/> */}
        <div className="relative flex justify-center items-center py-12 ">
-          <div className='w-full sm:w-1/2'><div data-aos="fade-left" className="flex justify-center items-center">
+          <div className='w-full sm:w-1/2'><div data-aos="fade-up" className="flex justify-center items-center">
               <img src="/img/greenphone2.png" alt="" className='hidden lg:flex' style={{width:'700px'}}/>
                <img src="/img/greenphone2-1.png" alt="" className='lg:hidden' style={{width:'700px'}}/>
             </div>
@@ -418,7 +418,7 @@ useEffect(() => {
       </div>
       {/* <div className=" bg-[url(/img/supporter_1.png)] w-full h-[400px] bg-cover bg-top md:h-[700px] lg:h-lvh lg:m-8 transition-transform duration-500 hover:scale-105 " /> */}
        <div className="relative flex justify-center items-center py-12 ">
-          <div className='w-full sm:w-1/2'><div data-aos="fade-left" className="flex justify-center items-center">
+          <div className='w-full sm:w-1/2'><div data-aos="fade-up" className="flex justify-center items-center">
               <img src="/img/greenphone.png" alt="" style={{width:'700px'}}/>
             </div>
           </div>
@@ -520,11 +520,11 @@ useEffect(() => {
     <div className='bg-primary w-full py-[150px]  '>
       <div className='max-w-7xl mx-auto px-10'>
       <div className="flex items-center gap-4 px-30">
-          <div className="flex-1 h-px bg-gray-300 "></div>
-          <div className="text-base font-semibold tracking-widest uppercase text-gray-600" data-aos="fade-up">
+          <div className="hidden  md:flex flex-1 h-px bg-gray-300 "></div>
+          <div className="text-base font-semibold md:tracking-widest uppercase text-gray-600" data-aos="fade-up">
             Behind Hora
           </div>
-          <div className="flex-1 h-px bg-gray-300"></div>
+          <div className=" hidden md:flex flex-1 h-px bg-gray-300"></div>
         </div>
       <div className="flex flex-col md:flex-row justify-center items-center gap-30 p-6">
       {/* Founder 1 */}
