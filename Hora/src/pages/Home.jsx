@@ -1,14 +1,10 @@
 import React, {useEffect, useRef, useState } from 'react';
 import TestimonialsSlider from './components/TestimonialsSlider.jsx';
-import Logo_01 from './components/animated/Logo_01.jsx';
-import Logo_02 from './components/animated/Logo_02.jsx';
-import Logo_03 from './components/animated/Logo_03.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DemoModal from './components/DemoModal.jsx';
 import JoinModal from "./components/JoinModal";
 import Stopwatch from '../pages/components/Stopwatch.jsx';
-import Iphone_01 from './components/Iphone_01.jsx';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AOS from 'aos';
@@ -182,93 +178,172 @@ useEffect(() => {
   return (
   <>
  <Header handleColor={handleColor} secondsElapsed={secondsElapsed} flipped={flipped} onDemoClick={() => setShowDemoModal(true)}/>
-  <main className="flex max-x-7xl flex-col items-center justify-center min-h-screen bg-accent " ref={pinSectionRef}>
-    {/*banner*/}
-    {/* <div className="bg-[url(/img/banner_3.JPG)] bg-cover bg-[position:80%_center] w-full min-h-[844px] md:bg-center"> */}
-      <div className="max-w-7xl mx-auto min-h-screen px-6 pb-10 pt-[250px] lg:pt-[350px]">  
-          <div className='text-center flex flex-col justify-center items-center  md:items-start md:justify-end md:text-left'>
-           <h3 className='text-gray-500 font-base text-sm pb-2'>🚧 Currently building our MVP. Request a demo to learn more.</h3>
-          <h1 className="text-6xl font-bold text-primary leading-tight mb-6 hero" ref={titleRef}>Your Hour, Your Way</h1>
-          <div ref={stopwatchRef} style={{ opacity: 0, transform: "translateX(-100px)" }}>
-          <Stopwatch  secondsElapsed={secondsElapsed} />
+  <main className="flex max-x-7xl flex-col items-center justify-center  bg-accent " ref={pinSectionRef}>
+    {/* HERO */}
+    <div className="px-2 mx-auto pb-16 pt-[100px] lg:py-[250px]
+                flex flex-col lg:flex-row justify-center items-center gap-10 md:mx-4 md:gap-10">
+
+      {/* 左側：標題 + 計時 + CTA */}
+      <div className="w-full flex flex-col items-center md:items-start text-center md:text-left">
+        <h3 className="text-gray-500 text-sm pb-2 font-secondary">
+          🚧 <span className='pl-2'>Alpha testing Hora in NYC.</span>
+        </h3>
+
+        <h1
+          className="text-5xl md:text-6xl font-bold text-primary leading-tight mb-6 hero"
+          ref={titleRef}
+        >
+          My Time, My Way
+        </h1>
+
+        <div
+          ref={stopwatchRef}
+          className="mb-8"
+          style={{ opacity: 10, transform: "translateX(-100px)" }}
+        >
+          <Stopwatch secondsElapsed={secondsElapsed} />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 w-full ">
+          {/* 主要 CTA：登記制 */}
+          <button
+            type="button"
+            onClick={() => setShowJoinModal('requester')}
+            className="button-tech font-secondary w-full "
+          >
+            Join the alpha waitlist
+          </button>
+
+          {/* 次要 CTA：直接進入 MVP */}
+          <a
+            href="https://mvp.horaapp.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full  px-6 py-3 rounded-full border border-primary/20
+                      text-sm font-secondary text-primary/80
+                      hover:bg-primary hover:text-accent transition"
+          >
+            View live MVP
+          </a>
+        </div>
+      </div>
+
+      {/* 右側：一張 app 圖（可以之後換成你想要的插畫） */}
+      <div className="w-full lg:w-4/5 flex justify-center" data-aos="fade-left">
+        <div  className="
+          relative
+          w-full
+          sm:max-w-sm md:max-w-md lg:max-w-lg
+          aspect-4/3                      
+          overflow-hidden
+          rounded-4xl
+          shadow-2xl
+        ">
+          <img
+            src="/heroPic.png"   
+            alt="Hora app preview"
+            className="w-full h-full object-cover"
+          />
+        </div>
+          <div className="absolute -bottom-4 left-6
+                          rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5
+                          text-[11px] font-secondary text-gray-700 shadow">
+            Live MVP · Early access
           </div>
-          </div>
+      </div>
     </div>
     <DemoModal show={showDemoModal===true} onClose={() => setShowDemoModal(false)} />
 
     {/* Section 1 */}
-    <div className="py-[100px] pt-10 w-full px-2 flex flex-col items-center justify-center md:py-[150px]">
-      <h2 className=" text-5xl text-left font-semibold mb-4 text-primary p-4 md:text-6xl " data-aos="fade-up">What is Hora?</h2>
-      <div className="text-lg mb-8 max-w-2xl text-left space-y-3 mx-8 ">
-        <p className=" text-primary font-secondary " ref={el => paragraphs.current[0] = el}>
-        Hora turns your free time into value — by the minute.<br/>
-        Earn by supporting others, or connect with verified local people for daily tasks.
-        </p>
+    <section className="w-full bg-primary py-20 md:py-[150px] px-4  flex justify-center">
+    <div className="max-w-5xl w-full text-center">
+      <h2
+        ref={h2Ref}
+        className="text-4xl md:text-5xl font-semibold text-accent mb-6"
+        data-aos="fade-up"
+      >
+        What is Hora?
+      </h2>
 
-        <p  className=" text-primary  font-secondary " ref={el => paragraphs.current[1] = el}>Your day runs lighter.
-          Your mind stays sharp. <br/>
-          Life doesn’t slow down. Neither do you. 
+      {/* 兩句話，講清楚是什麼（保留 paragraphs 的 ref 給 GSAP 用） */}
+      <div className="space-y-6 text-base md:text-lg text-accent font-secondary mb-10">
+              <p ref={el => (paragraphs.current[0] = el)}>
+                Hora is a time-based marketplace for everyday tasks and company.
+              </p>
+              <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-6">
+          {/* 左：busy 狀態 */}
+          <p
+            ref={el => (paragraphs.current[0] = el)}
+            className="flex-1 rounded-2xl bg-accent/5 border border-accent/10 px-4 py-3 text-sm md:text-base text-left"
+          >
+            <span className="block text-xs uppercase tracking-wide text-accent mb-1">
+              When you&apos;re busy
+            </span>
+            <span className="font-medium">
+              you post what you need.
+            </span>
           </p>
 
-      </div>
-      <button className="py-9 font-secondary">
-      <a href="/mission" className="button-tech font-secondary">
-        How we do it
-      </a>
-      </button>
-    </div>
-    <div className="py-[90px] w-full mx-auto flex flex-col items-center justify-center bg-primary">
-      <div className="flex flex-col items-start justify-center px-4 w-full md:items-center lg:items-start lg:px-0 max-w-7xl">
-        <div className="pb-[64px] mx-4  pt-8"> 
-          <h2 className="text-4xl text-accent md:text-6xl  " data-aos="fade-up">Why Hora?</h2>
-          <p className="text-lg text-accent max-w-2xl pt-4 font-secondary">
-            Your time, your needs — matched with trust and ease.
+          {/* 中間：雙向箭頭 */}
+          <div className="hidden md:flex items-center justify-center px-2">
+            <span className="text-2xl text-accent">⇄</span>
+          </div>
+
+          {/* 右：free 狀態 */}
+          <p
+            ref={el => (paragraphs.current[1] = el)}
+            className="flex-1 rounded-2xl bg-accent/5 border border-accent/10 px-4 py-3 text-sm md:text-base text-left"
+          >
+            <span className="block text-xs uppercase tracking-wide text-accent mb-1">
+              When you&apos;re free
+            </span>
+            <span className="font-medium">
+              you earn by offering your time nearby — tracked by the minute.
+            </span>
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-[32px] w-full pt-[32px] pb-2 md:items-center lg:items-start lg:px-4 max-w-7xl">
-          <div className="flex flex-col items-start justify-between py-4 md:items-center lg:items-start ">
-           <div className='pb-4'>
-            <Logo_01 activeAnimated={activeAnimated}/>
-           </div>
-            <div className="flex flex-col items-start pt-2 md:items-center lg:items-start ">
-              <h3 className="text-3xl font-semibold text-accent pb-4  md:text-center lg:text-left">
-                Safety is standard.
-              </h3>
-              <p className="text-lg font-secondary text-accent max-w-xl md:text-center lg:text-left">
-              All supporters and requesters complete secure ID verification and background checks. Hire or earn with confidence. </p>
-            </div>
-          </div>
+      </div>
 
-          <div className="flex flex-col items-start justify-between py-4 md:items-center lg:items-start ">
-            <div className='pb-4'>
-            <Logo_02 activeAnimated ={activeAnimated}/>
-            </div>
-            <div className="flex flex-col items-start pt-2 md:items-center lg:items-start md:text-center lg:text-left ">
-              <h3 className="text-3xl font-semibold text-accent pb-4  md:text-center lg:text-left">
-                Payments, safeguarded.
-              </h3>
-              <p className="text-lg  font-secondary text-accent max-w-xl md:text-center lg:text-left">
-               Transactions run on Stripe. Funds stay protected, always.
-              </p>
-            </div>
-          </div>
+    {/* 三個很乾淨的小點：安全 / 金流 / 計費方式 */}
+    <div className="grid gap-4 md:grid-cols-3 text-left">
+      <div className="flex items-start gap-3 rounded-2xl border border-accent/10 bg-accent/5 px-4 py-3">
+        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-accent/40 text-[11px] font-medium text-accent">
+          1
+        </span>
+        <div>
+          <p className="text-sm font-semibold text-accent">Verified people only</p>
+          <p className="text-xs font-secondary text-accent/70">
+            Requesters and supporters complete ID checks before using Hora.
+          </p>
+        </div>
+      </div>
 
-          <div className="flex flex-col items-start justify-between py-4 md:items-center lg:items-start ">
-            <div className='pb-4 '>
-            <Logo_03 activeAnimated ={activeAnimated}/>
-            </div>
-            <div className="flex flex-col items-start justify-center pt-2 md:items-center lg:items-start ">
-              <h3 className="text-3xl font-semibold text-accent pb-4  md:text-center lg:text-left">
-                Only pay for real time.
-              </h3>
-              <p className="text-lg font-secondary text-accent max-w-xl">
-                We charge by the minute — no rounding. You pay precisely for time used.
-              </p>
-            </div>
-          </div>
+      <div className="flex items-start gap-3 rounded-2xl border border-accent/10 bg-accent/5 px-4 py-3">
+        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-accent/40 text-[11px] font-medium text-accent">
+          2
+        </span>
+        <div>
+          <p className="text-sm font-semibold text-accent">Secure payments</p>
+          <p className="text-xs font-secondary text-accent/70">
+            Payments run through Stripe so funds stay protected, both ways.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-start gap-3 rounded-2xl border border-accent/10 bg-accent/5 px-4 py-3">
+        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-accent/40 text-[11px] font-medium text-accent">
+          3
+        </span>
+        <div>
+          <p className="text-sm font-semibold text-accent">Minute-based pricing</p>
+          <p className="text-xs font-secondary text-accent/70">
+            Hora tracks time in-app and you only pay for minutes actually used.
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</section>
     {/* Section 2 */}
     <div className=" bg-accent w-full mx-auto flex flex-col items-center justify-center max-w-7xl py-[100px] md:py-[150px] lg:py-[90px]">
       <div className='flex flex-col font-semibold justify-center items-center mx-4 w-full lg:flex-row lg:justify-between lg:py-8'>
@@ -476,7 +551,7 @@ useEffect(() => {
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {/* Supporter Card */}
           <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md"  >
-            <h3 className="text-xl font-semibold text-[#222831] mb-4">💚 Supporter</h3>
+            <h3 className="text-xl font-semibold text-primary ` mb-4">💚 Supporter</h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li><span className="font-medium text-secondary">Who:</span> Students, freelancers, part-timers</li>
               <li><span className="font-medium text-secondary">Why:</span> Use your spare time wisely — support with groceries, clean a backyard, or share an hour at the park. Every task brings value.</li>
@@ -484,7 +559,7 @@ useEffect(() => {
               <li className="italic text-xs text-gray-500">“Weekend free? I take a task or two — and turn time into extra income.”</li>
             </ul>
             <button
-              className="mt-6 w-full py-2 rounded-lg bg-[#222831] text-white hover:bg-[#333f48] transition"
+              className="mt-6 w-full py-2 rounded-lg bg-primary text-white hover:bg-[#333f48] transition"
               onClick={() => setShowJoinModal('supporter')}
             >
               Offer Your Time
@@ -493,7 +568,7 @@ useEffect(() => {
 
           {/* Requester Card */}
           <div className="border border-[#E5E7EB] bg-white rounded-3xl p-8 shadow-md" >
-            <h3 className="text-xl font-semibold text-[#222831] mb-4">🤝 Requester</h3>
+            <h3 className="text-xl font-semibold text-primary mb-4">🤝 Requester</h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li><span className="font-medium text-secondary">Who:</span> Busy professionals, families, teams</li>
               <li><span className="font-medium text-secondary">Why:</span> Whether it’s picking up groceries, handling chores, or simply needing company — post what you need and use your time wisely.</li>
@@ -501,7 +576,7 @@ useEffect(() => {
               <li className="italic text-xs text-gray-500">“One tap. Chores done. I’ve got my time back.”</li>
             </ul>
             <button
-              className="mt-6 w-full py-2 rounded-lg bg-[#A3C585] text-[#222831] hover:bg-[#91b76e] transition"
+              className="mt-6 w-full py-2 rounded-lg bg-secondary text-primary hover:bg-[#91b76e] transition"
               onClick={() => setShowJoinModal('requester')}
             >
               Start a Request
@@ -551,7 +626,7 @@ useEffect(() => {
         <img
           src="/img/founder2.jpg"
           alt="Leo"
-          className="w-32 h-32 rounded-full object-cover object-left-bottom mb-4 transition-transform duration-300 hover:scale-110  filter grayscale"
+          className="w-32 h-32 rounded-full object-cover object-bottom-left mb-4 transition-transform duration-300 hover:scale-110  filter grayscale"
         />
          <h3 className="text-sm  text-accent/50 ">Co-founder, Marketing & Growth</h3>
         <h3 className="text-xl text-accent" data-aos="fade-left">Daniele</h3>
@@ -583,7 +658,7 @@ useEffect(() => {
   </div>
     </div> */}
     {/* Section 5 */}
-    <div className='w-full h-[300px] mx-auto flex flex-col items-center justify-center bg-[url(/img/section_5_1.JPG)] bg-cover bg-center  bg-no-repeat py-[64px]'/>
+    <div className='w-full h-[300px] mx-auto flex flex-col items-center justify-center bg-[url(/img/section_5_1.JPG)] bg-cover bg-center  bg-no-repeat py-16'/>
 
     {/* Footer */}
     <Footer />

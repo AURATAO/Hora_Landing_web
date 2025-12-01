@@ -34,14 +34,18 @@ export default function Header({handleColor, secondsElapsed, flipped, onDemoClic
                     onClick={() => setIsActive(!isActive)}
                     >
                     <div className=" w-[45px] relative " >
-                        <div className={`hamburger-inner ${handleColor === 'bg-accent' ? 'bg-primary' : 'bg-accent'} h-[2px]`} ></div>
+                        <div className={`hamburger-inner ${handleColor === 'bg-accent' ? 'bg-primary' : 'bg-accent'} h-0.5`} ></div>
                 </div>
                </div>
               </div>
             </nav>
             <div className={`flex items-center justify-center logo-flip ${flipped ? "flipped" : ""}`}>
             <div className={`front text-4xl font-normal font-heading md:text-5xl ${handleColor === 'bg-accent' ? 'text-primary' : 'text-accent'}`} >
-              <Link to="/" className='font-accent font-semibold'>Hora</Link>
+              <Link to="/" >
+              <div className='w-[180px]'>
+              <img src="/img/Horalogonew.png" alt="horalogo" className='w-full'/>
+              </div>
+              </Link>
             </div>
             <div className="back text-center flex flex-col justify-center items-center md:flex-row md:gap-4">
               <div className={`logo-flip font-secondary ${handleColor === 'bg-accent' ? 'text-primary !important' : 'text-accent !important'}`}>
@@ -49,7 +53,7 @@ export default function Header({handleColor, secondsElapsed, flipped, onDemoClic
                   {minutes.toString().padStart(2,'0')}:
                   {seconds.toString().padStart(2,'0')}
               </div>
-                 <div className="dot hidden md:inline-block flex-shrink-0 mb-" ></div>
+                 <div className="dot hidden md:inline-block shrink-0 mb-" ></div>
                 <div className={`logo-flip font-secondary ${handleColor === 'bg-accent' ? 'text-primary !important' : 'text-accent !important'}`}>
                   ${earned}
                 </div>

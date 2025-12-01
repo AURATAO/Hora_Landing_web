@@ -15,7 +15,7 @@ export default function Stopwatch( { secondsElapsed }) {
 
   return (
     <>
-      <div className="flex gap-5 pb-8 pt-10 ">
+      <div className="flex gap-5 pb-4 pt-10 ">
         <div>
           <span className="countdown  text-4xl text-primary">
             <span style={{"--value":days}}  className="text-primary ">{days}</span>
@@ -41,7 +41,7 @@ export default function Stopwatch( { secondsElapsed }) {
           sec
         </div>
       </div>
-      <div className="value-card">
+      <div className="flex justify-center items-center gap-2 md:justify-start opacity-60">
         <div className="title font-secondary">
           Equivalent
         </div>
