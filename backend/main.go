@@ -82,6 +82,7 @@ func main() {
 			"https://www.my-hora.com",
 			"https://my-hora.com",
 			"http://localhost:5173",
+			"https://www.horaapp.co",
 		},
 		AllowOriginRequestFunc: func(r *http.Request, origin string) bool {
 			return strings.HasSuffix(origin, ".vercel.app")
