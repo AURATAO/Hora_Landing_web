@@ -12,6 +12,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/joho/godotenv"
 	"github.com/rs/cors"
 )
 
@@ -36,6 +37,7 @@ type ContactMessage struct {
 
 func main() {
 	mux := http.NewServeMux()
+	_ = godotenv.Load()
 
 	// healthz
 	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
@@ -76,21 +78,38 @@ func main() {
 	}
 
 	// CORS
-	handler := cors.New(cors.Options{
-		AllowedOrigins: []string{
-			"https://horaapp.co",
-			"https://www.my-hora.com",
-			"https://my-hora.com",
-			"http://localhost:5173",
-			"https://www.horaapp.co",
-		},
-		AllowOriginRequestFunc: func(r *http.Request, origin string) bool {
-			return strings.HasSuffix(origin, ".vercel.app")
-		},
-		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
-		AllowedHeaders:   []string{"Content-Type", "Authorization"},
-		AllowCredentials: true,
-	}).Handler(recoverMw(mux))
+	env := os.Getenv("APP_ENV")
+	var handler http.Handler
+
+	if env == "dev" {
+		// 🧪 本機開發：全部放行比較好 debug
+		log.Println("CORS mode: DEV (AllowAll)")
+		handler = cors.AllowAll().Handler(recoverMw(mux))
+	} else {
+		// 🚀 正式機：只允許特定網域
+		log.Println("CORS mode: PROD (restricted origins)")
+		handler = cors.New(cors.Options{
+			AllowedOrigins: []string{
+				// 正式網站
+				"https://horaapp.co",
+				"https://www.horaapp.co",
+				"https://www.my-hora.com",
+				"https://my-hora.com",
+
+				// 如果你未來有本機打到遠端 API 也可以留下
+				"http://localhost:5173",
+				"http://localhost:8080",
+			},
+			AllowOriginRequestFunc: func(r *http.Request, origin string) bool {
+				// vercel preview 等 *.vercel.app
+				return strings.HasSuffix(origin, ".vercel.app")
+			},
+			AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
+			AllowedHeaders:   []string{"Content-Type", "Authorization"},
+			AllowCredentials: true,
+			Debug:            true,
+		}).Handler(recoverMw(mux))
+	}
 
 	// PORT
 	port := os.Getenv("PORT")
@@ -159,6 +178,7 @@ func sendToPocketbase(w http.ResponseWriter, collection string, payload map[stri
 }
 
 func handleSubmitDemo(w http.ResponseWriter, r *http.Request) {
+	log.Println("🔥 handleSubmitDemo hit! method=", r.Method, "origin=", r.Header.Get("Origin"))
 	if r.Method == http.MethodOptions {
 		w.WriteHeader(http.StatusOK)
 		return
