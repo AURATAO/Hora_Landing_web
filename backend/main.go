@@ -12,7 +12,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/joho/godotenv"
 	"github.com/rs/cors"
 )
 
@@ -37,10 +36,10 @@ type ContactMessage struct {
 
 func main() {
 	mux := http.NewServeMux()
-	_ = godotenv.Load()
 
 	// healthz
 	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("💓 /healthz hit, method=", r.Method)
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("ok"))
 	})
@@ -82,26 +81,20 @@ func main() {
 	var handler http.Handler
 
 	if env == "dev" {
-		// 🧪 本機開發：全部放行比較好 debug
 		log.Println("CORS mode: DEV (AllowAll)")
 		handler = cors.AllowAll().Handler(recoverMw(mux))
 	} else {
-		// 🚀 正式機：只允許特定網域
 		log.Println("CORS mode: PROD (restricted origins)")
 		handler = cors.New(cors.Options{
 			AllowedOrigins: []string{
-				// 正式網站
 				"https://horaapp.co",
 				"https://www.horaapp.co",
 				"https://www.my-hora.com",
 				"https://my-hora.com",
-
-				// 如果你未來有本機打到遠端 API 也可以留下
 				"http://localhost:5173",
 				"http://localhost:8080",
 			},
 			AllowOriginRequestFunc: func(r *http.Request, origin string) bool {
-				// vercel preview 等 *.vercel.app
 				return strings.HasSuffix(origin, ".vercel.app")
 			},
 			AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
@@ -122,7 +115,6 @@ func main() {
 		log.Fatal(err)
 	}
 }
-
 func sendToPocketbase(w http.ResponseWriter, collection string, payload map[string]interface{}) {
 	jsonData, err := json.Marshal(payload)
 	if err != nil {
