@@ -9,7 +9,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/rs/cors"
@@ -94,9 +93,7 @@ func main() {
 				"http://localhost:5173",
 				"http://localhost:8080",
 			},
-			AllowOriginRequestFunc: func(r *http.Request, origin string) bool {
-				return strings.HasSuffix(origin, ".vercel.app")
-			},
+
 			AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
 			AllowedHeaders:   []string{"Content-Type", "Authorization"},
 			AllowCredentials: true,
