@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { postJSON } from "../../lib/fetcher";
+import { createPortal } from "react-dom";
 
 export default function JoinModal({ role, onClose }) {
   const [name, setName] = useState("");
@@ -74,78 +75,106 @@ export default function JoinModal({ role, onClose }) {
   }, []);
 
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-xl p-6 w-[90%] max-w-md relative">
-        {/* Close button */}
-        <button onClick={onClose} className="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+ return createPortal(
+  <div
+    className="fixed inset-0 z-9999 flex items-center justify-center bg-black/40"
+    style={{ pointerEvents: "auto" }}
+    onMouseDown={(e) => {
+      // 點背景關閉（可留可不留）
+      if (e.target === e.currentTarget) onClose();
+    }}
+  >
+    <div
+      className="bg-white rounded-2xl shadow-xl p-6 w-[90%] max-w-md relative"
+      onMouseDown={(e) => e.stopPropagation()}
+    >
+      {/* Close button */}
+      <button
+        onClick={onClose}
+        className="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-xl"
+      >
+        &times;
+      </button>
 
-        <h2 className={`text-xl font-bold mb-4 ${isSupporter ? "text-secondary" : "text-primary"}`}>
-          {isSupporter ? "Join as a Supporter" : "Post your first task"}
-        </h2>
-        <p className="text-sm text-gray-500 mb-6">
-          We’ll notify you when Hora launches in your city.
-        </p>
+      <h2 className={`text-xl font-bold mb-4 ${isSupporter ? "text-secondary" : "text-primary"}`}>
+        {isSupporter ? "Join as a Supporter" : "Post your first task"}
+      </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Your name"
-            className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+      <p className="text-sm text-gray-500 mb-6">
+        We’ll notify you when Hora launches in your city.
+      </p>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
         <input
-            type="text"
-            placeholder="City"
-            className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            required
-          />
+          type="text"
+          placeholder="Your name"
+          className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="City"
+          className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="Email address"
+          className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <div className="flex items-center mb-4">
           <input
-            type="email"
-            placeholder="Email address"
-            className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+            type="checkbox"
+            checked={agree}
+            onChange={(e) => setAgree(e.target.checked)}
+            className="mr-2 accent-secondary"
           />
-          <div className="flex items-center mb-4">
-                    <input 
-                    type="checkbox"
-                    checked={agree}
-                    onChange={(e) => setAgree(e.target.checked)}
-                    className="mr-2 accent-[var(--color-secondary)]"
-                    />
-                    <span className="text-primary/50 text-xs">
-                    I have read and agree to the <Link to="/privacy" className="underline text-secondary)]">Privacy Policy</Link> and <Link to="/terms" className="underline text-[var(--color-secondary)]">Terms of Use</Link>.
-                    </span>
-                </div>
-            {errors && (
-          <div className="text-red-500 text-sm text-center">{errors}</div>
+          <span className="text-primary/50 text-xs">
+            I have read and agree to the{" "}
+            <Link to="/privacy" className="underline text-secondary">
+              Privacy Policy
+            </Link>{" "}
+            and{" "}
+            <Link to="/terms" className="underline text-secondary">
+              Terms of Use
+            </Link>.
+          </span>
+        </div>
+
+        {errors && <div className="text-red-500 text-sm text-center">{errors}</div>}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className={`w-full py-2 rounded-lg text-white transition ${
+            isSupporter ? "bg-secondary hover:bg-[#91b76e]" : "bg-primary hover:bg-[#333f48]"
+          }`}
+        >
+          {loading ? (
+            <span className="flex justify-center items-center space-x-2">
+              <Loader2 className="animate-spin w-4 h-4" />
+              <span>Processing...</span>
+            </span>
+          ) : isSupporter ? (
+            "Become a supporter"
+          ) : (
+            "Get notified"
           )}
-          <button
-            type="submit"
-            disabled={loading}
-            className={`w-full py-2 rounded-lg text-white transition ${
-              isSupporter ? "bg-secondary hover:bg-[#91b76e]" : "bg-[#222831] hover:bg-[#333f48]"
-            } `}
-          >
-           {loading ? (
-              <>
-                  <span className="flex justify-center items-center space-x-2">
-                    <Loader2 className="animate-spin w-4 h-4" />
-                    <span>Processing...</span>
-                  </span>
-              </>
-            ) : (
-              isSupporter ? "Become a supporter" : "Get notified"
-            )}
-          </button>
-        </form>
-      </div>
+        </button>
+      </form>
     </div>
-  );
+  </div>,
+  document.body
+);
+
 }

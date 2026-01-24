@@ -21,7 +21,7 @@ export default function FakeIphone() {
   return (
   <div className="h-[353px] w-[280px] round-t-[32px] flex justify-center items-start overflow-hidden ">
     <div
-    className="relative w-[400px] h-auto overflow-hidden rounded-[32px] drop-shadow-2xl "
+    className="relative w-[400px] h-auto overflow-hidden rounded-4-xl drop-shadow-2xl "
     style={{ position: "relative", overflow: "hidden", height: 600 }}
   >
     <div
