@@ -16,39 +16,39 @@ export default function Stopwatch( { secondsElapsed }) {
   return (
     <>
       <div className="flex gap-5 pb-4 pt-10 ">
-        <div>
-          <span className="countdown  text-4xl text-primary">
-            <span style={{"--value":days}}  className="text-primary ">{days}</span>
+        <div  className="text-accent">
+          <span className="countdown  text-4xl text-accent">
+            <span style={{"--value":days}}  >{days}</span>
           </span>
           days
         </div>
-        <div>
-          <span className="countdown   text-4xl text-primary">
-            <span style={{"--value":hours}}  className="text-primary  " >{hours}</span>
+        <div className="text-accent">
+          <span className="countdown   text-4xl text-accent">
+            <span style={{"--value":hours}}  >{hours}</span>
           </span>
           hours
         </div>
-        <div>
-          <span className="countdown  text-4xl text-primary">
-            <span style={{"--value":minutes}} className="text-primary  " >{minutes}</span>
+        <div className="text-accent">
+          <span className="countdown  text-4xl text-accent">
+            <span style={{"--value":minutes}} >{minutes}</span>
           </span>
           min
         </div>
-        <div>
-          <span className="countdown   text-4xl text-primary">
-            <span style={{"--value":seconds}} className="" >{seconds}</span>
+        <div className="text-accent">
+          <span className="countdown   text-4xl text-accent">
+            <span style={{"--value":seconds}}  >{seconds}</span>
           </span>
           sec
         </div>
       </div>
-      <div className="flex justify-center items-center gap-2 md:justify-start opacity-60">
-        <div className="title font-secondary">
+      <div className="flex justify-center items-center gap-2 md:justify-start ">
+        <div className="title font-secondary text-accent">
           Equivalent
         </div>
-        <div className="amount font-secondary">
+        <div className="amount font-secondary text-accent">
           ${earned}
         </div>
-        <div className="note font-secondary">
+        <div className="note font-secondary text-accent">
           at min wage
         </div>
       </div>

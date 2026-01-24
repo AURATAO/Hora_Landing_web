@@ -11,6 +11,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+body {
+  touch-action: pan-y; /* 只允許垂直手勢 */
 }
 
 /*button*/

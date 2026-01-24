@@ -51,18 +51,43 @@ useEffect(() => {
   const pinned = heroRef.current;
   if (!wrap || !pinned) return;
 
-  const st = ScrollTrigger.create({
-    trigger: wrap,
-    start: 'top top',
-    end: 'bottom bottom',      // 跟 wrapper 高度一致（200vh）
-    pin: pinned,
-    pinSpacing: true,
-    scrub: 1,
-    onUpdate: (self) => setScrollProgress(self.progress),
+  const mm = ScrollTrigger.matchMedia();
+
+  const make = (multiplier) =>
+    ScrollTrigger.create({
+      trigger: wrap,
+      start: "top top",
+      end: () => `+=${Math.round(window.innerHeight * multiplier)}`,
+      pin: pinned,
+      pinSpacing: true,
+      scrub: 1,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => setScrollProgress(self.progress),
+    });
+
+  let st;
+
+  mm.add("(max-width: 1023px)", () => {
+    // 手機：pin 距離短一點（更順、更不會空白）
+    st = make(1.35);
+    return () => st?.kill();
   });
 
+  mm.add("(min-width: 1024px)", () => {
+    // 桌機：距離長一點
+    st = make(2.0);
+    return () => st?.kill();
+  });
+
+  // iOS/手機地址列伸縮會影響高度，refresh 讓它穩
+  const onResize = () => ScrollTrigger.refresh();
+  window.addEventListener("resize", onResize);
+
   return () => {
-    st.kill();
+    window.removeEventListener("resize", onResize);
+    mm.kill();
+    st?.kill();
   };
 }, []);
 
@@ -132,17 +157,14 @@ useEffect(() => {
     
     {/* SCROLL SECTION WRAPPER - Provides scroll length (200vh for 2 scenes) */}
     <div
-      ref={pinSectionRef}
-      className="heroScrollSection relative w-full"
-      style={{ height: '200vh' }}
-    >
-          
-      {/* PINNED HERO CONTAINER - Stays fixed during scroll with proper z-index */}
-      <div 
-        ref={heroRef}
-        className="heroPinned sticky top-0 left-0 w-full h-screen overflow-y-auto lg:overflow-hidden z-40"
-        style={{ isolation: 'isolate' }}
+        ref={pinSectionRef}
+        className="heroScrollSection relative w-full min-h-svh "
       >
+        <div
+          ref={heroRef}
+          className="heroPinned relative w-full h-svh overflow-hidden z-40"
+          style={{ isolation: 'isolate' }}
+        >
         
         {/* SCENE 1 - horaImage4 fullscreen (0-50%) - Fades out */}
         {/* SCENE 1 - image4 fullscreen (0-50%) - collapses from all sides into center */}
@@ -229,7 +251,6 @@ useEffect(() => {
         </div>
 
         {/* SCENE 2 - Phone with CTA (50-100%) - Fades in from bottom */}
-        {/* SCENE 2 - Phone with CTA (50-100%) - fades/slides in */}
      
       {/* =========================
     SCENE 2 (50% -> 100%)
@@ -251,7 +272,7 @@ useEffect(() => {
   <div className="absolute inset-0 grid-pattern opacity-50 z-0"></div>
 
   {/* Content */}
-         <div className="relative h-full flex items-center justify-center z-20">
+         <div className="relative h-full flex items-start lg:items-center justify-center z-20 pt-16 lg:pt-0">
             <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -611,7 +632,7 @@ useEffect(() => {
           </div>
 
           {/* Phone Visual */}
-          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="200">
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end" data-aos="fade-up" data-aos-delay="200">
             <div className="relative max-w-xs lg:max-w-sm">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-secondary/20 rounded-full blur-3xl"></div>
@@ -680,7 +701,7 @@ useEffect(() => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Supporter Card - Enhanced */}
-          <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" data-aos="fade-right">
+          <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" >
             {/* Decorative gradient */}
             <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-secondary to-secondary/50"></div>
             
@@ -753,7 +774,7 @@ useEffect(() => {
           </div>
 
           {/* Requester Card - Enhanced */}
-          <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" data-aos="fade-left">
+          <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" >
             {/* Decorative gradient */}
             <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-primary to-primary/50"></div>
             

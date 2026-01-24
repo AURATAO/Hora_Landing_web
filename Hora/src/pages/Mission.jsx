@@ -671,7 +671,7 @@ export default function Mission( {secondsElapsed } ) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               
               {/* Supporter Card */}
-              <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" data-aos="fade-right">
+              <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-secondary to-secondary/50"></div>
                 
                 <div className="relative z-10">
@@ -736,7 +736,7 @@ export default function Mission( {secondsElapsed } ) {
               </div>
 
               {/* Requester Card */}
-              <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" data-aos="fade-left">
+              <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden" >
                 <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-primary to-primary/50"></div>
                 
                 <div className="relative z-10">
