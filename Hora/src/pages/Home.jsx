@@ -140,7 +140,7 @@ useEffect(() => {
       {/* PINNED HERO CONTAINER - Stays fixed during scroll with proper z-index */}
       <div 
         ref={heroRef}
-        className="heroPinned sticky top-0 left-0 w-full h-screen overflow-hidden z-40"
+        className="heroPinned sticky top-0 left-0 w-full h-screen overflow-y-auto lg:overflow-hidden z-40"
         style={{ isolation: 'isolate' }}
       >
         
@@ -331,7 +331,7 @@ useEffect(() => {
 
                 {/* Right - Phone enters */}
                 <div
-                  className="relative flex justify-center lg:justify-end"
+                   className="relative hidden lg:flex justify-center lg:justify-end"
                   style={{
                     opacity: p2,
                     transform: `translateY(${lerp(140, 0, p2)}px) scale(${lerp(0.92, 1, p2)})`,
