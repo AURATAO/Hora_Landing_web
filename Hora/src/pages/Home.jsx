@@ -227,7 +227,7 @@ useEffect(() => {
             className="absolute bottom-20 right-8 lg:bottom-32 lg:right-20 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-4 border border-white/20 animate-float z-30"
             style={{ opacity: lerp(1, 0, p1) }}
           >
-            <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
                 <span className="text-2xl">⚡</span>
               </div>

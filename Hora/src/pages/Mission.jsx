@@ -304,7 +304,7 @@ export default function Mission( {secondsElapsed } ) {
 
                   {/* Floating Stats Cards */}
                   <div 
-                    className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-4 border border-secondary/20"
+                    className=" absolute -top-6 -right-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-4 border border-secondary/20"
                     style={{ 
                       animation: 'float 3s ease-in-out infinite',
                       transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`
