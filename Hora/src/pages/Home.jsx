@@ -159,6 +159,7 @@ useEffect(() => {
     <div
         ref={pinSectionRef}
         className="heroScrollSection relative w-full min-h-svh "
+       
       >
         <div
           ref={heroRef}
@@ -198,7 +199,7 @@ useEffect(() => {
         <div className="relative h-full flex items-center justify-center z-20">
           <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-white/20 shadow-lg mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg mb-6">
                 <span className="text-xl">🚧</span>
                 <span className="text-sm font-medium text-primary font-secondary">
                   Alpha testing Hora in NYC
@@ -253,11 +254,11 @@ useEffect(() => {
         {/* SCENE 2 - Phone with CTA (50-100%) - Fades in from bottom */}
      
       {/* =========================
-    SCENE 2 (50% -> 100%)
-    - Background fades in
-    - Phone slides up + scales in + de-blurs
-    - Floating cards appear progressively
-   ========================= */}
+        SCENE 2 (50% -> 100%)
+        - Background fades in
+        - Phone slides up + scales in + de-blurs
+        - Floating cards appear progressively
+      ========================= */}
 
   <div
     className="absolute inset-0 bg-linear-to-br from-accent via-white to-secondary/10 z-10"
@@ -272,12 +273,12 @@ useEffect(() => {
   <div className="absolute inset-0 grid-pattern opacity-50 z-0"></div>
 
   {/* Content */}
-         <div className="relative h-full flex items-start lg:items-center justify-center z-20 pt-16 lg:pt-0">
+         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-22 lg:pt-0">
             <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left - Text */}
-                <div className="text-center lg:text-left space-y-8">
+                <div className="text-center lg:text-left space-y-4">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full">
                     <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
                     <span className="text-sm font-semibold text-secondary uppercase tracking-wider">
@@ -285,7 +286,7 @@ useEffect(() => {
                     </span>
                   </div>
 
-                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.05]">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.05]">
                     Real people.
                     <br />
                     Real connections.
@@ -293,11 +294,11 @@ useEffect(() => {
                     <span className="gradient-animate inline-block">Real fast.</span>
                   </h2>
 
-                  <p className="text-xl md:text-2xl text-primary/70 font-secondary max-w-2xl">
+                  <p className="text-base sm:text-lg md:text-xl text-primary/70 font-secondary max-w-2xl">
                     Get matched with nearby supporters in seconds. No waiting, no hassle—just instant help.
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-6 mb-8">
+                  <div className="flex flex-wrap items-center gap-2 mb-8">
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-primary/10 shadow-sm">
                       <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                         <path
