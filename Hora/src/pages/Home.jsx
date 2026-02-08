@@ -14,8 +14,8 @@ import 'aos/dist/aos.css';
 
 export default function Home({ secondsElapsed  } ) {
   const [handleColor, sethandleColor] = useState('bg-accent');
-  const [activeAnimated, setActiveAnimated] = useState(false);
-  const [isQuickRequest, setIsQuickRequest] = useState(false);
+  // const [activeAnimated, setActiveAnimated] = useState(false);
+  // const [isQuickRequest, setIsQuickRequest] = useState(false);
   const [flipped, setFlipped] = useState(false);
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [showJoinModal, setShowJoinModal]=useState(null);
@@ -25,11 +25,11 @@ export default function Home({ secondsElapsed  } ) {
  
 
   const heroRef = useRef(null);
-  const titleRef = useRef(null)
-  const stopwatchRef = useRef(null)
+  // const titleRef = useRef(null)
+  // const stopwatchRef = useRef(null)
   const pinSectionRef = useRef(null)
-  const h2Ref = useRef(null)
-  const paragraphs = useRef([])
+  // const h2Ref = useRef(null)
+  // const paragraphs = useRef([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,7 +97,7 @@ useEffect(() => {
             const width = window.innerWidth;
             
             if (window.scrollY > 1000) {
-              setActiveAnimated(true);
+              // setActiveAnimated(true);
             }
 
            if(width < 1024 ){
@@ -138,15 +138,15 @@ useEffect(() => {
 }, []);
 
   // Calculate which scene to show based on scroll
-  const getScene = () => {
-    if (scrollProgress < 0.33) return 1;
-    if (scrollProgress < 0.66) return 2;
-    return 3;
-  };
+  // const getScene = () => {
+  //   if (scrollProgress < 0.33) return 1;
+  //   if (scrollProgress < 0.66) return 2;
+  //   return 3;
+  // };
 
   const p1 = clamp01(scrollProgress / 0.5);          // 0 -> 1  (0 ~ 0.5)
   const p2 = clamp01((scrollProgress - 0.5) / 0.5);  // 0 -> 1  (0.5 ~ 1)
-  const currentScene = getScene();
+  // const currentScene = getScene();
 
   return (
   <>
@@ -200,9 +200,8 @@ useEffect(() => {
           <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg mb-6">
-                <span className="text-xl">🚧</span>
                 <span className="text-sm font-medium text-primary font-secondary">
-                  Alpha testing Hora in NYC
+                  Alpha testing Ho:ra in NYC
                 </span>
               </div>
 
@@ -273,7 +272,7 @@ useEffect(() => {
   <div className="absolute inset-0 grid-pattern opacity-50 z-0"></div>
 
   {/* Content */}
-         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-22 lg:pt-0">
+         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-22nid lg:pt-0">
             <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -370,7 +369,7 @@ useEffect(() => {
                       <img
                         src="/img/greenphone.png"
                         alt="Hora App Interface"
-                        className="w-full h-auto max-w-[280px] lg:max-w-[320px] mx-auto rounded-2xl shadow-lg"
+                        className="w-full h-auto max-w-70 lg:max-w-[320px] mx-auto rounded-2xl shadow-lg"
                       />
                     </div>
 
@@ -452,7 +451,7 @@ useEffect(() => {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Why Choose Hora?
+            Why Choose Ho:ra?
           </h2>
           <p className="text-lg text-primary/70 font-secondary max-w-2xl mx-auto">
             A smarter way to get things done with real people you can trust
@@ -550,7 +549,7 @@ useEffect(() => {
         {/* Section Header */}
         <div className="text-center mb-20" data-aos="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-accent mb-4">
-            How Hora Works
+            How Ho:ra Works
           </h2>
           <p className="text-lg text-accent/70 font-secondary max-w-2xl mx-auto">
             Get help in four simple steps
@@ -643,7 +642,7 @@ useEffect(() => {
                 <img 
                   src="/img/greenphone2.png" 
                   alt="Hora App Process" 
-                  className="w-full  max-w-[260px] lg:max-w-[600px] "
+                  className="w-full  max-w-65 lg:max-w-150 "
                 />
               </div>
 
@@ -652,7 +651,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2">
                   <span className="text-xl">✅</span>
                   <div>
-                    <span className="text-xs font-semibold text-gray-700 block">Hora</span>
+                    <span className="text-xs font-semibold text-gray-700 block">Ho:ra</span>
                     <p className="text-xs text-gray-900 leading-tight">Match found!</p>
                   </div>
                 </div>
@@ -663,7 +662,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2">
                   <span className="text-xl">🕒</span>
                   <div>
-                    <span className="text-xs font-semibold text-gray-700 block">Hora</span>
+                    <span className="text-xs font-semibold text-gray-700 block">Ho:ra</span>
                     <p className="text-xs text-gray-900 leading-tight">Checked in 3:14 PM</p>
                   </div>
                 </div>
@@ -674,7 +673,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2">
                   <span className="text-xl">💸</span>
                   <div>
-                    <span className="text-xs font-semibold text-gray-700 block">Hora</span>
+                    <span className="text-xs font-semibold text-gray-700 block">Ho:ra</span>
                     <p className="text-xs text-gray-900 leading-tight">Payment confirmed</p>
                   </div>
                 </div>
@@ -692,7 +691,7 @@ useEffect(() => {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Who Uses Hora?
+            Who Uses Ho:ra?
           </h2>
           <p className="text-lg text-primary/70 font-secondary">
             Join thousands already getting things done smarter
@@ -862,7 +861,7 @@ useEffect(() => {
         <div className="flex items-center gap-4 mb-16" data-aos="fade-down">
           <div className="flex-1 h-px bg-accent/20"></div>
           <div className="text-sm font-semibold tracking-[0.3em] uppercase text-accent/60">
-            Behind Hora
+            Behind Ho:ra
           </div>
           <div className="flex-1 h-px bg-accent/20"></div>
         </div>
@@ -947,7 +946,7 @@ useEffect(() => {
         <div className="text-center mt-16" data-aos="fade-up" data-aos-delay="300">
           <div className="inline-block bg-accent/5 border border-accent/10 rounded-2xl px-8 py-6 backdrop-blur-sm">
             <p className='text-lg text-accent/90 font-secondary italic'>
-              "We are building Hora to redefine how the world values time."
+              "We are building Ho:ra to redefine how the world values time."
             </p>
           </div>
         </div>
@@ -955,7 +954,7 @@ useEffect(() => {
     </div>
 
     {/* FINAL CTA BANNER */}
-    <div className='w-full h-[400px] relative overflow-hidden'>
+    <div className='w-full h-100 relative overflow-hidden'>
       {/* Background image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -970,7 +969,7 @@ useEffect(() => {
           Ready to Get Started?
         </h2>
         <p className="text-xl text-accent/80 font-secondary mb-8 max-w-2xl" data-aos="zoom-in" data-aos-delay="100">
-          Join the Hora community and experience a new way to manage your time
+          Join the Ho:ra community and experience a new way to manage your time
         </p>
         <button 
           className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"

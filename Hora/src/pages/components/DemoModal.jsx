@@ -95,7 +95,7 @@ const handleSubmit = async (e) => {
 
     return (
         <>
-         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-primary)]/70 p-4">
+         <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/70 p-4">
             <div className="relative bg-primary  rounded-lg p-8  w-full max-w-md">
                 {/* X button */}
                 <button
@@ -116,7 +116,7 @@ const handleSubmit = async (e) => {
                     type="text"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded text-accent focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
+                    className="w-full p-2 border border-gray-300 rounded text-accent focus:outline-none focus:ring-2 focus:ring-secondary"
                     />
                 </div>
 
@@ -126,7 +126,7 @@ const handleSubmit = async (e) => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded text-accent focus:outline-none  focus:ring-2 focus:ring-[var(--color-secondary)]"
+                    className="w-full p-2 border border-gray-300 rounded text-accent focus:outline-none  focus:ring-2 focus:ring-secondary"
                     />
                 </div>
 
@@ -136,7 +136,7 @@ const handleSubmit = async (e) => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none text-accent focus:ring-2 focus:ring-[var(--color-secondary)]"
+                    className="w-full p-2 border border-gray-300 rounded focus:outline-none text-accent focus:ring-2 focus:-secondary"
                     />
                 </div>
 
@@ -145,7 +145,7 @@ const handleSubmit = async (e) => {
                     type="checkbox"
                     checked={agree}
                     onChange={(e) => setAgree(e.target.checked)}
-                    className="mr-2 accent-[var(--color-secondary)]"
+                    className="mr-2 accent-secondary"
                     />
                     <span className="text-accent text-sm">
                     I have read and agree to the <Link to="/privacy" className="underline text-secondary">Privacy Policy</Link> and <Link to="/terms" className="underline text-secondary">Terms of Use</Link>.

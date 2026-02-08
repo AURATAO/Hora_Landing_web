@@ -190,7 +190,7 @@ export default function Mission( {secondsElapsed } ) {
     
     <Header handleColor={handleColor} secondsElapsed={secondsElapsed} flipped={flipped} onDemoClick={()=>setShowModal(true)}/>
     
-      <main className="bg-accent w-full md:pt-[72px]">
+      <main className="bg-accent w-full md:pt-18">
         
         {/* HERO SECTION - Revolut Style with Cool Animations */}
         <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-accent via-white to-secondary/10">
@@ -283,7 +283,6 @@ export default function Mission( {secondsElapsed } ) {
 
                 {/* Status Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full border border-primary/10" data-aos="fade-up" data-aos-delay="700">
-                  <span>🚧</span>
                   <span className="text-sm font-medium text-primary/70">MVP in development</span>
                 </div>
               </div>
@@ -383,13 +382,13 @@ export default function Mission( {secondsElapsed } ) {
             {/* Section Header */}
             <div className="text-center mb-16" data-aos="fade-up">
               <div className="inline-block px-4 py-1 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-                Hora in Action
+                Ho:ra in Action
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
                 Real people. Real tasks. Real connections.
               </h2>
               <p className="text-xl text-primary/70 font-secondary max-w-3xl mx-auto">
-                From groceries to companionship, Hora supporters are making life easier across NYC.
+                From groceries to companionship, Ho:ra supporters are making life easier across NYC.
               </p>
             </div>
 
@@ -401,7 +400,7 @@ export default function Mission( {secondsElapsed } ) {
                 <img 
                   src="/img/horaImage1.png" 
                   alt="Hora supporter delivering groceries in NYC"
-                  className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-125 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                   <h3 className="text-2xl font-bold text-white mb-2">Quick Delivery</h3>
@@ -414,7 +413,7 @@ export default function Mission( {secondsElapsed } ) {
                 <img 
                   src="/img/horaImage6.png" 
                   alt="Hora supporter handling packages"
-                  className="w-full h-[500px] object-bottom object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-125 object-bottom object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                   <h3 className="text-2xl font-bold text-white mb-2">Any Task</h3>
@@ -427,7 +426,7 @@ export default function Mission( {secondsElapsed } ) {
                 <img 
                   src="/img/horaImage3.png" 
                   alt="Hora supporter connecting with client"
-                  className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-125 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                   <h3 className="text-2xl font-bold text-white mb-2">Human Touch</h3>
@@ -462,7 +461,7 @@ export default function Mission( {secondsElapsed } ) {
                 Free your day.<br />Or earn your way.
               </h2>
               <p className="text-xl text-primary/70 font-secondary">
-                Hora makes it effortless.
+                Ho:ra makes it effortless.
               </p>
             </div>
           </div>
@@ -598,7 +597,7 @@ export default function Mission( {secondsElapsed } ) {
               <img
                 src="/img/horaImage8.jpg"
                 alt="Our Principles"
-                className="w-full h-[400px] md:h-[500px] object-cover"
+                className="w-full h-100 md:h-125 object-cover"
               />
             </div>
           </div>
@@ -612,7 +611,7 @@ export default function Mission( {secondsElapsed } ) {
             <div className="mb-16 text-center" data-aos="fade-up">
               <div className="text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">Our Approach</div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-4">
-                The Hora Difference
+                The Ho:ra Difference
               </h2>
             </div>
 
@@ -664,7 +663,7 @@ export default function Mission( {secondsElapsed } ) {
                 Time, Reimagined.
               </h2>
               <p className="text-lg text-primary/70 font-secondary">
-                Join our waitlist and be the first to experience Hora.
+                Join our waitlist and be the first to experience Ho:ra.
               </p>
             </div>
 
@@ -808,7 +807,7 @@ export default function Mission( {secondsElapsed } ) {
         </div>
 
         {/* FINAL CTA */}
-        <div className='w-full h-[400px] relative overflow-hidden'>
+        <div className='w-full h-100 relative overflow-hidden'>
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: 'url(/img/section_5_1.JPG)' }}
@@ -821,7 +820,7 @@ export default function Mission( {secondsElapsed } ) {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-accent/80 font-secondary mb-8 max-w-2xl" data-aos="zoom-in" data-aos-delay="100">
-              Join the Hora community today
+              Join the Ho:ra community today
             </p>
             <button 
               className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
