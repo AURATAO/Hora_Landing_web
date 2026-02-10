@@ -18,10 +18,20 @@ export default function Mission( {secondsElapsed } ) {
    const [showJoinModal, setShowJoinModal] = useState(null);
    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
  
-   const hours = Math.floor(secondsElapsed / 3600);
-   const minutes = Math.floor((secondsElapsed % 3600) / 60);
-   const seconds = secondsElapsed % 60;
-   const earned = (secondsElapsed * (16.50/3600)).toFixed(4);
+ // time
+const hours = Math.floor(secondsElapsed / 3600);
+const minutes = Math.floor((secondsElapsed % 3600) / 60);
+const seconds = secondsElapsed % 60;
+
+// NYC time-based "value now" (12am–8am => $1, otherwise $0.5)
+const nyHour = new Date(
+  new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
+).getHours();
+
+const valueNow = nyHour >= 0 && nyHour < 8 ? 1 : 0.5;
+
+// running value (matches the current valueNow)
+const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
    const [flipped, setFlipped] = useState(false);
 
    useEffect(() => {
@@ -248,15 +258,31 @@ export default function Mission( {secondsElapsed } ) {
                   <div className="group flex items-center gap-3 px-6 py-4 bg-white/70 backdrop-blur-md rounded-xl border border-primary/10 hover:border-secondary/30 transition-all duration-300 cursor-default">
                     <div className="flex items-center gap-2">
                       <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                          clipRule="evenodd"
+                        />
                       </svg>
+
                       <span className="font-secondary text-base font-semibold text-primary">
-                        {hours.toString().padStart(2,'0')}:{minutes.toString().padStart(2,'0')}:{seconds.toString().padStart(2,'0')}
+                        {hours.toString().padStart(2, "0")}:
+                        {minutes.toString().padStart(2, "0")}:
+                        {seconds.toString().padStart(2, "0")}
                       </span>
                     </div>
+
                     <div className="w-px h-6 bg-primary/20"></div>
-                    <span className="text-sm text-primary/60">${earned}</span>
+
+                    <span className="text-sm text-primary/60 flex items-center gap-2">
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary/40" />
+                      <span className="uppercase tracking-[0.12em] text-[10px]">Value now</span>
+                      <span className="font-semibold text-primary">${valueNow}</span>/min
+                      <span className="text-primary/40">·</span>
+                      <span className="text-primary/70">${earned}</span>
+                    </span>
                   </div>
+
                 </div>
 
                 {/* Trust Indicators */}

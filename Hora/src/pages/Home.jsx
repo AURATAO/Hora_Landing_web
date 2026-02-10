@@ -216,6 +216,25 @@ useEffect(() => {
               </p>
 
               <div className="inline-block">
+               
+                    <div className=" flex flex-wrap items-center gap-2">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
+                        <span className="text-white/90">☀️</span>
+                        <span className="text-white/90 font-secondary text-sm">
+                          $0.5<span className="text-white/60">/min</span>
+                        </span>
+                      </div>
+
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
+                        <span className="text-white/90">🌙</span>
+                        <span className="text-white/90 font-secondary text-sm">
+                          $1<span className="text-white/60">/min</span>
+                        </span>
+                        <span className="text-white/50 font-secondary text-xs">
+                          12am–8am
+                        </span>
+                      </div>
+                  </div>
                 <Stopwatch secondsElapsed={secondsElapsed} />
               </div>
             </div>
