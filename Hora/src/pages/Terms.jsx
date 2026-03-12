@@ -24,7 +24,7 @@ export default function Terms() {
     return (
       <>
         <Header handleColor={'bg-primary/40'} onDemoClick={() => setShowDemoModal(true)} />
-        <div className='bg-gradient-to-br from-primary to-primary/50 py-[150px] px-4'>
+        <div className='bg-linear-to-br from-primary to-primary/50 py-37 px-4'>
             <div className="max-w-7xl mx-auto">
             <DemoModal show={showDemoModal === true} onClose={() => setShowDemoModal(false)} />
              <div className='justify-start mx-8 flex flex-col pb-10 md:hidden'>
@@ -36,6 +36,9 @@ export default function Terms() {
             <div className="flex flex-wrap gap-2 justify-start mx-8 pb-4 md:pb-10 md:mx-20 lg:mx-30">
                 <a href="#1-platform" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                     Platform
+                </a>
+                <a href="#nyc-beta-addendum" className="px-4 py-2 text-sm rounded-xl border border-accent/30 bg-accent/20 text-accent hover:bg-accent/30 transition-all font-bold">
+                    NYC Beta Addendum
                 </a>
                 <a href="#2-use-of-the-platform" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                      Use of the Platform
@@ -128,7 +131,7 @@ export default function Terms() {
 
                     const id = slugify(getText(children));
                     return (
-                        <h1 id={id} className="text-accent text-3xl md:text-3xl font-bold my-6 pt-[80px]" {...props}>
+                        <h1 id={id} className="text-accent text-3xl md:text-3xl font-bold my-6 pt-20" {...props}>
                         {children}
                         </h1>
                     );

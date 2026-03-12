@@ -224,7 +224,6 @@ useEffect(() => {
                           $0.5<span className="text-white/60">/min</span>
                         </span>
                       </div>
-
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
                         <span className="text-white/90">🌙</span>
                         <span className="text-white/90 font-secondary text-sm">
@@ -304,7 +303,7 @@ useEffect(() => {
                     </span>
                   </div>
 
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.05]">
+                  <h2 className="text-7xl sm:text-6xl md:text-6xl lg:text-6xl font-bold text-primary leading-[1.05]">
                     Real people.
                     <br />
                     Real connections.
@@ -470,7 +469,7 @@ useEffect(() => {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Why Choose Ho:ra?
+            Why Choose HO:RA?
           </h2>
           <p className="text-lg text-primary/70 font-secondary max-w-2xl mx-auto">
             A smarter way to get things done with real people you can trust
@@ -568,7 +567,7 @@ useEffect(() => {
         {/* Section Header */}
         <div className="text-center mb-20" data-aos="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-accent mb-4">
-            How Ho:ra Works
+            How HO:RA Works
           </h2>
           <p className="text-lg text-accent/70 font-secondary max-w-2xl mx-auto">
             Get help in four simple steps
@@ -670,7 +669,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2">
                   <span className="text-xl">✅</span>
                   <div>
-                    <span className="text-xs font-semibold text-gray-700 block">Ho:ra</span>
+                    <span className="text-xs font-semibold text-gray-700 block">HO:RA</span>
                     <p className="text-xs text-gray-900 leading-tight">Match found!</p>
                   </div>
                 </div>
@@ -681,7 +680,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2">
                   <span className="text-xl">🕒</span>
                   <div>
-                    <span className="text-xs font-semibold text-gray-700 block">Ho:ra</span>
+                    <span className="text-xs font-semibold text-gray-700 block">HO:RA</span>
                     <p className="text-xs text-gray-900 leading-tight">Checked in 3:14 PM</p>
                   </div>
                 </div>
@@ -692,7 +691,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2">
                   <span className="text-xl">💸</span>
                   <div>
-                    <span className="text-xs font-semibold text-gray-700 block">Ho:ra</span>
+                    <span className="text-xs font-semibold text-gray-700 block">HO:RA</span>
                     <p className="text-xs text-gray-900 leading-tight">Payment confirmed</p>
                   </div>
                 </div>
@@ -710,7 +709,7 @@ useEffect(() => {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Who Uses Ho:ra?
+            Who Uses HO:RA?
           </h2>
           <p className="text-lg text-primary/70 font-secondary">
             Join thousands already getting things done smarter
@@ -880,7 +879,7 @@ useEffect(() => {
         <div className="flex items-center gap-4 mb-16" data-aos="fade-down">
           <div className="flex-1 h-px bg-accent/20"></div>
           <div className="text-sm font-semibold tracking-[0.3em] uppercase text-accent/60">
-            Behind Ho:ra
+            Behind HO:RA
           </div>
           <div className="flex-1 h-px bg-accent/20"></div>
         </div>
@@ -965,7 +964,7 @@ useEffect(() => {
         <div className="text-center mt-16" data-aos="fade-up" data-aos-delay="300">
           <div className="inline-block bg-accent/5 border border-accent/10 rounded-2xl px-8 py-6 backdrop-blur-sm">
             <p className='text-lg text-accent/90 font-secondary italic'>
-              "We are building Ho:ra to redefine how the world values time."
+              "We are building HO:RA to redefine how the world values time."
             </p>
           </div>
         </div>
@@ -988,7 +987,7 @@ useEffect(() => {
           Ready to Get Started?
         </h2>
         <p className="text-xl text-accent/80 font-secondary mb-8 max-w-2xl" data-aos="zoom-in" data-aos-delay="100">
-          Join the Ho:ra community and experience a new way to manage your time
+          Join the HO:RA community and experience a new way to manage your time
         </p>
         <button 
           className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"

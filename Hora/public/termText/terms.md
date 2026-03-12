@@ -1,7 +1,41 @@
-_Last updated: July 13, 2025_
+_Last updated: March 12, 2026_
 
 These Terms of Use (“Terms”) govern your access to and use of the Hora platform (the “Platform”), which is owned and operated by Arcodiax LLC (“Arcodiax”, “we”, “our”, or “us”).
 By accessing or using the Platform, you agree to be bound by these Terms and to enter into a legally binding agreement with Arcodiax LLC.
+
+> **⚠️ NYC BETA PROGRAM NOTICE:**
+> The following "NYC Beta Addendum" applies specifically to Users participating in the New York City pilot program. These terms supplement and, where inconsistent, override the Global Terms of Service below.
+
+# NYC Beta Addendum
+
+## A. Companionship & Safety Boundaries
+
+To ensure User safety during our pilot, all companionship tasks are subject to these strict limitations:
+
+- **Public Settings Only**: Companionship is defined as accompaniment on public routes or in public/semi-public locations (e.g., cafes, libraries, transit stops).
+- **No Private Residence Entry**: Supporters are strictly prohibited from entering a Requester’s private residence.
+- **Non-Medical Scope**: Services are non-medical and non-caregiving. Supporters shall not handle medication, provide physical care, or assist with personal hygiene.
+- **No Minors**: Services involving or provided to minors are strictly prohibited during the Beta phase.
+- **Professional Conduct**: Intimate, sexual, or "dating-style" services are strictly prohibited.
+
+## B. Beta Shift Protocol & Contractor Status
+
+- **Availability Shifts**: Hora may offer fixed availability windows (e.g., 3-hour shifts) to ensure service coverage[cite: 563, 567].
+- **Shift Compensation**: Flat-rate pay (e.g., $30/hour) provided during these shifts is a fee for maintaining active availability. This does not create an employer-employee relationship.
+- **Supporter Autonomy**: Supporters remain independent business owners and retain the sole discretion to accept or decline any specific Task request.
+
+## C. Upfront Purchases & Reimbursement
+
+- **Approval Requirement**: Supporters may front costs for errands only after obtaining explicit Requester approval in the in-app chat.
+- **Spending Cap**: Upfront purchases are capped at a maximum of **$30.00 USD**.
+- **Documentation**: Supporters must upload a clear photo of the physical receipt to the Platform for same-day reimbursement.
+
+## D. Operational Reporting
+
+- **Mandatory Tracking**: Supporters must use the "Clock In" and "Clock Out" features to record active time for safety and payment accuracy.
+- **Communication Traceability**: All task-related communication must stay on the Platform or authorized Beta group .
+
+---
 
 # 1. Platform
 

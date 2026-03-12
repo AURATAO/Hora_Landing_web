@@ -408,7 +408,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
             {/* Section Header */}
             <div className="text-center mb-16" data-aos="fade-up">
               <div className="inline-block px-4 py-1 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-                Ho:ra in Action
+                HO:RA in Action
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
                 Real people. Real tasks. Real connections.
@@ -487,7 +487,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                 Free your day.<br />Or earn your way.
               </h2>
               <p className="text-xl text-primary/70 font-secondary">
-                Ho:ra makes it effortless.
+                HO:RA makes it effortless.
               </p>
             </div>
           </div>
@@ -637,7 +637,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
             <div className="mb-16 text-center" data-aos="fade-up">
               <div className="text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">Our Approach</div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-4">
-                The Ho:ra Difference
+                The HO:RA Difference
               </h2>
             </div>
 
@@ -689,7 +689,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                 Time, Reimagined.
               </h2>
               <p className="text-lg text-primary/70 font-secondary">
-                Join our waitlist and be the first to experience Ho:ra.
+                Join our waitlist and be the first to experience HO:RA.
               </p>
             </div>
 
@@ -846,7 +846,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
               Ready to Get Started?
             </h2>
             <p className="text-xl text-accent/80 font-secondary mb-8 max-w-2xl" data-aos="zoom-in" data-aos-delay="100">
-              Join the Ho:ra community today
+              Join the HO:RA community today
             </p>
             <button 
               className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
