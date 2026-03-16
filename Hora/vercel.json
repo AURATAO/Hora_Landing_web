@@ -4,13 +4,13 @@
       "source": "/(.*)",
       "destination": "https://my-hora.com/$1",
       "permanent": true,
-      "has": [{ "type": "host", "value": "horaapp.com" }]
+      "has": [{ "type": "host", "value": "horaapp.co" }]
     },
     {
       "source": "/(.*)",
       "destination": "https://my-hora.com/$1",
       "permanent": true,
-      "has": [{ "type": "host", "value": "www.horaapp.com" }]
+      "has": [{ "type": "host", "value": "www.horaapp.co" }]
     }
   ],
   "rewrites": [
