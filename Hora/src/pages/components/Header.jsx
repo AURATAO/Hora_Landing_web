@@ -68,7 +68,7 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
             <div className={`front text-4xl font-normal font-heading md:text-5xl ${textColor}`}>
               <Link to="/">
                 <div className="w-45">
-                  <img src="/img/Horalogonew.png" alt="horalogo" className="w-full" />
+                  <img src="/img/hora_logo.png" alt="horalogo" className="w-full" />
                 </div>
               </Link>
             </div>
