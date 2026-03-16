@@ -1,8 +1,22 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://my-hora.com/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "horaapp.com" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://my-hora.com/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.horaapp.com" }]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
