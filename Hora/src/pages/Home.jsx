@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTimer } from '../context/TimerContext.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DemoModal from './components/DemoModal.jsx';
@@ -11,7 +12,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Home({ secondsElapsed  } ) {
+export default function Home() {
+  const secondsElapsed = useTimer();
   const [handleColor, sethandleColor] = useState('bg-accent');
   const [flipped, setFlipped] = useState(false);
   const [showDemoModal, setShowDemoModal] = useState(false);

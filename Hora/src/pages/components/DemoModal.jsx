@@ -51,7 +51,6 @@ const handleSubmit = async (e) => {
 
   // 先驗證，不通過就不要進 loading
   if (!company || !name || !email || !agree) {
-    console.warn('Form not complete', { company, name, email, agree });
     setErrors('Please complete all fields and agree to the terms.');
     return;
   }

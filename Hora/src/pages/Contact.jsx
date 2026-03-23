@@ -3,13 +3,15 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import DemoModal from './components/DemoModal.jsx';
 import { useEffect, useState } from "react";
+import { useTimer } from "../context/TimerContext.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Loader2 } from 'lucide-react';
 import { postJSON } from "../lib/fetcher";
 
 
-export default function Contact( {secondsElapsed} ){
+export default function Contact() {
+  const secondsElapsed = useTimer();
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +30,6 @@ const handleSubmit = async (e) => {
 
     // 先驗證，不通過就不要進 loading
     if (!name || !email || !message) {
-        console.warn('Form not complete', { name, email, message });
         setErrors('Please complete all fields and agree to the terms.');
         return;
     }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useTimer } from "../context/TimerContext.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer.jsx";
 import DemoModal from './components/DemoModal.jsx';
@@ -12,7 +13,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-export default function Mission( {secondsElapsed } ) {
+export default function Mission() {
+  const secondsElapsed = useTimer();
    const [handleColor, setHandleColor] = useState('bg-accent');
    const [activeAnimated, setActiveAnimated] = useState(false);
    const [showModal, setShowModal] = useState(false);

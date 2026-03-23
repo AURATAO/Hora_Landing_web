@@ -19,9 +19,6 @@ export default function JoinModal({ role, onClose }) {
     e.preventDefault();
      setLoading(true);
 
-    console.log("Submit:", { name, email, role, city });
-    // TODO: send to backend or service
-
       if (!name || !email || !city || !agree) {
       setErrors('Please complete all fields and agree to the terms.');
       return;
