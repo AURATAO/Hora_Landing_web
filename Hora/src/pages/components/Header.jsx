@@ -25,17 +25,16 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
 
   useEffect(() => {
     if (isActive) {
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
+      document.documentElement.classList.add("overflow-hidden");
+      document.body.classList.add("overflow-hidden");
     } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      document.documentElement.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
     }
+    return () => {
+      document.documentElement.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
+    };
   }, [isActive]);
 
   const isAccentBg = handleColor === "bg-accent";
@@ -132,7 +131,7 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
       <div
         id="mobile-nav"
         aria-hidden={!isActive}
-        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary/70 transition-all duration-500 ease-in-out z-30 flex flex-col items-center justify-start ${
+        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary transition-all duration-500 ease-in-out z-39 flex flex-col items-center justify-start ${
           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
         } lg:hidden`}
       >
