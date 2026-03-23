@@ -198,7 +198,7 @@ useEffect(() => {
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
                   <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium text-primary font-secondary">
-                    Alpha testing Ho:ra in NYC
+                    Beta testing Ho:ra in NYC
                   </span>
                 </div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/70 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
