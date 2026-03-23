@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     question: 'How do I post a task?',
-    answer: 'Click on <span class="text-secondary">QuickRequest</span> to match instantly, or <span class="text-secondary">Schedule Request</span> to book someone for later.',
+    answer: <>Click on <span className="text-secondary">QuickRequest</span> to match instantly, or <span className="text-secondary">Schedule Request</span> to book someone for later.</>,
   },
   {
     question: 'Are tasks always 1-on-1 or group service?',
-    answer: 'Hora currently offers <span class="text-secondary">1-on-1</span> support only. Group features may be added in the future.',
+    answer: <>Hora currently offers <span className="text-secondary">1-on-1</span> support only. Group features may be added in the future.</>,
   },
   {
     question: 'How are Supporters verified?',
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'Can I cancel a task after booking?',
-    answer: 'Yes. Cancellations made within our guidelines are <span class="text-secondary">free of charge</span>.',
+    answer: <>Yes. Cancellations made within our guidelines are <span className="text-secondary">free of charge</span>.</>,
   },
   {
     question: 'Is my personal data safe?',
@@ -101,10 +101,9 @@ export default function FQA() {
                   <span className="text-accent text-xl">{openIndex === index ? '−' : '+'}</span>
                 </button>
                 {openIndex === index && (
-                  <div
-                    className="px-6 pb-5 pt-1 text-sm text-secondary/80 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: faq.answer }}
-                  />
+                  <div className="px-6 pb-5 pt-1 text-sm text-secondary/80 leading-relaxed">
+                    {faq.answer}
+                  </div>
                 )}
               </div>
             );
