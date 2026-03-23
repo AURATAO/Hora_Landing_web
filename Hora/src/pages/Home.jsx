@@ -294,7 +294,7 @@ useEffect(() => {
   <div className="absolute inset-0 grid-pattern opacity-50 z-0"></div>
 
   {/* Content */}
-         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-22 lg:pt-0">
+         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-20 lg:pt-0">
             <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -307,7 +307,7 @@ useEffect(() => {
                     </span>
                   </div>
 
-                  <h2 className="text-7xl sm:text-6xl md:text-6xl lg:text-6xl font-bold text-primary leading-[1.05]">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-primary leading-[1.05]">
                     Real people.
                     <br />
                     Real connections.
@@ -319,7 +319,7 @@ useEffect(() => {
                     Get matched with nearby supporters in seconds. No waiting, no hassle—just instant help.
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-2 mb-8">
+                  <div className="flex flex-wrap items-center gap-2 mb-2 md:mb-8">
                     <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-primary/10 shadow-sm">
                       <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                         <path

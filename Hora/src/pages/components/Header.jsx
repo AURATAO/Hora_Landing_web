@@ -74,7 +74,7 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
           <div className={`flex items-center justify-center logo-flip ${flipped ? "flipped" : ""}`}>
             <div className={`front text-4xl font-normal font-heading md:text-5xl ${textColor}`}>
               <Link to="/">
-                <div className="w-45">
+                <div className="w-28 sm:w-36 md:w-45">
                   <img src="/img/hora_logo.png" alt="horalogo" className="w-full" />
                 </div>
               </Link>
