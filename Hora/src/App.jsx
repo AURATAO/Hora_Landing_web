@@ -7,7 +7,9 @@ import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import FQA from "./pages/FQA";
 import JoinPage from "./pages/JoinPage";
+import Beta from "./pages/Beta";
 import NotFound from "./pages/NotFound";
+import GateModal from "./pages/components/GateModal";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         >
           Skip to main content
         </a>
+        <GateModal />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,6 +32,7 @@ function App() {
           <Route path="/faq" element={<FQA />} />
           <Route path="/FQA" element={<FQA />} />
           <Route path="/Join" element={<JoinPage />} />
+          <Route path="/beta" element={<Beta />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
