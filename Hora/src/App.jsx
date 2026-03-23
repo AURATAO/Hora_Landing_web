@@ -9,8 +9,6 @@ import FQA from "./pages/FQA";
 import JoinPage from "./pages/JoinPage";
 import { useEffect, useState } from "react";
 
-
-
 function App() {
 const [secondsElapsed, setSecondsElapsed] = useState(0);
 
@@ -34,7 +32,6 @@ const [secondsElapsed, setSecondsElapsed] = useState(0);
           <Route path="/Contact" element={<Contact secondsElapsed={secondsElapsed} />}/>
           <Route path="/FQA" element={<FQA secondsElapsed={secondsElapsed}/>} />
           <Route path='/Join' element={<JoinPage/>}/>
-          {/* Example: <Route path="/about" element={<About />} /> */}
         </Routes>
       </BrowserRouter>
     </>
