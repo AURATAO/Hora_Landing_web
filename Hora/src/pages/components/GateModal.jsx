@@ -30,7 +30,7 @@ export default function GateModal() {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
+      className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60"
       role="dialog"
       aria-modal="true"
       aria-labelledby="gate-modal-title"
