@@ -11,6 +11,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/joho/godotenv"
 	"github.com/rs/cors"
 )
 
@@ -34,6 +35,11 @@ type ContactMessage struct {
 }
 
 func main() {
+	// Load .env file if present (ignored in production where env vars are set directly)
+	if err := godotenv.Load(); err != nil {
+		log.Println("ℹ️  No .env file found, using system environment variables")
+	}
+
 	mux := http.NewServeMux()
 
 	// healthz

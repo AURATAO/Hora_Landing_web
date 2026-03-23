@@ -6,7 +6,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Loader2 } from 'lucide-react';
 import { postJSON } from "../lib/fetcher";
-// import pb from '../lib/pb';  
 
 
 export default function Contact( {secondsElapsed} ){
@@ -16,7 +15,6 @@ export default function Contact( {secondsElapsed} ){
   const [message, setMessage] = useState('');
   const [errors, setErrors]= useState('');
   const [loading, setLoading] = useState(false);
-//   const token = pb.authStore.token;
 
    const hours = Math.floor(secondsElapsed / 3600);
    const minutes = Math.floor((secondsElapsed % 3600) / 60);

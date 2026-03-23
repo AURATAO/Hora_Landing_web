@@ -1,21 +1,17 @@
-import PocketBase from "pocketbase";
+import pb from "../lib/pb";
 
-const pb = new PocketBase("http://127.0.0.1:8090");
-
-async function loginAsPublicUser() {
-  try {
-    await pb
-      .collection("users")
-      .authWithPassword(
-        import.meta.env.VITE_PB_EMAIL,
-        import.meta.env.VITE_PB_PASSWORD
-      );
-    console.log("✅ public user 登入成功");
-  } catch (error) {
-    console.error("❌ public user 登入失敗：", error);
-  }
+// Use this to log in a real user with credentials they type into a form.
+// Example:
+//   import { loginUser } from '../utils/auth';
+//   await loginUser(email, password);
+export async function loginUser(email, password) {
+  return pb.collection("users").authWithPassword(email, password);
 }
 
-loginAsPublicUser();
+export function logoutUser() {
+  pb.authStore.clear();
+}
 
-export default pb;
+// ⚠️ DO NOT add admin/service-account credentials here.
+// VITE_* env vars are compiled into the public JS bundle and are
+// visible to anyone in DevTools. Admin auth must live in the Go backend.

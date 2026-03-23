@@ -1,5 +1,4 @@
-import React, {useEffect, useRef, useState } from 'react';
-import TestimonialsSlider from './components/TestimonialsSlider.jsx';
+import { useEffect, useRef, useState } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DemoModal from './components/DemoModal.jsx';
@@ -10,12 +9,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
-
 export default function Home({ secondsElapsed  } ) {
   const [handleColor, sethandleColor] = useState('bg-accent');
-  // const [activeAnimated, setActiveAnimated] = useState(false);
-  // const [isQuickRequest, setIsQuickRequest] = useState(false);
   const [flipped, setFlipped] = useState(false);
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [showJoinModal, setShowJoinModal]=useState(null);
@@ -25,11 +20,7 @@ export default function Home({ secondsElapsed  } ) {
  
 
   const heroRef = useRef(null);
-  // const titleRef = useRef(null)
-  // const stopwatchRef = useRef(null)
   const pinSectionRef = useRef(null)
-  // const h2Ref = useRef(null)
-  // const paragraphs = useRef([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -96,10 +87,6 @@ useEffect(() => {
             const y = window.scrollY;
             const width = window.innerWidth;
             
-            if (window.scrollY > 1000) {
-              // setActiveAnimated(true);
-            }
-
            if(width < 1024 ){
             if(y > 4136){
               sethandleColor('bg-primary');
@@ -137,16 +124,8 @@ useEffect(() => {
   });
 }, []);
 
-  // Calculate which scene to show based on scroll
-  // const getScene = () => {
-  //   if (scrollProgress < 0.33) return 1;
-  //   if (scrollProgress < 0.66) return 2;
-  //   return 3;
-  // };
-
   const p1 = clamp01(scrollProgress / 0.5);          // 0 -> 1  (0 ~ 0.5)
   const p2 = clamp01((scrollProgress - 0.5) / 0.5);  // 0 -> 1  (0.5 ~ 1)
-  // const currentScene = getScene();
 
   return (
   <>
