@@ -80,9 +80,11 @@ export default function JoinModal({ role, onClose }) {
     className="fixed inset-0 z-9999 flex items-center justify-center bg-black/40"
     style={{ pointerEvents: "auto" }}
     onMouseDown={(e) => {
-      // 點背景關閉（可留可不留）
       if (e.target === e.currentTarget) onClose();
     }}
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="join-modal-title"
   >
     <div
       className="bg-white rounded-2xl shadow-xl p-6 w-[90%] max-w-md relative"
@@ -91,12 +93,13 @@ export default function JoinModal({ role, onClose }) {
       {/* Close button */}
       <button
         onClick={onClose}
+        aria-label="Close"
         className="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-xl"
       >
-        &times;
+        <span aria-hidden="true">&times;</span>
       </button>
 
-      <h2 className={`text-xl font-bold mb-4 ${isSupporter ? "text-secondary" : "text-primary"}`}>
+      <h2 id="join-modal-title" className={`text-xl font-bold mb-4 ${isSupporter ? "text-secondary" : "text-primary"}`}>
         {isSupporter ? "Join as a Supporter" : "Post your first task"}
       </h2>
 

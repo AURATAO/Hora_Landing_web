@@ -52,7 +52,11 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
             </div>
 
             <div className="flex justify-between items-center lg:hidden">
-              <div
+              <button
+                type="button"
+                aria-label={isActive ? "Close menu" : "Open menu"}
+                aria-expanded={isActive}
+                aria-controls="mobile-nav"
                 className={`hamburger hamburger--squeeze transform scale-75 ${
                   isActive ? "is-active" : ""
                 } ${hamburgerTheme}`}
@@ -63,7 +67,7 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
                     className={`hamburger-inner ${isAccentBg ? "bg-primary" : "bg-accent"} h-0.5`}
                   ></div>
                 </div>
-              </div>
+              </button>
             </div>
           </nav>
 
@@ -113,6 +117,8 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
       </header>
 
       <div
+        id="mobile-nav"
+        aria-hidden={!isActive}
         className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary/70 transition-all duration-500 ease-in-out z-30 flex flex-col items-center justify-start ${
           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
         } lg:hidden`}

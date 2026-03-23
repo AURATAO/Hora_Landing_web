@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css/effect-fade';
@@ -43,10 +44,24 @@ const testimonials = [
 ];
 
 export default function TestimonialsSlider() {
+  const swiperRef = useRef(null);
+  const [paused, setPaused] = useState(false);
+
+  const togglePause = () => {
+    if (!swiperRef.current) return;
+    if (paused) {
+      swiperRef.current.autoplay.start();
+    } else {
+      swiperRef.current.autoplay.stop();
+    }
+    setPaused(!paused);
+  };
+
   return (
     <div className="py-16 bg-primary w-full">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <Swiper
+          onSwiper={(swiper) => { swiperRef.current = swiper; }}
           modules={[Autoplay, EffectFade]}
           effect="fade"
           fadeEffect={{ crossFade: true }}
@@ -54,6 +69,7 @@ export default function TestimonialsSlider() {
           loop={true}
           autoplay={{ delay: 5000 }}
           speed={1000}
+          aria-live={paused ? "polite" : "off"}
         >
           {testimonials.map((t, i) => (
             <SwiperSlide key={i}>
@@ -68,6 +84,20 @@ export default function TestimonialsSlider() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="mt-6 flex justify-start">
+          <button
+            onClick={togglePause}
+            aria-label={paused ? "Play testimonials slideshow" : "Pause testimonials slideshow"}
+            className="text-accent/50 hover:text-accent transition text-sm font-secondary flex items-center gap-2"
+          >
+            {paused ? (
+              <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
+            ) : (
+              <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+            )}
+            {paused ? "Play" : "Pause"}
+          </button>
+        </div>
       </div>
     </div>
   );

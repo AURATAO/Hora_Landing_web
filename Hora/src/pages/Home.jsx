@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DemoModal from './components/DemoModal.jsx';
@@ -130,10 +131,22 @@ useEffect(() => {
 
   return (
   <>
-  
+  <Helmet>
+    <title>Hora — Turn Time into Value | Find Trusted Support Near You</title>
+    <meta name="description" content="Tap. Match. Track. Hora connects you with verified supporters nearby for any task — pay only per minute. Now in NYC and Milan." />
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hora",
+      "url": "https://my-hora.com",
+      "logo": "https://my-hora.com/img/hora_logo.png",
+      "description": "Time-based task matching platform connecting requesters with verified local supporters.",
+      "sameAs": []
+    })}</script>
+  </Helmet>
  <Header handleColor={handleColor} secondsElapsed={secondsElapsed} flipped={flipped} onDemoClick={() => setShowDemoModal(true)}/>
   
-  <main className="flex flex-col items-center justify-center bg-accent">
+  <main id="main-content" className="flex flex-col items-center justify-center bg-accent">
     
     {/* SCROLL SECTION WRAPPER - Provides scroll length (200vh for 2 scenes) */}
     <div

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import DemoModal from "./components/DemoModal";
@@ -73,35 +74,57 @@ export default function FQA() {
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
   const [showDemoModal, setShowDemoModal] = useState(false);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": typeof faq.question === "string" ? faq.question : "",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": typeof faq.answer === "string" ? faq.answer : "",
+      },
+    })),
+  };
+
   return (
     <>
+    <Helmet>
+      <title>FAQ | Hora — Frequently Asked Questions</title>
+      <meta name="description" content="Got questions about Hora? Find answers about how it works, pricing, supporter verification, cancellations, and more." />
+      <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+    </Helmet>
     <Header handleColor={'bg-primary/40'}  onDemoClick={() => setShowDemoModal(true)}/>
-    <section className="bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 px-4">
+    <section id="main-content" className="bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 px-4">
       <div className="max-w-4xl mx-auto">
         <DemoModal show={showDemoModal===true} onClose={() => setShowDemoModal(false)} />
         <h3 className='text-accent font-base text-sm pb-4 text-center'>🚧 Currently building our MVP. Request a demo to learn more.</h3>
         <h1 className="text-4xl font-bold text-accent text-center mb-12">FAQ</h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => {
-            const isContextual = index >= faqs.length - 5; // 最後五個是情境題
+            const isContextual = index >= faqs.length - 5;
+            const panelId = `faq-panel-${index}`;
+            const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className={`rounded-xl overflow-hidden border transition 
-                  ${isContextual 
-                    ? 'bg-accent/5 border-accent/20 border-l-4 border-l-accent/50' 
+                className={`rounded-xl overflow-hidden border transition
+                  ${isContextual
+                    ? 'bg-accent/5 border-accent/20 border-l-4 border-l-accent/50'
                     : 'bg-accent/10 border-accent/30'}
                 `}
               >
                 <button
                   onClick={() => toggle(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
                   className="w-full px-6 py-5 flex justify-between items-center text-left hover:bg-accent/20"
                 >
                   <span className="text-base font-medium">{faq.question}</span>
-                  <span className="text-accent text-xl">{openIndex === index ? '−' : '+'}</span>
+                  <span className="text-accent text-xl" aria-hidden="true">{isOpen ? '−' : '+'}</span>
                 </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-5 pt-1 text-sm text-secondary/80 leading-relaxed">
+                {isOpen && (
+                  <div id={panelId} role="region" className="px-6 pb-5 pt-1 text-sm text-secondary/80 leading-relaxed">
                     {faq.answer}
                   </div>
                 )}

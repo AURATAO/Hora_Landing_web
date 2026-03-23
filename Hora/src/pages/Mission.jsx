@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer.jsx";
 import DemoModal from './components/DemoModal.jsx';
@@ -109,6 +110,10 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
 
   return (
     <>
+    <Helmet>
+      <title>Our Mission | Hora — Why We're Building a Time Economy</title>
+      <meta name="description" content="Learn why we built Hora — a platform that turns spare time into real value. Connecting people who need help with those ready to give it, minute by minute." />
+    </Helmet>
     <style>{`
       @keyframes float {
         0%, 100% { transform: translateY(0px); }

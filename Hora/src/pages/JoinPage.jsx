@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import JoinModal from "./components/JoinModal";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,6 +10,10 @@ export default function JoinPage(){
 
     return(
         <>
+        <Helmet>
+          <title>Join Hora — Get Early Access as a Supporter or Requester</title>
+          <meta name="description" content="Sign up for early access to Hora. Join as a Supporter to earn on your schedule, or as a Requester to get help on demand — launching in NYC and Milan." />
+        </Helmet>
         <Header handleColor={'bg-primary'} />
         <div className="bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen pt-28 pb-16 px-4">
 

@@ -24,6 +24,12 @@ const [secondsElapsed, setSecondsElapsed] = useState(0);
   return (
     <>
       <BrowserRouter>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-secondary focus:text-white focus:rounded focus:text-sm focus:font-semibold"
+        >
+          Skip to main content
+        </a>
        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home secondsElapsed={secondsElapsed}  />} />

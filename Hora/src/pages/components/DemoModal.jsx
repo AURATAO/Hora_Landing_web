@@ -95,17 +95,18 @@ const handleSubmit = async (e) => {
 
     return (
         <>
-         <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/70 p-4">
+         <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/70 p-4" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
             <div className="relative bg-primary  rounded-lg p-8  w-full max-w-md">
                 {/* X button */}
                 <button
                 onClick={handleClose}
+                aria-label="Close"
                 className="absolute top-4 right-4 text-accent hover:text-secondary"
                 >
-                <X />
+                <X aria-hidden="true" />
                 </button>
 
-                <h2 className="text-2xl font-semibold mb-6 text-accent text-center">
+                <h2 id="demo-modal-title" className="text-2xl font-semibold mb-6 text-accent text-center">
                 Sign Up
                 </h2>
 
