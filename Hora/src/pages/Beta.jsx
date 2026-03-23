@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-const BETA_CODE = "HORA2025";
+const BETA_CODE = "HORABETA";
 const BETA_URL = "https://mvp.horaapp.co";
 
 export default function Beta() {
   const [showCodeInput, setShowCodeInput] = useState(false);
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   const handleApply = () => {
     setShowCodeInput(true);
@@ -31,7 +30,7 @@ export default function Beta() {
         <title>NYC Beta | Hora</title>
         <meta
           name="description"
-          content="Join the Hora NYC beta pilot. Free to use, no background check required yet. Help others or get help — earn while you have spare time."
+          content="Hora NYC Beta — an invite-only pilot in NYC. Get support with everyday tasks or earn money supporting others. Participation is limited and personally managed by the Hora team."
         />
       </Helmet>
 
@@ -45,26 +44,33 @@ export default function Beta() {
           {/* Hero */}
           <div className="text-center space-y-3">
             <h1 className="text-3xl font-bold text-accent">
-              Hora NYC Beta — Pilot Week
+              Hora NYC Beta
             </h1>
             <p className="text-accent/60 text-sm leading-relaxed">
-              We're running a 1-week pilot in NYC to test our execution flow and
-              collect real feedback. It's completely free during beta — no
-              background check required yet.
+              We're running an invite-only pilot in NYC to test our execution
+              flow, observe real-world use cases, and collect early feedback.
+              Participation is limited and personally managed by the Hora team.
             </p>
           </div>
 
           {/* What is Hora */}
           <section className="space-y-3">
             <h2 className="text-lg font-semibold text-accent">What is Hora?</h2>
+            <p className="text-accent/60 text-sm leading-relaxed mb-3">
+              Hora is a local task platform where anyone can participate as both:
+            </p>
+            <ul className="space-y-2 text-sm text-accent/60">
+              <li className="flex items-start gap-2">
+                <span className="text-secondary mt-0.5">•</span>
+                <span><span className="text-accent font-medium">Requester</span> — get support with everyday tasks</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-secondary mt-0.5">•</span>
+                <span><span className="text-accent font-medium">Supporter</span> — earn money supporting others in your spare time</span>
+              </li>
+            </ul>
             <p className="text-accent/60 text-sm leading-relaxed">
-              Hora is a local task platform where you can be{" "}
-              <span className="text-accent font-medium">both</span> a{" "}
-              <span className="text-secondary font-medium">Requester</span>{" "}
-              (get help with everyday tasks) and a{" "}
-              <span className="text-secondary font-medium">Supporter</span>{" "}
-              (earn money by helping others in your spare time). No need to pick
-              a role — you can do both.
+              There's no need to choose just one — you can do both.
             </p>
           </section>
 
@@ -76,19 +82,33 @@ export default function Beta() {
             <ul className="space-y-2 text-sm text-accent/60">
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                Free to use — no payment required during the pilot
+                <span>
+                  Free to use — no platform fee during the pilot{" "}
+                  <span className="text-accent/40 text-xs">
+                    (Direct task costs such as purchases, transit, or other
+                    third-party expenses remain the Requester's responsibility.)
+                  </span>
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                NYC only for now
+                NYC only
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                Tasks are public-location only (no private residences)
+                Public locations only — no private residences
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                Your feedback directly shapes the product
+                Participation is invite-only and manually reviewed by our team
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-secondary mt-0.5">•</span>
+                Some task types and availability may be limited as we test operations
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-secondary mt-0.5">•</span>
+                Your feedback directly shapes what we build next
               </li>
             </ul>
           </section>

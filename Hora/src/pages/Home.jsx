@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import { useTimer } from '../context/TimerContext.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DemoModal from './components/DemoModal.jsx';
 import TestimonialsSlider from './components/TestimonialsSlider.jsx';
-import JoinModal from "./components/JoinModal";
 import Stopwatch from '../pages/components/Stopwatch.jsx';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,8 +16,8 @@ export default function Home() {
   const secondsElapsed = useTimer();
   const [handleColor, sethandleColor] = useState('bg-accent');
   const [flipped, setFlipped] = useState(false);
+  const navigate = useNavigate();
   const [showDemoModal, setShowDemoModal] = useState(false);
-  const [showJoinModal, setShowJoinModal]=useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const clamp01 = (v) => Math.min(1, Math.max(0, v));
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -357,7 +357,7 @@ useEffect(() => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       className="group relative px-8 py-4 bg-secondary text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                      onClick={() => setShowJoinModal('requester')}
+                      onClick={() => navigate('/beta')}
                     >
                       <span className="relative z-10">Get Help in Minutes</span>
                       <div className="absolute inset-0 bg-linear-to-r from-secondary to-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -365,7 +365,7 @@ useEffect(() => {
 
                     <button
                       className="px-8 py-4 bg-white/80 backdrop-blur-sm text-primary font-semibold rounded-xl border-2 border-primary/10 hover:border-secondary/30 hover:bg-white transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-md"
-                      onClick={() => setShowJoinModal('supporter')}
+                      onClick={() => navigate('/beta')}
                     >
                       Earn on Your Schedule
                     </button>
@@ -786,7 +786,7 @@ useEffect(() => {
               {/* CTA Button */}
               <button
                 className="w-full py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg"
-                onClick={() => setShowJoinModal('supporter')}
+                onClick={() => navigate('/beta')}
               >
                 Earn on Your Schedule →
               </button>
@@ -859,7 +859,7 @@ useEffect(() => {
               {/* CTA Button */}
               <button
                 className="w-full py-4 bg-secondary text-white rounded-xl font-semibold hover:bg-secondary/90 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg"
-                onClick={() => setShowJoinModal('requester')}
+                onClick={() => navigate('/beta')}
               >
                 Get Help in Minutes →
               </button>
@@ -870,9 +870,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {showJoinModal && (
-          <JoinModal role={showJoinModal} onClose={() => setShowJoinModal(null)} />
-        )}
       </div>
     </div>
 

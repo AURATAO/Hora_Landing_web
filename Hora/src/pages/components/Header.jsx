@@ -49,6 +49,9 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
               <Link to="/Contact" className={`${textColor} text-xl font-light hover:text-gray-500`}>
                 Contact
               </Link>
+              <Link to="/beta" className="text-secondary text-xl font-semibold hover:text-secondary/75">
+                Join Beta →
+              </Link>
             </div>
 
             <div className="flex justify-between items-center lg:hidden">
@@ -152,11 +155,11 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
           Contact
         </Link>
         <Link
-          to="/Join"
+          to="/beta"
           onClick={() => setIsActive(false)}
           className="mt-2 px-10 py-4 bg-secondary text-white font-semibold rounded-xl text-xl hover:bg-secondary/90 transition-all duration-200"
         >
-          Join Now
+          Join Beta →
         </Link>
       </div>
     </>

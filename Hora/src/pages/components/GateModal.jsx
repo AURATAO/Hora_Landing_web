@@ -54,7 +54,7 @@ export default function GateModal() {
             onClick={handleInvestor}
             className="w-full py-3 rounded-xl border border-accent/30 text-accent text-sm font-medium hover:bg-accent/10 transition"
           >
-            I'm an Investor / Partner
+            Investor · Partner · Accelerator
           </button>
           <button
             onClick={handleBeta}
