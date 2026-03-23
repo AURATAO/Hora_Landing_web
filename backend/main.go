@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"horaweb-backend/backup"
@@ -136,15 +137,17 @@ func sendToPocketbase(w http.ResponseWriter, collection string, payload map[stri
 	url := baseURL + "/api/collections/" + collection + "/records"
 	log.Println("📤 Sending request to:", url)
 
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+
+	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewBuffer(jsonData))
 	if err != nil {
 		http.Error(w, "建立請求失敗", http.StatusInternalServerError)
 		return
 	}
 	req.Header.Set("Content-Type", "application/json")
 
-	// 加逾時，避免卡死
-	client := &http.Client{Timeout: 10 * time.Second}
+	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
 		log.Println("❌ PocketBase Error:", err)

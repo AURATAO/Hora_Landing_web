@@ -19,7 +19,7 @@ export default function Privacy(){
     return (
         <>
         <Header handleColor="bg-primary/40" onDemoClick={()=>setShowDemoModal(true)} />
-         <div className='bg-gradient-to-br from-primary to-primary/50 py-[150px] px-4'>
+         <div className='bg-linear-to-br from-primary to-primary/50 py-37.5 px-4'>
                     <div className="max-w-7xl mx-auto">
                     <DemoModal show={showDemoModal === true} onClose={() => setShowDemoModal(false)} />
                     <div className='justify-start mx-8 flex flex-col pb-10 md:hidden'>
@@ -77,7 +77,7 @@ export default function Privacy(){
         
                             const id = slugify(getText(children));
                             return (
-                                <h1 id={id} className="text-accent text-3xl md:text-3xl font-bold my-6 pt-[80px]" {...props}>
+                                <h1 id={id} className="text-accent text-3xl md:text-3xl font-bold my-6 pt-20" {...props}>
                                 {children}
                                 </h1>
                             );

@@ -7,6 +7,7 @@ import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact"
 import FQA from "./pages/FQA";
 import JoinPage from "./pages/JoinPage";
+import NotFound from "./pages/NotFound";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -30,8 +31,10 @@ const [secondsElapsed, setSecondsElapsed] = useState(0);
           <Route path="/terms" element={<Terms />}/>
           <Route path='/privacy' element={<Privacy/>}/>
           <Route path="/Contact" element={<Contact secondsElapsed={secondsElapsed} />}/>
+          <Route path="/faq" element={<FQA secondsElapsed={secondsElapsed}/>} />
           <Route path="/FQA" element={<FQA secondsElapsed={secondsElapsed}/>} />
           <Route path='/Join' element={<JoinPage/>}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

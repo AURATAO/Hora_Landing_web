@@ -80,7 +80,7 @@ const handleSubmit = async (e) => {
     return(
         <>
         <Header handleColor={'bg-primary/20'} onDemoClick={() => setShowModal(true)}/>
-            <div className="min-h-screen flex flex-col justify-center items-center px-4 py-16 bg-gradient-to-br from-primary to-accent">
+            <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-28 pb-16 bg-gradient-to-br from-primary to-accent">
              <DemoModal show={showModal} onClose={() => setShowModal(false)} />
              <div className="pb-2 flex items-baseline space-x-2 font-secondary text-sm text-primary " data-aos="zoom-out-left">
                 <span>{hours.toString().padStart(2,'0')}:{minutes.toString().padStart(2,'0')}:{seconds.toString().padStart(2,'0')}</span>

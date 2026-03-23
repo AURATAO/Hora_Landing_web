@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "hamburgers/dist/hamburgers.min.css";
 
@@ -37,14 +37,17 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
       <header
         className={`flex items-center justify-even px-3 h-18 w-full fixed shadow-[0_12px_22px_0_rgba(0,0,0,0.08)] z-40 ${handleColor} header-fix`}
       >
-        <div className="flex items-center justify-between w-full mx-auto lg:max-w-7xl ">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center h-full w-full mx-auto lg:max-w-7xl">
           <nav className="flex space-x-5">
-            <div className="hidden lg:flex" data-aos="fade-up">
-              <Link
-                to="/mission"
-                className={`${textColor} text-xl font-light hover:text-gray-500`}
-              >
+            <div className="hidden lg:flex items-center gap-6" data-aos="fade-up">
+              <Link to="/mission" className={`${textColor} text-xl font-light hover:text-gray-500`}>
                 Mission
+              </Link>
+              <Link to="/faq" className={`${textColor} text-xl font-light hover:text-gray-500`}>
+                FAQ
+              </Link>
+              <Link to="/Contact" className={`${textColor} text-xl font-light hover:text-gray-500`}>
+                Contact
               </Link>
             </div>
 
@@ -73,8 +76,8 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
               </Link>
             </div>
 
-            <div className="back text-center flex flex-col justify-center items-center md:flex-row md:gap-4">
-              <div className={`logo-flip font-secondary ${textColor}`}>
+            <div className="back text-center flex flex-row items-center gap-2 md:gap-4">
+              <div className={`logo-flip font-secondary text-sm md:text-base ${textColor}`}>
                 {hours.toString().padStart(2, "0")}:
                 {minutes.toString().padStart(2, "0")}:
                 {seconds.toString().padStart(2, "0")}
@@ -83,23 +86,23 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
               <div className="dot hidden md:inline-block shrink-0" />
 
               {/* cold-tech: value + live value */}
-              <div className={`logo-flip font-secondary ${textColor} flex items-center gap-2`}>
-                <span className="uppercase tracking-[0.12em] text-xs opacity-80">
+              <div className={`logo-flip font-secondary ${textColor} flex items-center gap-1 md:gap-2`}>
+                <span className="hidden md:inline uppercase tracking-[0.12em] text-xs opacity-80">
                   Value now
                 </span>
-                <span className="font-semibold">${valueNow}</span>
+                <span className="font-semibold text-sm md:text-base hidden md:inline">${valueNow}</span>
               </div>
 
               <div className="dot hidden md:inline-block shrink-0" />
 
-              <div className={`logo-flip font-secondary ${textColor}`}>
+              <div className={`logo-flip font-secondary text-sm md:text-base ${textColor}`}>
                 ${earned}
               </div>
             </div>
           </div>
 
           <button
-            className="flex justify-center items-center button-tech-sm md:button-tech"
+            className="flex justify-center items-center button-tech-sm md:button-tech justify-self-end"
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-center"
             onClick={onDemoClick}
@@ -116,15 +119,38 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
       >
         <Link
           to="/"
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4"
+          onClick={() => setIsActive(false)}
+          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
         >
           Home
         </Link>
         <Link
           to="/mission"
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4"
+          onClick={() => setIsActive(false)}
+          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
         >
           Mission
+        </Link>
+        <Link
+          to="/faq"
+          onClick={() => setIsActive(false)}
+          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
+        >
+          FAQ
+        </Link>
+        <Link
+          to="/Contact"
+          onClick={() => setIsActive(false)}
+          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
+        >
+          Contact
+        </Link>
+        <Link
+          to="/Join"
+          onClick={() => setIsActive(false)}
+          className="mt-2 px-10 py-4 bg-secondary text-white font-semibold rounded-xl text-xl hover:bg-secondary/90 transition-all duration-200"
+        >
+          Join Now
         </Link>
       </div>
     </>

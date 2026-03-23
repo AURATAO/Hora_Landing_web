@@ -200,7 +200,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
     
     <Header handleColor={handleColor} secondsElapsed={secondsElapsed} flipped={flipped} onDemoClick={()=>setShowModal(true)}/>
     
-      <main className="bg-accent w-full md:pt-18">
+      <main className="bg-accent w-full pt-18">
         
         {/* HERO SECTION - Revolut Style with Cool Animations */}
         <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-accent via-white to-secondary/10">
@@ -482,7 +482,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
             </div>
             
             {/* Right - Counter Statement */}
-            <div className="space-y-6 lg:text-right" data-aos="fade-left">
+            <div className="space-y-6 lg:text-right" >
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.05]">
                 Free your day.<br />Or earn your way.
               </h2>

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import JoinModal from "./components/JoinModal";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 export default function JoinPage(){
@@ -7,12 +9,13 @@ export default function JoinPage(){
 
     return(
         <>
-        <div className=" bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen py-25 px-4">
+        <Header handleColor={'bg-primary'} />
+        <div className="bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen pt-28 pb-16 px-4">
 
               <div className="pt-12 pb-20 w-full ">
                   <div className="max-w-6xl mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-semibold text-primary  uppercase mb-4" >Join Hora</h2>
-                    <p className="text-primary/70 font-secondary mb-12">
+                    <h2 className="text-4xl font-semibold text-accent uppercase mb-4">Join Hora</h2>
+                    <p className="text-accent/70 font-secondary mb-12">
                     Be first to try Hora — Join Early Access
                     </p>
             
@@ -60,6 +63,7 @@ export default function JoinPage(){
                 We respect your privacy — your information will only be used to contact you about Hora’s early access.
             </p>
         </div>
+        <Footer />
         </>
     )
 }

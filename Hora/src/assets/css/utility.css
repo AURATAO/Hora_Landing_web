@@ -191,15 +191,27 @@ body {
   transform: translate3d(25%, 0, 0);
 }
 
-/* 整條軌道 */
+/* Page scrollbar — subtle but visible */
 ::-webkit-scrollbar {
-  height: 4px;  /* 水平滾軸 */
+  width: 6px;
+  height: 4px;
 }
-
-::-webkit-scrollbar {
-  height: 1px;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A3C585;
+}
+
+/* Horizontal scroll containers (e.g. carousels) */
+.scroll-container::-webkit-scrollbar {
+  height: 4px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
   background: transparent;
 }
 .scroll-container:hover::-webkit-scrollbar-thumb {

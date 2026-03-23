@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DemoModal from './components/DemoModal.jsx';
+import TestimonialsSlider from './components/TestimonialsSlider.jsx';
 import JoinModal from "./components/JoinModal";
 import Stopwatch from '../pages/components/Stopwatch.jsx';
 import gsap from 'gsap'
@@ -178,10 +179,18 @@ useEffect(() => {
         <div className="relative h-full flex items-center justify-center z-20">
           <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg mb-6">
-                <span className="text-sm font-medium text-primary font-secondary">
-                  Alpha testing Ho:ra in NYC
-                </span>
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
+                  <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-primary font-secondary">
+                    Alpha testing Ho:ra in NYC
+                  </span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/70 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
+                  <span className="text-sm font-medium text-white font-secondary">
+                    🗽 New York City only — for now
+                  </span>
+                </div>
               </div>
 
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6">
@@ -196,22 +205,23 @@ useEffect(() => {
 
               <div className="inline-block">
                
-                    <div className=" flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-white/50 font-secondary text-xs uppercase tracking-wider">Pay per minute:</span>
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
                         <span className="text-white/90">☀️</span>
                         <span className="text-white/90 font-secondary text-sm">
-                          $0.5<span className="text-white/60">/min</span>
+                          $0.50<span className="text-white/60">/min</span>
                         </span>
+                        <span className="text-white/50 font-secondary text-xs">daytime</span>
                       </div>
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
                         <span className="text-white/90">🌙</span>
                         <span className="text-white/90 font-secondary text-sm">
-                          $1<span className="text-white/60">/min</span>
+                          $1.00<span className="text-white/60">/min</span>
                         </span>
-                        <span className="text-white/50 font-secondary text-xs">
-                          12am–8am
-                        </span>
+                        <span className="text-white/50 font-secondary text-xs">12am–8am</span>
                       </div>
+                      <span className="text-white/40 font-secondary text-xs">· supporters keep 80%</span>
                   </div>
                 <Stopwatch secondsElapsed={secondsElapsed} />
               </div>
@@ -269,7 +279,7 @@ useEffect(() => {
   <div className="absolute inset-0 grid-pattern opacity-50 z-0"></div>
 
   {/* Content */}
-         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-22nid lg:pt-0">
+         <div className="relative min-h-svh flex items-start lg:items-center justify-center z-20 pt-22 lg:pt-0">
             <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -334,7 +344,7 @@ useEffect(() => {
                       className="group relative px-8 py-4 bg-secondary text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                       onClick={() => setShowJoinModal('requester')}
                     >
-                      <span className="relative z-10">Start a Request</span>
+                      <span className="relative z-10">Get Help in Minutes</span>
                       <div className="absolute inset-0 bg-linear-to-r from-secondary to-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
 
@@ -342,7 +352,7 @@ useEffect(() => {
                       className="px-8 py-4 bg-white/80 backdrop-blur-sm text-primary font-semibold rounded-xl border-2 border-primary/10 hover:border-secondary/30 hover:bg-white transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-md"
                       onClick={() => setShowJoinModal('supporter')}
                     >
-                      Become a Supporter
+                      Earn on Your Schedule
                     </button>
                   </div>
                 </div>
@@ -440,6 +450,31 @@ useEffect(() => {
 
     {/* NEXT SECTION - Features (Starts AFTER 200vh scroll, will never overlap) */}
     <div className="relative w-full z-10">{/* z-10 ensures it's below hero's z-40 */}
+
+    {/* SOCIAL PROOF STATS STRIP */}
+    <div className="w-full bg-primary border-b border-accent/10 py-5">
+      <div className="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16">
+        <div className="flex items-center gap-3 text-center">
+          <span className="text-2xl font-bold text-secondary">500+</span>
+          <span className="text-sm text-accent/60 font-secondary">Tasks Completed</span>
+        </div>
+        <div className="w-px h-8 bg-accent/10 hidden md:block self-center"></div>
+        <div className="flex items-center gap-3 text-center">
+          <span className="text-2xl font-bold text-secondary">4.9★</span>
+          <span className="text-sm text-accent/60 font-secondary">Avg Rating</span>
+        </div>
+        <div className="w-px h-8 bg-accent/10 hidden md:block self-center"></div>
+        <div className="flex items-center gap-3 text-center">
+          <span className="text-2xl font-bold text-secondary">&lt;2 min</span>
+          <span className="text-sm text-accent/60 font-secondary">Avg Match Time</span>
+        </div>
+        <div className="w-px h-8 bg-accent/10 hidden md:block self-center"></div>
+        <div className="flex items-center gap-3 text-center">
+          <span className="text-2xl font-bold text-secondary">NYC</span>
+          <span className="text-sm text-accent/60 font-secondary">Beta Active</span>
+        </div>
+      </div>
+    </div>
 
     {/* FEATURES SECTION - Enhanced */}
     <div className="w-full bg-linear-0-to-b from-accent to-white py-20 lg:py-32">
@@ -762,7 +797,7 @@ useEffect(() => {
                 className="w-full py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg"
                 onClick={() => setShowJoinModal('supporter')}
               >
-                Offer Your Time →
+                Earn on Your Schedule →
               </button>
             </div>
 
@@ -835,7 +870,7 @@ useEffect(() => {
                 className="w-full py-4 bg-secondary text-white rounded-xl font-semibold hover:bg-secondary/90 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg"
                 onClick={() => setShowJoinModal('requester')}
               >
-                Start a Request →
+                Get Help in Minutes →
               </button>
             </div>
 
@@ -949,6 +984,9 @@ useEffect(() => {
         </div>
       </div>
     </div>
+
+    {/* TESTIMONIALS */}
+    <TestimonialsSlider />
 
     {/* FINAL CTA BANNER */}
     <div className='w-full h-100 relative overflow-hidden'>
