@@ -466,30 +466,6 @@ useEffect(() => {
     {/* NEXT SECTION - Features (Starts AFTER 200vh scroll, will never overlap) */}
     <div className="relative w-full z-10">{/* z-10 ensures it's below hero's z-40 */}
 
-    {/* SOCIAL PROOF STATS STRIP */}
-    <div className="w-full bg-primary border-b border-accent/10 py-5">
-      <div className="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16">
-        <div className="flex items-center gap-3 text-center">
-          <span className="text-2xl font-bold text-secondary">500+</span>
-          <span className="text-sm text-accent/60 font-secondary">Tasks Completed</span>
-        </div>
-        <div className="w-px h-8 bg-accent/10 hidden md:block self-center"></div>
-        <div className="flex items-center gap-3 text-center">
-          <span className="text-2xl font-bold text-secondary">4.9★</span>
-          <span className="text-sm text-accent/60 font-secondary">Avg Rating</span>
-        </div>
-        <div className="w-px h-8 bg-accent/10 hidden md:block self-center"></div>
-        <div className="flex items-center gap-3 text-center">
-          <span className="text-2xl font-bold text-secondary">&lt;2 min</span>
-          <span className="text-sm text-accent/60 font-secondary">Avg Match Time</span>
-        </div>
-        <div className="w-px h-8 bg-accent/10 hidden md:block self-center"></div>
-        <div className="flex items-center gap-3 text-center">
-          <span className="text-2xl font-bold text-secondary">NYC</span>
-          <span className="text-sm text-accent/60 font-secondary">Beta Active</span>
-        </div>
-      </div>
-    </div>
 
     {/* FEATURES SECTION - Enhanced */}
     <div className="w-full bg-linear-0-to-b from-accent to-white py-20 lg:py-32">
