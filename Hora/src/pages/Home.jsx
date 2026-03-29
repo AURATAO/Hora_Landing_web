@@ -45,6 +45,7 @@ useEffect(() => {
   const wrap = pinSectionRef.current;
   const pinned = heroRef.current;
   if (!wrap || !pinned) return;
+  const pinnedEl = pinned;
 
   const mm = ScrollTrigger.matchMedia();
 
@@ -79,10 +80,21 @@ useEffect(() => {
   const onResize = () => ScrollTrigger.refresh();
   window.addEventListener("resize", onResize);
 
+  // Refresh after DOM settles (fixes stale pin measurements on back-navigation)
+  const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 50);
+
   return () => {
+    clearTimeout(refreshTimer);
     window.removeEventListener("resize", onResize);
     mm.kill();
     st?.kill();
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+    // Clear any pin inline-styles GSAP may have left on the element
+    pinnedEl.style.removeProperty("position");
+    pinnedEl.style.removeProperty("top");
+    pinnedEl.style.removeProperty("left");
+    pinnedEl.style.removeProperty("width");
+    pinnedEl.style.removeProperty("transform");
   };
 }, []);
 

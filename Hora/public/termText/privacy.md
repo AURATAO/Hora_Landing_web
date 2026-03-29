@@ -8,6 +8,21 @@ If you are a resident of California or a data subject located in the European Ec
 
 For any questions or to exercise your rights, please see the “Contact Us” section at the end of this Policy.
 
+## 1.1 Beta Program Notice
+
+Hora is currently operating certain parts of the Platform in a beta, pilot, limited-release, or testing phase ("Beta Program"). If you participate in the Beta Program, you acknowledge that the Platform is still being tested and refined.
+
+During the Beta Program:
+
+- certain features, workflows, or services may be unavailable, limited, changed, or discontinued at any time;
+- some operational processes may be handled manually or with limited automation;
+- the Platform may contain bugs, delays, interruptions, or other unexpected issues;
+- our policies, disclosures, and product experience may be revised as we continue testing and improving the service.
+
+We may collect and use Personal Information during the Beta Program not only to provide the Platform, but also for internal testing, quality assurance, debugging, trust and safety review, fraud prevention, performance monitoring, user research, and service improvement, to the extent permitted by applicable law.
+
+Unless otherwise stated, participation in the Beta Program remains subject to this Privacy Policy and the Hora Terms of Service.
+
 # 2. General Terms
 
 In this Privacy Policy:
