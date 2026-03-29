@@ -64,7 +64,7 @@ export default function Privacy() {
                     </div>
                     <div className='hidden flex-col justify-start mx-8 md:flex md:mx-20 lg:mx-30'>
                         <p className="text-sm text-accent/60 italic border-l-4 pl-4 border-accent/30 mb-6">
-                            ⚠️ This Privacy Policy is a pre-release draft prepared in anticipation of the platform’s official launch. As Hora is currently under development, some sections may be revised before public release.
+                            ⚠️ Hora is currently operating in a limited beta phase. Certain features, workflows, and policy sections may be updated as we continue testing and refining the platform.
                         </p>
                         <h1 className='text-3xl font-semibold text-accent  '>Hora Privacy Policy</h1>
                         <h5 className="text-sm text-accent/60 italic border-accent/30 mt-4">Last updated: March 29, 2026</h5>

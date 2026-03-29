@@ -44,7 +44,7 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
   return (
     <>
       <header
-        className={`flex items-center justify-even px-3 h-18 w-full fixed shadow-[0_12px_22px_0_rgba(0,0,0,0.08)] z-40 ${handleColor} header-fix`}
+        className={`flex items-center justify-even px-3 h-18 w-full fixed z-40 header-fix transition-colors duration-300 ${handleColor === 'bg-accent' ? 'bg-transparent' : handleColor} shadow-[0_12px_22px_0_rgba(0,0,0,0.08)]`}
       >
         <div className="grid grid-cols-[1fr_auto_1fr] items-center h-full w-full mx-auto lg:max-w-7xl">
           <nav className="flex space-x-5">
@@ -69,9 +69,8 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
                 aria-label={isActive ? "Close menu" : "Open menu"}
                 aria-expanded={isActive}
                 aria-controls="mobile-nav"
-                className={`hamburger hamburger--squeeze transform scale-75 ${
-                  isActive ? "is-active" : ""
-                } ${hamburgerTheme}`}
+                className={`hamburger hamburger--squeeze transform scale-75 ${isActive ? "is-active" : ""
+                  } ${hamburgerTheme}`}
                 onClick={() => setIsActive(!isActive)}
               >
                 <div className="w-11.25 relative">
@@ -131,9 +130,8 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
       <div
         id="mobile-nav"
         aria-hidden={!isActive}
-        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary transition-all duration-500 ease-in-out z-39 flex flex-col items-center justify-start ${
-          isActive ? "opacity-100" : "opacity-0 pointer-events-none"
-        } lg:hidden`}
+        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary/50 transition-all duration-500 ease-in-out z-39 flex flex-col items-center justify-start ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+          } lg:hidden`}
       >
         <Link
           to="/"
