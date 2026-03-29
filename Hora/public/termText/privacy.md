@@ -8,7 +8,7 @@ If you are a resident of California or a data subject located in the European Ec
 
 For any questions or to exercise your rights, please see the “Contact Us” section at the end of this Policy.
 
-## 1.1 Beta Program Notice
+# 1.1 Beta Program Notice
 
 Hora is currently operating certain parts of the Platform in a beta, pilot, limited-release, or testing phase ("Beta Program"). If you participate in the Beta Program, you acknowledge that the Platform is still being tested and refined.
 
