@@ -67,7 +67,7 @@ export default function Privacy() {
                             ⚠️ This Privacy Policy is a pre-release draft prepared in anticipation of the platform’s official launch. As Hora is currently under development, some sections may be revised before public release.
                         </p>
                         <h1 className='text-3xl font-semibold text-accent  '>Hora Privacy Policy</h1>
-                        <h5 className="text-sm text-accent/60 italic border-accent/30 mt-4">Last updated: July 13, 2025</h5>
+                        <h5 className="text-sm text-accent/60 italic border-accent/30 mt-4">Last updated: March 29, 2026</h5>
                     </div>
                     <div className='flex flex-col justify-center items-start mx-8 md:mx-20 lg:mx-30 text-accent'>
                         <ReactMarkdown
@@ -86,9 +86,24 @@ export default function Privacy() {
                                         </h1>
                                     );
                                 },
-                                h2: (props) => (
-                                    <h2 className=" text-accent text-lg md:text-2xl font-semibold my-4" {...props} />
-                                ),
+                                h2: ({ children, ...props }) => {
+                                    const getText = (children) => {
+                                        return React.Children.toArray(children)
+                                            .map((child) => (typeof child === 'string' ? child : ''))
+                                            .join('');
+                                    };
+
+                                    const id = slugify(getText(children));
+                                    return (
+                                        <h2
+                                            id={id}
+                                            className="text-accent text-lg md:text-2xl font-semibold my-4 pt-20"
+                                            {...props}
+                                        >
+                                            {children}
+                                        </h2>
+                                    );
+                                },
                                 p: (props) => (
                                     <p className="text-accent font-secondary text-base md:text-lg leading-relaxed my-2" {...props} />
                                 ),
