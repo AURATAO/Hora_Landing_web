@@ -8,7 +8,7 @@ If you are a resident of California or a data subject located in the European Ec
 
 For any questions or to exercise your rights, please see the “Contact Us” section at the end of this Policy.
 
-# 1.1 Beta Program Notice
+## 1.1 Beta Program Notice
 
 Hora is currently operating certain parts of the Platform in a beta, pilot, limited-release, or testing phase ("Beta Program"). If you participate in the Beta Program, you acknowledge that the Platform is still being tested and refined.
 
@@ -214,7 +214,7 @@ If you have any questions about our this policy or our privacy practices, you ma
 > Attn: Hora Team  
 > 254 Chapman Rd, Ste 208 #23317  
 > Newark, Delaware 19702, USA  
-> Email: info@my-hora.com
+> Email: liang.you@horaapp.co
 
 # 9. Jurisdiction-Specific Provisions
 
@@ -238,7 +238,7 @@ To the extent such practices are interpreted as a “sale” or “sharing,” y
 You may exercise your opt-out rights by:
 
 - Clicking the “Do Not Sell or Share My Personal Information” link available in the footer of our website, or
-- Contacting us directly at Info@hora.com with your request.
+- Contacting us directly at liang.you@horaapp.com with your request.
 
 We will process valid requests in accordance with applicable state laws. Please note that we may request additional information to verify your identity and residency before processing certain requests.
 
