@@ -1,27 +1,12 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "hamburgers/dist/hamburgers.min.css";
 
-export default function Header({ handleColor, secondsElapsed, flipped, onDemoClick }) {
+export default function Header({ onDemoClick }) {
   const [isActive, setIsActive] = useState(false);
-
-  // elapsed time (keep)
-  const hours = Math.floor(secondsElapsed / 3600);
-  const minutes = Math.floor((secondsElapsed % 3600) / 60);
-  const seconds = secondsElapsed % 60;
-
-  // NYC time-based value (12am–8am => $1, otherwise $0.5)
-  const { valueNow, earned } = useMemo(() => {
-    const nyHour = new Date(
-      new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
-    ).getHours();
-
-    const valueNow = nyHour >= 0 && nyHour < 8 ? 1 : 0.5;
-    const perSecond = valueNow / 60;
-    const earned = (secondsElapsed * perSecond).toFixed(2);
-
-    return { valueNow, earned };
-  }, [secondsElapsed]);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef(null);
 
   useEffect(() => {
     if (isActive) {
@@ -37,25 +22,41 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
     };
   }, [isActive]);
 
-  const isAccentBg = handleColor === "bg-accent";
-  const textColor = isAccentBg ? "text-primary" : "text-accent";
-  const hamburgerTheme = isAccentBg ? "hamburger-dark" : "hamburger-light";
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.innerWidth < 1024) return;
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY.current) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+      clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = setTimeout(() => setHidden(false), 150);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(scrollTimeout.current);
+    };
+  }, []);
 
   return (
     <>
       <header
-        className={`flex items-center justify-even px-3 h-18 w-full fixed z-40 header-fix transition-colors duration-300 ${handleColor === 'bg-accent' ? 'bg-transparent' : handleColor} shadow-[0_12px_22px_0_rgba(0,0,0,0.08)]`}
+        className={`flex items-center justify-even px-3 h-18 w-full fixed z-40 header-fix bg-accent/20 backdrop-blur-md shadow-[0_12px_22px_0_rgba(0,0,0,0.08)] transition-transform duration-300 ${hidden ? "lg:-translate-y-full" : "translate-y-0"}`}
       >
         <div className="grid grid-cols-[1fr_auto_1fr] items-center h-full w-full mx-auto lg:max-w-7xl">
           <nav className="flex space-x-5">
             <div className="hidden lg:flex items-center gap-6" data-aos="fade-up">
-              <Link to="/mission" className={`${textColor} text-xl font-light hover:text-gray-500`}>
+              <Link to="/mission" className="text-primary text-xl font-light hover:text-gray-500">
                 Mission
               </Link>
-              <Link to="/faq" className={`${textColor} text-xl font-light hover:text-gray-500`}>
+              <Link to="/faq" className="text-primary text-xl font-light hover:text-gray-500">
                 FAQ
               </Link>
-              <Link to="/Contact" className={`${textColor} text-xl font-light hover:text-gray-500`}>
+              <Link to="/Contact" className="text-primary text-xl font-light hover:text-gray-500">
                 Contact
               </Link>
               <Link to="/beta" className="text-secondary text-xl font-semibold hover:text-secondary/75">
@@ -69,51 +70,22 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
                 aria-label={isActive ? "Close menu" : "Open menu"}
                 aria-expanded={isActive}
                 aria-controls="mobile-nav"
-                className={`hamburger hamburger--squeeze transform scale-75 ${isActive ? "is-active" : ""
-                  } ${hamburgerTheme}`}
+                className={`hamburger hamburger--squeeze transform scale-75 ${isActive ? "is-active" : ""} hamburger-dark`}
                 onClick={() => setIsActive(!isActive)}
               >
                 <div className="w-11.25 relative">
-                  <div
-                    className={`hamburger-inner ${isAccentBg ? "bg-primary" : "bg-accent"} h-0.5`}
-                  ></div>
+                  <div className="hamburger-inner bg-primary h-0.5"></div>
                 </div>
               </button>
             </div>
           </nav>
 
-          <div className={`flex items-center justify-center logo-flip ${flipped ? "flipped" : ""}`}>
-            <div className={`front text-4xl font-normal font-heading md:text-5xl ${textColor}`}>
-              <Link to="/">
-                <div className="w-28 sm:w-36 md:w-45">
-                  <img src="/img/hora_logo.png" alt="horalogo" className="w-full" />
-                </div>
-              </Link>
-            </div>
-
-            <div className="back text-center flex flex-row items-center gap-2 md:gap-4">
-              <div className={`logo-flip font-secondary text-sm md:text-base ${textColor}`}>
-                {hours.toString().padStart(2, "0")}:
-                {minutes.toString().padStart(2, "0")}:
-                {seconds.toString().padStart(2, "0")}
+          <div className="flex items-center justify-center">
+            <Link to="/">
+              <div className="w-28 sm:w-36 md:w-45">
+                <img src="/img/hora_logo.png" alt="horalogo" className="w-full" />
               </div>
-
-              <div className="dot hidden md:inline-block shrink-0" />
-
-              {/* cold-tech: value + live value */}
-              <div className={`logo-flip font-secondary ${textColor} flex items-center gap-1 md:gap-2`}>
-                <span className="hidden md:inline uppercase tracking-[0.12em] text-xs opacity-80">
-                  Value now
-                </span>
-                <span className="font-semibold text-sm md:text-base hidden md:inline">${valueNow}</span>
-              </div>
-
-              <div className="dot hidden md:inline-block shrink-0" />
-
-              <div className={`logo-flip font-secondary text-sm md:text-base ${textColor}`}>
-                ${earned}
-              </div>
-            </div>
+            </Link>
           </div>
 
           <button
@@ -130,42 +102,21 @@ export default function Header({ handleColor, secondsElapsed, flipped, onDemoCli
       <div
         id="mobile-nav"
         aria-hidden={!isActive}
-        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary/50 transition-all duration-500 ease-in-out z-39 flex flex-col items-center justify-start ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"
-          } lg:hidden`}
+        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary/80 transition-all duration-500 ease-in-out z-39 flex flex-col items-center justify-start ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"} lg:hidden`}
       >
-        <Link
-          to="/"
-          onClick={() => setIsActive(false)}
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
-        >
+        <Link to="/" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
           Home
         </Link>
-        <Link
-          to="/mission"
-          onClick={() => setIsActive(false)}
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
-        >
+        <Link to="/mission" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
           Mission
         </Link>
-        <Link
-          to="/faq"
-          onClick={() => setIsActive(false)}
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
-        >
+        <Link to="/faq" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
           FAQ
         </Link>
-        <Link
-          to="/Contact"
-          onClick={() => setIsActive(false)}
-          className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4"
-        >
+        <Link to="/Contact" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
           Contact
         </Link>
-        <Link
-          to="/beta"
-          onClick={() => setIsActive(false)}
-          className="mt-2 px-10 py-4 bg-secondary text-white font-semibold rounded-xl text-xl hover:bg-secondary/90 transition-all duration-200"
-        >
+        <Link to="/beta" onClick={() => setIsActive(false)} className="mt-2 px-10 py-4 bg-secondary text-white font-semibold rounded-xl text-xl hover:bg-secondary/90 transition-all duration-200">
           Join Beta →
         </Link>
       </div>

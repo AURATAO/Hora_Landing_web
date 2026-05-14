@@ -7,15 +7,19 @@ import DemoModal from "./components/DemoModal";
 const faqs = [
   {
     question: 'What is Hora and how does it work?',
-    answer: 'Hora is a time-based service platform where you can request support from verified people nearby. You can post tasks, book time, and get matched with a Supporter instantly or schedule one for later.',
+    answer: 'Hora is a task-matching platform where you can request support from verified people nearby. Post a task, get matched with a Supporter instantly or schedule one for later.',
   },
   {
     question: 'What are Supporters and Requesters?',
-    answer: 'Requesters post tasks and pay for support time. Supporters offer their free time to support others and earn per minute.',
+    answer: 'Requesters post tasks and pay a flat fee based on task type. Supporters offer their time to help others and earn per task.',
+  },
+  {
+    question: 'How much does a task cost?',
+    answer: 'Quick tasks start at $12, Flex tasks at $18, and Companionship at $25 — flat fee for the first 15 minutes. After that, $0.50/min standard, or $1.00/min during nights, holidays, and bad weather.',
   },
   {
     question: 'How do I post a task?',
-    answer: <>Click on <span className="text-secondary">QuickRequest</span> to match instantly, or <span className="text-secondary">Schedule Request</span> to book someone for later.</>,
+    answer: <>Click <span className="text-secondary">QuickRequest</span> to match instantly, or <span className="text-secondary">Schedule Request</span> to book someone for later.</>,
   },
   {
     question: 'Are tasks always 1-on-1 or group service?',
@@ -27,11 +31,11 @@ const faqs = [
   },
   {
     question: 'Will I get refunded for unused time?',
-    answer: 'Any unused time is automatically refunded to your Hora balance as credit for future tasks. If you prefer a cash refund, just reach out — we’re happy to help.',
+    answer: 'Yes. If your session ends early, unused time is automatically refunded. Run over? You\'ll be charged $0.50/min after the first 15 minutes — or $1.00/min during nights, holidays, and bad weather.',
   },
   {
     question: 'What if the session goes overtime?',
-    answer: 'You’ll be charged for the extra minutes at the same per-minute rate.',
+    answer: 'Extra time is billed at $0.50/min. During nights, public holidays, and bad weather, the rate is $1.00/min.',
   },
   {
     question: 'Can I cancel a task after booking?',
@@ -45,30 +49,27 @@ const faqs = [
     question: 'Can I be both a Supporter and Requester?',
     answer: 'Yes. You can switch roles anytime in your profile settings.',
   },
-
-  // --- Contextual / situational FAQs ---
   {
     question: 'I just moved to a new city — how can Hora help me settle in?',
     answer: 'Post tasks like unpacking, grocery shopping, or even a neighborhood walk with someone nearby. Hora helps you feel connected and supported in new places.',
   },
   {
     question: 'Can I use Hora just for one-off weekend support?',
-    answer: 'Absolutely. Whether it’s running errands, yardwork, or assembling furniture — Hora works for one-time support too.',
+    answer: 'Absolutely. Whether it\'s running errands, yardwork, or assembling furniture — Hora works for one-time tasks too.',
   },
   {
     question: 'Can I ask for non-physical tasks like tech help or talking?',
-    answer: 'Yes. You can request support with simple digital setups, chatting with someone during a hard day, or anything that fits into someone’s time and willingness.',
+    answer: 'Yes. You can request help with simple digital setups, a chat during a hard day, or anything that fits within someone\'s time and willingness.',
   },
   {
-    question: 'I don’t feel safe inviting strangers — how do I know Supporters are trustworthy?',
-    answer: 'All Supporters are verified and reviewed. You can choose who to book, and see their past feedback before confirming.',
+    question: 'I don\'t feel safe inviting strangers — how do I know Supporters are trustworthy?',
+    answer: 'All Supporters are verified and reviewed. You can choose who to book and see their past feedback before confirming.',
   },
   {
-    question: 'What if the Supporter doesn’t show up?',
+    question: 'What if the Supporter doesn\'t show up?',
     answer: 'We track arrival times. If your Supporter is late or absent, you can cancel and receive a full refund.',
   },
 ];
-
 export default function FQA() {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);

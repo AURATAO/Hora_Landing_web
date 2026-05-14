@@ -408,64 +408,35 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
 
         <DemoModal show={showModal} onClose={() => setShowModal(false)} />
 
-        {/* HORA IN ACTION - Image Grid */}
-        <div className="w-full bg-white py-32">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
-            
-            {/* Section Header */}
-            <div className="text-center mb-16" data-aos="fade-up">
-              <div className="inline-block px-4 py-1 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-                HO:RA in Action
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-                Real people. Real tasks. Real connections.
-              </h2>
-              <p className="text-xl text-primary/70 font-secondary max-w-3xl mx-auto">
-                From groceries to companionship, Ho:ra supporters are making life easier across NYC.
-              </p>
+     
+           {/* ── FEATURES ── */}
+        <div className="w-full bg-linear-0-to-b from-accent to-white py-20 lg:py-32">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">Why Choose HO:RA?</h2>
+              <p className="text-lg text-primary/70 font-secondary max-w-2xl mx-auto">A smarter way to get things done with real people you can trust</p>
             </div>
-
-            {/* Image Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
-              {/* Image 1 */}
-              <div className="relative group image-overlay rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                <img 
-                  src="/img/horaImage1.png" 
-                  alt="Hora supporter delivering groceries in NYC"
-                  className="w-full h-125 object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <h3 className="text-2xl font-bold text-white mb-2">Quick Delivery</h3>
-                  <p className="text-white/90 font-secondary">Fresh groceries, delivered on your schedule</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Lightning Fast", desc: "Get matched with nearby supporters in seconds. No waiting, no hassle—just instant help when you need it." },
+                { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "100% Verified", desc: "Every supporter is ID-verified and background-checked. Connect with confidence in a secure environment." },
+                { 
+                  icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",title: "Simple Pricing", desc: "Flat rate per task, plus a small per-minute charge if you run over. No hidden fees." 
+                },
+                { icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z", title: "Real Connections", desc: "Beyond tasks—get companionship, conversations, and emotional support from verified community members." },
+                { icon: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z", title: "24/7 Support", desc: "Our team is always here to help. Real-time tracking, in-app chat, and dedicated customer support." },
+                { icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z", title: "Quality Ratings", desc: "Transparent reviews and ratings help you choose the best supporters. Build trust with every interaction." },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/5">
+                  <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon} />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-3">{title}</h3>
+                  <p className="text-primary/70 font-secondary leading-relaxed">{desc}</p>
                 </div>
-              </div>
-
-              {/* Image 2 */}
-              <div className="relative group image-overlay rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                <img 
-                  src="/img/horaImage6.png" 
-                  alt="Hora supporter handling packages"
-                  className="w-full h-125 object-bottom object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <h3 className="text-2xl font-bold text-white mb-2">Any Task</h3>
-                  <p className="text-white/90 font-secondary">From shipping to errands, we've got you</p>
-                </div>
-              </div>
-
-              {/* Image 3 */}
-              <div className="relative group image-overlay rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                <img 
-                  src="/img/horaImage3.png" 
-                  alt="Hora supporter connecting with client"
-                  className="w-full h-125 object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <h3 className="text-2xl font-bold text-white mb-2">Human Touch</h3>
-                  <p className="text-white/90 font-secondary">Real connections that matter</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -654,7 +625,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                 { id: "element1", title: "Verified & Safe", content: "All users complete ID verification and background checks, ensuring every connection happens in a secure, trusted environment." },
                 { id: "element2", title: "Flexible Requests", content: "Post any kind of request — big or small — as long as it meets our community guidelines. Built to support exactly what you need." },
                 { id: "element3", title: "Emotional Support", content: "The first platform where you can seek verified, genuine human connection — verified people to talk, walk, and build healthy connections with." },
-                { id: "element4", title: "Every Minute Counts", content: "Only pay for the time you actually use. If your session ends early, we'll automatically refund the unused minutes." },
+                { id: "element4", title: "Fair for Everyone", content: "A flat fee guarantees supporters are fairly compensated. Run over? You're charged a small per-minute rate. Finish early? The unused time is refunded automatically."  },
                 { id: "element5", title: "Zero Cost to Earn", content: "Become a supporter without paying any upfront registration or verification fees. Join freely and start earning right away." },
                 { id: "element6", title: "Reputation System", content: "Our transparent review system helps everyone feel secure. 81% of people feel more confident with trusted ratings." },
                 { id: "element7", title: "Bonus Tips", content: "Great service deserves more. Supporters can receive tips without limits, giving them even more ways to earn." },
