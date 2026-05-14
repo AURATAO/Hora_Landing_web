@@ -99,6 +99,8 @@ export default function Home() {
                   </div>
                 </div>
 
+                 <h2 className='text-xl italic text-white/80'>Your time is worth more than errands.</h2>
+
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6">
                   A real person,
                   <br />
@@ -109,6 +111,7 @@ export default function Home() {
                   Post any task — errands, deliveries, laundry runs. Get matched with someone verified and nearby, instantly.
                 </p>
 
+               
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   {["Same-day delivery", "Grocery runs", "Laundry drop-off"].map((label) => (
                     <div key={label} className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
