@@ -91,7 +91,7 @@ export default function Home() {
               <div className="max-w-3xl">
                 <div className="flex flex-wrap items-center gap-3 mb-6">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
-                    <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-[#3A5A2D] rounded-full animate-pulse" />
                     <span className="text-sm font-medium text-primary font-secondary">Free beta trial · NYC 🗽</span>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/70 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
