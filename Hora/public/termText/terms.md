@@ -187,19 +187,25 @@ _Hora reserves the right to suspend or terminate any account found to be arrangi
 
 # 3. Fees, Billing, Invoicing, and Payment; Cancellation
 
-_The terms governing Task payments (including Supporter compensation and Hora’s service fees), invoicing, billing procedures, and cancellation policies are set forth in the Fees, Payments, and Cancellation Supplemental Terms, which form an integral part of this Agreement._
+_The terms governing Task payments (including Supporter compensation and Hora's service fees), invoicing, billing procedures, and cancellation policies are set forth in the Fees, Payments, and Cancellation Supplemental Terms, which form an integral part of this Agreement._
 
 _Unless expressly stated otherwise, all fees paid on the Platform — including, without limitation, booking fees, Supporter compensation, and Hora commissions — are non-refundable._
 
 _By using the Platform, Users agree to the following general principles, subject to more detailed terms in the Supplemental Terms:_
 
-**(a)** Minimum Booking Requirement: _All Tasks must meet the Platform’s minimum billing threshold, which is currently one hour. Rates begin at €12/hour unless otherwise specified._
-**(b)** Prepayment: _Once a Task is matched and confirmed by a Supporter, the Requester is required to prepay for the initial agreed duration._
-**(c)** Time Adjustments: _If the Task is completed early, remaining time is credited to the Requester's account in the form of time credits (based on minutes), which may be applied to future bookings. If the Task exceeds the original booking time, additional charges will apply and a supplemental invoice will be issued._
-**(d)** Disbursement Timing: _Supporters are paid 24 hours after the Task is completed, provided that no disputes have been filed._
+**(a)** Minimum Booking Requirement: _All Tasks are subject to a base fee determined by task type. Base fees are as follows: $12.00 USD for Quick Tasks (errands, delivery, grocery, laundry, queue); $18.00 USD for Extended Tasks (open-ended or tasks exceeding 90 minutes); $25.00 USD for Companionship Tasks. An additional overtime rate of $0.50 USD per minute applies to all time exceeding 15 minutes of active work._
+
+**(b)** Prepayment: _Once a Task is matched and confirmed by a Supporter, the Requester is required to prepay for the estimated duration at the applicable base fee and rate._
+
+**(c)** Time Adjustments: _Task fees are calculated based on actual time logged by the Supporter via the Platform's Clock In and Clock Out features. If the Task is completed in less time than estimated, the Requester is charged only for actual time worked. If the Task exceeds the estimated duration, additional charges at the overtime rate will apply._
+
+**(d)** Disbursement Timing: _Supporters receive 80% of the total task fee. Disbursement occurs 24 hours after the Task is marked complete, provided that no disputes have been filed. Hora retains 20% as a platform service fee._
+
 **(e)** Optional Add-Ons: _Requesters may purchase enhanced support features (such as insurance coverage, priority dispute handling, or refund eligibility) during checkout for an additional fee._
+
 **(f)** Subscription Services: _Users may choose to enroll in a subscription plan offering premium features; such fees are billed separately._
-**(g)** Cancellations and No-Shows: _Requesters and Supporters are subject to specific cancellation and no-show penalties, which may include flat-rate fees, partial refunds in platform credit, or forfeiture of time credits. Exceptions (e.g., first-time forgiveness) may apply._
+
+**(g)** Cancellations and No-Shows: _Requesters and Supporters are subject to specific cancellation and no-show penalties, which may include flat-rate fees, partial refunds in platform credit, or forfeiture of prepaid amounts. Exceptions (e.g., first-time forgiveness) may apply._
 
 _Hora reserves the right to determine the form of any refund — whether to the original payment method or as platform credit — unless otherwise required by law._
 
