@@ -13,16 +13,16 @@ By accessing or using the Platform, you agree to be bound by these Terms and to 
 To ensure User safety during our pilot, all companionship tasks are subject to these strict limitations:
 
 - **Public Settings Only**: Companionship is defined as accompaniment on public routes or in public/semi-public locations (e.g., cafes, libraries, transit stops).
-- **No Private Residence Entry**: Supporters are strictly prohibited from entering a Requester’s private residence.
+- **No Private Residence Entry**: Supporters are strictly prohibited from entering a Requester's private residence.
 - **Non-Medical Scope**: Services are non-medical and non-caregiving. Supporters shall not handle medication, provide physical care, or assist with personal hygiene.
 - **No Minors**: Services involving or provided to minors are strictly prohibited during the Beta phase.
 - **Professional Conduct**: Intimate, sexual, or "dating-style" services are strictly prohibited.
 
-## B. Beta Shift Protocol & Contractor Status
+## B. Beta Supporter Compensation
 
-- **Availability Shifts**: Hora may offer fixed availability windows (e.g., 3-hour shifts) to ensure service coverage[cite: 563, 567].
-- **Shift Compensation**: Flat-rate pay (e.g., $30/hour) provided during these shifts is a fee for maintaining active availability. This does not create an employer-employee relationship.
-- **Supporter Autonomy**: Supporters remain independent business owners and retain the sole discretion to accept or decline any specific Task request.
+- **Task-Based Pay**: Supporters earn 80% of the total task fee upon completion. Fees are calculated based on the applicable base rate plus overtime, as described in Section 3(a).
+- **Availability Windows**: Hora may offer optional fixed availability windows to ensure service coverage. Participation is voluntary and does not create an employer-employee relationship.
+- **Supporter Autonomy**: Supporters remain independent contractors and retain sole discretion to accept or decline any Task request.
 
 ## C. Upfront Purchases & Reimbursement
 
@@ -33,7 +33,8 @@ To ensure User safety during our pilot, all companionship tasks are subject to t
 ## D. Operational Reporting
 
 - **Mandatory Tracking**: Supporters must use the "Clock In" and "Clock Out" features to record active time for safety and payment accuracy.
-- **Communication Traceability**: All task-related communication must stay on the Platform or authorized Beta group .
+- **Completion Photo**: Supporters must upload a completion photo via the Platform when marking a Task as complete.
+- **Communication Traceability**: All task-related communication must remain on the Platform or authorized Beta channels.
 
 ---
 
