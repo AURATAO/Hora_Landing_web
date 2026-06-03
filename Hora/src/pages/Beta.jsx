@@ -46,11 +46,11 @@ export default function Beta() {
             <h1 className="text-3xl font-bold text-accent">
               Hora NYC Beta
             </h1>
-            <p className="text-accent/60 text-sm leading-relaxed">
-              We're running an invite-only pilot in NYC to test our execution
-              flow, observe real-world use cases, and collect early feedback.
-              Participation is limited and personally managed by the Hora team.
-            </p>
+           <p className="text-accent/60 text-sm leading-relaxed">
+            We're hand-picking a small group of New Yorkers to try HO:RA
+            before we fully launch. Spots are limited and personally managed
+            by our team. 💚
+          </p>
           </div>
 
           {/* What is Hora */}
@@ -62,7 +62,7 @@ export default function Beta() {
             <ul className="space-y-2 text-sm text-accent/60">
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                <span><span className="text-accent font-medium">Requester</span> — get support with everyday tasks</span>
+               <span><span className="text-accent font-medium">Requester</span> — get support with everyday tasks: pickups, drop-offs, package returns, grocery runs, walking companion, and more</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
@@ -92,7 +92,7 @@ export default function Beta() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                NYC only
+                NYC only — Midtown Manhattan focus during beta
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
@@ -108,7 +108,7 @@ export default function Beta() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                Your feedback directly shapes what we build next
+              <span>Your feedback directly shapes what HO:RA becomes — we're building this with you 💚</span>
               </li>
             </ul>
           </section>
