@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-const BETA_CODE = "HORABETA";
+const BETA_CODE = "HORABETA3";
 const BETA_URL = "https://mvp.horaapp.co";
 
 export default function Beta() {
