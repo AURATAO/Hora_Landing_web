@@ -1,4 +1,4 @@
-_Last updated: March 12, 2026_
+_Last updated: July 18, 2026_
 
 These Terms of Use (“Terms”) govern your access to and use of the Hora platform (the “Platform”), which is owned and operated by Arcodiax LLC (“Arcodiax”, “we”, “our”, or “us”).
 By accessing or using the Platform, you agree to be bound by these Terms and to enter into a legally binding agreement with Arcodiax LLC.
@@ -20,7 +20,7 @@ To ensure User safety during our pilot, all companionship tasks are subject to t
 
 ## B. Beta Supporter Compensation
 
-- **Task-Based Pay**: Supporters earn 80% of the total task fee upon completion. Fees are calculated based on the applicable base rate plus overtime, as described in Section 3(a).
+- **Task-Based Pay**: Supporters earn 80% of the total task fee upon completion. Fees are calculated based on the applicable base fee plus the per-minute time rate, as described in Section 3(a).
 - **Availability Windows**: Hora may offer optional fixed availability windows to ensure service coverage. Participation is voluntary and does not create an employer-employee relationship.
 - **Supporter Autonomy**: Supporters remain independent contractors and retain sole discretion to accept or decline any Task request.
 
@@ -42,16 +42,16 @@ To ensure User safety during our pilot, all companionship tasks are subject to t
 
 ## A. Online Marketplace
 
-The Platform is a web- and app-based two-sided marketplace that facilitates connections between individuals and/or businesses seeking short-term services (“Supporter(s)”) and independent service providers (“Supporter(s)”), collectively referred to as "Users."
+The Platform is a web- and app-based two-sided marketplace that facilitates connections between individuals and/or businesses seeking short-term services ("Requester(s)") and independent service providers ("Supporter(s)"), collectively referred to as "Users."
 Supporters are independent business owners who perform Tasks under their own name or business entity, and not as employees or representatives of Hora. Supporters set their own rates for Tasks, subject to any pricing structures or minimums established by Hora. Hora does not deduct fees from these rates unless otherwise specified. Supporters utilize their own tools and operate independently, without control or direction from Hora. Supporters may:
-**(a)** maintain their own Supporter base,
+**(a)** maintain their own client base,
 **(b)** offer services through other platforms, including competitors,
-**(c)** accept or decline any Task or Supporter at their sole discretion.
-Supporters engage Supporters directly, and any contractual relationship exists solely between the Supporter and the Supporter. Hora is not a party to any such agreement.
+**(c)** accept or decline any Task or Requester at their sole discretion.
+Requesters engage Supporters directly, and any contractual relationship exists solely Requester and the Supporter. Hora is not a party to any such agreement.
 Any indication that a Supporter is “licensed,” “vetted,” “background checked,” “reliable,” “elite,” or similar designations only signifies that the Supporter has completed specific Platform registration steps or met certain criteria as defined by Hora. These terms:
-**(i)** are provided solely for informational purposes to assist Supporters in evaluating Supporters,
+**(i)** are provided solely for informational purposes to assist Requesters in evaluating Supporters,
 **(ii)** do not constitute an endorsement, guarantee, or representation by Hora as to the Supporter's qualifications, licensure, insurance, trustworthiness, or suitability for any particular Task.
-While the Platform may offer features to help streamline the selection of Supporters, Supporters are solely responsible for evaluating and selecting their Supporters and should conduct any due diligence they deem necessary prior to booking a Task.
+While the Platform may offer features to help streamline the selection of Supporters, Requesters are solely responsible for evaluating and selecting their Supporters and should conduct any due diligence they deem necessary prior to booking a Task.
 
 ## B. Hora’s Role
 
@@ -96,7 +96,7 @@ By accessing or using the Platform, you represent and warrant that you:
 If you are a Supporter, you additionally represent and warrant that you:
 
 1.  are operating as a sole proprietor, partnership, limited liability company, limited liability partnership, corporation, or other business entity when using the Platform;
-2.  are customarily engaged in an independently established business of the same nature as the services performed for Supporters through the Platform, and maintain an independent Supporterele;
+2.  are customarily engaged in an independently established business of the same nature as the services performed for Supporters through the Platform, and maintain an independent clientele;
 3.  have the legal right to work in the jurisdiction(s) where you perform Tasks;
 4.  have and will maintain, at your own expense, all licenses, permits, and registrations required under applicable laws to perform your services (including, as applicable, a business license, contractor’s license, or business tax registration);
 5.  have and will maintain all insurance necessary to operate your business and perform Tasks in a safe and lawful manner;
@@ -108,7 +108,7 @@ If you are a Supporter, you additionally represent and warrant that you:
 
 ### A. Account Registration and Identity Verification
 
-_To access and use the Platform, all Users—whether acting as a Supporter or a Supporter—must register and create an account, providing complete, accurate, and up-to-date information, including but not limited to your full legal name, mailing address, email address, and telephone number. You agree to update this information promptly to ensure its continued accuracy. Failure to do so may result in suspension or termination of your access to the Platform._
+_To access and use the Platform, all Users—whether acting as a Requester or a Supporter—must register and create an account, providing complete, accurate, and up-to-date information, including but not limited to your full legal name, mailing address, email address, and telephone number. You agree to update this information promptly to ensure its continued accuracy. Failure to do so may result in suspension or termination of your access to the Platform._
 
 _As a condition of registration and continued use of the Platform, all Users are required to complete identity verification through a third-party service provider, which may include, without limitation:_
 
@@ -131,7 +131,7 @@ _Hora reserves the right to take any action it deems necessary, including but no
 ### C. Supporter Onboarding
 
 **(i) Background Checks.**  
-_To the extent permitted by applicable law, all Users (including both Supporters and Supporters) may be subject to a review process before gaining access to, or while continuing to use, the Platform. This process may include, but is not limited to, identity verification and criminal background checks, conducted through trusted third-party service providers (“Background Checks”)._
+_To the extent permitted by applicable law, all Users (including Requesters and Supporters) may be subject to a review process before gaining access to, or while continuing to use, the Platform. This process may include, but is not limited to, identity verification and criminal background checks, conducted through trusted third-party service providers (“Background Checks”)._
 
 _By using the Platform, you acknowledge and agree that you may be required to undergo such Background Checks as a condition of access or continued participation, and you authorize Hora and its third-party providers to collect, process, and use your personal information for these purposes._
 
@@ -154,9 +154,9 @@ _Supporters are solely responsible for determining whether a Supporter is approp
 
 ### D. Service Agreement
 
-_The Platform enables Users to post, discover, and accept Tasks. Once a Supporter accepts a Task invitation via the Platform interface, the Supporter and the Supporter may communicate further through the in-app messaging feature (the “Chat Thread”) to confirm the scope, timing, location, and any relevant considerations (e.g., potential hazards or access instructions)._
+_The Platform enables Users to post, discover, and accept Tasks. Once a Supporter accepts a Task invitation via the Platform interface, the Requester and the Supporter may communicate further through the in-app messaging feature (the “Chat Thread”) to confirm the scope, timing, location, and any relevant considerations (e.g., potential hazards or access instructions)._
 
-_Upon confirmation by the Supporter, a legally binding agreement (“Service Agreement”) is formed between the Supporter and the Supporter. This includes the Task details, pricing, and any additional terms mutually agreed upon within the Chat Thread. The Service Agreement is solely between the two Users. Hora is not a party to any Service Agreement and assumes no liability arising from such contracts._
+_Upon confirmation by the Supporter, a legally binding agreement (“Service Agreement”) is formed between the Requester and the Supporter. This includes the Task details, pricing, and any additional terms mutually agreed upon within the Chat Thread. The Service Agreement is solely between the two Users. Hora is not a party to any Service Agreement and assumes no liability arising from such contracts._
 
 _Supporters acknowledge and agree that they act as independent service providers exercising their own business judgment. They assume the risk of profit or loss and are solely responsible for fulfilling their contractual obligations._
 
@@ -194,7 +194,7 @@ _Unless expressly stated otherwise, all fees paid on the Platform — including,
 
 _By using the Platform, Users agree to the following general principles, subject to more detailed terms in the Supplemental Terms:_
 
-**(a)** Minimum Booking Requirement: _All Tasks are subject to a base fee determined by task type. Base fees are as follows: $12.00 USD for Quick Tasks (errands, delivery, grocery, laundry, queue); $18.00 USD for Extended Tasks (open-ended or tasks exceeding 90 minutes); $25.00 USD for Companionship Tasks. An additional overtime rate of $0.50 USD per minute applies to all time exceeding 15 minutes of active work._
+**(a)** Minimum Booking Requirement: _All Tasks are subject to a base fee determined by task type. Base fees are as follows: $12.00 USD for Quick Tasks (errands, delivery, grocery, laundry, queue); $18.00 USD for Extended Tasks (open-ended or tasks exceeding 90 minutes); $25.00 USD for Companionship Tasks. In addition to the base fee, a time-based rate of $0.50 USD per minute applies to all active work time, as recorded through the Platform's Clock In and Clock Out features._
 
 **(b)** Prepayment: _Once a Task is matched and confirmed by a Supporter, the Requester is required to prepay for the estimated duration at the applicable base fee and rate._
 
@@ -297,7 +297,7 @@ _To the extent permitted by law, you waive all moral rights and agree not to ass
 **Feedback and Ratings**  
 _The Platform may host User Generated Content in the form of reviews, ratings, or feedback (“Feedback”) about specific Supporters or Requesters. Such Feedback represents the subjective opinions of Users and not those of Hora. Hora does not independently verify, endorse, or evaluate any Feedback._
 
-_Hora reserves the right, but not the obligation, to monitor, review, edit, or remove any Feedback at its sole discretion, including for violations of these Terms or applicable law. You may request removal of a review that violates the Agreement or the Hora Ratings and Reviews Guidelines by contacting us at help.hora.co._
+_Hora reserves the right, but not the obligation, to monitor, review, edit, or remove any Feedback at its sole discretion, including for violations of these Terms or applicable law. You may request removal of a review that violates the Agreement or the Hora Ratings and Reviews Guidelines by contacting us at info@my-hora.com._
 
 _You acknowledge that Feedback helps maintain trust on the Platform and agree not to post any intentionally false, defamatory, discriminatory, or misleading information. Hora may suspend or terminate accounts found to be abusing the Feedback system._
 
@@ -313,7 +313,7 @@ _All Hora names, logos, and trademarks (the “Marks”)—including but not lim
 **(B) Authorized Use of Hora Marks**  
 _Use of Hora’s names, logos, or other brand identifiers (the “Marks”) is strictly prohibited without prior written consent. If you wish to use the Marks for press, partnerships, marketing, co-branding, or other promotional purposes, you must obtain an express license from Hora._
 
-_To request permission, please contact us at contact@hora.co or info@arcodiax.com with a detailed description of the intended use. Any such usage must comply with Hora’s Brand Guidelines (if provided) and may be revoked at any time at Hora’s sole discretion._
+_To request permission, please contact us at info@my-hora.com with a detailed description of the intended use. Any such usage must comply with Hora’s Brand Guidelines (if provided) and may be revoked at any time at Hora’s sole discretion._
 
 _Unauthorized use of the Marks may result in legal action and/or termination of your account._
 
