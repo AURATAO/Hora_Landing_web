@@ -65,7 +65,6 @@ export default function Privacy() {
                             ⚠️ Hora is currently operating in a limited beta phase. Certain features, workflows, and policy sections may be updated as we continue testing and refining the platform.
                         </p>
                         <h1 className='text-3xl font-semibold text-accent  '>Hora Privacy Policy</h1>
-                        <h5 className="text-sm text-accent/60 italic border-accent/30 mt-4">Last updated: March 29, 2026</h5>
                     </div>
                     <div className='flex flex-col justify-center items-start mx-8 md:mx-20 lg:mx-30 text-accent'>
                         <ReactMarkdown
