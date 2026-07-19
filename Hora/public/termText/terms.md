@@ -47,7 +47,7 @@ Supporters are independent business owners who perform Tasks under their own nam
 **(a)** maintain their own client base,
 **(b)** offer services through other platforms, including competitors,
 **(c)** accept or decline any Task or Requester at their sole discretion.
-Requesters engage Supporters directly, and any contractual relationship exists solely Requester and the Supporter. Hora is not a party to any such agreement.
+Requesters engage Supporters directly, and any contractual relationship exists solely between Requester and the Supporter. Hora is not a party to any such agreement.
 Any indication that a Supporter is “licensed,” “vetted,” “background checked,” “reliable,” “elite,” or similar designations only signifies that the Supporter has completed specific Platform registration steps or met certain criteria as defined by Hora. These terms:
 **(i)** are provided solely for informational purposes to assist Requesters in evaluating Supporters,
 **(ii)** do not constitute an endorsement, guarantee, or representation by Hora as to the Supporter's qualifications, licensure, insurance, trustworthiness, or suitability for any particular Task.
@@ -61,7 +61,7 @@ Users acknowledge and agree that:
 **(i)** perform Tasks or employ individuals to perform Tasks;
 **(ii)** supervise, direct, or control Supporters’ work, including work location, schedule, tools, or expenses;
 **(iii)** guarantee the quality, timing, legality, or any aspect of Tasks or Users, including their conduct, qualifications, or communications.
-**(b)** The formation of a Service Agreement between a Supporter and a Supporter does not create any employment, partnership, or agency relationship with Hora. Users do not have authority to act on behalf of Hora or modify any part of the Platform’s fee structure.
+**(b)** The formation of a Service Agreement between a Requester and a Supporter does not create any employment, partnership, or agency relationship with Hora. Users do not have authority to act on behalf of Hora or modify any part of the Platform’s fee structure.
 Hora is not responsible for and shall not be held liable for any employment-related obligations, including but not limited to workers’ compensation, payroll taxes, Social Security, Medicare, unemployment insurance, or any federal, state, or local tax obligations. Supporters are solely responsible for all income taxes and contributions applicable to themselves and any individuals they engage in connection with Tasks. Each User is solely responsible for correctly classifying any individuals they engage, in accordance with applicable law.
 
 ## C. License
@@ -150,13 +150,13 @@ _Supporters are solely responsible for ensuring that they comply with all applic
 
 _If you have questions about how national, state, or local laws apply to a specific Task, you are encouraged to seek independent legal advice before posting or performing such Task._
 
-_Supporters are solely responsible for determining whether a Supporter is appropriately qualified to perform the Task, and for confirming that all required licenses, permits, or registrations have been obtained._
+_Requesters are solely responsible for determining whether a Supporter is appropriately qualified to perform the Task, and for confirming that all required licenses, permits, or registrations have been obtained._
 
 ### D. Service Agreement
 
-_The Platform enables Users to post, discover, and accept Tasks. Once a Supporter accepts a Task invitation via the Platform interface, the Requester and the Supporter may communicate further through the in-app messaging feature (the “Chat Thread”) to confirm the scope, timing, location, and any relevant considerations (e.g., potential hazards or access instructions)._
+_The Platform enables Users to post, discover, and accept Tasks. Once a Supporter accepts a Task invitation via the Platform interface, the Requester and the Supporter may communicate further through the in-app messaging feature (the “Chat Thread”)  to coordinate details such as scope, timing, location, and any relevant considerations (e.g., potential hazards or access instructions)._
 
-_Upon confirmation by the Supporter, a legally binding agreement (“Service Agreement”) is formed between the Requester and the Supporter. This includes the Task details, pricing, and any additional terms mutually agreed upon within the Chat Thread. The Service Agreement is solely between the two Users. Hora is not a party to any Service Agreement and assumes no liability arising from such contracts._
+_Upon a Supporter's acceptance of a Task, a legally binding agreement ("Service Agreement") is formed between the Requester and the Supporter. This includes the Task details, pricing, and any additional terms mutually agreed upon within the Chat Thread. The Service Agreement is solely between the two Users. Hora is not a party to any Service Agreement and assumes no liability arising from such contracts._
 
 _Supporters acknowledge and agree that they act as independent service providers exercising their own business judgment. They assume the risk of profit or loss and are solely responsible for fulfilling their contractual obligations._
 
@@ -198,7 +198,7 @@ _By using the Platform, Users agree to the following general principles, subject
 
 **(b)** Prepayment: _Once a Task is matched and confirmed by a Supporter, the Requester is required to prepay for the estimated duration at the applicable base fee and rate._
 
-**(c)** Time Adjustments: _Task fees are calculated based on actual time logged by the Supporter via the Platform's Clock In and Clock Out features. If the Task is completed in less time than estimated, the Requester is charged only for actual time worked. If the Task exceeds the estimated duration, additional charges at the overtime rate will apply._
+**(c)** Time Adjustments: _Task fees are calculated based on actual time logged by the Supporter via the Platform's Clock In and Clock Out features. If the Task is completed in less time than estimated, the Requester is charged only for actual time worked. If the Task exceeds the estimated duration, additional charges at the time-based rate will apply._
 
 **(d)** Disbursement Timing: _Supporters receive 80% of the total task fee. Disbursement occurs 24 hours after the Task is marked complete, provided that no disputes have been filed. Hora retains 20% as a platform service fee._
 

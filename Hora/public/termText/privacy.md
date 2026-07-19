@@ -1,3 +1,4 @@
+_Last updated: July 18, 2026_
 # 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
@@ -23,6 +24,8 @@ We may collect and use Personal Information during the Beta Program not only to 
 
 Unless otherwise stated, participation in the Beta Program remains subject to this Privacy Policy and the Hora Terms of Service.
 
+**Features Not Yet Active During Beta.** Certain data practices described in this Privacy Policy relate to features that are not yet active during the Beta Program. In particular, in-app payment processing, payout disbursement, formal identity-document verification, and third-party background checks (including through providers such as Stripe, Veriff, or Checkr) have not yet launched. We do not currently collect payment card numbers, banking details, tax information, or identity documents through the Platform. During the Beta Program, task fees may be handled through off-platform arrangements communicated to you directly. The relevant sections of this Policy will apply if and when those features launch, and we will update this Policy accordingly.
+
 # 2. General Terms
 
 In this Privacy Policy:
@@ -46,7 +49,8 @@ Hora collects certain personally identifiable information about Users ("Personal
 - Identity Information: To ensure a safe experience, all users—including both Requesters and Supporters—are required to complete identity verification through trusted third-party providers such as Stripe and Veriff. This may include your date of birth, national ID number, residential address, and verification documents (e.g., passport, national ID card), and may also include background check data where permitted by applicable law.
 - Financial Information: In order to process payments or payouts, we may collect your tax information, banking details (e.g., account and routing number), and taxpayer identification number. Payment data is securely processed and stored through third-party payment processors.
 - Task Details: When using the platform, you may be asked to provide specific task information, such as task description, estimated hours, preferred time and date, and location.
-- Location Information: To ensure accurate task coordination and safety, we may collect approximate or precise location data via IP address, GPS, or device sensors. Users may be required to share real-time location with Hora or other Users, particularly for check-in/out verification and in-person task coordination.
+- Location Information: To ensure accurate task coordination and safety, we may collect approximate or precise location data via IP address, GPS, or device sensors. Users may be required to share real-time location with Hora or other Users, particularly for check-in/out verification and in-person task coordination. 
+- Photos and Camera Access: With your permission, we access your device's camera and photo library so that you can upload a profile photo and, for Supporters, task completion photos. These images are stored on our infrastructure and are visible to the relevant Users (e.g., a completion photo is visible to the Requester of that Task).
 - Promotional Information: Participation in optional services like newsletters, surveys, or contests may result in the collection of additional data used to send targeted communications or manage the promotional program.
 - Employment and Qualifications (Supporters only): We may collect relevant experience, education, skills, certifications, and verification documents necessary for tasks.
 - Message Content: We collect content from messages you exchange within the platform, including chat between Requesters and Supporters, and inquiries submitted via email or support forms.
@@ -125,6 +129,8 @@ We engage vetted third-party service providers to perform services on our behalf
 - Onboarding and registration workflows
 - Security monitoring and fraud prevention
 - Legal and compliance consultation
+
+**Current Service Providers.** As of the date of this Policy, our principal service providers include: Supabase (database hosting, authentication, and file storage, including profile photos and task completion photos); Google (sign-in authentication and mapping/travel-time estimation); Postmark (transactional email delivery); TalkJS (in-app messaging infrastructure — message content you exchange with other Users is processed and stored by TalkJS on our behalf); Anthropic (AI-assisted processing — when you use the AI task-creation feature, the task description text you enter is processed by Anthropic's Claude API to structure your request); and our cloud hosting providers (Render and Vercel). This list may change as the Platform evolves; material changes will be reflected in updates to this Policy.
 
 ### c. Promotional Activities and Offers
 
@@ -214,7 +220,7 @@ If you have any questions about our this policy or our privacy practices, you ma
 > Attn: Hora Team  
 > 254 Chapman Rd, Ste 208 #23317  
 > Newark, Delaware 19702, USA  
-> Email: liang.you@horaapp.co
+> Email: info@my-hora.com
 
 # 9. Jurisdiction-Specific Provisions
 
@@ -238,7 +244,7 @@ To the extent such practices are interpreted as a “sale” or “sharing,” y
 You may exercise your opt-out rights by:
 
 - Clicking the “Do Not Sell or Share My Personal Information” link available in the footer of our website, or
-- Contacting us directly at liang.you@horaapp.com with your request.
+- Contacting us directly at info@my-hora.com with your request.
 
 We will process valid requests in accordance with applicable state laws. Please note that we may request additional information to verify your identity and residency before processing certain requests.
 
