@@ -95,7 +95,7 @@ export default function Home() {
                     <span className="text-sm font-medium text-primary font-secondary">Free beta trial · NYC 🗽</span>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/70 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
-                    <span className="text-sm font-medium text-white font-secondary"> Beta trial starts June 4</span>
+                    <span className="text-sm font-medium text-white font-secondary"> Beta Round 3 coming soon </span>
                   </div>
                 </div>
 
