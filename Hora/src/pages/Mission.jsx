@@ -326,7 +326,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                       <img 
                         src="/img/horaImage5.png" 
                         alt="Hora supporter delivering in NYC"
-                        className="w-full h-auto rounded-3xl transform scale-110 hover:scale-115 transition-transform duration-700 origin-center"
+                        className="w-full h-auto rounded-4xl transform scale-110 hover:scale-115 transition-transform duration-700 origin-center"
                         style={{
                           objectFit: 'cover',
                           objectPosition: 'center center'

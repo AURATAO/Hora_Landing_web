@@ -83,7 +83,7 @@ export default function Home() {
             src="/img/horaImage4.png"
             alt="Hora supporter delivering in NYC"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ transform: 'scale(1.2) translate(4%, -2%)', transformOrigin: 'center' }}
+            style={{ transform: 'scale(1.2) translate(4%, 5%)', transformOrigin: 'center' }}
           />
           <div className="absolute inset-0 bg-linear-to-br from-primary/40 via-primary/20 to-transparent" />
           <div className="relative h-full flex items-center justify-center z-10 pt-20 lg:pt-24">
