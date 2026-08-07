@@ -99,7 +99,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                 <h2 className='text-xl italic text-white/80'>Your time is worth more than errands.</h2>
+                 <h2 className='text-xl italic text-white/80'>Time has value.</h2>
 
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6">
                   A real person,
@@ -112,28 +112,15 @@ export default function Home() {
                 </p>
 
                
-                <div className="flex flex-wrap items-center gap-2 mb-4">
+                {/* <div className="flex flex-wrap items-center gap-2 mb-4">
                   {["Same-day delivery", "Grocery runs", "Laundry drop-off"].map((label) => (
                     <div key={label} className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
                       <span className="text-white/90 font-secondary text-sm">{label}</span>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
         
-              </div>
-            </div>
-          </div>
-
-          {/* Floating stat card */}
-          <div className="hidden md:flex absolute bottom-20 right-8 lg:bottom-32 lg:right-20 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-4 border border-white/20 animate-float z-10">
-            <div className="hidden lg:flex items-center gap-3">
-              <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <div>
-                <p className="text-xs text-primary/60 font-secondary">Avg Response</p>
-                <p className="text-lg font-bold text-primary">5 min</p>
               </div>
             </div>
           </div>
@@ -190,7 +177,7 @@ export default function Home() {
               <div className="w-full lg:w-1/2 space-y-12">
                 {[
                   { n: "01", title: "Sign Up & Verify", desc: "Create your account and complete a quick sign-up. Get instant access to our trusted community." },
-                  { n: "02", title: "Tap QuickRequest", desc: "Describe what you need in one tap. Whether it's groceries, errands, or companionship—we've got you covered." },
+                  { n: "02", title: "Tap Post a Task", desc: "Describe what you need in one tap. Whether it's groceries, errands, or companionship—we've got you covered." },
                   { n: "03", title: "Auto-Match Nearby", desc: "We connect you with a verified supporter nearby. Average match time: 2 minutes." },
                   { n: "04", title: "Track & Pay", desc: "Real-time tracking keeps you updated. Pay only for minutes used with automatic refunds for early completions." },
                 ].map(({ n, title, desc }, i) => (
@@ -280,8 +267,8 @@ export default function Home() {
         <div className="w-full bg-linear-to-b from-white to-accent py-20 lg:py-32">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">Who Uses HO:RA?</h2>
-              <p className="text-lg text-primary/70 font-secondary">Join thousands already getting things done smarter</p>
+              <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">Who uses HO:RA?</h2>
+              <p className="text-lg text-primary/70 font-secondary">Join thousands of people who have chosen a smarter way to magnage their time.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden">
@@ -292,7 +279,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-primary">Supporter</h3>
                   </div>
                   <ul className="space-y-4 mb-8">
-                    {[["Who", "Students, freelancers, part-timers"], ["Why", "Turn spare time into income—help with groceries, yard work, or simply share an hour at the park."], ["How to start", "Sign up + verify identity"]].map(([label, text]) => (
+                    {[["Why", "Turn spare time into income—help with groceries, yard work, or simply share an hour at the park."], ["How to start", "Sign up + verify identity"]].map(([label, text]) => (
                       <li key={label} className="flex items-start gap-3">
                         <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                           <svg className="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
@@ -316,7 +303,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-primary">Requester</h3>
                   </div>
                   <ul className="space-y-4 mb-8">
-                    {[["Who", "Busy professionals, families, teams"], ["Why", "Get groceries, handle chores, or simply need company—post it and reclaim your time."], ["How to start", "QuickRequest or Schedule a task"]].map(([label, text]) => (
+                    {[ ["Why", "Get groceries, handle chores, or simply need company—post it and reclaim your time."], ["How to start", "ASAP or Schedule a task"]].map(([label, text]) => (
                       <li key={label} className="flex items-start gap-3">
                         <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                           <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>

@@ -8,9 +8,9 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 const news = [
   {
     tag: "Beta",
-    date: "June 4, 2026",
-    headline: "Round 2 is coming.",
-    body: "After 60+ inquiries and sign-ups from our first beta, we're launching the next round in Midtown Manhattan. Limited spots — be early.",
+    date: "July, 2026",
+    headline: "Round 3 is coming.",
+    body: "After 120+ inquiries and sign-ups from our first beta, we're launching the next round in Midtown Manhattan. Limited spots — be early.",
     color: "bg-[#3A5A2D]",
     textColor: "text-[#E1B145]",
     tagColor: "bg-[#E1B145] text-[#3A5A2D]",

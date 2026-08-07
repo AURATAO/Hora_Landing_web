@@ -16,30 +16,25 @@ const QuoteIcon = () => (
 );
 
 const testimonials = [
-  {
-    quote: "I moved to NYC two months ago and needed stuff from the Asian grocery store — things I couldn’t find anywhere nearby. Found someone on Hora who literally went to the Taiwanese market and brought everything to my door. Felt like having a friend in the city already.",
-    name: "Jamie L.",
-    location: "Astoria, NY · Grocery run",
+{
+    quote: "Knicks were playing at MSG and I couldn't get off work in time to line up. Posted on Hora at 3pm, someone got there by 4:30 and held a spot for almost two hours. Texted me photos the whole time so I knew it was real. Got my ticket, missed zero minutes of work.",
+    name: "Laura T.",
+    location: "Midtown, NY · Ticket line",
   },
   {
-    quote: "I run a small cake business and had a last-minute delivery fall through. Posted on Hora, someone showed up in under 10 minutes, delivered the order fresh, and honestly charged less than any courier app. Saved the whole day.",
-    name: "Mei C.",
-    location: "Brooklyn, NY · Last-minute delivery",
+    quote: "My dryer died on a Sunday and the laundromat two blocks over doesn't do pickup. Found a supporter on Hora who did three loads for me and folded everything — took him about 4 hours total, charged by time so it wasn't crazy expensive. Would've been a whole afternoon wasted otherwise.",
+    name: "Priya S.",
+    location: "Astoria, NY · Laundry",
   },
   {
-    quote: "I had a spare 15 minutes between meetings and figured I’d try supporting on Hora. Helped someone carry groceries upstairs. Made a bit of pocket money, nothing crazy — but it was fun and weirdly satisfying. Now I do it a few times a week.",
-    name: "Marco B.",
-    location: "Milan · Supporter — errands",
+    quote: "Landlord needed my signature on paperwork in Jersey City and I was stuck in back-to-back calls. Someone on Hora picked it up from my apartment, took the PATH train over, dropped it off, sent me a photo of the receipt. Small thing but it would've eaten my whole evening.",
+    name: "Wei L.",
+    location: "Lower East Side, NY · Errand/delivery",
   },
   {
-    quote: "Needed someone to help me assemble IKEA furniture. Found a supporter nearby, he came over, we chatted the whole time — done in an hour. Way cheaper than a professional service and honestly more fun.",
-    name: "Sofia R.",
-    location: "Manhattan, NY · Assembly help",
-  },
-  {
-    quote: "I was visiting Milan for a week and needed a local sim card and some errands sorted. Hora connected me with someone who spoke English and knew the city. Felt like having a local friend show me around.",
-    name: "Daniel K.",
-    location: "Milan · Local errands",
+    quote: "Was in back-to-back meetings but needed to know if Whole Foods still had something in stock before I made the trip. Posted on Hora, Daniele was in the store within 10 minutes and sent photos of the shelf to confirm, then asked if I wanted him to grab anything else while he was there. Faster than texting a friend would've been.",
+    name: "Grace H.",
+    location: "Upper West Side, NY · Real-time check/pickup",
   },
 ];
 
