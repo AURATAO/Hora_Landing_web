@@ -245,7 +245,7 @@ _In such cases, Hora may, at its sole discretion:_
 **(a)** _Temporarily suspend your access to the Platform while investigating the issue; and/or_
 **(b)** _Permanently deactivate your account or restrict your use of certain Platform features if a breach is confirmed._
 
-_Where required by applicable law, Hora will provide you with written notice of its determination, and you may submit an appeal within 14 days of receiving such notice by contacting us at the address provided in Section 22 (Notices), including your reasons and any supporting information._
+_Where required by applicable law, Hora will provide you with written notice of its determination, and you may submit an appeal within 14 days of receiving such notice by contacting us at the address provided in Section 17 (Contact Information), including your reasons and any supporting information._
 
 _If your account is suspended or deactivated, you agree that you may not create a new account under your own or any other identity, name, or business, nor may you access the Platform through another User's account._
 
@@ -454,7 +454,7 @@ _Unless otherwise specified in the Agreement, all agreements, notices, disclosur
 
 _Notwithstanding the foregoing, any Notices to which the Agreement refers will be sent to you electronically (including, without limitation, by email or by posting Notices on the Sites), and you consent to receive Notices in this manner. All notices that we provide to you electronically satisfy any legal requirement that such communications be in writing._
 
-_If you have any questions about these Terms of Service or about the Platform, please contact us at info@my-hora.com._
+_If you have any questions about these Terms of Service or about the Platform, please contact us here._
 
 # 20. Consent to Electronic Signatures
 
@@ -519,21 +519,9 @@ _The terms in this Section apply to Users in the noted jurisdictions. To the ext
 **New York Residents**  
 _Notwithstanding the general choice of law provision in Section 21, if you are a resident of the State of New York or if a Task is performed within the State of New York, the Agreement and any dispute arising from it may be governed, to the extent required by applicable local law, by the laws of the State of New York. In such cases, claims may be subject to the New York State arbitration and consumer protection regulations. However, unless prohibited by applicable law, all claims will still be resolved individually through binding arbitration as set forth in Section 24(A), and the Class Action Waiver and Representative PAGA Waiver will continue to apply._
 
-**(A) Residents of the United States of America — Arbitration Agreement**
+**(A) Residents of the United States of America**
 
-_(1) Agreement to Arbitrate. You and Hora mutually agree that any Dispute (as defined in Section 15) that cannot be resolved informally under Section 15 shall be resolved exclusively through final and binding arbitration on an individual basis, rather than in court. This Arbitration Agreement is governed by the Federal Arbitration Act (9 U.S.C. § 1 et seq.). YOU AND HORA EACH WAIVE THE RIGHT TO A TRIAL BY JURY._
-
-_(2) Exceptions. Either party may (i) bring an individual claim in small claims court in the county of your residence, so long as the claim remains in that court and is pursued on an individual basis, and (ii) seek injunctive or other equitable relief in a court of competent jurisdiction to protect its intellectual property rights or prevent unauthorized use of the Platform._
-
-_(3) Rules and Administration. The arbitration will be administered by the American Arbitration Association ("AAA") under its Consumer Arbitration Rules then in effect, as modified by this Arbitration Agreement. The AAA rules are available at www.adr.org. If the AAA is unavailable, the parties will select an alternative arbitral forum, and if they cannot agree, a court will appoint one. Arbitration fees will be allocated as provided in the AAA Consumer Arbitration Rules; if your claim is for less than $10,000 USD, Hora will pay the filing, administration, and arbitrator fees other than the initial consumer filing fee, unless the arbitrator finds the claim frivolous._
-
-_(4) Procedure. Arbitration will be conducted by a single arbitrator in the county of your residence, or, at your election, by telephone, video conference, or written submissions. The arbitrator has exclusive authority to resolve any dispute relating to the interpretation, applicability, enforceability, or formation of this Arbitration Agreement, except that a court shall decide any dispute concerning the enforceability of the Class Action Waiver in subsection (5). The arbitrator may award the same individual relief that a court could award, and the award may be entered in any court of competent jurisdiction._
-
-_(5) Class Action Waiver; Non-Individualized Relief. YOU AND HORA AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING. The arbitrator may not consolidate more than one person's claims and may not preside over any form of class, collective, or representative proceeding, and may award relief only in favor of, and to the extent necessary to resolve, the individual claim before them. This subsection constitutes the "Agreement Prohibiting Class Actions and Non-Individualized Relief" referenced in Section 23(c). If this subsection is found unenforceable as to a particular Dispute, then that Dispute (and only that Dispute) shall proceed in court, and all other Disputes remain subject to arbitration._
-
-_(6) Opt-Out. You may opt out of this Arbitration Agreement within thirty (30) days after you first accept these Terms or create your account, whichever is earlier, by sending written notice to info@my-hora.com or to Arcodiax LLC, Attn: Hora Team, 254 Chapman Rd, Ste 208 #23317, Newark, Delaware 19702 US. Your notice must include your full name, the email address associated with your account, and a clear statement that you wish to opt out of arbitration. Opting out of this Arbitration Agreement does not affect any other provision of these Terms. If you opt out, Disputes will be resolved in accordance with Section 21 (Governing Law)._
-
-_(7) Survival. This Arbitration Agreement survives termination of this Agreement and your relationship with Hora._
+- _Please see the detailed subsections on Dispute Resolution, Arbitration, Class Action Waiver, Representative PAGA Waiver, Arbitration Rules, Costs, Exceptions, Severability, and Opt-Out, as fully set forth in the Agreement above. This section governs how you and Hora will resolve disputes, generally requiring arbitration on an individual basis._
 
 **(B) Residents of a Country other than the United States of America**
 
