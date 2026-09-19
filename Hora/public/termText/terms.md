@@ -104,7 +104,7 @@ If you are a Supporter, you additionally represent and warrant that you:
 5.  have and will maintain all insurance necessary to operate your business and perform Tasks in a safe and lawful manner;
 6.  will respond to invitations promptly; will only offer and perform Tasks for which you possess the necessary expertise; and will deliver services professionally, safely, and as agreed with the Requester through the Chat Thread;
 7.  will promptly disclose to Hora in writing any potentially relevant criminal convictions (excluding minor traffic or parking violations) that arise during your use of the Platform;
-8.  acknowledge and agree that, as a condition of accessing and using the Platform as a Supporter, you may be required to complete identity verification and, where applicable, background checks conducted by Hora or its third-party service providers (which may include, without limitation, Stripe Identity and Checkr). You authorize Hora and its third-party providers to collect, process, and retain your personal information for the purposes of verifying your identity and determining your eligibility to perform Tasks. Failure to complete or pass any required verification or background check may result in the suspension or termination of your access to the Platform.
+8.  acknowledge and agree that, as a condition of accessing and using the Platform as a Supporter, you may be required to complete identity verification and, where applicable, background checks conducted by Hora or its third-party service providers (which may include, without limitation, Checkr). You authorize Hora and its third-party providers to collect, process, and retain your personal information for the purposes of verifying your identity and determining your eligibility to perform Tasks. Failure to complete or pass any required verification or background check may result in the suspension or termination of your access to the Platform.
 
 # 2. Use of the Platform
 
@@ -118,7 +118,7 @@ _As a condition of registration and continued use of the Platform, Users may be 
 **(b)** Completing a real-time facial recognition scan (selfie check);
 **(c)** Providing additional supporting documents, biometric data, or verification steps as required by our verification partner.
 
-_By registering, you authorize Hora and its designated third-party providers (which may include Stripe Identity and Checkr) to collect, process, and retain your personal information for the purposes of identity verification, fraud prevention, and determining your eligibility to use the Platform._
+_By registering, you authorize Hora and its designated third-party providers (which may include Checkr) to collect, process, and retain your personal information for the purposes of identity verification, fraud prevention, and determining your eligibility to use the Platform._
 
 _Hora reserves the right to deny, suspend, or revoke access to any User who fails or refuses to complete any required verification process, or where verification results raise reasonable safety, integrity, or legal concerns._
 
