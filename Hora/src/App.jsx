@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import FQA from "./pages/FQA";
 import JoinPage from "./pages/JoinPage";
 import Beta from "./pages/Beta";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 import GateModal from "./pages/components/GateModal";
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/FQA" element={<FQA />} />
           <Route path="/Join" element={<JoinPage />} />
           <Route path="/beta" element={<Beta />} />
+          <Route path="/support" element={<Support />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

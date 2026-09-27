@@ -11,6 +11,7 @@ export default function GateModal() {
 
   useEffect(() => {
     if (location.pathname === "/beta") return;
+    if (location.pathname.toLowerCase().startsWith("/support")) return;
     if (localStorage.getItem(GATE_KEY)) return;
     setVisible(true);
   }, [location.pathname]);
