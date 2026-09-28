@@ -316,7 +316,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
 
                 {/* Status Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full border border-primary/10" data-aos="fade-up" data-aos-delay="700">
-                  <span className="text-sm font-medium text-primary/70">MVP in development</span>
+                  <span className="text-sm font-medium text-primary/70">Now operating in New York City</span>
                 </div>
               </div>
 

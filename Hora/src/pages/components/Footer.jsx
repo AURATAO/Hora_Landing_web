@@ -21,7 +21,7 @@ export default function Footer() {
                               </div>
                               </Link></h2>
                 <div className="flex flex-col justify-end">
-                    <p className='text-accent text-md'>© 2025 Hora. All rights reserved.</p>
+                    <p className='text-accent text-md'>© {new Date().getFullYear()} Hora. All rights reserved.</p>
                 </div>
                 </div>
                 <div className='pt-5 w-full md:w-1/3 '>
@@ -49,7 +49,7 @@ export default function Footer() {
                 </div>
                 </div>
                 <div className='pt-10 w-full text-center lg:hidden'>
-                    <p className='text-accent text-md'>© 2025 Hora. All rights reserved.</p>
+                    <p className='text-accent text-md'>© {new Date().getFullYear()} Hora. All rights reserved.</p>
                 </div>
             </div>
         </footer>

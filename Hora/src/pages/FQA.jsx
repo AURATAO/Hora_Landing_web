@@ -99,7 +99,7 @@ export default function FQA() {
     <section id="main-content" className="bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 px-4">
       <div className="max-w-4xl mx-auto">
         <DemoModal show={showDemoModal===true} onClose={() => setShowDemoModal(false)} />
-        <h3 className='text-accent font-base text-sm pb-4 text-center'>🚧 Currently building our MVP. Request a demo to learn more.</h3>
+        <h3 className='text-accent font-base text-sm pb-4 text-center'>HO:RA is currently available in New York City. Request a demo to learn more.</h3>
         <h1 className="text-4xl font-bold text-accent text-center mb-12">FAQ</h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => {
