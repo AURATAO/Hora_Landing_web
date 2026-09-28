@@ -146,7 +146,7 @@ export default function JoinModal({ role, onClose }) {
             </Link>{" "}
             and{" "}
             <Link to="/terms" className="underline text-secondary">
-              Terms of Use
+              Terms of Service
             </Link>.
           </span>
         </div>

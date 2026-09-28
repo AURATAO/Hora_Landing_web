@@ -24,7 +24,7 @@ export default function Privacy() {
                     <DemoModal show={showDemoModal === true} onClose={() => setShowDemoModal(false)} />
                     <div className='justify-start mx-8 flex flex-col pb-10 md:hidden'>
                         <p className="text-sm text-accent/60 italic border-l-4 pl-4 border-accent/30 mb-6">
-                            ⚠️ Hora is currently operating in a limited beta phase. Certain features, workflows, and policy sections may be updated as we continue testing and refining the platform.
+                            Hora currently operates in a limited service area with a limited set of features. Sections of this Policy may be updated as the Platform evolves.
                         </p>
                         <h1 className='text-3xl font-semibold text-accent'>Hora Privacy Policy</h1>
                         </div>
@@ -32,8 +32,8 @@ export default function Privacy() {
                         <a href="#1-introduction" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                             Introduction
                         </a>
-                        <a href="#11-beta-program-notice" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
-                            Beta Program Notice
+                        <a href="#11-early-operations-notice" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
+                            Early Operations Notice
                         </a>
                         <a href="#2-general-terms" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                             General Terms
@@ -62,7 +62,7 @@ export default function Privacy() {
                     </div>
                     <div className='hidden flex-col justify-start mx-8 md:flex md:mx-20 lg:mx-30'>
                         <p className="text-sm text-accent/60 italic border-l-4 pl-4 border-accent/30 mb-6">
-                            ⚠️ Hora is currently operating in a limited beta phase. Certain features, workflows, and policy sections may be updated as we continue testing and refining the platform.
+                            Hora currently operates in a limited service area with a limited set of features. Sections of this Policy may be updated as the Platform evolves.
                         </p>
                         <h1 className='text-3xl font-semibold text-accent  '>Hora Privacy Policy</h1>
                     </div>

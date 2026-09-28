@@ -20,7 +20,7 @@ const pricing = [
   "Companionship tasks: $25 base, same per-minute rate",
   "Evening & overnight (9 PM–8 AM): $1.00 per minute after the first 15",
   "Shopping budgets are set by you and reimbursed in full against a photo of the receipt",
-  "Nothing beyond your approved amounts is ever charged — if your supporter needs more time or a bigger budget, you approve it first",
+  "Purchases up to $5 over the approved budget are reimbursed automatically; anything more, or extra time, needs your approval first",
 ];
 
 function Section({ id, title, children }) {
@@ -99,8 +99,9 @@ export default function Support() {
 
             <Section id="cancelling" title="Cancelling">
               <p>
-                Free within 2 minutes of a supporter accepting. After that, the $12 base fee goes to
-                your supporter for the time they committed.
+                Free within 3 minutes of a supporter accepting. After that you're charged the $12 base
+                fee (or the time already worked, if more), which goes to your supporter for the time
+                they committed.
               </p>
             </Section>
 

@@ -148,7 +148,7 @@ const handleSubmit = async (e) => {
                     className="mr-2 accent-secondary"
                     />
                     <span className="text-accent text-sm">
-                    I have read and agree to the <Link to="/privacy" className="underline text-secondary">Privacy Policy</Link> and <Link to="/terms" className="underline text-secondary">Terms of Use</Link>.
+                    I have read and agree to the <Link to="/privacy" className="underline text-secondary">Privacy Policy</Link> and <Link to="/terms" className="underline text-secondary">Terms of Service</Link>.
                     </span>
                 </div>
 

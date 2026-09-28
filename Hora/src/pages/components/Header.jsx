@@ -60,7 +60,7 @@ export default function Header({ onDemoClick }) {
                 Contact
               </Link>
               <Link to="/beta" className="text-secondary text-xl font-semibold hover:text-secondary/75">
-                Join Beta →
+                Join HO:RA →
               </Link>
             </div>
 
@@ -117,7 +117,7 @@ export default function Header({ onDemoClick }) {
           Contact
         </Link>
         <Link to="/beta" onClick={() => setIsActive(false)} className="mt-2 px-10 py-4 bg-secondary text-white font-semibold rounded-xl text-xl hover:bg-secondary/90 transition-all duration-200">
-          Join Beta →
+          Join HO:RA →
         </Link>
       </div>
     </>

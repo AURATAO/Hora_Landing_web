@@ -92,10 +92,10 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3 mb-6">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
                     <div className="w-2 h-2 bg-[#3A5A2D] rounded-full animate-pulse" />
-                    <span className="text-sm font-medium text-primary font-secondary">Free beta trial · NYC 🗽</span>
+                    <span className="text-sm font-medium text-primary font-secondary">Now in NYC 🗽</span>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/70 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
-                    <span className="text-sm font-medium text-white font-secondary"> Beta Round 3 coming soon </span>
+                    <span className="text-sm font-medium text-white font-secondary"> Early access · Limited spots </span>
                   </div>
                 </div>
 

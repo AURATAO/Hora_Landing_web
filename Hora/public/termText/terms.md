@@ -1,27 +1,27 @@
-_Last updated: September 19, 2026_
+_Last updated: September 28, 2026_
 
-These Terms of Use ("Terms") govern your access to and use of the Hora platform (the "Platform"), which is owned and operated by Arcodiax LLC ("Arcodiax", "we", "our", or "us").
+These Terms of Service ("Terms") govern your access to and use of the Hora platform (the "Platform"), which is owned and operated by Arcodiax LLC ("Arcodiax", "we", "our", or "us").
 By accessing or using the Platform, you agree to be bound by these Terms and to enter into a legally binding agreement with Arcodiax LLC.
 
-> **⚠️ NYC BETA PROGRAM NOTICE:**
-> The following "NYC Beta Addendum" applies specifically to Users participating in the New York City pilot program. These terms supplement and, where inconsistent, override the Global Terms of Service below.
+> **NEW YORK CITY SERVICE NOTICE:**
+> The following "New York City Service Addendum" applies to Users in the New York City service area, where the Platform currently operates. These terms supplement and, where inconsistent, override the Global Terms of Service below.
 
-# NYC Beta Addendum
+# New York City Service Addendum
 
 ## A. Companionship & Safety Boundaries
 
-To ensure User safety during our pilot, all companionship tasks are subject to these strict limitations:
+To ensure User safety, all companionship tasks are subject to these strict limitations:
 
 - **Public Settings Only**: Companionship is defined as accompaniment on public routes or in public/semi-public locations (e.g., cafes, libraries, transit stops).
 - **No Private Residence Entry**: Supporters are strictly prohibited from entering a Requester's private residence in connection with a Companionship Task.
 - **Non-Medical Scope**: Services are non-medical and non-caregiving. Supporters shall not handle medication, provide physical care, or assist with personal hygiene.
-- **No Minors**: Services involving or provided to minors are strictly prohibited during the Beta phase.
+- **No Minors**: Services involving or provided to minors are strictly prohibited.
 - **Professional Conduct**: Intimate, sexual, or "dating-style" services are strictly prohibited.
 - **In-Home Tasks (Non-Companionship)**: Certain non-companionship Tasks (e.g., organizing or other household help) may take place inside a Requester's residence only where this is expressly described in the Task posting. For such Tasks, the Requester (or an adult authorized by the Requester) must be present for the duration of the Task, and the Supporter must comply with the time-tracking, location, and completion-photo requirements set out in Part D below.
 
-## B. Beta Supporter Compensation
+## B. Supporter Compensation
 
-- **Task-Based Pay**: During the Beta phase, Supporters receive **100%** of the total Task fee (the applicable base fee plus time-based charges, as described in Section 3(a)) upon completion and settlement of the Task. Hora's platform service fee is currently set at **0%** and is waived for the duration of the Beta phase. Hora reserves the right to introduce or adjust a platform service fee for future phases upon reasonable advance notice.
+- **Task-Based Pay**: Supporters are paid the Task's service revenue (the applicable base fee plus time-based charges, including any Requester-approved time extensions, as described in Section 3(a)) less Hora's platform service fee, upon completion and settlement of the Task. The platform service fee is currently **20%** of service revenue, rounded to the nearest cent, and is deducted from the Supporter's payout; it does not change the price displayed to the Requester. The platform service fee is **never** applied to purchase reimbursements under Part C, which are passed through to the Supporter in full. Promotional discounts applied to a Requester's charge do not reduce the Supporter's service revenue. Hora may adjust the platform service fee upon reasonable advance notice; a change applies only to Tasks posted after it takes effect.
 - **Payouts**: Supporter payouts are processed through Stripe Connect and follow Stripe's automatic payout schedule after settlement of the related Task. Supporters must complete Stripe onboarding — including identity verification and tax information — before accepting Tasks for which payouts are enabled.
 - **Availability Windows**: Hora may offer optional fixed availability windows to ensure service coverage. Participation is voluntary and does not create an employer-employee relationship.
 - **Supporter Autonomy**: Supporters remain independent contractors and retain sole discretion to accept or decline any Task request.
@@ -29,15 +29,15 @@ To ensure User safety during our pilot, all companionship tasks are subject to t
 ## C. Shopping Budgets, Upfront Purchases & Reimbursement
 
 - **Shopping Budget**: Supporters may make purchases only for Tasks that include a shopping budget set by the Requester when posting the Task. The budget amount is included in the pre-authorized hold described in Section 3(c). There is no fixed platform-wide cap on shopping budgets.
-- **Approval for Overages**: If a purchase would exceed the approved budget by more than **$5.00 USD**, the Supporter must submit an in-app budget increase request and receive the Requester's approval **before** making the purchase. Requests not answered within the time shown in-app are automatically declined, and the Supporter will proceed with the fallback option selected in the request (e.g., purchase an available alternative, or skip the item). Overages of $5.00 USD or less above the approved budget are covered automatically without a separate request.
+- **Approval for Overages**: If a purchase would exceed the approved budget by more than **$5.00 USD**, the Supporter must submit an in-app budget increase request and receive the Requester's approval **before** making the purchase. If the Requester does not respond within five (5) minutes, the request is automatically declined, and the Supporter will proceed with the fallback option selected in the request (e.g., purchase an available alternative, or skip the item). Overages of $5.00 USD or less above the approved budget are covered automatically without a separate request. The same five-minute rule applies to requests for additional time (see Section 3(f)).
 - **Reimbursement**: Supporters front purchase costs and are reimbursed through their payout after uploading a clear photo of the receipt and confirming the purchase amount at Task completion. Reimbursement is capped at the approved budget plus a $5.00 USD tolerance; amounts above that cap are the Supporter's sole responsibility. The corresponding purchase amount is charged to the Requester at settlement as described in Section 3(d).
 
 ## D. Operational Reporting & Location Tracking
 
-- **Mandatory Time Tracking**: Supporters must use the "Clock In" and "Clock Out" features to record active time for safety and payment accuracy. Clock In may require the Supporter's presence at or near the first Task location; early or out-of-area clock-ins may be flagged for review. Tasks involving waiting periods may use multiple Clock In / Clock Out sessions; only active session time is billed.
-- **Location Tracking During Tasks**: While a Task is active (between Clock In and Clock Out), the App collects the Supporter's GPS location data — **including while the App is running in the background** — for safety, service verification, and billing accuracy. Location data is not collected while a Task session is paused or outside active Task sessions. Use of the Platform as a Supporter requires granting the App the corresponding device location permissions. Please refer to our Privacy Policy for details on how location data is collected, used, and retained.
-- **Completion Photo**: Supporters must upload a completion photo via the Platform when marking a Task as complete.
-- **Communication Traceability**: All task-related communication must remain on the Platform or authorized Beta channels.
+- **Mandatory Time Tracking**: Supporters must use the "Clock In" and "Clock Out" features to record active time for safety and payment accuracy. Hora may review recorded locations against the Task location. Tasks involving waiting periods may use multiple Clock In / Clock Out sessions; only active session time is billed.
+- **Location Sharing and Tracking**: Location collection for a Task begins only when the Supporter taps "On my way" and continues until the Supporter clocks out or the Task ends, whichever is first. During that period the App collects the Supporter's GPS location at regular intervals, **including while the App is running in the background**, for safety, service verification, and billing accuracy, and shares the Supporter's approximate live position with the Requester of that Task. Location is not collected while a Task session is paused or when the Supporter has no active Task. Tapping "On my way" is optional and will prompt for background location permission. Use of the Platform as a Supporter requires granting the App the corresponding device location permissions. Please refer to our Privacy Policy for details on how location data is collected, used, and retained.
+- **Completion and Receipt Photos**: Supporters must upload a completion photo when marking a Task as complete, and a receipt photo for any purchase to be reimbursed. These photos are stored privately and are visible only to the Requester and Supporter on that Task, and to Hora for support, dispute resolution, and trust and safety purposes, as described in the Privacy Policy.
+- **Communication Traceability**: All task-related communication must remain on the Platform or authorized Hora support channels.
 
 ---
 
@@ -192,23 +192,23 @@ _Hora reserves the right to suspend or terminate any account found to be arrangi
 
 _This Section sets out the terms governing Task payments, billing, and cancellation. Additional details may be set forth in Supplemental Terms published by Hora from time to time, which form part of this Agreement once published. All payments on the Platform are processed by our authorized third-party payment service provider ("PSP"), currently Stripe. Hora does not store full payment card details._
 
-**(a) Standard Pricing.** _All Tasks are subject to a base fee determined by Task type: **$12.00 USD** for standard Tasks (including errands, delivery, grocery, laundry, queueing, and similar tasks); and **$25.00 USD** for Companionship Tasks. The base fee includes the first fifteen (15) minutes of active Task time. Active Task time beyond the first 15 minutes is billed at a time-based rate of **$0.50 USD per minute**. For Tasks scheduled to begin at or after **9:00 PM (America/New_York time)**, an evening rate of **$1.00 USD per minute** applies in place of the standard per-minute rate. The applicable per-minute rate is determined and displayed at the time the Task is posted and remains fixed for that Task. Hora may update its standard pricing from time to time; updated pricing applies only to Tasks posted after the change takes effect._
+**(a) Standard Pricing.** _All Tasks are subject to a base fee determined by Task type: **$12.00 USD** for standard Tasks (including errands, delivery, grocery, laundry, queueing, and similar tasks); and **$25.00 USD** for Companionship Tasks. The base fee includes the first fifteen (15) minutes of active Task time. Active Task time beyond the first 15 minutes is billed at a time-based rate of **$0.50 USD per minute**. For Tasks scheduled to begin at or after **9:00 PM and before 8:00 AM (America/New_York time)**, an evening and overnight rate of **$1.00 USD per minute** applies in place of the standard per-minute rate to active time beyond the first fifteen (15) minutes. The applicable per-minute rate is determined from the scheduled start time (or, for Tasks requested to start immediately, the posting time) when the Task is posted, is displayed to the Requester before posting, and remains fixed for that Task even if the work runs into or out of that window. Hora may update its standard pricing from time to time; updated pricing applies only to Tasks posted after the change takes effect._
 
 **(b) Active Task Time.** _Active Task time is measured through the Platform's Clock In and Clock Out features. Billable time begins when the Supporter clocks in upon arrival at the first Task location; the Supporter's travel to the first Task location is not billed. Time spent traveling between Task locations after Clock In is billed as active time. For Tasks involving waiting periods, the Supporter may pause and resume work through multiple Clock In / Clock Out sessions; only active session time is billed, and the 15-minute inclusion described in subsection (a) is applied once per Task._
 
 **(c) Payment Method; Pre-Authorized Hold.** _To post a Task, the Requester must maintain a valid payment method on file with the PSP. When a Task is posted, the Requester authorizes a pre-authorized hold on that payment method equal to the estimated Task cost (base fee plus estimated time charges) plus any shopping budget specified for the Task. A hold is an authorization, not a completed charge, and the held amount is displayed to the Requester at posting. If the hold cannot be authorized, the Task will not be posted._
 
-**(d) Settlement at Completion; Off-Session Charges.** _When a Task is completed, the final Task fee is calculated based on actual active time logged and any approved purchase reimbursements, and is captured from the pre-authorized hold. Any portion of the hold that is not captured is released automatically; the release of an unused hold is not a refund. If the final amount exceeds the pre-authorized hold — for example, due to Requester-approved time or budget extensions, or a receipt overage within the tolerance described in the NYC Beta Addendum, Part C — the Requester authorizes Hora, acting through the PSP, to charge the excess amount to the payment method on file without further action by the Requester (an "off-session" charge). By adding a payment method and posting a Task, the Requester expressly consents to such off-session charges for amounts arising from that Task as described in this Agreement._
+**(d) Settlement at Completion; Off-Session Charges.** _When a Task is completed, the final Task fee is calculated based on actual active time logged and any approved purchase reimbursements, and is captured from the pre-authorized hold. Any portion of the hold that is not captured is released automatically; the release of an unused hold is not a refund. If the final amount exceeds the pre-authorized hold — for example, due to Requester-approved time or budget extensions, or a receipt overage within the tolerance described in the New York City Service Addendum, Part C — the Requester authorizes Hora, acting through the PSP, to charge the excess amount to the payment method on file without further action by the Requester (an "off-session" charge). By adding a payment method and posting a Task, the Requester expressly consents to such off-session charges for amounts arising from that Task as described in this Agreement._
 
 **(e) Outstanding Balances.** _If a settlement charge cannot be completed (for example, due to a declined payment method), the Task is still treated as complete, and the uncollected amount becomes an outstanding balance owed by the Requester. While an outstanding balance remains unpaid, the Requester may not post new Tasks. Hora may retry the charge off-session and/or require the Requester to confirm payment on-session (including through authentication steps such as 3-D Secure). Supporter payouts are not conditioned on collection of the Requester's outstanding balance._
 
-**(f) Extensions and Approvals.** _Time or budget extensions requested during a Task and approved by the Requester in-app raise the authorized spending ceiling for that Task only; no charge is collected at the moment of approval. All amounts are collected at completion as described in subsections (d) and (e)._
+**(f) Authorized Time; Extensions and Approvals.** _Billable time is capped at the time estimate the Requester approved when posting the Task (the "Authorized Time"). If the Requester opts in at posting, the Supporter may continue up to fifteen (15) minutes beyond the estimate without a further approval, and that time is billable. A Supporter who needs more time or a larger shopping budget must request it in-app before proceeding. If the Requester does not respond within five (5) minutes, the request is automatically declined: for a time request, billable time remains capped at the Authorized Time; for a budget request, the Supporter proceeds with the fallback option selected in the request (for example, buying an available alternative or skipping the item). Both parties are notified in-app shortly before the Authorized Time is reached. Hora never ends a Task automatically; a Supporter who continues past the cap does so at their own discretion and without additional pay. An approved extension raises the authorized spending ceiling for that Task only; no charge is collected at the moment of approval, and all amounts are collected at completion as described in subsections (d) and (e)._
 
-**(g) Disbursement to Supporters.** _Supporter payouts are processed through the PSP's connected-account program (currently Stripe Connect). Supporters must complete the PSP's onboarding, including identity verification and tax information, before receiving payouts. Payouts follow the PSP's automatic payout schedule after settlement of the related Task. Supporter compensation during the Beta phase, including the current platform service fee, is described in the NYC Beta Addendum, Part B. Hora may retain a platform service fee from Task fees where disclosed on the Platform or in the applicable Addendum._
+**(g) Disbursement to Supporters.** _Supporter payouts are processed through the PSP's connected-account program (currently Stripe Connect). Supporters must complete the PSP's onboarding, including identity verification and tax information, before receiving payouts. Payouts follow the PSP's automatic payout schedule after settlement of the related Task. Supporter payouts are net of the platform service fee described in the New York City Service Addendum, Part B._
 
 **(h) Refunds.** _Amounts captured for completed active time and approved purchases are non-refundable except as required by applicable law or as determined by Hora in its discretion. Hora reserves the right to determine the form of any refund — whether to the original payment method or as platform credit — unless otherwise required by law._
 
-**(i) Cancellations and No-Shows.** _A Requester may cancel a Task before a Supporter has begun work; in that case the pre-authorized hold is released in full. Once work has begun, cancellation may result in charges for active time already logged and for purchases already made with Requester approval. Cancellation of an accepted Task may be subject to additional restrictions or conditions as displayed in-app at the time of cancellation. Supporters who accept a Task and fail to perform it, and Requesters who are unavailable at the Task location at the agreed time, may be subject to penalties, including account restrictions. Exceptions (e.g., first-time forgiveness) may apply at Hora's discretion._
+**(i) Cancellations and No-Shows.** _A Requester may cancel a Task at no charge at any time before a Supporter accepts it, and for three (3) minutes after a Supporter accepts it; the pre-authorized hold is released in full. After that window the Supporter is treated as committed, and a cancellation by the Requester is charged at the greater of (i) the applicable base fee for the Task type, or (ii) the base fee plus time-based charges for active time actually logged up to the moment of cancellation, including a session still running. The base fee is the Supporter's guarantee for committing to the Task. The cancellation charge is settled as described in subsections (d) and (e) and is paid to the Supporter net of the platform service fee described in the New York City Service Addendum, Part B. Purchases already made with Requester approval are handled under Part C of that Addendum, and any remainder of the hold is released. The exact amount, and the time remaining in the free window, are shown in-app before you confirm a cancellation. Supporters who accept a Task and fail to perform it, and Requesters who are unavailable at the Task location at the agreed time, may be subject to penalties, including account restrictions. Exceptions (e.g., first-time forgiveness) may apply at Hora's discretion._
 
 **(j) Optional Features.** _Hora may in the future offer optional paid features (such as enhanced support options or subscription plans); any such features will be governed by additional terms disclosed at the time of purchase._
 
@@ -232,7 +232,8 @@ _By using Public Areas, you agree to:_
 **Content Moderation:**  
 _To help ensure a safe and positive experience for all Users, Hora reserves the right, but is not obligated, to review, monitor, filter, or remove content posted in Public Areas at its sole discretion. This may include future use of automated tools or other content moderation technologies._
 
-_While the Platform does not currently provide features such as content flagging, reporting, or blocking, Hora may introduce such tools in the future without prior notice. Users are encouraged to communicate respectfully and use the Platform in good faith._
+**Reporting and Blocking:**  
+_Users may report or block another User with whom they have been matched on a Task, from the Task screen or the Chat Thread. Reports are submitted under a preset reason with optional details, are reviewed by Hora's team (typically within 24 hours), and may result in the actions described in Section 6. When a User blocks another User, the block is enforced in both directions: neither User will see the other's Tasks, neither can accept the other's Task, Hora will not match them again, and the Chat Thread between them becomes read-only. A block does not by itself cancel a Task already in progress between the two Users; the Requester may cancel under Section 3(i). Hora retains report and block records after an account is deleted, as described in the Privacy Policy. Submitting a report you know to be false is a violation of these Terms. Users are encouraged to communicate respectfully and use the Platform in good faith._
 
 _Hora disclaims any responsibility for user-generated content and is not liable for any actions or communications between Users in Public Areas. However, Hora may take appropriate action, including content removal or account restrictions, if any misuse or suspected violations occur._
 
@@ -243,19 +244,20 @@ _To help ensure the safety, trust, and proper functioning of the Platform, Hora 
 _In such cases, Hora may, at its sole discretion:_
 
 **(a)** _Temporarily suspend your access to the Platform while investigating the issue; and/or_
-**(b)** _Permanently deactivate your account or restrict your use of certain Platform features if a breach is confirmed._
+**(b)** _Permanently deactivate your account or restrict your use of certain Platform features if a breach is confirmed; and/or_
+**(c)** _Act on reports received from other Users, including by suspending or restricting the reported account, and enforce blocks between Users as described in Section 5._
 
 _Where required by applicable law, Hora will provide you with written notice of its determination, and you may submit an appeal within 14 days of receiving such notice by contacting us at the address provided in Section 22 (Notices), including your reasons and any supporting information._
 
 _If your account is suspended or deactivated, you agree that you may not create a new account under your own or any other identity, name, or business, nor may you access the Platform through another User's account._
 
 **Platform Integrity Note:**  
-_Hora may also take proactive action to suspend or restrict access to accounts that raise reasonable safety, trust, or policy concerns, including—but not limited to—situations involving false identity information, repeated cancellations, harmful behavior, or attempts to circumvent Platform safeguards. While not all of these features are in place in our MVP, Hora reserves the right to expand its trust & safety tools over time._
+_Hora may also take proactive action to suspend or restrict access to accounts that raise reasonable safety, trust, or policy concerns, including—but not limited to—situations involving false identity information, repeated cancellations, harmful behavior, or attempts to circumvent Platform safeguards. Hora reserves the right to expand its trust and safety tools over time._
 
 # 7. Termination
 
 **By You:**  
-_You may terminate this Agreement at any time by ceasing all use of the Platform and requesting deactivation of your account via the account settings or by contacting Hora's support team._
+_You may terminate this Agreement at any time by ceasing all use of the Platform and deleting your account in the App (Profile, Delete account) or by contacting Hora's support team at info@my-hora.com. Account deletion is not available while you have a Task in progress on either side, an outstanding balance under Section 3(e), or a Supporter payout that has not yet been transferred; the App will tell you which applies and what clears it. On deletion, your personal information is removed or anonymised as described in the Privacy Policy; Task, payment and payout records, reviews, and safety records are retained in anonymised form. A deleted account cannot be signed into again, and signing in later with the same email creates a new account._
 
 **By Hora:**  
 _Hora may terminate this Agreement and your access to the Platform at any time, with or without notice, if you breach any provision of the Agreement, violate applicable laws, or if your use of the Platform creates risk or potential legal exposure for Hora or other Users (including as described in Section 6 above)._
@@ -419,7 +421,7 @@ _If you access or download the Platform's mobile application (the "App") from th
 
 _If you access or download the App from the Google Play Store, you acknowledge and agree to comply with Google Play Terms of Service._
 
-_These third-party terms apply in addition to these Terms of Use. If there is any conflict between them, the applicable App Store terms will govern your use of the App on that platform._
+_These third-party terms apply in addition to these Terms of Service. If there is any conflict between them, the applicable App Store terms will govern your use of the App on that platform._
 
 # 17. Changes to the Agreement, the Platform and the App
 
@@ -440,7 +442,7 @@ _By installing the App(s), you consent to the installation of the App(s) and any
 
 **(i)** _cause your device to automatically communicate with Hora's servers to deliver the App functionality and to record usage metrics,_
 **(ii)** _affect App-related preferences or data stored on your device, and/or_
-**(iii)** _collect personal information, including location data as described in the NYC Beta Addendum, Part D, as set out in our Privacy Policy._
+**(iii)** _collect personal information, including location data as described in the New York City Service Addendum, Part D, as set out in our Privacy Policy._
 
 _You can uninstall the App(s) at any time._
 

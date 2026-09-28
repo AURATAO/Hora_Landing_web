@@ -27,10 +27,10 @@ export default function Beta() {
   return (
     <>
       <Helmet>
-        <title>NYC Beta | Hora</title>
+        <title>Early Access | Hora</title>
         <meta
           name="description"
-          content="Hora NYC Beta — an invite-only pilot in NYC. Get support with everyday tasks or earn money supporting others. Participation is limited and personally managed by the Hora team."
+          content="HO:RA early access in New York City. Get support with everyday tasks or earn money supporting others. Participation is invite-only and personally managed by the Hora team."
         />
       </Helmet>
 
@@ -44,12 +44,11 @@ export default function Beta() {
           {/* Hero */}
           <div className="text-center space-y-3">
             <h1 className="text-3xl font-bold text-accent">
-              Hora NYC Beta
+              HO:RA Early Access · NYC
             </h1>
            <p className="text-accent/60 text-sm leading-relaxed">
-            We're hand-picking a small group of New Yorkers to try HO:RA
-            before we fully launch. Spots are limited and personally managed
-            by our team. 💚
+            We're onboarding a small group of New Yorkers to HO:RA. Spots
+            are limited and personally managed by our team. 💚
           </p>
           </div>
 
@@ -77,22 +76,26 @@ export default function Beta() {
           {/* What to expect */}
           <section className="space-y-3">
             <h2 className="text-lg font-semibold text-accent">
-              What to expect during beta
+              What to expect
             </h2>
             <ul className="space-y-2 text-sm text-accent/60">
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
                 <span>
-                  Free to use — no platform fee during the pilot{" "}
+                  Simple pricing — $12 base covers the first 15 minutes, then
+                  $0.50/min ($25 base for companionship; $1.00/min for tasks
+                  starting 9 PM–8 AM). Supporters receive their task earnings
+                  less a 20% platform service fee; purchase reimbursements are
+                  passed through in full.{" "}
                   <span className="text-accent/40 text-xs">
-                    (Direct task costs such as purchases, transit, or other
-                    third-party expenses remain the Requester's responsibility.)
+                    (Purchases and other approved third-party costs are charged
+                    to the Requester at cost.)
                   </span>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                NYC only — Midtown Manhattan focus during beta
+                NYC only — Midtown Manhattan focus for now
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
@@ -104,7 +107,7 @@ export default function Beta() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                Some task types and availability may be limited as we test operations
+                Some task types and availability may be limited as we scale operations
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>

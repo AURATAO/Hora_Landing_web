@@ -29,7 +29,7 @@ export default function Terms() {
             <DemoModal show={showDemoModal === true} onClose={() => setShowDemoModal(false)} />
              <div className='justify-start mx-8 flex flex-col pb-10 md:hidden'>
             <p className="text-sm text-accent/60 italic border-l-4 pl-4 border-accent/30 mb-6">
-            ⚠️ This Terms of Use document is a preliminary version drafted in anticipation of the platform’s full release. As Hora is currently in MVP development, certain clauses may be revised to reflect future functionalities.
+            Hora currently operates in a limited service area with a limited set of features. These Terms may be updated as the Platform evolves; material changes will be notified as described in Section 17.
             </p>
             <h1 className='text-3xl font-semibold text-accent  '>Hora Global Terms of Service</h1>
             </div>
@@ -37,8 +37,8 @@ export default function Terms() {
                 <a href="#1-platform" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                     Platform
                 </a>
-                <a href="#nyc-beta-addendum" className="px-4 py-2 text-sm rounded-xl border border-accent/30 bg-accent/20 text-accent hover:bg-accent/30 transition-all font-bold">
-                    NYC Beta Addendum
+                <a href="#new-york-city-service-addendum" className="px-4 py-2 text-sm rounded-xl border border-accent/30 bg-accent/20 text-accent hover:bg-accent/30 transition-all font-bold">
+                    New York City Service Addendum
                 </a>
                 <a href="#2-use-of-the-platform" className="px-4 py-2 text-sm rounded-xl border border-accent/30 text-accent hover:bg-accent/10 transition-all">
                      Use of the Platform
@@ -115,7 +115,7 @@ export default function Terms() {
             </div>
             <div className='hidden flex-col justify-start mx-8 md:flex md:mx-20 lg:mx-30'>
             <p className="text-sm text-accent/60 italic border-l-4 pl-4 border-accent/30 mb-6">
-            ⚠️ This Terms of Use document is a preliminary version drafted in anticipation of the platform’s full release. As Hora is currently in MVP development, certain clauses may be revised to reflect future functionalities.
+            Hora currently operates in a limited service area with a limited set of features. These Terms may be updated as the Platform evolves; material changes will be notified as described in Section 17.
             </p>
             <h1 className='text-3xl font-semibold text-accent  '>Hora Global Terms of Service</h1>
             </div>

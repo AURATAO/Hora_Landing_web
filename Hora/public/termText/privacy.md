@@ -1,4 +1,4 @@
-_Last updated: September 19, 2026_
+_Last updated: September 28, 2026_
 # 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
@@ -9,22 +9,20 @@ If you are a resident of California or a data subject located in the European Ec
 
 For any questions or to exercise your rights, please see the "Contact Us" section at the end of this Policy.
 
-## 1.1 Beta Program Notice
+## 1.1 Early Operations Notice
 
-Hora is currently operating certain parts of the Platform in a beta, pilot, limited-release, or testing phase ("Beta Program"). If you participate in the Beta Program, you acknowledge that the Platform is still being tested and refined.
-
-During the Beta Program:
+Hora currently operates the Platform in a limited service area (at present, New York City) with a limited set of features ("Early Operations"). During Early Operations:
 
 - certain features, workflows, or services may be unavailable, limited, changed, or discontinued at any time;
 - some operational processes may be handled manually or with limited automation;
 - the Platform may contain bugs, delays, interruptions, or other unexpected issues;
-- our policies, disclosures, and product experience may be revised as we continue testing and improving the service.
+- our policies, disclosures, and product experience may be revised as we continue improving the service.
 
-We may collect and use Personal Information during the Beta Program not only to provide the Platform, but also for internal testing, quality assurance, debugging, trust and safety review, fraud prevention, performance monitoring, user research, and service improvement, to the extent permitted by applicable law.
+We may collect and use Personal Information not only to provide the Platform, but also for internal quality assurance, debugging, trust and safety review, fraud prevention, performance monitoring, user research, and service improvement, to the extent permitted by applicable law.
 
-Unless otherwise stated, participation in the Beta Program remains subject to this Privacy Policy and the Hora Terms of Service.
+Unless otherwise stated, your use of the Platform during Early Operations remains subject to this Privacy Policy and the Hora Terms of Service.
 
-**Payments and Verification During Beta.** In-app payment processing and Supporter payout disbursement are operated through our payment service provider, Stripe. Hora does not collect or store full payment card numbers, CVV codes, or bank account details on its own systems; when you add a payment method or enroll for payouts, that information is provided by you directly to Stripe and processed on Stripe's infrastructure, subject to Stripe's own privacy policy. Supporters who enroll for payouts provide identity, tax, and banking information directly to Stripe through Stripe Connect onboarding. Formal identity-document verification and third-party background checks (including through providers such as Checkr) have not yet launched; if and when those features launch, the relevant sections of this Policy will apply and we will update this Policy accordingly. During certain Beta test windows, payment collection may be temporarily disabled and task fees may be waived or handled through arrangements communicated to you directly.
+**Payments and Verification.** In-app payment processing and Supporter payout disbursement are operated through our payment service provider, Stripe. Hora does not collect or store full payment card numbers, CVV codes, or bank account details on its own systems; when you add a payment method or enroll for payouts, that information is provided by you directly to Stripe and processed on Stripe's infrastructure, subject to Stripe's own privacy policy. Supporters who enroll for payouts provide identity, tax, and banking information directly to Stripe through Stripe Connect onboarding. Formal identity-document verification and third-party background checks (including through providers such as Checkr) have not yet launched; if and when those features launch, the relevant sections of this Policy will apply and we will update this Policy accordingly. From time to time, payment collection may be temporarily disabled and task fees may be waived or handled through arrangements communicated to you directly.
 
 # 2. General Terms
 
@@ -45,19 +43,21 @@ Hora collects certain personally identifiable information about Users ("Personal
 ### a. Information Provided by Users
 
 - Contact Information: Full name, postal address, phone number, email address.
+- Account and Sign-In Information: You can create and access your account with an email one-time code, with Google, or with Sign in with Apple. When you use Google or Apple, we receive the name and email address you choose to share (for Apple, this may be a private relay address if you hide your email) and a provider account identifier. We never receive your Google or Apple password.
 - Payment Information: When you add a payment method, your card details (card number, expiration date, CVV) are collected directly by our payment processor, Stripe, and are not stored on Hora's systems. Hora receives and stores limited payment metadata, such as the card brand, the last four digits of the card number, payment and pre-authorization status, and transaction records (amounts, timestamps, and task associations).
 - Identity Information: To help ensure a safe experience, Users may be required to complete identity verification through trusted third-party providers (which may include Checkr). This may include your date of birth, national ID number, residential address, and verification documents (e.g., passport, national ID card), and may also include background check data where permitted by applicable law.
 - Financial Information (Supporters): Supporters who enroll for payouts provide tax information, banking details (e.g., account and routing number), and taxpayer identification directly to Stripe through Stripe Connect onboarding. Hora receives payout status and account-capability information from Stripe but does not store your full banking details or tax identification numbers on its own systems.
 - Task Details: When using the platform, you may be asked to provide specific task information, such as task description, estimated hours, preferred time and date, location, and any shopping budget.
 - Location Information: We collect location data to coordinate Tasks, verify service delivery, support billing accuracy, and promote user safety. Specifically:
   - **Requesters**: the Task locations (addresses) you provide when posting a Task.
-  - **Supporters**: while a Task is active (between Clock In and Clock Out), the App collects your precise GPS location at regular intervals — **including while the App is running in the background**. Location data is not collected while a Task session is paused or when you have no active Task session. Your location at Clock In may be checked against the first Task location to verify presence.
-  - **Live location sharing**: while you are en route to or performing an accepted Task, your approximate live location may be shared with the Requester of that Task within the App (e.g., on a live map showing your progress). This sharing ends when the Task session ends.
+  - **Supporters**: location collection for a Task begins when you tap "On my way" (optional) and continues while you are en route and while a Task session is active (between Clock In and Clock Out), **including while the App is running in the background**. Collection stops when you clock out or the Task ends, whichever is first. Location is not collected while a Task session is paused or when you have no active Task. Tapping "On my way" prompts for the device's background ("Always") location permission. Hora may review recorded locations against the Task location.
+  - **Live location sharing**: during that same window, your approximate live position and distance to the Task location are shown to the Requester of that Task on a live map, and the Requester may receive a notification when you arrive. The Requester cannot see your location at any other time, and no other User can see it.
   - We use this location data to verify that logged time corresponds to actual work performed, for safety and dispute resolution, and to improve service quality. Using the Platform as a Supporter requires granting the App the corresponding device location permissions, including background location access. We may also collect approximate location via IP address for all Users.
-- Photos and Camera Access: With your permission, we access your device's camera and photo library so that you can upload a profile photo and, for Supporters, task completion photos and purchase receipt photos. These images are stored on our infrastructure and are visible to the relevant Users (e.g., a completion photo or receipt photo is visible to the Requester of that Task).
+- Photos and Camera Access: With your permission, we access your device's camera and photo library so that you can upload a profile photo and, for Supporters, Task completion photos and purchase receipt photos. Profile photos are displayed to other Users. Completion and receipt photos are stored in private storage and are not publicly accessible; they are shown only to the Requester and Supporter on that Task through short-lived signed links (valid for about one hour in the App, and up to seven days for a link included in a Task completion email), and are accessible to Hora for support, dispute resolution, and trust and safety purposes.
 - Promotional Information: Participation in optional services like newsletters, surveys, or contests may result in the collection of additional data used to send targeted communications or manage the promotional program.
 - Employment and Qualifications (Supporters only): We may collect relevant experience, education, skills, certifications, and verification documents necessary for tasks.
-- Message Content: We collect content from messages you exchange within the platform, including chat between Requesters and Supporters, and inquiries submitted via email or support forms. During the Beta Program, if you choose to communicate with Hora through authorized channels such as WhatsApp, those messages are also processed by the respective channel provider.
+- Message Content: We collect content from messages you exchange within the platform, including chat between Requesters and Supporters, and inquiries submitted via email or support forms. If you choose to communicate with Hora through authorized support channels such as WhatsApp, those messages are also processed by the respective channel provider.
+- Safety Reports and Blocks: If you report or block another User, we record who filed it, who it concerns, the Task it relates to, the reason selected from a preset list, any optional details you provide (visible to Hora's team only and never shown to the reported User), the time, and how the report was resolved. We retain report and block records after account deletion so that a block continues to be enforced.
 - Push Notification Tokens: If you enable push notifications, we collect device push tokens in order to deliver notifications to your device through our notification delivery providers and the Apple and Google notification services.
 - Device and Usage Data: We may automatically collect data about the devices you use to access the platform (including IP address, browser type, operating system) and usage behavior, such as access times, interactions, and navigation patterns. This information is used to improve security, performance, and user experience.
 
@@ -138,7 +138,7 @@ We engage vetted third-party service providers to perform services on our behalf
 - Security monitoring and fraud prevention
 - Legal and compliance consultation
 
-**Current Service Providers.** As of the date of this Policy, our principal service providers include: Stripe (payment processing — including card-on-file storage, pre-authorizations, charges, and refunds — and Supporter payout disbursement through Stripe Connect, including the identity, tax, and banking information Supporters provide during payout onboarding); Supabase (database hosting, authentication, and file storage, including profile photos, task completion photos, and receipt photos); Google (sign-in authentication, address autocomplete, and mapping/travel-time estimation); Postmark (transactional email delivery); TalkJS (in-app messaging infrastructure — message content you exchange with other Users is processed and stored by TalkJS on our behalf); Anthropic (AI-assisted processing — when you use the AI task-creation feature, the task description text you enter is processed by Anthropic's Claude API to structure your request); Expo (push notification delivery, together with the Apple and Google notification services); and our cloud hosting providers (Render and Vercel). This list may change as the Platform evolves; material changes will be reflected in updates to this Policy.
+**Current Service Providers.** As of the date of this Policy, our principal service providers include: Stripe (payment processing — including card-on-file storage, pre-authorizations, charges, and refunds — and Supporter payout disbursement through Stripe Connect, including the identity, tax, and banking information Supporters provide during payout onboarding); Supabase (database hosting; authentication, including email one-time codes and verification of Google and Apple sign-in tokens; and file storage, including profile photos, task completion photos, and receipt photos); Google (sign-in authentication, address autocomplete, and mapping/travel-time estimation); Apple (Sign in with Apple authentication, App Store distribution, and the Apple Push Notification service); Postmark (transactional email delivery); TalkJS (in-app messaging infrastructure — message content you exchange with other Users is processed and stored by TalkJS on our behalf); Anthropic (AI-assisted processing — when you use the AI task-creation feature, the task description text you enter is processed by Anthropic's Claude API to structure your request); Expo (push notification delivery, together with the Apple and Google notification services); and our cloud hosting providers (Render and Vercel). This list may change as the Platform evolves; material changes will be reflected in updates to this Policy.
 
 ### c. Promotional Activities and Offers
 
@@ -150,7 +150,7 @@ We may share limited, non-identifiable Personal Information (such as cookies or 
 
 ### e. Other Hora Users
 
-Certain information is shared between Users as part of normal Platform operation: for example, a Supporter's name, profile photo, and reviews are visible to Requesters; a Requester's Task details and locations are visible to the Supporter who accepts the Task; and a Supporter's approximate live location is visible to the Requester during an active Task as described in Section 3(a). In addition, in the event of a dispute, safety concern, or platform investigation, Hora may share relevant Personal Information (e.g., name or contact info) between a Requester and Supporter or with their authorized legal representative, only as necessary to address or resolve the issue.
+Certain information is shared between Users as part of normal Platform operation: for example, a Supporter's name, profile photo, and reviews are visible to Requesters; a Requester's Task details and locations are visible to the Supporter who accepts the Task; and a Supporter's approximate live location is visible to the Requester from "On my way" until clock-out as described in Section 3(a). If a User has blocked you, or you have blocked them, neither of you is shown the other's Tasks, you will not be matched again, and messaging between you is disabled. The reported User is not told who reported them. In addition, in the event of a dispute, safety concern, or platform investigation, Hora may share relevant Personal Information (e.g., name or contact info) between a Requester and Supporter or with their authorized legal representative, only as necessary to address or resolve the issue.
 
 ### f. Legal and Regulatory Disclosures
 
@@ -170,7 +170,7 @@ If Hora is involved in a merger, acquisition, restructuring, or sale of all or p
 # 6. Retention of Personal Information
 
 We retain your Personal Information for as long as necessary to provide you with our products or services and fulfill the purposes described in this Privacy Policy. When we no longer need to use your information and there is no need for us to keep it to comply with our legal obligations or to the extent permitted under applicable laws, we'll either delete it from our systems or deidentify it so that we can't use it to reidentify you.
-Users may also request to delete or access their personal information at any time. Please refer to Section 7, "Your Rights and Choices."
+Users may also request to delete or access their personal information at any time. Please refer to Section 7, "Your Rights and Choices." Details of what is deleted, anonymised, and retained when you delete your account are in Section 7(d).
 
 ---
 
@@ -204,11 +204,19 @@ Users may update or correct inaccurate or incomplete information at any time by 
 
 ### d. Right to Delete
 
-Users may request deletion of their Personal Information held by Hora. However, we may retain certain data:
+You can delete your account at any time in the App (Profile, Delete account) or by contacting us at info@my-hora.com. Deletion is not available while you have a Task in progress, an outstanding balance, or a Supporter payout that has not yet reached your bank; the App tells you which applies and what clears it.
 
-- To comply with legal obligations (e.g., accounting or tax regulations),
-- For security or fraud prevention,
-- To enforce our terms or protect other users.
+When your account is deleted:
+
+- Your name, profile photo, phone number, city, bio, and sign-in identifiers are removed, and your email address is replaced with an anonymous placeholder. The account can no longer be signed into.
+- Your location history, push notification tokens, and in-app notifications are deleted.
+- Your saved payment methods are deleted from our payment processor.
+- Task, payment, and payout records are retained in anonymised form, linked to the placeholder rather than to you, for as long as required for financial, tax, dispute, and legal obligations.
+- Reviews you wrote about other Users, and reviews written about you, are retained in anonymised form so that other Users' ratings remain accurate.
+- Safety records (reports and blocks) are retained so that blocks continue to be enforced and reports can be investigated.
+- If you enrolled for payouts, your Stripe Connect account and the identity, tax, and banking information you gave Stripe are retained by Stripe under its own privacy policy and legal obligations.
+
+We may also retain other information where required to comply with legal obligations, for security or fraud prevention, or to enforce our terms or protect other Users.
 
 To exercise any of these rights, please contact us through the details provided in the Contact Us section below. We may request identity verification prior to processing certain requests.
 

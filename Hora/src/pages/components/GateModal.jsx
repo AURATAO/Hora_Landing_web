@@ -61,7 +61,7 @@ export default function GateModal() {
             onClick={handleBeta}
             className="w-full py-3 rounded-xl bg-secondary text-white text-sm font-semibold hover:bg-secondary/85 transition"
           >
-            Join the Beta
+            Join HO:RA
           </button>
         </div>
       </div>
