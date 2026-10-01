@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import DemoModal from './components/DemoModal.jsx';
 import { useEffect, useState } from "react";
 import { useTimer } from "../context/TimerContext.jsx";
 import AOS from 'aos';
@@ -12,7 +11,6 @@ import { postJSON } from "../lib/fetcher";
 
 export default function Contact() {
   const secondsElapsed = useTimer();
-  const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -85,9 +83,8 @@ const handleSubmit = async (e) => {
           <title>Contact Us | Hora</title>
           <meta name="description" content="Get in touch with the Hora team. Questions, partnership inquiries, or feedback — we'd love to hear from you." />
         </Helmet>
-        <Header handleColor={'bg-primary/20'} onDemoClick={() => setShowModal(true)}/>
+        <Header />
             <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-28 pb-16 bg-linear-to-br from-primary to-accent">
-             <DemoModal show={showModal} onClose={() => setShowModal(false)} />
              <div className="pb-2 flex items-baseline space-x-2 font-secondary text-sm text-primary " data-aos="zoom-out-left">
                 <span>{hours.toString().padStart(2,'0')}:{minutes.toString().padStart(2,'0')}:{seconds.toString().padStart(2,'0')}</span>
                 <span className="text-sm text-primary/40">${earned} <span className="text-[10px]">at min wage</span></span>

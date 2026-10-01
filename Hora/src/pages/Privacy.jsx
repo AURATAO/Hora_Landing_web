@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import DemoModal from "./components/DemoModal";
 
 const slugify = (text) =>
     text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 export default function Privacy() {
     const [content, setContent] = useState('');
-    const [showDemoModal, setShowDemoModal] = useState(false);
 
     useEffect(() => {
         fetch('/termText/privacy.md')
@@ -18,10 +16,9 @@ export default function Privacy() {
     }, []);
     return (
         <>
-            <Header handleColor="bg-primary/40" onDemoClick={() => setShowDemoModal(true)} />
+            <Header />
             <div className='bg-linear-to-br from-primary to-primary/50 py-37.5 px-4'>
                 <div className="max-w-7xl mx-auto">
-                    <DemoModal show={showDemoModal === true} onClose={() => setShowDemoModal(false)} />
                     <div className='justify-start mx-8 flex flex-col pb-10 md:hidden'>
                         <p className="text-sm text-accent/60 italic border-l-4 pl-4 border-accent/30 mb-6">
                             Hora currently operates in a limited service area with a limited set of features. Sections of this Policy may be updated as the Platform evolves.

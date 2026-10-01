@@ -1,58 +1,56 @@
 import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from "react";
+
+const sectionLinks = [
+  { to: "/#services", label: "Services" },
+  { to: "/#how-it-works", label: "How it works" },
+  { to: "/#pricing", label: "Pricing" },
+  { to: "/#trust", label: "Trust" },
+];
+
+const companyLinks = [
+  { to: "/#supporters", label: "Become a Supporter" },
+  { to: "/mission", label: "Mission" },
+  { to: "/faq", label: "FAQ" },
+  { to: "/Contact", label: "Contact" },
+];
+
+const legalLinks = [
+  { to: "/support", label: "Support" },
+  { to: "/terms", label: "Terms of Service" },
+  { to: "/privacy", label: "Privacy Policy" },
+];
 
 export default function Footer() {
-      useEffect(() => {
-        AOS.init({
-          duration: 1200,
-        });
-      }, []);
-    return (
-        <>
-         <footer className="w-full bg-primary py-8">
-            <div className=' mx-auto px-8 flex-col items-start  md:items-center  lg:max-w-7xl'>
-                <div className='w-full flex flex-col items-start justify-center md:flex-row md:items-start md:justify-center md:gap-8 lg:max-w-7xl '>
-                <div className='hidden w-full h-75 mx-auto flex-col items-start justify-end  lg:flex '>
-                <h2 className='text-5xl text-accent font-heading mb-auto' data-aos="fade-down"> <Link to="/" >
-                              <div className='w-45'>
-                              <img src="/img/hora_logo.png" alt="horalogo" className='w-full'/>
-                              </div>
-                              </Link></h2>
-                <div className="flex flex-col justify-end">
-                    <p className='text-accent text-md'>© {new Date().getFullYear()} Hora. All rights reserved.</p>
-                </div>
-                </div>
-                <div className='pt-5 w-full md:w-1/3 '>
-                    <ul className='flex flex-col items-start justify-start gap-4 '>
-                    <li className='text-accent/30 text-lg' data-aos="fade-down">Index</li>
-                    <li className='text-accent hover:text-secondary text-sm'><Link to="/mission">Mission</Link></li>
-                    <li>
-                        <ul className='flex items-center justify-center gap-2'>
-                        <li className='text-accent hover:text-secondary text-sm'><Link to="/contact">Contact</Link></li>
-                        </ul>
-                    </li>
-                    </ul>
-                </div>
-                <div className='pt-5 w-full md:w-1/3 '>
-                    <ul className='flex flex-col items-start justify-start gap-4'>
-                    <li className='text-accent/30 text-lg' data-aos="fade-down"> Resources</li>
-                    <li className='text-accent hover:text-secondary text-sm'> <Link to="/FQA">FAQ</Link></li>
-                    </ul>
-                </div>
-                <div className='pt-5 w-full md:w-1/3 '>
-                    <ul className='flex flex-col items-start justify-start gap-4'>
-                    <li className='text-accent/30 text-lg' data-aos="fade-down">Legal</li>
-                    <li className='text-accent hover:text-secondary text-sm'><Link to="/terms">Terms</Link></li>
-                    <li className='text-accent hover:text-secondary text-sm'><Link to="/privacy">Privacy</Link></li>                    </ul>
-                </div>
-                </div>
-                <div className='pt-10 w-full text-center lg:hidden'>
-                    <p className='text-accent text-md'>© {new Date().getFullYear()} Hora. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-        </>
-    );
+  return (
+    <footer className="w-full bg-cream text-ink">
+      <div className="mx-auto w-full max-w-7xl px-5 md:px-8 py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+          <Link to="/" aria-label="HO:RA home" className="shrink-0 self-start">
+            <img src="/img/hora_logo.png" alt="HO:RA" width="2239" height="707" className="h-10 w-auto" />
+          </Link>
+
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-10 gap-y-8 sm:grid-cols-3 md:gap-x-16">
+            {[sectionLinks, companyLinks, legalLinks].map((links) => (
+              <ul key={links[0].label} className="flex flex-col gap-3">
+                {links.map(({ to, label }) => (
+                  <li key={label}>
+                    <Link to={to} className="text-sm text-ink/80 hover:text-forest transition-colors">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </nav>
+        </div>
+
+        <p className="mt-12 border-t border-ink/15 pt-6 text-sm text-ink/70">
+          © {new Date().getFullYear()} Arcodiax LLC · Delaware, United States ·{" "}
+          <a href="mailto:info@my-hora.com" className="underline underline-offset-2 hover:text-forest">
+            info@my-hora.com
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
 }

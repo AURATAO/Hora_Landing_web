@@ -1,8 +1,22 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "hamburgers/dist/hamburgers.min.css";
+import { APP_STORE_URL } from "../../lib/config";
 
-export default function Header({ onDemoClick }) {
+const navLinks = [
+  { id: "services", label: "Services" },
+  { id: "how-it-works", label: "How it works" },
+  { id: "pricing", label: "Pricing" },
+  { id: "trust", label: "Trust" },
+  { id: "supporters", label: "Become a Supporter" },
+];
+
+// Home sections are plain anchors; this also covers a repeat click on the current hash.
+const scrollToSection = (id) => {
+  document.getElementById(id)?.scrollIntoView();
+};
+
+export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
@@ -45,26 +59,35 @@ export default function Header({ onDemoClick }) {
   return (
     <>
       <header
-        className={`flex items-center justify-even px-3 h-18 w-full fixed z-40 header-fix bg-accent/20 backdrop-blur-md shadow-[0_12px_22px_0_rgba(0,0,0,0.08)] transition-transform duration-300 ${hidden ? "lg:-translate-y-full" : "translate-y-0"}`}
+        className={`flex items-center px-5 md:px-8 h-18 w-full fixed z-40 header-fix bg-white/85 backdrop-blur-md border-b border-ink/10 transition-transform duration-300 ${hidden ? "lg:-translate-y-full" : "translate-y-0"}`}
       >
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center h-full w-full mx-auto lg:max-w-7xl">
-          <nav className="flex space-x-5">
-            <div className="hidden lg:flex items-center gap-6" data-aos="fade-up">
-              <Link to="/mission" className="text-primary text-xl font-light hover:text-gray-500">
-                Mission
-              </Link>
-              <Link to="/faq" className="text-primary text-xl font-light hover:text-gray-500">
-                FAQ
-              </Link>
-              <Link to="/Contact" className="text-primary text-xl font-light hover:text-gray-500">
-                Contact
-              </Link>
-              <Link to="/beta" className="text-secondary text-xl font-semibold hover:text-secondary/75">
-                Join HO:RA →
-              </Link>
-            </div>
+        <div className="flex items-center justify-between gap-6 h-full w-full mx-auto lg:max-w-7xl">
+          <Link to="/" aria-label="HO:RA home" className="shrink-0">
+            <img src="/img/hora_logo.png" alt="HO:RA" width="2239" height="707" className="h-9 w-auto" />
+          </Link>
 
-            <div className="flex justify-between items-center lg:hidden">
+          <nav aria-label="Main" className="hidden lg:flex items-center gap-7">
+            {navLinks.map(({ id, label }) => (
+              <Link
+                key={id}
+                to={`/#${id}`}
+                onClick={() => scrollToSection(id)}
+                className="text-sm font-medium text-ink/80 hover:text-forest whitespace-nowrap transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <a
+              href={APP_STORE_URL}
+              className="hidden sm:inline-flex items-center justify-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white whitespace-nowrap hover:bg-forest/90 active:scale-[0.98] transition"
+            >
+              Get the app
+            </a>
+
+            <div className="flex items-center lg:hidden -mr-3">
               <button
                 type="button"
                 aria-label={isActive ? "Close menu" : "Open menu"}
@@ -78,48 +101,36 @@ export default function Header({ onDemoClick }) {
                 </div>
               </button>
             </div>
-          </nav>
-
-          <div className="flex items-center justify-center">
-            <Link to="/">
-              <div className="w-28 sm:w-36 md:w-45">
-                <img src="/img/hora_logo.png" alt="horalogo" className="w-full" />
-              </div>
-            </Link>
           </div>
-
-          <button
-            className="flex justify-center items-center button-tech-sm md:button-tech justify-self-end"
-            data-aos="fade-up"
-            data-aos-anchor-placement="bottom-center"
-            onClick={onDemoClick}
-          >
-            Book Demo
-          </button>
         </div>
       </header>
 
-      <div
+      <nav
         id="mobile-nav"
-        aria-hidden={!isActive}
-        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-primary/80 transition-all duration-500 ease-in-out z-39 flex flex-col items-center justify-start ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"} lg:hidden`}
+        aria-label="Mobile"
+        inert={!isActive}
+        className={`fixed top-18 pt-8 left-0 w-full h-screen bg-ink/95 transition-opacity duration-300 ease-in-out z-39 flex flex-col items-center justify-start ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"} lg:hidden`}
       >
-        <Link to="/" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
-          Home
-        </Link>
-        <Link to="/mission" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
-          Mission
-        </Link>
-        <Link to="/faq" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
-          FAQ
-        </Link>
-        <Link to="/Contact" onClick={() => setIsActive(false)} className="text-2xl text-center text-accent mb-6 border-b border-accent/20 w-2/4 md:w-3/4 pb-4">
-          Contact
-        </Link>
-        <Link to="/beta" onClick={() => setIsActive(false)} className="mt-2 px-10 py-4 bg-secondary text-white font-semibold rounded-xl text-xl hover:bg-secondary/90 transition-all duration-200">
-          Join HO:RA →
-        </Link>
-      </div>
+        {navLinks.map(({ id, label }) => (
+          <Link
+            key={id}
+            to={`/#${id}`}
+            onClick={() => {
+              setIsActive(false);
+              scrollToSection(id);
+            }}
+            className="text-xl text-center text-white mb-5 border-b border-white/15 w-3/4 pb-4"
+          >
+            {label}
+          </Link>
+        ))}
+        <a
+          href={APP_STORE_URL}
+          className="mt-2 px-10 py-4 bg-cream text-ink font-semibold rounded-full text-lg hover:bg-cream/90 transition"
+        >
+          Get the app
+        </a>
+      </nav>
     </>
   );
 }

@@ -27,10 +27,10 @@ export default function Beta() {
   return (
     <>
       <Helmet>
-        <title>Early Access | Hora</title>
+        <title>Access | HO:RA</title>
         <meta
           name="description"
-          content="HO:RA early access in New York City. Get support with everyday tasks or earn money supporting others. Participation is invite-only and personally managed by the Hora team."
+          content="HO:RA in New York City. Get support with everyday tasks or earn money supporting others. Participation is manually reviewed by the Hora team."
         />
       </Helmet>
 
@@ -44,11 +44,10 @@ export default function Beta() {
           {/* Hero */}
           <div className="text-center space-y-3">
             <h1 className="text-3xl font-bold text-accent">
-              HO:RA Early Access · NYC
+              HO:RA Access · NYC
             </h1>
            <p className="text-accent/60 text-sm leading-relaxed">
-            We're onboarding a small group of New Yorkers to HO:RA. Spots
-            are limited and personally managed by our team. 💚
+            Access through this page is personally managed by our team. 💚
           </p>
           </div>
 
@@ -103,7 +102,7 @@ export default function Beta() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>
-                Participation is invite-only and manually reviewed by our team
+                Participation is manually reviewed by our team
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-secondary mt-0.5">•</span>

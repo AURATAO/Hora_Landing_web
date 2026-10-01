@@ -10,6 +10,10 @@ export default function GateModal() {
   const location = useLocation();
 
   useEffect(() => {
+    if (location.pathname === "/") {
+      setVisible(false);
+      return;
+    }
     if (location.pathname === "/beta") return;
     if (location.pathname.toLowerCase().startsWith("/support")) return;
     if (localStorage.getItem(GATE_KEY)) return;

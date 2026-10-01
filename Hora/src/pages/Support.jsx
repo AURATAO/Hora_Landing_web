@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import DemoModal from "./components/DemoModal";
 
 const SUPPORT_EMAIL = "info@my-hora.com";
 
@@ -41,7 +39,6 @@ function Section({ id, title, children }) {
 }
 
 export default function Support() {
-  const [showDemoModal, setShowDemoModal] = useState(false);
 
   return (
     <>
@@ -52,12 +49,11 @@ export default function Support() {
           content="HO:RA support — contact us, how pricing works, cancelling, becoming a supporter, and where HO:RA is available."
         />
       </Helmet>
-      <Header handleColor="bg-primary/40" onDemoClick={() => setShowDemoModal(true)} />
+      <Header />
       <main
         id="main-content"
         className="bg-linear-to-br from-primary to-primary/50 min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 px-4"
       >
-        <DemoModal show={showDemoModal === true} onClose={() => setShowDemoModal(false)} />
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-semibold text-accent mb-6">HO:RA Support</h1>
 

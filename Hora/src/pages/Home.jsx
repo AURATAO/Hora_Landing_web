@@ -1,67 +1,170 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import DemoModal from './components/DemoModal.jsx';
-import TestimonialsSlider from './components/TestimonialsSlider.jsx';
-import NewsSection from './components/NewsSection.jsx';
+import useScrollReveal from '../hooks/useScrollReveal';
+import { APP_STORE_URL, WEB_APP_URL, SUPPORTER_APPLY_URL } from '../lib/config';
 import {
+  ShoppingBag,
   Bike,
-  ShoppingCart,
   WashingMachine,
-  Users,
+  ShoppingCart,
   Clock,
-  Sparkles,
+  Users,
+  Wallet,
+  MapPin,
+  ListChecks,
+  Banknote,
+  UserCheck,
+  ClipboardList,
+  Navigation,
+  Receipt,
+  BadgeCheck,
+  Check,
+  Image as ImageIcon,
 } from "lucide-react";
 
+// Copy source: hora-landing-copy.md — use verbatim, do not edit numbers or wording here.
+
+const heroTrust = [
+  "Interviewed & ID-verified Supporters",
+  "Price shown before you post",
+  "Pay by the minute",
+];
+
+const proof = [
+  { value: "400+", label: "tasks completed" },
+  { value: "81%", label: "fulfilment rate" },
+  { value: "~10 min", label: "median match time" },
+];
+
+const categories = [
+  { icon: ShoppingBag, title: "Quick errand", desc: "A local purchase, a document drop, a last-minute pickup." },
+  { icon: Bike, title: "Delivery", desc: "Collect something from one place and bring it to another, with as many stops as you need." },
+  { icon: WashingMachine, title: "Laundry", desc: "Drop off, wait out the wash, pick it back up. Waiting time isn't billed." },
+  { icon: ShoppingCart, title: "Grocery", desc: "A shopping list, a budget you set, a receipt photo at the end." },
+  { icon: Clock, title: "Queue", desc: "Someone holds your place while you keep moving." },
+  { icon: Users, title: "Companionship", desc: "A walk, a conversation, a shared meal, or company at an event. Non-medical." },
+];
+
+const steps = [
+  { n: "01", title: "Describe it", desc: "Say what you need, where, and how long you think it'll take. Add stops and a shopping budget if there is one." },
+  { n: "02", title: "See the price first", desc: "The estimate appears before you post. That exact amount is reserved on your card — nothing more." },
+  { n: "03", title: "Follow along", desc: "Your Supporter taps \"On my way\" and you see them approach on a live map. You're notified when they arrive." },
+  { n: "04", title: "Pay for what happened", desc: "An itemised receipt at the end: base fee, minutes worked, and any purchases, with the receipt photo attached." },
+];
+
+const plans = [
+  {
+    title: "Everyday tasks",
+    sub: "Errands, delivery, laundry, grocery, queues",
+    price: "$12",
+    unit: "base",
+    note: "Includes the first 15 minutes, then $0.50 per minute.",
+    highlighted: true,
+  },
+  {
+    title: "Companionship",
+    sub: "A walk, a conversation, company at an event",
+    price: "$25",
+    unit: "base",
+    note: "Includes the first 15 minutes, then $0.50 per minute.",
+  },
+  {
+    title: "Evening & overnight",
+    sub: "Tasks starting 9 PM – 8 AM",
+    price: "$1.00",
+    unit: "per minute",
+    note: "After the first 15 minutes. The rate is locked when you post and shown before you confirm.",
+  },
+];
+
+const pricingTicks = [
+  "Supporters keep 80% of service pay",
+  "Purchases reimbursed in full, no markup",
+  "Cancel free within 3 minutes of a Supporter accepting",
+];
+
+const supporterCards = [
+  { icon: Wallet, title: "Transparent payout", desc: "You keep 80% of service pay. Purchases you front are reimbursed in full." },
+  { icon: MapPin, title: "Stay local", desc: "Take tasks that fit your zone and the way you already move through the city." },
+  { icon: ListChecks, title: "Choose freely", desc: "Every detail is visible before you accept or decline." },
+  { icon: Banknote, title: "Paid for your commitment", desc: "If a Requester cancels after accepting, the base fee is still yours." },
+];
+
+const trustCards = [
+  { icon: UserCheck, title: "Approved before activation", desc: "Every Supporter applies, is interviewed one-on-one by our team, and completes identity verification through Checkr before they can take a task." },
+  { icon: ClipboardList, title: "Scope stays recorded", desc: "Stops, spending limits and any approved change stay attached to the task." },
+  { icon: Navigation, title: "Live location while it matters", desc: "You see your Supporter's location only while they're on their way to you and working — never before, never after." },
+  { icon: Receipt, title: "Itemised closeout", desc: "Time worked and approved purchases are listed separately, with the receipt photo attached." },
+];
+
+const container = "mx-auto w-full max-w-7xl px-5 md:px-8";
+const btn = "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold whitespace-nowrap transition active:scale-[0.98]";
+const btnPrimary = `${btn} bg-forest text-white hover:bg-forest/90`;
+const btnSecondary = `${btn} border border-ink/25 text-ink hover:bg-ink/5`;
+
+function Eyebrow({ children, dark = false }) {
+  return (
+    <p className={`mb-4 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] ${dark ? "text-gold" : "text-forest"}`}>
+      <span aria-hidden="true" className="h-px w-6 bg-gold" />
+      {children}
+    </p>
+  );
+}
+
+function Tick({ children, dark = false }) {
+  return (
+    <li className="flex items-start gap-2.5">
+      <span aria-hidden="true" className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest">
+        <Check className="h-3 w-3 text-gold" strokeWidth={3} />
+      </span>
+      <span className={dark ? "text-white/90" : "text-ink/85"}>{children}</span>
+    </li>
+  );
+}
+
+function IconChip({ icon: Icon }) {
+  return (
+    <div aria-hidden="true" className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-forest">
+      <Icon className="h-5 w-5 text-gold" strokeWidth={2} />
+    </div>
+  );
+}
+
+// Sized stand-in until the real photography is supplied. `ratio` reserves the space so nothing shifts on swap.
+// With `parallax`, the inner layer is taller than the frame and drifts as it scrolls; put the real <img> there.
+function ImagePlaceholder({ ratio, label, size, parallax = false }) {
+  return (
+    <div
+      role="img"
+      aria-label={`Image placeholder: ${label}`}
+      // overflow-clip, not overflow-hidden: a hidden box becomes the scroll container the drift would track instead of the page.
+      className={`relative ${ratio} w-full overflow-clip rounded-3xl border border-dashed border-forest/40 bg-sage/20`}
+    >
+      <div
+        className={`absolute inset-x-0 flex flex-col items-center justify-center gap-2 p-6 text-center ${parallax ? "parallax-drift -top-[6%] h-[112%]" : "inset-y-0"}`}
+      >
+        <ImageIcon aria-hidden="true" className="h-7 w-7 text-forest/70" />
+        <span className="text-sm font-semibold text-forest">{label}</span>
+        <span className="text-xs text-ink/70">{size}</span>
+      </div>
+    </div>
+  );
+}
+
+// Hero entrance order; each value is that element's start time. The last one ends at ~1.1s.
+const heroDelay = (ms, duration) => ({ "--hero-delay": `${ms}ms`, ...(duration && { "--hero-duration": `${duration}ms` }) });
+
 export default function Home() {
-  const navigate = useNavigate();
-  const [showDemoModal, setShowDemoModal] = useState(false);
-  const services = [
-  {
-    icon: Bike,
-    title: "Same-day Delivery",
-    desc: "Multi-stop pickups and drop-offs, on your schedule",
-    delay: "100",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Grocery & Errands",
-    desc: "We go to the store so you don't have to",
-    delay: "150",
-  },
-  {
-    icon: WashingMachine,
-    title: "Laundry Service",
-    desc: "Wash, dry, fold — picked up and returned",
-    delay: "200",
-  },
-  {
-  icon: Users,
-  title: "Companionship",
-  desc: "A friendly presence for a walk, a chat, or just some company — no medical care included",
-  delay: "250",
-  },
-  {
-    icon: Clock,
-    title: "Queue & Wait",
-    desc: "We hold your spot so you can be somewhere better",
-    delay: "300",
-  },
-  {
-    icon: Sparkles,
-    title: "Anything Else",
-    desc: "If we can do it, just ask",
-    delay: "350",
-    },
-  ];
+  const mainRef = useRef(null);
+  useScrollReveal(mainRef);
 
   return (
     <>
       <Helmet>
-        <title>Hora — Turn Time into Value | Find Trusted Support Near You</title>
-        <meta name="description" content="Tap. Match. Track. Hora connects you with verified supporters nearby for any task — pay only per minute. Now in NYC and Milan." />
+        <title>HO:RA — A real person, 5 minutes away | New York City</title>
+        <meta name="description" content="Post any task — errands, deliveries, laundry runs. Get matched with someone approved and nearby, usually within minutes." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -73,321 +176,293 @@ export default function Home() {
         })}</script>
       </Helmet>
 
-      <Header onDemoClick={() => setShowDemoModal(true)} />
+      <Header />
 
-      <main id="main-content" className="flex flex-col items-center justify-center bg-accent pt-15">
+      <main ref={mainRef} id="main-content" className="bg-white pt-18 text-ink">
 
-        {/* ── SCENE 1 — Full-bleed hero image ── */}
-        <div className="hero relative w-full h-svh overflow-hidden">
-          <img
-            src="/img/horaImage4.png"
-            alt="Hora supporter delivering in NYC"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ transform: 'scale(1.2) translate(4%, 5%)', transformOrigin: 'center' }}
-          />
-          <div className="absolute inset-0 bg-linear-to-br from-primary/40 via-primary/20 to-transparent" />
-          <div className="relative h-full flex items-center justify-center z-10 pt-20 lg:pt-24">
-            <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
-              <div className="max-w-3xl">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
-                    <div className="w-2 h-2 bg-[#3A5A2D] rounded-full animate-pulse" />
-                    <span className="text-sm font-medium text-primary font-secondary">Now in NYC 🗽</span>
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/70 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
-                    <span className="text-sm font-medium text-white font-secondary"> Early access · Limited spots </span>
-                  </div>
+        {/* ── HERO ── */}
+        <section className="bg-cream">
+          <div className={`${container} grid items-center gap-12 py-14 lg:grid-cols-[7fr_5fr] lg:gap-16 lg:py-20`}>
+            <div>
+              <div className="hero-in mb-6 inline-flex items-center gap-2 rounded-full border border-forest/25 bg-white/70 px-4 py-1.5 text-sm font-medium text-forest" style={heroDelay(0, 400)}>
+                <MapPin aria-hidden="true" className="h-4 w-4 text-forest" />
+                New York City
+              </div>
+
+              <p className="hero-in mb-3 text-lg italic text-ink/75 md:text-xl" style={heroDelay(0, 400)}>Time has value.</p>
+
+              <h1 className="mb-6 text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl xl:text-7xl">
+                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>A real person,</span>
+                <span className="hero-rise-blur block text-forest" style={heroDelay(240, 600)}>5 minutes away.</span>
+              </h1>
+
+              <p className="hero-rise mb-8 max-w-xl font-secondary text-lg text-ink/80 md:text-xl" style={heroDelay(420)}>
+                Post any task — errands, deliveries, laundry runs. Get matched with someone approved and nearby, usually within minutes.
+              </p>
+
+              <ul className="hero-rise mb-9 flex flex-col gap-3 text-sm font-medium sm:flex-row sm:flex-wrap sm:gap-x-6" style={heroDelay(500)}>
+                {heroTrust.map((item) => (
+                  <Tick key={item}>{item}</Tick>
+                ))}
+              </ul>
+
+              <div className="hero-rise flex flex-col gap-3 sm:flex-row" style={heroDelay(580)}>
+                <a href={APP_STORE_URL} className={btnPrimary}>
+                  Get the app <span aria-hidden="true">→</span>
+                </a>
+                <a href={WEB_APP_URL} className={btnSecondary}>
+                  Open the web app
+                </a>
+              </div>
+            </div>
+
+            {/* TODO(prefill-form): replace this framed visual with the real task prefill form once the web app
+                can receive handed-over values. Until then this stays a static image — no inputs, no estimate. */}
+            <div className="hero-in mx-auto w-full max-w-md rounded-[2rem] border border-ink/10 bg-white p-3 shadow-[0_24px_60px_-24px_rgba(58,90,45,0.35)] lg:max-w-none" style={heroDelay(120, 900)}>
+              <div className="overflow-hidden rounded-3xl">
+                <div className="hero-settle" style={heroDelay(120, 900)}>
+                  <ImagePlaceholder ratio="aspect-[4/5]" label="Hero photo" size="4:5 · supply at 1600 × 2000" />
                 </div>
-
-                 <h2 className='text-xl italic text-white/80'>Time has value.</h2>
-
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6">
-                  A real person,
-                  <br />
-                  <span className="gradient-animate inline-block">5 minutes away.</span>
-                </h1>
-
-                <p className="text-xl md:text-2xl text-white/90 font-secondary mb-8 max-w-2xl">
-                  Post any task — errands, deliveries, laundry runs. Get matched with someone verified and nearby, instantly.
-                </p>
-
-               
-                {/* <div className="flex flex-wrap items-center gap-2 mb-4">
-                  {["Same-day delivery", "Grocery runs", "Laundry drop-off"].map((label) => (
-                    <div key={label} className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
-                      <span className="text-white/90 font-secondary text-sm">{label}</span>
-                    </div>
-                  ))}
-                </div> */}
-
-        
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-         
-   
-        {/* HORA IN ACTION - Image Grid */}
-       <div className="w-full bg-white py-32">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
-            
-            {/* Section Header */}
-            <div className="text-center mb-16" data-aos="fade-up">
-              <div className="inline-block px-4 py-1 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-                What we do
+        {/* ── PROOF STRIP ── */}
+        <section aria-label="Pilot results" className="border-b border-ink/10 bg-white">
+          <div className={`${container} py-12 md:py-14`} data-reveal="fade">
+            <dl className="grid gap-8 text-center sm:grid-cols-3">
+              {proof.map(({ value, label }) => (
+                <div key={label} className="flex flex-col">
+                  <dt className="order-2 mt-1 font-secondary text-ink/75">{label}</dt>
+                  <dd className="order-1 text-4xl font-bold tracking-tight text-forest md:text-5xl">{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
+              Results from HO:RA's 2026 New York City pilot rounds. Past match times are not a service guarantee.
+            </p>
+          </div>
+        </section>
+
+        {/* ── WHAT HO:RA IS ── */}
+        <section className="bg-white">
+          <div className={`${container} grid items-center gap-12 py-20 md:py-28 lg:grid-cols-2 lg:gap-20`}>
+            <div>
+              <div data-reveal="rise">
+                <Eyebrow>BUILT FOR REAL LIFE</Eyebrow>
+                <h2 className="mb-6 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                  One local network.
+                  <br />
+                  Many small tasks.
+                </h2>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-                Every errand. Every task. Handled.
-              </h2>
-              <p className="text-xl text-primary/70 font-secondary max-w-3xl mx-auto">
-                Real people near you — ready for whatever you need.
+              <div data-reveal="rise" data-reveal-step="1">
+                <p className="mb-8 max-w-xl font-secondary text-lg text-ink/80">
+                  Start with the task, not a job category. Describe what you need, HO:RA prices the time, and an approved Supporter nearby picks it up.
+                </p>
+                <a href="#how-it-works" className="inline-flex items-center gap-2 font-semibold text-forest underline-offset-4 hover:underline">
+                  See how it works <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+            <figure data-reveal="fade">
+              <ImagePlaceholder parallax ratio="aspect-[4/3]" label="Handover scene" size="4:3 · supply at 1600 × 1200" />
+              <figcaption className="mt-3 text-sm text-ink/70">Illustrative scene created for HO:RA.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        {/* ── CATEGORIES ── */}
+        <section id="services" className="scroll-mt-20 bg-cream">
+          <div className={`${container} py-20 md:py-28`}>
+            <h2 className="sr-only">Services</h2>
+            <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-reveal-block>
+              {categories.map(({ icon, title, desc }) => (
+                <li
+                  key={title}
+                  className="rounded-3xl border border-ink/10 bg-white p-7 md:p-8"
+                  data-reveal="rise"
+                  data-reveal-stagger
+                >
+                  <IconChip icon={icon} />
+                  <h3 className="mb-2 text-xl font-bold">{title}</h3>
+                  <p className="font-secondary leading-relaxed text-ink/75">{desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ── HOW IT WORKS ── */}
+        <section id="how-it-works" className="scroll-mt-20 bg-white">
+          <div className={`${container} py-20 md:py-28`}>
+            <div className="mb-12 md:mb-16" data-reveal="rise">
+              <Eyebrow>FROM REQUEST TO DONE</Eyebrow>
+              <h2 className="text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">Clear at every minute.</h2>
+            </div>
+            <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal-block>
+              {steps.map(({ n, title, desc }) => (
+                <li
+                  key={n}
+                  className="rounded-3xl border border-ink/10 bg-white p-7"
+                  data-reveal="rise"
+                  data-reveal-stagger
+                >
+                  <span aria-hidden="true" className="mb-6 block text-4xl font-bold tracking-tight text-sage">{n}</span>
+                  <h3 className="mb-2 text-xl font-bold">{title}</h3>
+                  <p className="font-secondary leading-relaxed text-ink/75">{desc}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* ── PRICING ── */}
+        <section id="pricing" className="scroll-mt-20 bg-cream">
+          <div className={`${container} py-20 md:py-28`}>
+            <div className="mb-12 max-w-2xl md:mb-16">
+              <div data-reveal="rise">
+                <Eyebrow>SIMPLE PRICING</Eyebrow>
+                <h2 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">Pay for the time you use.</h2>
+              </div>
+              <p className="font-secondary text-lg text-ink/80" data-reveal="rise" data-reveal-step="1">
+                No booking fee, no subscription. The base fee covers the first 15 minutes; after that you're billed by the minute.
               </p>
             </div>
 
-            {/* Service Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc, delay }) => (
-              <div
-                key={title}
-                className="group bg-gray-50 hover:bg-secondary/5 border border-gray-100 hover:border-secondary/20 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-delay={delay}
-              >
-                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors duration-300">
-                  <Icon className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">{title}</h3>
-                <p className="text-primary/60 font-secondary text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-          </div>
-        </div>
-
-
-        {/* ── HOW IT WORKS ── */}
-        <div className="w-full bg-primary py-20 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl lg:text-5xl font-bold text-accent mb-4">How HO:RA Works</h2>
-              <p className="text-lg text-accent/70 font-secondary max-w-2xl mx-auto">From request to done in minutes.</p>
-            </div>
-            <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
-              <div className="w-full lg:w-1/2 space-y-12">
-                {[
-                  { n: "01", title: "Sign Up & Verify", desc: "Create your account and complete a quick sign-up. Get instant access to our trusted community." },
-                  { n: "02", title: "Tap Post a Task", desc: "Describe what you need in one tap. Whether it's groceries, errands, or companionship—we've got you covered." },
-                  { n: "03", title: "Auto-Match Nearby", desc: "We connect you with a verified supporter nearby. Average match time: 2 minutes." },
-                  { n: "04", title: "Track & Pay", desc: "Real-time tracking keeps you updated. Pay only for minutes used with automatic refunds for early completions." },
-                ].map(({ n, title, desc }, i) => (
-                  <div key={n}>
-                    <div className="flex gap-6 group">
-                      <div className="shrink-0 w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">{n}</div>
-                      <div className="pt-1">
-                        <h3 className="text-2xl font-bold text-accent mb-3">{title}</h3>
-                        <p className="text-accent/70 font-secondary leading-relaxed">{desc}</p>
-                      </div>
-                    </div>
-                    {i < 3 && <div className="ml-8 mt-12 h-12 w-0.5 bg-accent/20" />}
-                  </div>
-                ))}
-              </div>
-              <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
-                <div className="relative max-w-xs lg:max-w-sm">
-                  <div className="absolute inset-0 bg-secondary/20 rounded-full blur-3xl" />
-                  <img src="/img/greenphone2.png" alt="Hora App Process" className="relative w-full max-w-65 lg:max-w-150" />
-                  {[
-                    { icon: "✅", label: "Match found!", className: "top-6", delay: "animate-float" },
-                    { icon: "🕒", label: "Checked in 3:14 PM", className: "top-20", delay: "animate-float-delayed" },
-                    { icon: "💸", label: "Payment confirmed", className: "top-34", delay: "animate-float" },
-                  ].map(({ icon, label, className, delay }) => (
-                    <div key={label} className={`absolute ${className} left-2 lg:-left-4 bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-3 ${delay}`}>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xl">{icon}</span>
-                        <div>
-                          <span className="text-xs font-semibold text-gray-700 block">HO:RA</span>
-                          <p className="text-xs text-gray-900 leading-tight">{label}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-          {/* Section logo  */}
-
-        <div className="w-full bg-primary py-12 ">
-              <div className="flex flex-wrap justify-center items-center gap-2 mb-8">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-primary/10 shadow-sm">
-                    <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm font-secondary text-primary">ID Verified</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-primary/10 shadow-sm">
-                    <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm font-secondary text-primary">Background Checked</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-primary/10 shadow-sm">
-                    <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm font-secondary text-primary">Secure Payments</span>
-                  </div>
-                </div>
-            
-            <div className='max-w-7xl mx-auto px-4 md:px-8'>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="flex-1 h-px bg-accent/20" />
-              <div className="text-sm font-semibold tracking-[0.3em] uppercase text-accent/60">Trusted & powered by</div>
-              <div className="flex-1 h-px bg-accent/20" />
-            </div>
-            </div>
-          
-          
-
-          <div className='flex items-center justify-center gap-8'>
-          <img src="/img/checkr.png" alt="checkr logo" className="h-10 md:h-10 w-auto" />
-          <img src="/img/stripeLogo.png" alt="Stripe logo" className="h-14 pt-2 md:h-14 md:pt-2 w-auto" />
-          </div>
-        </div>
-
-        {/* ── TESTIMONIALS ── */}
-        <TestimonialsSlider />
-        {/* ── NEWS & UPDATES ── */}
-        <NewsSection />
-
-        {/* ── WHO USES HORA ── */}
-        <div className="w-full bg-linear-to-b from-white to-accent py-20 lg:py-32">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">Who uses HO:RA?</h2>
-              <p className="text-lg text-primary/70 font-secondary">Join thousands of people who have chosen a smarter way to magnage their time.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-secondary to-secondary/50" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">💚</div>
-                    <h3 className="text-2xl font-bold text-primary">Supporter</h3>
-                  </div>
-                  <ul className="space-y-4 mb-8">
-                    {[["Why", "Turn spare time into income—help with groceries, yard work, or simply share an hour at the park."], ["How to start", "Sign up + verify identity"]].map(([label, text]) => (
-                      <li key={label} className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <svg className="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                        </div>
-                        <div><span className="font-semibold text-secondary">{label}: </span><span className="text-primary/80 font-secondary">{text}</span></div>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="bg-secondary/5 border-l-4 border-secondary rounded-r-xl p-4 mb-6">
-                    <p className="text-sm italic text-primary/70 font-secondary">"Weekend free? I take a task or two—and turn time into extra income."</p>
-                  </div>
-                  <button className="w-full py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg" onClick={() => navigate('/beta')}>Earn on Your Schedule →</button>
-                </div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
-              </div>
-              <div className="group relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary/5 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-primary to-primary/50" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">🤝</div>
-                    <h3 className="text-2xl font-bold text-primary">Requester</h3>
-                  </div>
-                  <ul className="space-y-4 mb-8">
-                    {[ ["Why", "Get groceries, handle chores, or simply need company—post it and reclaim your time."], ["How to start", "ASAP or Schedule a task"]].map(([label, text]) => (
-                      <li key={label} className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                        </div>
-                        <div><span className="font-semibold text-primary">{label}: </span><span className="text-primary/80 font-secondary">{text}</span></div>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="bg-primary/5 border-l-4 border-primary rounded-r-xl p-4 mb-11">
-                    <p className="text-sm italic text-primary/70 font-secondary">"One tap. Chores done. I've got my time back."</p>
-                  </div>
-                  <button className="w-full py-4 bg-secondary text-white rounded-xl font-semibold hover:bg-secondary/90 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg" onClick={() => navigate('/beta')}>Get Help in Minutes →</button>
-                </div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ── TEAM ── */}
-        <div className="w-full bg-linear-to-br from-primary via-primary to-primary/90 py-20 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center gap-4 mb-16">
-              <div className="flex-1 h-px bg-accent/20" />
-              <div className="text-sm font-semibold tracking-[0.3em] uppercase text-accent/60">Behind HO:RA</div>
-              <div className="flex-1 h-px bg-accent/20" />
-            </div>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-16 mb-12">
-              {[
-                { src: "/img/founder1.JPG", alt: "Liang you", role: "Co-founder, Product & Business", name: "Liang you", linkedin: "https://www.linkedin.com/in/liang-you-tao-658705106/", github: "https://github.com/AURATAO" },
-                { src: "/img/founder2.jpg", alt: "Daniele", role: "Co-founder, Marketing & Growth", name: "Daniele", linkedin: "https://www.linkedin.com/in/daniele-rollo-9898061a5/" },
-              ].map(({ src, alt, role, name, linkedin, github }) => (
-                <div key={name} className="group flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-secondary/20 rounded-full blur-2xl scale-110" />
-                    <img src={src} alt={alt} className="relative w-40 h-40 rounded-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 shadow-2xl border-4 border-white/10" />
-                  </div>
-                  <p className="text-sm text-accent/50 mb-2 font-secondary">{role}</p>
-                  <h3 className="text-2xl font-bold text-accent mb-3">{name}</h3>
-                  <div className="flex gap-4">
-                    <a href={linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent/60 hover:text-secondary text-sm transition-colors duration-300">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                      LinkedIn
-                    </a>
-                    {github && (
-                      <a href={github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent/60 hover:text-secondary text-sm transition-colors duration-300">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
-                        GitHub
-                      </a>
-                    )}
-                  </div>
+            <div className="grid gap-5 lg:grid-cols-3" data-reveal-block>
+              {plans.map(({ title, sub, price, unit, note, highlighted }) => (
+                <div
+                  key={title}
+                  className={`flex flex-col rounded-3xl border p-8 ${highlighted ? "border-forest bg-forest text-white" : "border-ink/10 bg-white text-ink"}`}
+                  data-reveal="rise"
+                  data-reveal-stagger
+                >
+                  <h3 className="text-xl font-bold">{title}</h3>
+                  <p className={`mt-1 font-secondary ${highlighted ? "text-white/85" : "text-ink/75"}`}>{sub}</p>
+                  <p className="mt-8 mb-4 flex items-baseline gap-2">
+                    <span className="text-5xl font-bold tracking-tight md:text-6xl">{price}</span>
+                    <span className={`font-secondary text-lg ${highlighted ? "text-white/85" : "text-ink/75"}`}>{unit}</span>
+                  </p>
+                  <p className={`font-secondary leading-relaxed ${highlighted ? "text-white/90" : "text-ink/80"}`}>{note}</p>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-16">
-              <div className="inline-block bg-accent/5 border border-accent/10 rounded-2xl px-8 py-6 backdrop-blur-sm">
-                <p className="text-lg text-accent/90 font-secondary italic">"We are building HO:RA to redefine how the world values time."</p>
+
+            <ul className="mt-10 grid gap-4 text-sm font-medium md:grid-cols-3 md:gap-5">
+              {pricingTicks.map((item) => (
+                <Tick key={item}>{item}</Tick>
+              ))}
+            </ul>
+
+            <p className="mt-8 max-w-4xl text-sm leading-relaxed text-ink/70">
+              Shopping budgets are set by you and reimbursed against a photo of the receipt. If your Supporter needs more time or a larger budget, you approve it first. After the free cancellation window, a cancelled task is charged the base fee — or the time already worked, if more — and that goes to your Supporter.
+            </p>
+          </div>
+        </section>
+
+        {/* ── FOR SUPPORTERS ── */}
+        <section id="supporters" className="scroll-mt-20 bg-white">
+          <div className={`${container} grid items-start gap-12 py-20 md:py-28 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
+            <div className="mx-auto w-full max-w-md lg:max-w-none" data-reveal="fade">
+              <ImagePlaceholder parallax ratio="aspect-[4/5]" label="Supporter photo" size="4:5 · supply at 1600 × 2000" />
+            </div>
+            <div>
+              <div data-reveal="rise">
+                <Eyebrow>FOR SUPPORTERS</Eyebrow>
+                <h2 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">Make open time count.</h2>
               </div>
+              <div data-reveal="rise" data-reveal-step="1">
+                <p className="mb-8 max-w-xl font-secondary text-lg text-ink/80">
+                  See the task, the stops, the expected commitment and your payout before you accept. Work locally, no exclusivity, no minimum hours.
+                </p>
+                <a href={SUPPORTER_APPLY_URL} className={btnPrimary}>
+                  Apply as a Supporter <span aria-hidden="true">→</span>
+                </a>
+                <p className="mt-4 text-sm text-ink/70">
+                  Sign up → apply → interview → ID verification → approval
+                </p>
+              </div>
+              <ul className="mt-12 grid gap-5 sm:grid-cols-2" data-reveal-block>
+                {supporterCards.map(({ icon, title, desc }) => (
+                  <li
+                    key={title}
+                    className="rounded-3xl border border-ink/10 bg-cream/40 p-7"
+                    data-reveal="rise"
+                    data-reveal-stagger
+                  >
+                    <IconChip icon={icon} />
+                    <h3 className="mb-2 text-lg font-bold">{title}</h3>
+                    <p className="font-secondary leading-relaxed text-ink/75">{desc}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-   
+        {/* ── TRUST ── */}
+        <section id="trust" className="scroll-mt-20 bg-ink text-white" data-reveal="tone" data-reveal-margin="-20%">
+          <div className={`${container} py-20 md:py-28`}>
+            <div className="mb-12 max-w-3xl md:mb-16">
+              <div data-reveal="rise">
+                <Eyebrow dark>TRUST IS INFRASTRUCTURE</Eyebrow>
+                <h2 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">The right person for the right task.</h2>
+              </div>
+              <p className="font-secondary text-lg text-white/80" data-reveal="rise" data-reveal-step="1">
+                Every Supporter is reviewed and approved by our team before they can accept a task. What happens during the task is recorded, and what you pay is itemised.
+              </p>
+            </div>
 
-        {/* ── FINAL CTA ── */}
-        <div className="w-full h-100 relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/img/section_5_1.JPG)' }}>
-            <div className="absolute inset-0 bg-primary/60 backdrop-blur-sm" />
+            <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal-block data-reveal-step="3">
+              {trustCards.map(({ icon: Icon, title, desc }) => (
+                <li
+                  key={title}
+                  className="rounded-3xl border border-white/15 bg-white/5 p-7"
+                  data-reveal="rise"
+                  data-reveal-stagger
+                  data-reveal-step="3"
+                >
+                  <Icon aria-hidden="true" className="mb-5 h-6 w-6 text-gold" strokeWidth={2} />
+                  <h3 className="mb-2 text-lg font-bold">{title}</h3>
+                  <p className="font-secondary leading-relaxed text-white/75">{desc}</p>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-6 border-t border-white/15 pt-10">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                <BadgeCheck aria-hidden="true" className="h-5 w-5 text-gold" />
+                <span className="font-secondary text-sm text-white">ID Verified</span>
+              </div>
+              <img src="/img/checkr.png" alt="Checkr" width="136" height="32" loading="lazy" className="h-8 w-auto" />
+              <img src="/img/stripeLogo.png" alt="Stripe" width="99" height="40" loading="lazy" className="h-10 w-auto" />
+            </div>
           </div>
-          <div className="relative h-full flex flex-col items-center justify-center text-center px-4 z-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-accent mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-accent/80 font-secondary mb-8 max-w-2xl">Join the HO:RA community and experience a new way to manage your time</p>
-            <button
-              className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
-              onClick={() => setShowDemoModal(true)}
-            >
-              Book Your Demo Today
-            </button>
-          </div>
-        </div>
+        </section>
 
-        <DemoModal show={showDemoModal} onClose={() => setShowDemoModal(false)} />
-        <Footer />
+        {/* ── CLOSING CTA ── */}
+        <section className="bg-forest text-white">
+          <div className={`${container} flex flex-col items-center py-20 text-center md:py-28`}>
+            <h2 className="mb-4 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">Get your time back.</h2>
+            <p className="mb-9 font-secondary text-lg text-white/90 md:text-xl">HO:RA is live in New York City.</p>
+            <div className="flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+              <a href={APP_STORE_URL} className={`${btn} bg-cream text-ink hover:bg-white`}>
+                Download on the App Store
+              </a>
+              <a href={WEB_APP_URL} className={`${btn} border border-white/50 text-white hover:bg-white/10`}>
+                Open the web app
+              </a>
+            </div>
+            <a href={SUPPORTER_APPLY_URL} className="mt-7 inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-cream">
+              Apply as a Supporter <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </>
   );
 }

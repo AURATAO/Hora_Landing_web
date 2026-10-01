@@ -5,4 +5,11 @@
   --color-danger: #EF4444;
   --color-neutralbg: #F9FAFB;
   --color-border: #E5E7EB;
+
+  /* Brand tokens */
+  --color-ink: #222831;
+  --color-forest: #3A5A2D;
+  --color-gold: #E1B145;
+  --color-sage: #A3C585;
+  --color-cream: #F6ECCF;
 }

@@ -469,6 +469,77 @@ html {
 }
 
 
+/* Scroll reveal — driven by hooks/useScrollReveal.js.
+   Elements are visible by default; the hook adds .reveal-pending, then swaps it for .reveal-in. */
+.reveal-pending[data-reveal="rise"],
+.reveal-pending[data-reveal="fade"],
+.reveal-pending[data-reveal-block] {
+  opacity: 0;
+}
+.reveal-pending[data-reveal="rise"],
+.reveal-pending[data-reveal-block] {
+  transform: translateY(20px);
+}
+.reveal-in {
+  transition:
+    opacity 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+/* "tone": a dark section arrives from a slightly deeper shade of its own background. */
+.reveal-pending[data-reveal="tone"] {
+  background-color: #14181e;
+}
+.reveal-in[data-reveal="tone"] {
+  transition: background-color 900ms ease-out;
+}
+
+/* Hero entrance — plays once on load, CSS only, so the hero is never waiting on a script.
+   Sequence is set per element with --hero-delay / --hero-duration (see Home.jsx).
+   Under reduced motion none of this applies and the hero is simply there. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in,
+  .hero-rise,
+  .hero-rise-blur,
+  .hero-settle {
+    animation-duration: var(--hero-duration, 500ms);
+    animation-delay: var(--hero-delay, 0ms);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: both;
+  }
+  .hero-in { animation-name: hero-in; }
+  .hero-rise { animation-name: hero-rise; }
+  .hero-rise-blur { animation-name: hero-rise-blur; }
+  .hero-settle { animation-name: hero-settle; }
+
+  /* Section images drift inside their frame as they cross the viewport. Scroll-driven and
+     compositor-run where supported; elsewhere the image just sits still, slightly cropped. */
+  @supports (animation-timeline: view()) {
+    .parallax-drift {
+      animation: parallax-drift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+}
+@keyframes hero-in {
+  from { opacity: 0; }
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(16px); }
+}
+@keyframes hero-rise-blur {
+  from { opacity: 0; transform: translateY(18px); filter: blur(8px); }
+}
+@keyframes hero-settle {
+  from { transform: scale(1.04); }
+}
+/* The drifting layer is 112% of the frame height, so ±4% of its own height stays inside the overhang. */
+@keyframes parallax-drift {
+  from { transform: translateY(-4%); }
+  to { transform: translateY(4%); }
+}
+
 /* Respect user's motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,

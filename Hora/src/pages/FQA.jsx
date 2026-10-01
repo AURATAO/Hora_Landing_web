@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import DemoModal from "./components/DemoModal";
 
 const faqs = [
   {
@@ -73,7 +72,6 @@ const faqs = [
 export default function FQA() {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
-  const [showDemoModal, setShowDemoModal] = useState(false);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -95,10 +93,9 @@ export default function FQA() {
       <meta name="description" content="Got questions about Hora? Find answers about how it works, pricing, supporter verification, cancellations, and more." />
       <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
     </Helmet>
-    <Header handleColor={'bg-primary/40'}  onDemoClick={() => setShowDemoModal(true)}/>
+    <Header />
     <section id="main-content" className="bg-linear-to-br from-primary to-primary/30 text-secondary min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 px-4">
       <div className="max-w-4xl mx-auto">
-        <DemoModal show={showDemoModal===true} onClose={() => setShowDemoModal(false)} />
         <h3 className='text-accent font-base text-sm pb-4 text-center'>HO:RA is currently available in New York City. Request a demo to learn more.</h3>
         <h1 className="text-4xl font-bold text-accent text-center mb-12">FAQ</h1>
         <div className="space-y-4">

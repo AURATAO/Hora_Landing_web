@@ -205,7 +205,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
       }
     `}</style>
     
-    <Header handleColor={handleColor} secondsElapsed={secondsElapsed} flipped={flipped} onDemoClick={()=>setShowModal(true)}/>
+    <Header handleColor={handleColor} secondsElapsed={secondsElapsed} flipped={flipped}/>
     
       <main className="bg-accent w-full pt-18">
         
