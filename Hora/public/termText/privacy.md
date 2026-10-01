@@ -1,4 +1,4 @@
-_Last updated: September 28, 2026_
+_Last updated: October 1, 2026_
 # 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
@@ -22,7 +22,7 @@ We may collect and use Personal Information not only to provide the Platform, bu
 
 Unless otherwise stated, your use of the Platform during Early Operations remains subject to this Privacy Policy and the Hora Terms of Service.
 
-**Payments and Verification.** In-app payment processing and Supporter payout disbursement are operated through our payment service provider, Stripe. Hora does not collect or store full payment card numbers, CVV codes, or bank account details on its own systems; when you add a payment method or enroll for payouts, that information is provided by you directly to Stripe and processed on Stripe's infrastructure, subject to Stripe's own privacy policy. Supporters who enroll for payouts provide identity, tax, and banking information directly to Stripe through Stripe Connect onboarding. Formal identity-document verification and third-party background checks (including through providers such as Checkr) have not yet launched; if and when those features launch, the relevant sections of this Policy will apply and we will update this Policy accordingly. From time to time, payment collection may be temporarily disabled and task fees may be waived or handled through arrangements communicated to you directly.
+**Payments and Verification.** In-app payment processing and Supporter payout disbursement are operated through our payment service provider, Stripe. Hora does not collect or store full payment card numbers, CVV codes, or bank account details on its own systems; when you add a payment method or enroll for payouts, that information is provided by you directly to Stripe and processed on Stripe's infrastructure, subject to Stripe's own privacy policy. Supporters who enroll for payouts provide identity, tax, and banking information directly to Stripe through Stripe Connect onboarding. Supporter identity verification is conducted through our third-party provider, Checkr. It is initiated manually by Hora after a Supporter applicant's interview: we create a verification request with Checkr, and the applicant receives a link to complete identity verification directly with Checkr. Hora does not currently conduct criminal background checks. If we begin conducting them, the relevant sections of this Policy will apply and we will update this Policy before doing so. From time to time, payment collection may be temporarily disabled and task fees may be waived or handled through arrangements communicated to you directly.
 
 # 2. General Terms
 
@@ -45,7 +45,7 @@ Hora collects certain personally identifiable information about Users ("Personal
 - Contact Information: Full name, postal address, phone number, email address.
 - Account and Sign-In Information: You can create and access your account with an email one-time code, with Google, or with Sign in with Apple. When you use Google or Apple, we receive the name and email address you choose to share (for Apple, this may be a private relay address if you hide your email) and a provider account identifier. We never receive your Google or Apple password.
 - Payment Information: When you add a payment method, your card details (card number, expiration date, CVV) are collected directly by our payment processor, Stripe, and are not stored on Hora's systems. Hora receives and stores limited payment metadata, such as the card brand, the last four digits of the card number, payment and pre-authorization status, and transaction records (amounts, timestamps, and task associations).
-- Identity Information: To help ensure a safe experience, Users may be required to complete identity verification through trusted third-party providers (which may include Checkr). This may include your date of birth, national ID number, residential address, and verification documents (e.g., passport, national ID card), and may also include background check data where permitted by applicable law.
+- Identity Information: Supporters are required to complete identity verification through our third-party provider, Checkr, before they can accept Tasks; other Users may be required to complete identity verification in the future. This may include your date of birth, national ID number, residential address, and verification documents (e.g., passport, national ID card), and may also include background check data where permitted by applicable law.
 - Financial Information (Supporters): Supporters who enroll for payouts provide tax information, banking details (e.g., account and routing number), and taxpayer identification directly to Stripe through Stripe Connect onboarding. Hora receives payout status and account-capability information from Stripe but does not store your full banking details or tax identification numbers on its own systems.
 - Task Details: When using the platform, you may be asked to provide specific task information, such as task description, estimated hours, preferred time and date, location, and any shopping budget.
 - Location Information: We collect location data to coordinate Tasks, verify service delivery, support billing accuracy, and promote user safety. Specifically:
@@ -125,7 +125,7 @@ We may share your information with our parent company, subsidiaries, and affilia
 
 We engage vetted third-party service providers to perform services on our behalf and under strict data processing agreements. These providers may access Personal Information only to the extent necessary to carry out services such as:
 
-- Identity verification and background checks (which may include Checkr, if and when launched)
+- Identity verification (currently through Checkr) and, if and when launched, background checks
 - Payment processing, payout disbursement, and financial compliance
 - Email communication and customer messaging tools
 - Push notification delivery
