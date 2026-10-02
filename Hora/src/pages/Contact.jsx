@@ -86,8 +86,15 @@ const handleSubmit = async (e) => {
         <Header />
             <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-28 pb-16 bg-linear-to-br from-primary to-accent">
              <div className="pb-2 flex items-baseline space-x-2 font-secondary text-sm text-primary " data-aos="zoom-out-left">
-                <span>{hours.toString().padStart(2,'0')}:{minutes.toString().padStart(2,'0')}:{seconds.toString().padStart(2,'0')}</span>
-                <span className="text-sm text-primary/40">${earned} <span className="text-[10px]">at min wage</span></span>
+                <span className="tabular-nums">{hours.toString().padStart(2,'0')}:{minutes.toString().padStart(2,'0')}:{seconds.toString().padStart(2,'0')}</span>
+                {/* The hidden $00.0000 reserves room for a second integer digit, so the row doesn't grow at $10. */}
+                <span className="text-sm text-primary/40 whitespace-nowrap">
+                  <span className="inline-grid tabular-nums">
+                    <span className="invisible col-start-1 row-start-1" aria-hidden="true">$00.0000</span>
+                    <span className="col-start-1 row-start-1">${earned}</span>
+                  </span>{' '}
+                  <span className="text-[10px]">at min wage</span>
+                </span>
             </div>
             <div className="max-w-md w-full space-y-6">
                 <h1 className="text-3xl font-bold text-gray-800 text-center">

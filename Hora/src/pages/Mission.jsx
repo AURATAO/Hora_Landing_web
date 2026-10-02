@@ -3,9 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { useTimer } from "../context/TimerContext.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer.jsx";
-import DemoModal from './components/DemoModal.jsx';
 import { Link } from "react-router-dom";
-import { WEB_APP_URL } from "../lib/config";
+import { APP_STORE_URL, WEB_APP_URL } from "../lib/config";
 import Logo_01 from './components/animated/Logo_01.jsx';
 import Logo_02 from './components/animated/Logo_02.jsx';
 import Logo_03 from './components/animated/Logo_03.jsx';
@@ -18,7 +17,6 @@ export default function Mission() {
   const secondsElapsed = useTimer();
    const [handleColor, setHandleColor] = useState('bg-accent');
    const [activeAnimated, setActiveAnimated] = useState(false);
-   const [showModal, setShowModal] = useState(false);
    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
  
  // time
@@ -253,16 +251,23 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                 </p>
 
                 {/* CTA Buttons with Hover Effects */}
-                <div className="flex flex-col sm:flex-row items-center gap-4" data-aos="fade-up" data-aos-delay="500">
-                  <button 
-                    className="group relative px-8 py-4 bg-secondary text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
-                    onClick={() => setShowModal(true)}
+                <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-4" data-aos="fade-up" data-aos-delay="500">
+                  <a
+                    href={APP_STORE_URL}
+                    className="group relative px-8 py-4 bg-secondary text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden whitespace-nowrap"
                   >
-                    <span className="relative z-10">Book Demo</span>
+                    <span className="relative z-10">Get the app <span aria-hidden="true">→</span></span>
                     <div className="absolute inset-0 bg-linear-to-r from-secondary to-secondary/80 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-                  </button>
-                  
-                  <div className="group flex items-center gap-3 px-6 py-4 bg-white/70 backdrop-blur-md rounded-xl border border-primary/10 hover:border-secondary/30 transition-all duration-300 cursor-default">
+                  </a>
+
+                  <a
+                    href={WEB_APP_URL}
+                    className="px-8 py-4 border border-primary/25 text-primary font-semibold text-lg rounded-xl hover:bg-primary/5 transition-all duration-300 whitespace-nowrap"
+                  >
+                    Open the web app
+                  </a>
+
+                  <div className="group flex max-w-full items-center gap-2 px-3 py-4 sm:gap-3 sm:px-6 bg-white/70 backdrop-blur-md rounded-xl border border-primary/10 hover:border-secondary/30 transition-all duration-300 cursor-default">
                     <div className="flex items-center gap-2">
                       <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                         <path
@@ -272,7 +277,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                         />
                       </svg>
 
-                      <span className="font-secondary text-base font-semibold text-primary">
+                      <span className="font-secondary text-base font-semibold text-primary tabular-nums">
                         {hours.toString().padStart(2, "0")}:
                         {minutes.toString().padStart(2, "0")}:
                         {seconds.toString().padStart(2, "0")}
@@ -281,12 +286,16 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
 
                     <div className="w-px h-6 bg-primary/20"></div>
 
-                    <span className="text-sm text-primary/60 flex items-center gap-2">
-                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary/40" />
-                      <span className="uppercase tracking-[0.12em] text-[10px]">Value now</span>
+                    <span className="text-sm text-primary/60 flex items-center gap-1.5 sm:gap-2">
+                      <span className="hidden sm:inline-block h-1.5 w-1.5 rounded-full bg-primary/40" />
+                      <span className="hidden sm:inline uppercase tracking-[0.12em] text-[10px]">Value now</span>
                       <span className="font-semibold text-primary">${valueNow}</span>/min
                       <span className="text-primary/40">·</span>
-                      <span className="text-primary/70">${earned}</span>
+                      {/* The hidden $00.00 reserves room for a second integer digit, so the box doesn't grow at $10.00. */}
+                      <span className="inline-grid text-primary/70 tabular-nums">
+                        <span className="invisible col-start-1 row-start-1" aria-hidden="true">$00.00</span>
+                        <span className="col-start-1 row-start-1">${earned}</span>
+                      </span>
                     </span>
                   </div>
 
@@ -405,9 +414,6 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
             </div>
           </div>
       
-
-        <DemoModal show={showModal} onClose={() => setShowModal(false)} />
-
      
            {/* ── FEATURES ── */}
         <div className="w-full bg-linear-0-to-b from-accent to-white py-20 lg:py-32">
@@ -824,14 +830,23 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
             <p className="text-xl text-accent/80 font-secondary mb-8 max-w-2xl" data-aos="zoom-in" data-aos-delay="100">
               Join the HO:RA community today
             </p>
-            <button 
-              className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
-              onClick={() => setShowModal(true)}
-              data-aos="zoom-in" 
-              data-aos-delay="200"
-            >
-              Book Your Demo
-            </button>
+            <div className="flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row" data-aos="zoom-in" data-aos-delay="200">
+              <a
+                href={APP_STORE_URL}
+                className="px-10 py-5 bg-secondary text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
+              >
+                Get the app
+              </a>
+              <a
+                href={WEB_APP_URL}
+                className="px-10 py-5 border border-accent/50 text-accent text-lg font-bold rounded-xl hover:bg-accent/10 hover:-translate-y-1 transition-all duration-300"
+              >
+                Open the web app
+              </a>
+            </div>
+            <Link to="/beta" className="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-4 hover:text-white" data-aos="zoom-in" data-aos-delay="300">
+              Apply as a Supporter <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </main>
