@@ -190,7 +190,7 @@ Shopping budgets are set by you and reimbursed against a photo of the receipt. I
 | **Transparent payout** | You keep 80% of service pay. Purchases you front are reimbursed in full. |
 | **Stay local** | Take tasks that fit your zone and the way you already move through the city. |
 | **Choose freely** | Every detail is visible before you accept or decline. |
-| **Paid for your commitment** | If a Requester cancels after accepting, the base fee is still yours. |
+| **Paid for your commitment** | If a Requester cancels after the first few minutes, the base fee is still yours. |
 
 ---
 
@@ -267,7 +267,7 @@ Errands, deliveries, laundry runs, holding a place in line, or keeping someone c
 Reviews usually take 1–3 business days.
 
 ### What you earn
-$12 base for everyday tasks, $25 for companionship, covering the first 15 minutes, then $0.50 a minute. $1.00 a minute for tasks starting between 9 PM and 8 AM. You keep 80% of service pay, and anything you buy for a Requester is reimbursed in full, no markup. If a Requester cancels after accepting, the base fee is still yours.
+$12 base for everyday tasks, $25 for companionship, covering the first 15 minutes, then $0.50 a minute. $1.00 a minute for tasks starting between 9 PM and 8 AM. You keep 80% of service pay, and anything you buy for a Requester is reimbursed in full, no markup. If a Requester cancels after the first few minutes, the base fee is still yours.
 
 **CTA:** Start your application → *(links to mvp.horaapp.co/become-supporter; a signed-out visitor is sent to sign-in first, then on to the form)*
 

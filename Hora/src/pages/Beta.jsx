@@ -98,8 +98,8 @@ export default function Beta() {
             <p className={body}>
               $12 base for everyday tasks, $25 for companionship, covering the first 15 minutes, then $0.50 a minute.
               $1.00 a minute for tasks starting between 9 PM and 8 AM. You keep 80% of service pay, and anything you
-              buy for a Requester is reimbursed in full, no markup. If a Requester cancels after accepting, the base
-              fee is still yours.
+              buy for a Requester is reimbursed in full, no markup. If a Requester cancels after the first few
+              minutes, the base fee is still yours.
             </p>
           </section>
 

@@ -90,7 +90,7 @@ const supporterCards = [
   { icon: Wallet, title: "Transparent payout", desc: "You keep 80% of service pay. Purchases you front are reimbursed in full." },
   { icon: MapPin, title: "Stay local", desc: "Take tasks that fit your zone and the way you already move through the city." },
   { icon: ListChecks, title: "Choose freely", desc: "Every detail is visible before you accept or decline." },
-  { icon: Banknote, title: "Paid for your commitment", desc: "If a Requester cancels after accepting, the base fee is still yours." },
+  { icon: Banknote, title: "Paid for your commitment", desc: "If a Requester cancels after the first few minutes, the base fee is still yours." },
 ];
 
 const trustCards = [

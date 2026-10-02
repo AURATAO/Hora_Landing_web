@@ -668,7 +668,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                 Time, Reimagined.
               </h2>
               <p className="text-lg text-primary/70 font-secondary">
-                Join HO:RA as a Supporter or a Requester.
+                Join HO:RA — as someone who needs a hand, or someone who lends one.
               </p>
             </div>
 
