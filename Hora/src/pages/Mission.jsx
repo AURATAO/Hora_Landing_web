@@ -615,52 +615,50 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
 
         {/* THE HORA DIFFERENCE - Accordion */}
         <div className="bg-primary w-full py-32">
-          <div className="max-w-4xl mx-auto px-4 md:px-8">
-            
-            {/* Header */}
-            <div className="mb-16 text-center" data-aos="fade-up">
-              <div className="text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">Our Approach</div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-4">
-                The HO:RA Difference
-              </h2>
-            </div>
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
 
-            {/* Accordion */}
-            <div className="space-y-4">
-              {[
-                { id: "element1", title: "Verified & Safe", content: "All users complete ID verification and background checks, ensuring every connection happens in a secure, trusted environment." },
-                { id: "element2", title: "Flexible Requests", content: "Post any kind of request — big or small — as long as it meets our community guidelines. Built to support exactly what you need." },
-                { id: "element3", title: "Emotional Support", content: "The first platform where you can seek verified, genuine human connection — verified people to talk, walk, and build healthy connections with." },
-                { id: "element4", title: "Fair for Everyone", content: "A flat fee guarantees supporters are fairly compensated. Run over? You're charged a small per-minute rate. Finish early? The unused time is refunded automatically."  },
-                { id: "element5", title: "Zero Cost to Earn", content: "Become a supporter without paying any upfront registration or verification fees. Join freely and start earning right away." },
-                { id: "element6", title: "Reputation System", content: "Our transparent review system helps everyone feel secure. 81% of people feel more confident with trusted ratings." },
-                { id: "element7", title: "Bonus Tips", content: "Great service deserves more. Supporters can receive tips without limits, giving them even more ways to earn." },
-                { id: "element8", title: "Smart Matchmaking", content: "Our algorithm connects you to the best supporters based on location, availability, and shared interests." }
-              ].map((item, index) => (
-                <div key={item.id} className="border-b border-accent/10 last:border-0" data-aos="fade-up" data-aos-delay={index * 50}>
-                  <button
-                    className="w-full flex items-center justify-between py-6 text-left group"
-                    onClick={() => handleClick(item.id)}
-                  >
-                    <span className="text-xl md:text-2xl font-semibold text-accent group-hover:text-secondary transition-colors">
-                      {item.title}
-                    </span>
-                    <span className={`transform transition-transform duration-300 ${activeElement === item.id ? 'rotate-180' : ''}`}>
-                      <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </button>
-                  <TECollapse show={activeElement === item.id}>
-                    <div className="pb-6 text-lg text-accent/70 font-secondary leading-relaxed">
-                      {item.content}
-                    </div>
-                  </TECollapse>
-                </div>
-              ))}
-            </div>
+          {/* Header */}
+          <div className="mb-16 text-center" data-aos="fade-up">
+            <div className="text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">Our Approach</div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-4">
+              The HO:RA Difference
+            </h2>
+          </div>
+
+          {/* Accordion */}
+          <div className="space-y-4">
+            {[
+              { id: "element1", title: "Interviewed, not just signed up", content: "Every Supporter applies, is interviewed one-on-one by our team, and completes identity verification through Checkr before they can accept a task. Requesters sign up normally — the vetting is on the side doing the work." },
+              { id: "element2", title: "Flexible requests", content: "Post any kind of request — big or small — as long as it meets our community guidelines. Built to support exactly what you need." },
+              { id: "element3", title: "Company, not care", content: "Companionship on HO:RA means a walk, a conversation, a shared meal or company at an event. It is non-medical, and that boundary is deliberate." },
+              { id: "element4", title: "Billed by the minute, not by the hour", content: "A base fee covers the first 15 minutes, then you pay per minute for the time actually worked. We reserve the estimate when you post, charge what happened when it's done, and release the rest." },
+              { id: "element5", title: "Nothing is spent without your say-so", content: "If your Supporter needs more time or a bigger budget, you approve it first. No answer within five minutes counts as a no, and they fall back to the option they chose up front." },
+              { id: "element6", title: "Supporters keep 80%", content: "No registration fee, no verification fee, no charge to join. HO:RA takes 20% of service pay, and anything a Supporter buys for a Requester is reimbursed in full with no markup." }
+            ].map((item, index) => (
+              <div key={item.id} className="border-b border-accent/10 last:border-0" data-aos="fade-up" data-aos-delay={index * 50}>
+                <button
+                  className="w-full flex items-center justify-between py-6 text-left group"
+                  onClick={() => handleClick(item.id)}
+                >
+                  <span className="text-xl md:text-2xl font-semibold text-accent group-hover:text-secondary transition-colors">
+                    {item.title}
+                  </span>
+                  <span className={`transform transition-transform duration-300 ${activeElement === item.id ? 'rotate-180' : ''}`}>
+                    <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </button>
+                <TECollapse show={activeElement === item.id}>
+                  <div className="pb-6 text-lg text-accent/70 font-secondary leading-relaxed">
+                    {item.content}
+                  </div>
+                </TECollapse>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
         {/* JOIN — the Supporter card goes to the Supporter page (/beta), the Requester card to the
             web app. Both used to open a waitlist form that wrote to this site's own backend. */}
