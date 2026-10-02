@@ -4,7 +4,8 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import NewsSection from './components/NewsSection.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
-import { APP_STORE_URL, WEB_APP_URL, SUPPORTER_APPLY_URL, HERO_VARIANT } from '../lib/config';
+import { Link } from 'react-router-dom';
+import { APP_STORE_URL, WEB_APP_URL, HERO_VARIANT } from '../lib/config';
 import {
   ShoppingBag,
   Bike,
@@ -507,9 +508,9 @@ export default function Home() {
               <p className="mb-8 max-w-xl font-secondary text-lg text-ink/80">
                 See the task, the stops, the expected commitment and your payout before you accept. Work locally, no exclusivity, no minimum hours.
               </p>
-              <a href={SUPPORTER_APPLY_URL} className={btnPrimary}>
+              <Link to="/beta" className={btnPrimary}>
                 Apply as a Supporter <span aria-hidden="true">→</span>
-              </a>
+              </Link>
               <p className="mt-4 text-sm text-ink/70">
                 Sign up → apply → interview → ID verification → approval
               </p>
@@ -590,9 +591,9 @@ export default function Home() {
                 Open the web app
               </a>
             </div>
-            <a href={SUPPORTER_APPLY_URL} className="mt-7 inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-cream">
+            <Link to="/beta" className="mt-7 inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-cream">
               Apply as a Supporter <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </section>
       </main>

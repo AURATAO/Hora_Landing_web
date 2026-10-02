@@ -1,165 +1,129 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { SUPPORTER_APPLY_URL } from "../lib/config";
 
-const BETA_CODE = "HORABETA3";
-const BETA_URL = "https://mvp.horaapp.co";
+// The Supporter entry point. The URL is still /beta because that is what old
+// links and the retired access-code page used; "Apply as a Supporter" across
+// the site points here.
+//
+// There is no form on this page on purpose. An application only exists once
+// it is in the product, and the product's form (SUPPORTER_APPLY_URL) needs an
+// account — a signed-out visitor is sent to sign-in and then on to it. This
+// page explains that path and hands off to it.
+//
+// Copy source: docs/hora-landing-copy.md, section 11.
+
+const needs = [
+  "To be in New York City, where we currently operate",
+  "To be 18 or over, with a valid US government ID",
+  "A phone that can share location while you're on a task",
+];
+
+const steps = [
+  "Create your account — Apple, Google or an email code.",
+  "Fill in the application — name, phone and city.",
+  "We review it and get in touch for a short interview.",
+  "Identity verification through Checkr, sent to you as a link.",
+  "Once approved, you can start accepting tasks.",
+];
+
+const h2 = "mb-4 text-2xl font-bold tracking-tight md:text-3xl";
+const body = "font-secondary text-lg leading-relaxed text-ink/80";
 
 export default function Beta() {
-  const [showCodeInput, setShowCodeInput] = useState(false);
-  const [code, setCode] = useState("");
-  const [error, setError] = useState("");
-
-  const handleApply = () => {
-    setShowCodeInput(true);
-    setError("");
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (code.trim().toUpperCase() === BETA_CODE) {
-      window.location.href = BETA_URL;
-    } else {
-      setError("Invalid code — reach out to us to get access");
-    }
-  };
-
   return (
     <>
       <Helmet>
-        <title>Access | HO:RA</title>
+        <title>Become a Supporter | HO:RA</title>
         <meta
           name="description"
-          content="HO:RA in New York City. Get support with everyday tasks or earn money supporting others. Participation is manually reviewed by the Hora team."
+          content="Become a HO:RA Supporter in New York City. Take tasks near you, see the pay before you accept, and keep 80% of service pay."
         />
       </Helmet>
 
-      <div className="min-h-screen bg-primary flex flex-col items-center px-4 py-12">
-        {/* Logo */}
-        <div className="w-28 mb-8">
-          <img src="/img/hora_logo.png" alt="Hora" className="w-full" />
-        </div>
+      <Header />
 
-        <div className="w-full max-w-lg space-y-10">
-          {/* Hero */}
-          <div className="text-center space-y-3">
-            <h1 className="text-3xl font-bold text-accent">
-              HO:RA Access · NYC
+      <main id="main-content" className="bg-white pt-18 text-ink">
+        <section className="bg-cream">
+          <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
+            <h1 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+              Become a HO:RA Supporter
             </h1>
-           <p className="text-accent/60 text-sm leading-relaxed">
-            Access through this page is personally managed by our team. 💚
+            <p className={`${body} max-w-2xl`}>
+              Use the time you already have. Take tasks near you, see the pay before you accept, and keep 80% of
+              service pay.
+            </p>
+          </div>
+        </section>
+
+        <div className="mx-auto max-w-3xl space-y-14 px-5 py-16 md:px-8 md:py-20">
+          <section>
+            <h2 className={h2}>What you&apos;ll do</h2>
+            <p className={body}>
+              Errands, deliveries, laundry runs, holding a place in line, or keeping someone company. You see the
+              task, the stops, the expected time and your payout before you accept — and you decline anything that
+              doesn&apos;t fit.
+            </p>
+          </section>
+
+          <section>
+            <h2 className={h2}>What you need</h2>
+            <ul className={`${body} space-y-2`}>
+              {needs.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span aria-hidden="true" className="text-forest">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className={h2}>How it works</h2>
+            <ol className={`${body} space-y-2`}>
+              {steps.map((step, i) => (
+                <li key={step} className="flex gap-3">
+                  <span className="w-6 shrink-0 font-semibold text-forest">{i + 1}.</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-4 text-sm text-ink/70">Reviews usually take 1–3 business days.</p>
+          </section>
+
+          <section>
+            <h2 className={h2}>What you earn</h2>
+            <p className={body}>
+              $12 base for everyday tasks, $25 for companionship, covering the first 15 minutes, then $0.50 a minute.
+              $1.00 a minute for tasks starting between 9 PM and 8 AM. You keep 80% of service pay, and anything you
+              buy for a Requester is reimbursed in full, no markup. If a Requester cancels after accepting, the base
+              fee is still yours.
+            </p>
+          </section>
+
+          <section>
+            <a
+              href={SUPPORTER_APPLY_URL}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-forest px-6 py-3.5 text-base font-semibold whitespace-nowrap text-white transition hover:bg-forest/90 active:scale-[0.98]"
+            >
+              Start your application <span aria-hidden="true">→</span>
+            </a>
+            <p className="mt-4 text-sm text-ink/70">
+              You&apos;ll create an account first — it&apos;s the same step as signing in.
+            </p>
+          </section>
+
+          <p>
+            <Link to="/" className="text-sm text-ink/70 underline underline-offset-4 hover:text-forest">
+              ← Back to main site
+            </Link>
           </p>
-          </div>
-
-          {/* What is Hora */}
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-accent">What is Hora?</h2>
-            <p className="text-accent/60 text-sm leading-relaxed mb-3">
-              Hora is a local task platform where anyone can participate as both:
-            </p>
-            <ul className="space-y-2 text-sm text-accent/60">
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-               <span><span className="text-accent font-medium">Requester</span> — get support with everyday tasks: pickups, drop-offs, package returns, grocery runs, walking companion, and more</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-                <span><span className="text-accent font-medium">Supporter</span> — earn money supporting others in your spare time</span>
-              </li>
-            </ul>
-            <p className="text-accent/60 text-sm leading-relaxed">
-              There's no need to choose just one — you can do both.
-            </p>
-          </section>
-
-          {/* What to expect */}
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-accent">
-              What to expect
-            </h2>
-            <ul className="space-y-2 text-sm text-accent/60">
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-                <span>
-                  Simple pricing — $12 base covers the first 15 minutes, then
-                  $0.50/min ($25 base for companionship; $1.00/min for tasks
-                  starting 9 PM–8 AM). Supporters receive their task earnings
-                  less a 20% platform service fee; purchase reimbursements are
-                  passed through in full.{" "}
-                  <span className="text-accent/40 text-xs">
-                    (Purchases and other approved third-party costs are charged
-                    to the Requester at cost.)
-                  </span>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-                NYC only — Midtown Manhattan focus for now
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-                Public locations only — no private residences
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-                Participation is manually reviewed by our team
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-                Some task types and availability may be limited as we scale operations
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-secondary mt-0.5">•</span>
-              <span>Your feedback directly shapes what HO:RA becomes — we're building this with you 💚</span>
-              </li>
-            </ul>
-          </section>
-
-          {/* CTA */}
-          <div className="space-y-4">
-            {!showCodeInput ? (
-              <button
-                onClick={handleApply}
-                className="w-full py-3 rounded-xl bg-secondary text-white font-semibold text-sm hover:bg-secondary/85 transition"
-              >
-                Apply to Join
-              </button>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <input
-                  type="text"
-                  value={code}
-                  onChange={(e) => setCode(e.target.value)}
-                  placeholder="Enter your access code"
-                  autoFocus
-                  className="w-full px-4 py-3 rounded-xl bg-accent/10 border border-accent/20 text-accent placeholder:text-accent/30 focus:outline-none focus:ring-2 focus:ring-secondary text-sm"
-                />
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-xl bg-secondary text-white font-semibold text-sm hover:bg-secondary/85 transition"
-                >
-                  Submit
-                </button>
-                {error && (
-                  <div className="text-center space-y-1">
-                    <p className="text-danger text-xs">{error}</p>
-                    <Link to="/Contact" className="text-secondary text-xs underline">
-                      Contact us
-                    </Link>
-                  </div>
-                )}
-              </form>
-            )}
-          </div>
         </div>
+      </main>
 
-        {/* Back link */}
-        <div className="mt-16">
-          <Link to="/" className="text-accent/40 text-sm hover:text-accent/70 transition">
-            ← Back to main site
-          </Link>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }

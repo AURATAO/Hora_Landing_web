@@ -4,7 +4,8 @@ import { useTimer } from "../context/TimerContext.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer.jsx";
 import DemoModal from './components/DemoModal.jsx';
-import JoinModal from "./components/JoinModal.jsx";
+import { Link } from "react-router-dom";
+import { WEB_APP_URL } from "../lib/config";
 import Logo_01 from './components/animated/Logo_01.jsx';
 import Logo_02 from './components/animated/Logo_02.jsx';
 import Logo_03 from './components/animated/Logo_03.jsx';
@@ -18,7 +19,6 @@ export default function Mission() {
    const [handleColor, setHandleColor] = useState('bg-accent');
    const [activeAnimated, setActiveAnimated] = useState(false);
    const [showModal, setShowModal] = useState(false);
-   const [showJoinModal, setShowJoinModal] = useState(null);
    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
  
  // time
@@ -656,7 +656,8 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
           </div>
         </div>
 
-        {/* JOIN WAITLIST */}
+        {/* JOIN — the Supporter card goes to the Supporter page (/beta), the Requester card to the
+            web app. Both used to open a waitlist form that wrote to this site's own backend. */}
         <div className="w-full bg-accent py-32">
           <div className="max-w-6xl mx-auto px-4 md:px-8">
             
@@ -667,7 +668,7 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                 Time, Reimagined.
               </h2>
               <p className="text-lg text-primary/70 font-secondary">
-                Join our waitlist and be the first to experience HO:RA.
+                Join HO:RA as a Supporter or a Requester.
               </p>
             </div>
 
@@ -729,12 +730,12 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                     </p>
                   </div>
 
-                  <button
-                    className="w-full py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1"
-                    onClick={() => setShowJoinModal('supporter')}
+                  <Link
+                    to="/beta"
+                    className="block w-full py-4 text-center bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1"
                   >
                     Offer Your Time →
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -794,19 +795,16 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                     </p>
                   </div>
 
-                  <button
-                    className="w-full py-4 bg-secondary text-white rounded-xl font-semibold hover:bg-secondary/90 transition-all duration-300 hover:-translate-y-1"
-                    onClick={() => setShowJoinModal('requester')}
+                  <a
+                    href={WEB_APP_URL}
+                    className="block w-full py-4 text-center bg-secondary text-white rounded-xl font-semibold hover:bg-secondary/90 transition-all duration-300 hover:-translate-y-1"
                   >
                     Start a Request →
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
 
-            {showJoinModal && (
-              <JoinModal role={showJoinModal} onClose={() => setShowJoinModal(null)} />
-            )}
           </div>
         </div>
 

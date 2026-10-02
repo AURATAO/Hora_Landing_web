@@ -179,7 +179,7 @@ Shopping budgets are set by you and reimbursed against a photo of the receipt. I
 
 **Body:** See the task, the stops, the expected commitment and your payout before you accept. Work locally, no exclusivity, no minimum hours.
 
-**CTA:** Apply as a Supporter → *(links to the web app's application form at mvp.horaapp.co/become-supporter, which requires signing in first)*
+**CTA:** Apply as a Supporter → *(links to the Supporter page at /beta — section 11 — which hands off to the web app's application form)*
 
 **Line under CTA:** Sign up → apply → interview → ID verification → approval
 
@@ -236,6 +236,42 @@ Shopping budgets are set by you and reimbursed against a photo of the receipt. I
 Services · How it works · Pricing · Trust · Become a Supporter · Support · Terms of Service · Privacy Policy · Contact
 
 © 2026 Arcodiax LLC · Delaware, United States · info@my-hora.com
+
+---
+
+## 11 · Supporter page (/beta)
+
+The page "Apply as a Supporter" points to. The URL stays `/beta` so old links keep working; the access code it used to ask for is gone. There is no form on this page: an application exists only once it is in the product, and the product's form needs an account, so the page explains the path and hands off to it. `/Join` redirects here.
+
+**Page title:** Become a Supporter | HO:RA
+
+**Heading:** Become a HO:RA Supporter
+
+**Sub:** Use the time you already have. Take tasks near you, see the pay before you accept, and keep 80% of service pay.
+
+### What you'll do
+Errands, deliveries, laundry runs, holding a place in line, or keeping someone company. You see the task, the stops, the expected time and your payout before you accept — and you decline anything that doesn't fit.
+
+### What you need
+- To be in New York City, where we currently operate
+- To be 18 or over, with a valid US government ID
+- A phone that can share location while you're on a task
+
+### How it works
+1. Create your account — Apple, Google or an email code.
+2. Fill in the application — name, phone and city.
+3. We review it and get in touch for a short interview.
+4. Identity verification through Checkr, sent to you as a link.
+5. Once approved, you can start accepting tasks.
+
+Reviews usually take 1–3 business days.
+
+### What you earn
+$12 base for everyday tasks, $25 for companionship, covering the first 15 minutes, then $0.50 a minute. $1.00 a minute for tasks starting between 9 PM and 8 AM. You keep 80% of service pay, and anything you buy for a Requester is reimbursed in full, no markup. If a Requester cancels after accepting, the base fee is still yours.
+
+**CTA:** Start your application → *(links to mvp.horaapp.co/become-supporter; a signed-out visitor is sent to sign-in first, then on to the form)*
+
+**Beneath:** You'll create an account first — it's the same step as signing in.
 
 ---
 

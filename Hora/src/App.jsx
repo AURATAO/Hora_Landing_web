@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./pages/components/ ScrollToTop";
 import Home from "./pages/Home";
 import Mission from "./pages/Mission";
@@ -6,7 +6,6 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import FQA from "./pages/FQA";
-import JoinPage from "./pages/JoinPage";
 import Beta from "./pages/Beta";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
@@ -30,7 +29,9 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/faq" element={<FQA />} />
           <Route path="/FQA" element={<FQA />} />
-          <Route path="/Join" element={<JoinPage />} />
+          {/* /Join was a waitlist form that wrote to this site's own backend,
+              not to the product. Old links land on the Supporter page. */}
+          <Route path="/Join" element={<Navigate to="/beta" replace />} />
           <Route path="/beta" element={<Beta />} />
           <Route path="/support" element={<Support />} />
           <Route path="*" element={<NotFound />} />
