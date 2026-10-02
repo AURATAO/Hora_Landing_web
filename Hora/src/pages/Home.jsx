@@ -275,7 +275,7 @@ export default function Home() {
             <div>
               <div className="hero-in mb-6 inline-flex items-center gap-2 rounded-full border border-forest/25 bg-white/70 px-4 py-1.5 text-sm font-medium text-forest" style={heroDelay(0, 400)}>
                 <MapPin aria-hidden="true" className="h-4 w-4 text-forest" />
-                New York City
+                New York City Only
               </div>
 
               <p className="hero-in mb-3 text-lg italic text-ink/75 md:text-xl" style={heroDelay(0, 400)}>Time has value.</p>
