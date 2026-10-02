@@ -469,6 +469,28 @@ html {
 }
 
 
+/* Hero headline shimmer — the old .gradient-animate motion, recoloured for the cream hero
+   (the sage original is 1.6:1 on cream; every stop here is at least 3.4:1).
+   Falls back to solid forest where a background can't be clipped to text. */
+.hero-gradient {
+  color: var(--color-forest);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-gradient {
+    background: linear-gradient(90deg, #3A5A2D 0%, #5F8A41 25%, #3A5A2D 50%, #56803B 75%, #3A5A2D 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s linear infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient {
+    animation: none;
+  }
+}
+
 /* Scroll reveal — driven by hooks/useScrollReveal.js.
    Elements are visible by default; the hook adds .reveal-pending, then swaps it for .reveal-in. */
 .reveal-pending[data-reveal="rise"],
@@ -522,6 +544,39 @@ html {
     }
   }
 }
+/* Hero notification cards: a slow vertical drift so they read as suspended.
+   Transform and opacity only. The lifted shadow is a second, larger shadow on a pseudo-element
+   that fades in as the card rises, so nothing is repainted per frame. Runs only while
+   Home.jsx marks the stack as on screen, and never under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .note-float {
+    animation: note-float calc(var(--float-cycle, 5s) / 2) ease-in-out var(--float-delay, 1.3s) infinite alternate;
+    animation-play-state: paused;
+  }
+  .note-float::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 1rem;
+    box-shadow: 0 22px 40px -14px rgba(34, 40, 49, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    animation: note-float-shadow calc(var(--float-cycle, 5s) / 2) ease-in-out var(--float-delay, 1.3s) infinite alternate;
+    animation-play-state: paused;
+  }
+  [data-float="on"] > .note-float,
+  [data-float="on"] > .note-float::after {
+    animation-play-state: running;
+  }
+}
+@keyframes note-float {
+  to { transform: translateY(var(--float-y, -4px)); }
+}
+@keyframes note-float-shadow {
+  to { opacity: 1; }
+}
+
 @keyframes hero-in {
   from { opacity: 0; }
 }

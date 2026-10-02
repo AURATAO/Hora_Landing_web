@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import NewsSection from './components/NewsSection.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
-import { APP_STORE_URL, WEB_APP_URL, SUPPORTER_APPLY_URL } from '../lib/config';
+import { APP_STORE_URL, WEB_APP_URL, SUPPORTER_APPLY_URL, HERO_VARIANT } from '../lib/config';
 import {
   ShoppingBag,
   Bike,
@@ -21,7 +22,6 @@ import {
   Receipt,
   BadgeCheck,
   Check,
-  Image as ImageIcon,
 } from "lucide-react";
 
 // Copy source: hora-landing-copy.md — use verbatim, do not edit numbers or wording here.
@@ -33,7 +33,7 @@ const heroTrust = [
 ];
 
 const proof = [
-  { value: "400+", label: "tasks completed" },
+  { value: "400+", label: "tasks requested" },
   { value: "81%", label: "fulfilment rate" },
   { value: "~10 min", label: "median match time" },
 ];
@@ -132,23 +132,110 @@ function IconChip({ icon: Icon }) {
   );
 }
 
-// Sized stand-in until the real photography is supplied. `ratio` reserves the space so nothing shifts on swap.
-// With `parallax`, the inner layer is taller than the frame and drifts as it scrolls; put the real <img> there.
-function ImagePlaceholder({ ratio, label, size, parallax = false }) {
+// A photo in a frame whose `ratio` reserves the space, so nothing shifts while it loads.
+// With `parallax`, the image layer is taller than the frame and drifts as it scrolls.
+// `bleed` drops the rounded corners so the photo can run flush to the edges of its column.
+function Photo({ src, alt, ratio, position = "object-center", parallax = false, bleed = false, priority = false }) {
+  return (
+    // overflow-clip, not overflow-hidden: a hidden box becomes the scroll container the drift would track instead of the page.
+    <div className={`relative ${ratio} w-full overflow-clip bg-sage/20 ${bleed ? "" : "rounded-3xl"}`}>
+      <img
+        src={src}
+        alt={alt}
+        width="1122"
+        height="1402"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
+        decoding="async"
+        className={`absolute inset-x-0 w-full object-cover ${position} ${parallax ? "parallax-drift -top-[6%] h-[112%]" : "top-0 h-full"}`}
+      />
+    </div>
+  );
+}
+
+// Copy source: hora-landing-copy.md, hero. Read top to bottom they follow one task from start to receipt.
+const heroNotifications = [
+  { title: "Your supporter is on the way", body: "Jada is heading to Greenwich Village." },
+  { title: "Your supporter has clocked in", body: "The timer is running. Track progress in your app." },
+  { title: "Your HO:RA receipt — $12.00", body: "Charged to Visa ••6632 for \"Pick up keys, drop at my office\"." },
+];
+
+// One frosted notification: logo mark, bold title, detail line. Static — nothing here changes after it arrives.
+function NoteCard({ title, body, className = "", style }) {
   return (
     <div
-      role="img"
-      aria-label={`Image placeholder: ${label}`}
-      // overflow-clip, not overflow-hidden: a hidden box becomes the scroll container the drift would track instead of the page.
-      className={`relative ${ratio} w-full overflow-clip rounded-3xl border border-dashed border-forest/40 bg-sage/20`}
+      className={`flex items-start gap-3 rounded-2xl border border-white/60 bg-white/75 px-3.5 py-3 shadow-[0_12px_32px_-12px_rgba(34,40,49,0.45)] backdrop-blur-md ${className}`}
+      style={style}
     >
-      <div
-        className={`absolute inset-x-0 flex flex-col items-center justify-center gap-2 p-6 text-center ${parallax ? "parallax-drift -top-[6%] h-[112%]" : "inset-y-0"}`}
-      >
-        <ImageIcon aria-hidden="true" className="h-7 w-7 text-forest/70" />
-        <span className="text-sm font-semibold text-forest">{label}</span>
-        <span className="text-xs text-ink/70">{size}</span>
+      <span className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1 rounded-xl bg-forest">
+        <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+        <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm font-bold leading-snug text-ink">{title}</span>
+        <span className="mt-0.5 block text-sm leading-snug text-ink/75">{body}</span>
+      </span>
+    </div>
+  );
+}
+
+// Hero variant A, desktop: all three cards at once in a loose stagger over the photo's lower-left,
+// overhanging its edge. They arrive with the hero entrance, 120ms apart, then hover: each drifts a few
+// pixels on its own slow cycle (see .note-float in animations.css). Phones and tablets get the first
+// card only, with no drift. Decorative, so hidden from assistive tech.
+// The stack sits low and hangs below the frame so it stays clear of both faces and the hands with the keys.
+const noteStagger = ["", "-mt-3 ml-12", "-mt-3 ml-5"];
+// Per card: travel, seconds for one up-and-down cycle, and start (after the ~1.1s entrance). All different, so they never move together.
+const noteFloat = [
+  { "--float-y": "-4px", "--float-cycle": "5.2s", "--float-delay": "1.3s" },
+  { "--float-y": "-3px", "--float-cycle": "5.9s", "--float-delay": "2.4s" },
+  { "--float-y": "-5px", "--float-cycle": "4.6s", "--float-delay": "1.8s" },
+];
+
+function HeroNotifications() {
+  const stackRef = useRef(null);
+
+  // The drift only runs while the stack is on screen; off screen it is paused, not just hidden.
+  useEffect(() => {
+    const stack = stackRef.current;
+    if (!stack || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      stack.dataset.float = entry.isIntersecting ? "on" : "off";
+    });
+    observer.observe(stack);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div aria-hidden="true">
+      <div className="absolute inset-x-5 bottom-5 lg:hidden">
+        <NoteCard {...heroNotifications[0]} />
       </div>
+      <div ref={stackRef} className="absolute -bottom-12 -left-14 hidden w-[22rem] lg:block xl:-bottom-5">
+        {heroNotifications.map((note, i) => (
+          // Float on the wrapper, entrance on the card: two animations can't share an element.
+          <div key={note.title} className={`note-float relative ${noteStagger[i]}`} style={noteFloat[i]}>
+            <NoteCard {...note} className="hero-rise" style={heroDelay(360 + i * 120, 500)} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Hero variant B: the app's home screen in a phone, cropped by the frame below its first cards.
+function HeroPhone() {
+  return (
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-sage/25">
+      <img
+        src="/img/hero-phone.webp"
+        alt="The HO:RA app home screen on a phone, with a What do you need? field and task categories"
+        width="851"
+        height="1847"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute left-1/2 top-[7%] h-auto w-[68%] max-w-none -translate-x-1/2"
+      />
     </div>
   );
 }
@@ -158,6 +245,7 @@ const heroDelay = (ms, duration) => ({ "--hero-delay": `${ms}ms`, ...(duration &
 
 export default function Home() {
   const mainRef = useRef(null);
+  const heroVariant = (new URLSearchParams(window.location.search).get("hero") || HERO_VARIANT).toUpperCase();
   useScrollReveal(mainRef);
 
   return (
@@ -193,7 +281,10 @@ export default function Home() {
 
               <h1 className="mb-6 text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl xl:text-7xl">
                 <span className="hero-rise-blur block" style={heroDelay(120, 600)}>A real person,</span>
-                <span className="hero-rise-blur block text-forest" style={heroDelay(240, 600)}>5 minutes away.</span>
+                {/* Entrance on the outer span, gradient on the inner one: two animations can't share an element. */}
+                <span className="hero-rise-blur block" style={heroDelay(240, 600)}>
+                  <span className="hero-gradient">5 minutes away.</span>
+                </span>
               </h1>
 
               <p className="hero-rise mb-8 max-w-xl font-secondary text-lg text-ink/80 md:text-xl" style={heroDelay(420)}>
@@ -218,12 +309,24 @@ export default function Home() {
 
             {/* TODO(prefill-form): replace this framed visual with the real task prefill form once the web app
                 can receive handed-over values. Until then this stays a static image — no inputs, no estimate. */}
-            <div className="hero-in mx-auto w-full max-w-md rounded-[2rem] border border-ink/10 bg-white p-3 shadow-[0_24px_60px_-24px_rgba(58,90,45,0.35)] lg:max-w-none" style={heroDelay(120, 900)}>
-              <div className="overflow-hidden rounded-3xl">
-                <div className="hero-settle" style={heroDelay(120, 900)}>
-                  <ImagePlaceholder ratio="aspect-[4/5]" label="Hero photo" size="4:5 · supply at 1600 × 2000" />
+            <div>
+              <div className="hero-in relative mx-auto w-full max-w-md rounded-[2rem] border border-ink/10 bg-white p-3 shadow-[0_24px_60px_-24px_rgba(58,90,45,0.35)] lg:max-w-none" style={heroDelay(120, 900)}>
+                <div className="overflow-hidden rounded-3xl">
+                  <div className="hero-settle" style={heroDelay(120, 900)}>
+                    {heroVariant === "B" ? (
+                      <HeroPhone />
+                    ) : (
+                      <Photo
+                        priority
+                        src="/img/hero-photo.jpg"
+                        alt="Two people exchanging a set of keys on a brownstone doorstep"
+                        ratio="aspect-[4/5]"
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
+                {heroVariant !== "B" && <HeroNotifications />}
+            </div>
             </div>
           </div>
         </section>
@@ -251,15 +354,14 @@ export default function Home() {
             <div>
               <div data-reveal="rise">
                 <Eyebrow>BUILT FOR REAL LIFE</Eyebrow>
-                <h2 className="mb-6 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-                  One local network.
-                  <br />
-                  Many small tasks.
+                {/* Sized to stay on one line in the half-width column, so a step below the other section headings on desktop. */}
+                <h2 className="mb-6 text-[clamp(1.75rem,8.5vw,2.25rem)] font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-[2.5rem] xl:text-[3.25rem]">
+                  Someone can go now.
                 </h2>
               </div>
               <div data-reveal="rise" data-reveal-step="1">
                 <p className="mb-8 max-w-xl font-secondary text-lg text-ink/80">
-                  Start with the task, not a job category. Describe what you need, HO:RA prices the time, and an approved Supporter nearby picks it up.
+                  Describe what you need and HO:RA prices the time. An approved Supporter nearby picks it up — usually within minutes, not hours.
                 </p>
                 <a href="#how-it-works" className="inline-flex items-center gap-2 font-semibold text-forest underline-offset-4 hover:underline">
                   See how it works <span aria-hidden="true">→</span>
@@ -267,8 +369,21 @@ export default function Home() {
               </div>
             </div>
             <figure data-reveal="fade">
-              <ImagePlaceholder parallax ratio="aspect-[4/3]" label="Handover scene" size="4:3 · supply at 1600 × 1200" />
-              <figcaption className="mt-3 text-sm text-ink/70">Illustrative scene created for HO:RA.</figcaption>
+              {/* preload="none": only the poster loads with the page; the film itself is fetched on play. */}
+              <video
+                className="aspect-[1920/822] w-full rounded-3xl bg-ink"
+                width="1920"
+                height="822"
+                poster="/video/hora-film-poster.jpg"
+                controls
+                playsInline
+                preload="none"
+                aria-label="HO:RA film: a forgotten passport is picked up and handed over across New York City"
+              >
+                <source src="/video/hora-film.webm" type="video/webm" />
+                <source src="/video/hora-film.mp4" type="video/mp4" />
+              </video>
+              <figcaption className="mt-3 text-sm text-ink/70">Illustrative film created for HO:RA.</figcaption>
             </figure>
           </div>
         </section>
@@ -293,6 +408,9 @@ export default function Home() {
             </ul>
           </div>
         </section>
+
+        {/* ── WHAT PEOPLE ASK FOR ── */}
+        <NewsSection />
 
         {/* ── HOW IT WORKS ── */}
         <section id="how-it-works" className="scroll-mt-20 bg-white">
@@ -331,16 +449,20 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Each card is a subgrid spanning three shared rows (title + sub, price, note), so the rows
+                line up across cards however long any one card's copy gets. Keep three direct children per card. */}
             <div className="grid gap-5 lg:grid-cols-3" data-reveal-block>
               {plans.map(({ title, sub, price, unit, note, highlighted }) => (
                 <div
                   key={title}
-                  className={`flex flex-col rounded-3xl border p-8 ${highlighted ? "border-forest bg-forest text-white" : "border-ink/10 bg-white text-ink"}`}
+                  className={`row-span-3 grid grid-rows-subgrid gap-y-0 rounded-3xl border p-8 ${highlighted ? "border-forest bg-forest text-white" : "border-ink/10 bg-white text-ink"}`}
                   data-reveal="rise"
                   data-reveal-stagger
                 >
-                  <h3 className="text-xl font-bold">{title}</h3>
-                  <p className={`mt-1 font-secondary ${highlighted ? "text-white/85" : "text-ink/75"}`}>{sub}</p>
+                  <div>
+                    <h3 className="text-xl font-bold">{title}</h3>
+                    <p className={`mt-1 font-secondary ${highlighted ? "text-white/85" : "text-ink/75"}`}>{sub}</p>
+                  </div>
                   <p className="mt-8 mb-4 flex items-baseline gap-2">
                     <span className="text-5xl font-bold tracking-tight md:text-6xl">{price}</span>
                     <span className={`font-secondary text-lg ${highlighted ? "text-white/85" : "text-ink/75"}`}>{unit}</span>
@@ -363,42 +485,55 @@ export default function Home() {
         </section>
 
         {/* ── FOR SUPPORTERS ── */}
-        <section id="supporters" className="scroll-mt-20 bg-white">
-          <div className={`${container} grid items-start gap-12 py-20 md:py-28 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
-            <div className="mx-auto w-full max-w-md lg:max-w-none" data-reveal="fade">
-              <ImagePlaceholder parallax ratio="aspect-[4/5]" label="Supporter photo" size="4:5 · supply at 1600 × 2000" />
+        {/* Version C: the photo is a full-bleed slab — flush with the section's top, bottom and left edge.
+            The text column's right padding tracks the page container so it lines up with the other sections. */}
+        <section id="supporters" className="scroll-mt-20 bg-white lg:grid lg:grid-cols-[5fr_7fr]">
+          <div data-reveal="fade">
+            <Photo
+              parallax
+              bleed
+              src="/img/supporters-photo.jpg"
+              alt="A woman in a green cap checking her phone while waiting in a queue on a city street"
+              ratio="aspect-[3/2] lg:aspect-auto lg:h-full"
+              position="object-[50%_30%] lg:object-center"
+            />
+          </div>
+          <div className="flex flex-col justify-center px-5 py-16 md:px-8 md:py-24 lg:py-16 lg:pl-16 lg:pr-[max(2rem,calc((100vw-80rem)/2+2rem))]">
+            <div data-reveal="rise">
+              <Eyebrow>FOR SUPPORTERS</Eyebrow>
+              <h2 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">Make open time count.</h2>
             </div>
-            <div>
-              <div data-reveal="rise">
-                <Eyebrow>FOR SUPPORTERS</Eyebrow>
-                <h2 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">Make open time count.</h2>
-              </div>
-              <div data-reveal="rise" data-reveal-step="1">
-                <p className="mb-8 max-w-xl font-secondary text-lg text-ink/80">
-                  See the task, the stops, the expected commitment and your payout before you accept. Work locally, no exclusivity, no minimum hours.
-                </p>
-                <a href={SUPPORTER_APPLY_URL} className={btnPrimary}>
-                  Apply as a Supporter <span aria-hidden="true">→</span>
-                </a>
-                <p className="mt-4 text-sm text-ink/70">
-                  Sign up → apply → interview → ID verification → approval
-                </p>
-              </div>
-              <ul className="mt-12 grid gap-5 sm:grid-cols-2" data-reveal-block>
-                {supporterCards.map(({ icon, title, desc }) => (
-                  <li
-                    key={title}
-                    className="rounded-3xl border border-ink/10 bg-cream/40 p-7"
-                    data-reveal="rise"
-                    data-reveal-stagger
-                  >
-                    <IconChip icon={icon} />
-                    <h3 className="mb-2 text-lg font-bold">{title}</h3>
-                    <p className="font-secondary leading-relaxed text-ink/75">{desc}</p>
-                  </li>
-                ))}
-              </ul>
+            <div data-reveal="rise" data-reveal-step="1">
+              <p className="mb-8 max-w-xl font-secondary text-lg text-ink/80">
+                See the task, the stops, the expected commitment and your payout before you accept. Work locally, no exclusivity, no minimum hours.
+              </p>
+              <a href={SUPPORTER_APPLY_URL} className={btnPrimary}>
+                Apply as a Supporter <span aria-hidden="true">→</span>
+              </a>
+              <p className="mt-4 text-sm text-ink/70">
+                Sign up → apply → interview → ID verification → approval
+              </p>
             </div>
+            {/* Compact cards: the slab is as tall as this column, so the cards are kept short on desktop
+                (small inline icon, tight padding) to hold the section near one screen height. */}
+            <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-8 lg:gap-3" data-reveal-block>
+              {supporterCards.map(({ icon: Icon, title, desc }) => (
+                <li
+                  key={title}
+                  className="rounded-3xl border border-ink/10 bg-cream/40 p-7 lg:rounded-2xl lg:p-5"
+                  data-reveal="rise"
+                  data-reveal-stagger
+                >
+                  <div className="mb-2 flex items-center gap-3">
+                    <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-forest">
+                      <Icon className="h-4 w-4 text-gold" strokeWidth={2} />
+                    </span>
+                    <h3 className="text-lg font-bold">{title}</h3>
+                  </div>
+                  <p className="font-secondary leading-relaxed text-ink/75">{desc}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
