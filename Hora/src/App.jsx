@@ -10,7 +10,6 @@ import JoinPage from "./pages/JoinPage";
 import Beta from "./pages/Beta";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
-import GateModal from "./pages/components/GateModal";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         >
           Skip to main content
         </a>
-        <GateModal />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
