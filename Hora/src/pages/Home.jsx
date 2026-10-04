@@ -45,7 +45,7 @@ const categories = [
   { icon: WashingMachine, title: "Laundry", desc: "Drop off, wait out the wash, pick it back up. Waiting time isn't billed." },
   { icon: ShoppingCart, title: "Grocery", desc: "A shopping list, a budget you set, a receipt photo at the end." },
   { icon: Clock, title: "Queue", desc: "Someone holds your place while you keep moving." },
-  { icon: Users, title: "Companionship", desc: "A walk, a conversation, a shared meal, or company at an event. Non-medical." },
+  { icon: Users, title: "Companionship", desc: "Friendly company for a walk, a conversation, a shared meal, or company at an event. Non-medical." },
 ];
 
 const steps = [
@@ -74,7 +74,7 @@ const plans = [
   {
     title: "Evening & overnight",
     sub: "Tasks starting 9 PM – 8 AM",
-    price: "$1.00",
+    price: "$1",
     unit: "per minute",
     note: "After the first 15 minutes. The rate is locked when you post and shown before you confirm.",
   },
@@ -275,7 +275,7 @@ export default function Home() {
             <div>
               <div className="hero-in mb-6 inline-flex items-center gap-2 rounded-full border border-forest/25 bg-white/70 px-4 py-1.5 text-sm font-medium text-forest" style={heroDelay(0, 400)}>
                 <MapPin aria-hidden="true" className="h-4 w-4 text-forest" />
-                New York City Only
+                Launching in NYC
               </div>
 
               <p className="hero-in mb-3 text-lg italic text-ink/75 md:text-xl" style={heroDelay(0, 400)}>Time has value.</p>
@@ -284,12 +284,12 @@ export default function Home() {
                 <span className="hero-rise-blur block" style={heroDelay(120, 600)}>A real person,</span>
                 {/* Entrance on the outer span, gradient on the inner one: two animations can't share an element. */}
                 <span className="hero-rise-blur block" style={heroDelay(240, 600)}>
-                  <span className="hero-gradient">5 minutes away.</span>
+                  <span className="hero-gradient">10 minutes away.</span>
                 </span>
               </h1>
 
               <p className="hero-rise mb-8 max-w-xl font-secondary text-lg text-ink/80 md:text-xl" style={heroDelay(420)}>
-                Post any task — errands, deliveries, laundry runs. Get matched with someone approved and nearby, usually within minutes.
+                Tell us what you need done. Errands, pickups, returns, waiting, companionship and more handled by verified local Supporters.
               </p>
 
               <ul className="hero-rise mb-9 flex flex-col gap-3 text-sm font-medium sm:flex-row sm:flex-wrap sm:gap-x-6" style={heroDelay(500)}>
@@ -591,8 +591,8 @@ export default function Home() {
                 Open the web app
               </a>
             </div>
-            <Link to="/beta" className="mt-7 inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-cream">
-              Apply as a Supporter <span aria-hidden="true">→</span>
+            <Link to="/beta" className="mt-7 inline-flex items-center gap-2 font-semibold text-white  underline-offset-4 hover:text-cream">
+              Apply as a Supporter 
             </Link>
           </div>
         </section>
