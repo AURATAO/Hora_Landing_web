@@ -591,9 +591,7 @@ export default function Home() {
                 Open the web app
               </a>
             </div>
-            <Link to="/beta" className="mt-7 inline-flex items-center gap-2 font-semibold text-white  underline-offset-4 hover:text-cream">
-              Apply as a Supporter 
-            </Link>
+           
           </div>
         </section>
       </main>
