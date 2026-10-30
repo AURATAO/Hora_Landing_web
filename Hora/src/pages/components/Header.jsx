@@ -1,20 +1,18 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "hamburgers/dist/hamburgers.min.css";
-import { APP_STORE_URL } from "../../lib/config";
+import { IMESSAGE_HREF } from "../../lib/config";
 
+// Routes, not same-page anchors. The old nav indexed the homepage's own sections —
+// Services / How it works / Pricing / Trust — which was a reasonable table of
+// contents for a ten-section page and is noise on a three-section one. What a
+// visitor can still want from here is the other half of the product (Supporters)
+// or more detail than the homepage carries (FAQ, Mission).
 const navLinks = [
-  { id: "services", label: "Services" },
-  { id: "how-it-works", label: "How it works" },
-  { id: "pricing", label: "Pricing" },
-  { id: "trust", label: "Trust" },
-  { id: "supporters", label: "Become a Supporter" },
+  { to: "/supporters", label: "For Supporters" },
+  { to: "/faq", label: "FAQ" },
+  { to: "/mission", label: "Mission" },
 ];
-
-// Home sections are plain anchors; this also covers a repeat click on the current hash.
-const scrollToSection = (id) => {
-  document.getElementById(id)?.scrollIntoView();
-};
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -67,11 +65,10 @@ export default function Header() {
           </Link>
 
           <nav aria-label="Main" className="hidden lg:flex items-center gap-7">
-            {navLinks.map(({ id, label }) => (
+            {navLinks.map(({ to, label }) => (
               <Link
-                key={id}
-                to={`/#${id}`}
-                onClick={() => scrollToSection(id)}
+                key={to}
+                to={to}
                 className="text-sm font-medium text-ink/80 hover:text-forest whitespace-nowrap transition-colors"
               >
                 {label}
@@ -80,11 +77,12 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            {/* Was "Get the app", which sent a requester to the Supporter dashboard. */}
             <a
-              href={APP_STORE_URL}
+              href={IMESSAGE_HREF}
               className="hidden sm:inline-flex items-center justify-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white whitespace-nowrap hover:bg-forest/90 active:scale-[0.98] transition"
             >
-              Get the app
+              Text us
             </a>
 
             <div className="flex items-center lg:hidden -mr-3">
@@ -111,24 +109,21 @@ export default function Header() {
         inert={!isActive}
         className={`fixed top-18 pt-8 left-0 w-full h-screen bg-ink/95 transition-opacity duration-300 ease-in-out z-39 flex flex-col items-center justify-start ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"} lg:hidden`}
       >
-        {navLinks.map(({ id, label }) => (
+        {navLinks.map(({ to, label }) => (
           <Link
-            key={id}
-            to={`/#${id}`}
-            onClick={() => {
-              setIsActive(false);
-              scrollToSection(id);
-            }}
+            key={to}
+            to={to}
+            onClick={() => setIsActive(false)}
             className="text-xl text-center text-white mb-5 border-b border-white/15 w-3/4 pb-4"
           >
             {label}
           </Link>
         ))}
         <a
-          href={APP_STORE_URL}
+          href={IMESSAGE_HREF}
           className="mt-2 px-10 py-4 bg-cream text-ink font-semibold rounded-full text-lg hover:bg-cream/90 transition"
         >
-          Get the app
+          Text us
         </a>
       </nav>
     </>

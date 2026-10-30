@@ -6,7 +6,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import FQA from "./pages/FQA";
-import Beta from "./pages/Beta";
+import Supporters from "./pages/Supporters";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
@@ -31,8 +31,12 @@ function App() {
           <Route path="/FQA" element={<FQA />} />
           {/* /Join was a waitlist form that wrote to this site's own backend,
               not to the product. Old links land on the Supporter page. */}
-          <Route path="/Join" element={<Navigate to="/beta" replace />} />
-          <Route path="/beta" element={<Beta />} />
+          <Route path="/Join" element={<Navigate to="/supporters" replace />} />
+          {/* /beta was the closed-pilot invite-code gate. The page is gone, but the
+              URL is printed on things we no longer control, so it redirects rather
+              than 404s. */}
+          <Route path="/beta" element={<Navigate to="/supporters" replace />} />
+          <Route path="/supporters" element={<Supporters />} />
           <Route path="/support" element={<Support />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
