@@ -88,29 +88,41 @@ export default function Home() {
       <main ref={mainRef} id="main-content" className="bg-white pt-18 text-ink">
 
         {/* ── 1. HERO ───────────────────────────────────────────────────── */}
+        {/* ONE VIEWPORT. The film and the whole pitch sit inside 100svh minus the
+            4.5rem header, so nothing about what HO:RA is costs a scroll. On a phone
+            that budget is tight, which is what sets the type sizes below — they are
+            smaller than the rest of the page's scale on purpose. svh, not vh: a
+            phone's vh counts the address bar and overflows when it retracts.
+            Desktop drops the constraint (lg:min-h-0) because side by side it fits
+            on its own. */}
         <section className="bg-cream">
-          <div className={`${container} grid items-center gap-14 py-16 lg:grid-cols-[7fr_5fr] lg:gap-20 lg:py-24`}>
+          <div
+            className={`${container} flex min-h-[calc(100svh-4.5rem)] flex-col gap-6 py-6 lg:grid lg:min-h-0 lg:grid-cols-[7fr_5fr] lg:items-center lg:gap-20 lg:py-24`}
+          >
 
-            <div>
+            <div className="shrink-0 lg:shrink">
               <div
-                className="hero-in mb-7 inline-flex items-center gap-2 rounded-full border border-forest/30 bg-white/60 px-4 py-1.5 text-sm font-medium text-forest"
+                className="hero-in mb-4 inline-flex items-center gap-2 rounded-full border border-forest/30 bg-white/60 px-3.5 py-1 text-[13px] font-medium text-forest lg:mb-7 lg:px-4 lg:py-1.5 lg:text-sm"
                 style={heroDelay(0, 400)}
               >
                 <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
                 Now live in New York City
               </div>
 
-              <p className="hero-in mb-3.5 font-secondary text-lg italic text-ink/70" style={heroDelay(0, 400)}>
+              <p className="hero-in mb-2.5 font-secondary text-base italic text-ink/70 lg:mb-3.5 lg:text-lg" style={heroDelay(0, 400)}>
                 Time has value.
               </p>
 
-              <h1 className="mb-7 text-5xl font-bold leading-[1.04] tracking-[-0.035em] sm:text-6xl xl:text-[3.9rem]">
+              <h1 className="mb-4 text-[2.05rem] font-bold leading-[1.06] tracking-[-0.032em] sm:text-5xl lg:mb-7 lg:text-[3.3rem] lg:leading-[1.04] xl:text-[3.9rem]">
                 <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Text us.</span>
                 <span className="hero-rise-blur block" style={heroDelay(240, 600)}>A real person</span>
                 <span className="hero-rise-blur block" style={heroDelay(360, 600)}>does the rest.</span>
               </h1>
 
-              <p className="hero-rise mb-9 max-w-xl font-secondary text-lg leading-relaxed text-ink/80 md:text-[1.15rem]" style={heroDelay(480)}>
+              <p
+                className="hero-rise mb-6 max-w-xl font-secondary text-[15.5px] leading-relaxed text-ink/80 sm:text-base lg:mb-9 lg:text-[1.15rem]"
+                style={heroDelay(480)}
+              >
                 Errands, pickups, returns, waiting in line, company for an hour. Message us
                 and someone nearby takes it on. You see the price before anything starts.
               </p>
@@ -123,7 +135,7 @@ export default function Home() {
                 <a href={IMESSAGE_HREF} className={btnPrimary}>
                   Text us to start <span aria-hidden="true">→</span>
                 </a>
-                <p className="mt-5 text-[15px] text-ink/60">
+                <p className="mt-3.5 text-sm text-ink/60 lg:mt-5 lg:text-[15px]">
                   On Android or desktop?{" "}
                   <a href={WEB_APP_URL} className="text-forest underline underline-offset-[3px]">
                     Open the web app
@@ -132,7 +144,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-in mx-auto w-full max-w-[21rem] lg:max-w-none" style={heroDelay(120, 900)}>
+            {/* flex-1 + min-h-0: the film takes whatever the text left over, so it
+                shrinks on a short phone instead of pushing the hero past the fold.
+                No fixed mobile cap to guess wrong. */}
+            <div className="hero-in flex min-h-0 flex-1 items-center justify-center lg:block lg:flex-none" style={heroDelay(120, 900)}>
               <HeroFilm />
             </div>
 

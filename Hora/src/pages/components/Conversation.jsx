@@ -23,7 +23,7 @@ const thread = [
 export default function Conversation({ compact = false }) {
   return (
     <div
-      className={`${compact ? "rounded-[2.1rem] p-2.5" : "rounded-[2.6rem] p-3"} bg-ink shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)]`}
+      className={`${compact ? "rounded-[2.1rem] p-2.5" : "rounded-[2.6rem] p-3"} mx-auto w-full max-w-[17rem] bg-ink shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)] sm:max-w-[19rem] lg:max-w-[21rem]`}
     >
       <div className={`${compact ? "rounded-[1.7rem]" : "rounded-[2.1rem]"} overflow-hidden bg-white`}>
 

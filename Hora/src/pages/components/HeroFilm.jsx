@@ -68,11 +68,20 @@ export default function HeroFilm() {
 
   if (reduced) return <Conversation />;
 
+  // SIZED BY HEIGHT, NOT WIDTH. A 9:16 frame given its column's full width is
+  // 890px tall on a desktop and taller than the screen on a phone, which pushed
+  // the hero past one viewport and made the first thing a visitor did a scroll.
+  //
+  // So height leads and width follows from the aspect ratio. On a phone the
+  // height is h-full inside the hero's flex-1 slot — the film takes exactly what
+  // the text left over, on any screen, rather than a guessed cap that is wrong on
+  // an SE and wasteful on a Pro Max. Desktop lays out side by side and uses svh
+  // (not vh, which counts a phone's address bar and overflows when it retracts).
   return (
-    <div className="rounded-[2.6rem] bg-ink p-3 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)]">
+    <div className="mx-auto flex h-full w-fit max-w-full items-center rounded-[2.1rem] bg-ink p-2 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)] sm:rounded-[2.4rem] sm:p-2.5 lg:h-auto lg:rounded-[2.6rem] lg:p-3">
       <video
         ref={videoRef}
-        className="block aspect-[9/16] w-full rounded-[2.1rem] bg-ink object-cover"
+        className="block aspect-[9/16] h-full max-h-[460px] min-h-[180px] w-auto rounded-[1.7rem] bg-ink object-cover sm:rounded-[2rem] lg:h-[min(68svh,560px)] lg:max-h-none lg:rounded-[2.1rem]"
         poster="/video/hora-imessage-poster.jpg"
         preload="none"
         autoPlay
