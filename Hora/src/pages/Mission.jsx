@@ -42,6 +42,23 @@ const rail = "md:grid md:grid-cols-[1fr_2.25fr] md:items-start md:gap-x-20";
 const railHeading =
   "m-0 text-[2rem] font-bold leading-[1.14] tracking-[-0.025em] md:sticky md:top-28 md:text-[2.125rem]";
 
+// THE SAME TYPE, WITHOUT THE POSITIONING, and it has to be a separate string
+// rather than an override.
+//
+// Two sections wrap the heading and its standfirst in one sticky div, so that
+// the pair travels together. There the h2 must NOT stick: the wrapper already
+// does. That was written as `${railHeading} md:static` and it silently did
+// nothing — Tailwind emits position utilities in a fixed order, `.md\:static`
+// before `.md\:sticky`, at equal specificity, so the later rule wins and the
+// heading stayed sticky. Nested inside its own sticky parent it then pinned
+// independently and slid down onto the paragraph, which is the overlap that
+// sent me looking.
+//
+// No amount of class ordering in the JSX fixes that, because the cascade is
+// decided by the stylesheet, not the attribute. The class has to be absent.
+const railHeadingStatic =
+  "m-0 text-[2rem] font-bold leading-[1.14] tracking-[-0.025em] md:text-[2.125rem]";
+
 const principles = [
   {
     title: "Respect time",
@@ -266,7 +283,7 @@ export default function Mission() {
           <div className={`${container} py-20 md:py-24`}>
             <div className={rail} data-reveal="rise">
               <div className="mb-10 md:mb-0 md:sticky md:top-28">
-                <h2 className={`${railHeading} text-white md:static`}>What makes HO:RA different.</h2>
+                <h2 className={`${railHeadingStatic} text-white`}>What makes HO:RA different.</h2>
                 <p className="mt-4 font-secondary text-base leading-relaxed text-white/70">
                   Six things we decided early, and have not traded away since.
                 </p>
@@ -289,7 +306,7 @@ export default function Mission() {
           <div className={`${container} py-20 md:py-24`}>
             <div className={rail} data-reveal="rise">
               <div className="mb-10 md:mb-0 md:sticky md:top-28">
-                <h2 className={`${railHeading} md:static`}>The two of us.</h2>
+                <h2 className={`${railHeadingStatic}`}>The two of us.</h2>
                 <p className="mt-4 font-secondary text-base leading-relaxed text-ink/72">
                   HO:RA is run by two people, and between us we have met every Supporter on the platform one-on-one. When you message us, one of us is on the other end.
                 </p>
