@@ -96,16 +96,16 @@ const differences = [
 // problem than a plausible lie about who we are.
 const founders = [
   {
-    name: "Aura Tao",
-    role: "Co-founder",
+    name: "Liangyou Tao",
+    role: "Co-founder/Product & Strategy",
     photo: "/img/founder-aura.jpg",
-    bio: "[ONE OR TWO SENTENCES — what you do at HO:RA and one thing that is actually true about you.]",
+    bio: "Seven years in fashion before turning to code. What she took from it was never the clothes. It was the people who made everything happen.",
   },
   {
     name: "Daniele Rollo",
-    role: "Co-founder",
+    role: "Co-founder/Business & Partnerships",
     photo: "/img/founder-dani.jpg",
-    bio: "[ONE OR TWO SENTENCES — same for Dani.]",
+    bio: "Years in production, where the job is getting the right person to the right place with the right thing, on time. HO:RA is the same job without the film crew.",
   },
 ];
 
@@ -144,28 +144,76 @@ export default function Mission() {
         </section>
 
         {/* ── WHY WE BUILT IT ───────────────────────────────────────────── */}
+        {/* ── WHY WE BUILT IT ───────────────────────────────────────────── */}
         <section className="bg-cream">
           <div className={`${container} pb-0 pt-20 md:pt-24`}>
             <div className={rail} data-reveal="rise">
               <h2 className={`${railHeading} mb-7 md:mb-0`}>Why we built it.</h2>
-              <div>
-                {/* TODO(founding-story): the first paragraph is the one piece of this
-                    page nobody else can write. */}
-                <p className="mb-6 font-secondary text-[18px] leading-[1.68] text-ink/85 md:text-[19px]">
-                  [YOUR FOUNDING STORY — the specific moment that started this. A few sentences,
-                  first person. What you were trying to get done, and why it was harder than it
-                  should have been.]
+
+              {/* Fourteen beats, fourteen <p> elements. Blank lines inside a single <p>
+                  collapse to one space, so every pause in this text has to be a real
+                  element or it is not a pause. The shared styling lives on the wrapper
+                  rather than on all fourteen tags: change the measure or the leading in
+                  one place. mb-5 rather than mb-6 because most of these paragraphs are
+                  one line, and fourteen 24px gaps make a column you scroll instead of
+                  read. */}
+              <div className="[&>p]:mb-5 [&>p:last-child]:mb-0 [&>p]:font-secondary [&>p]:text-[18px] [&>p]:leading-[1.68] [&>p]:text-ink/85 md:[&>p]:text-[19px]">
+
+                <p className="!text-[19px] md:!text-[21px] md:!leading-[1.6]">
+                  One afternoon, someone broke the window of Daniele’s apartment while he was at
+                  work. He had a meeting he couldn’t miss. His family lived elsewhere, his friends
+                  were working, and nobody could get there in time.
                 </p>
-                <p className="mb-6 font-secondary text-[18px] leading-[1.68] text-ink/85 md:text-[19px]">
-                  Most of what eats a day isn&apos;t work. It&apos;s the twenty minutes at the dry
-                  cleaner, the afternoon waiting for a delivery, the trip across town for a form
-                  that had to be handed over in person. Each one is small. Together they are most
-                  of a life.
+
+                <p>All he needed was someone he could trust to stay until he got home.</p>
+
+                <p>
+                  It wasn’t a job for a locksmith or a cleaner. It didn’t fit into any service
+                  category. But it was something he genuinely needed.
                 </p>
-                <p className="font-secondary text-[18px] leading-[1.68] text-ink/85 md:text-[19px]">
-                  HO:RA exists so that an hour you don&apos;t want can go to someone who does — and
-                  so that person is paid properly for it. Both sides of that sentence matter equally.
+
+                <p>And once we started looking, we saw the same problem everywhere.</p>
+
+                <p>
+                  Twenty minutes at the dry cleaner. An afternoon waiting for a delivery. A quick
+                  trip across town to pick something up.
                 </p>
+
+                <p className="!text-ink">Small things, until they take over your day.</p>
+
+                <p className="!mt-11">
+                  Liangyou grew up in Taiwan, where everyday life felt easier. Not because of better
+                  technology, but because help was often just around the corner. Someone nearby,
+                  willing to lend a hand.
+                </p>
+
+                <p>Daniele experienced what was missing. Liangyou knew what it felt like when it wasn’t.</p>
+
+                <p>That became the idea behind HO:RA.</p>
+
+                <p>
+                  We believe technology should make it easier for people to help each other, not
+                  replace the human part of it.
+                </p>
+
+                <p>
+                  AI can understand what you need and connect the right people. But it can’t wait in
+                  your apartment, collect your parcel, or give you an hour of your day back.
+                </p>
+
+                {/* The hinge. Set at the rail heading's size so it reads as the second
+                    title of this section rather than a stray line. */}
+                <p className="!my-9 !text-[1.75rem] !font-semibold !leading-[1.2] !tracking-[-0.022em] !text-ink md:!text-[2.125rem]">
+                  A person can.
+                </p>
+
+                <p>
+                  So we built HO:RA to make everyday help accessible, flexible, and worth everyone’s
+                  time.
+                </p>
+
+                <p className="!text-ink">Because sometimes, all you need is another human being.</p>
+
               </div>
             </div>
           </div>
@@ -231,8 +279,7 @@ export default function Mission() {
               <div className="mb-10 md:mb-0 md:sticky md:top-28">
                 <h2 className={`${railHeading} md:static`}>The two of us.</h2>
                 <p className="mt-4 font-secondary text-base leading-relaxed text-ink/72">
-                  HO:RA is built and run by two people. When you message us, one of us is on the
-                  other end.
+                  HO:RA is run by two people, and between us we have met every Supporter on the platform one-on-one. When you message us, one of us is on the other end.
                 </p>
               </div>
 
