@@ -102,11 +102,24 @@ export default function Home() {
         <section className="relative h-[calc(100svh-4.5rem)] overflow-hidden bg-ink lg:hidden">
           <HeroFilm variant="fill" />
 
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 via-30% to-transparent to-62%" />
+          {/* The scrim is held to the bottom two fifths, where the text sits, and is
+              gone entirely above that. An even wash over the whole frame darkened the
+              conversation the film opens on, so the thread and the headline competed
+              for the same pixels. Separating them by height rather than by opacity
+              keeps the bubbles clean AND the headline readable over the bright
+              golden-hour shot the film ends on. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/55 via-16% to-transparent to-42%"
+          />
 
+          {/* Solid gold, ink text. The frosted white-on-dark version relied on the
+              scrim that is no longer up here, and would have sat unreadable over the
+              film's bright closing shot. Gold against ink is the one pairing in the
+              palette that holds over anything the film can put behind it. */}
           <div className="absolute inset-x-0 top-0 flex justify-center p-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-ink/40 px-3.5 py-1.5 text-[13px] font-medium text-white backdrop-blur-sm">
-              <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-1.5 text-[13px] font-semibold text-ink shadow-[0_6px_20px_-6px_rgba(34,40,49,0.5)]">
+              <MapPin aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2.5} />
               Now live in New York City
             </div>
           </div>

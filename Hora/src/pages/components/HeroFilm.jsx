@@ -78,7 +78,7 @@ export default function HeroFilm({ variant = "framed" }) {
       return (
         <img
           src="/video/hora-imessage-poster.jpg"
-          alt="A text conversation with HO:RA: two bunches of purple carrots to Bryant Park by 1pm, quoted at $43, confirmed, and accepted by a Supporter who is on the way."
+          alt="A text conversation with HO:RA: two bunches of purple carrots from the Union Square Greenmarket, delivered near Bryant Park by 1pm, quoted and charged at $43, with a Supporter on the way."
           className="absolute inset-0 h-full w-full object-cover"
         />
       );
@@ -94,7 +94,7 @@ export default function HeroFilm({ variant = "framed" }) {
         loop
         playsInline
         disablePictureInPicture
-        aria-label="A text conversation with HO:RA: a request for two bunches of purple carrots to Bryant Park by 1pm, quoted at $43, confirmed with YES, then accepted by a Supporter who is on the way."
+        aria-label="A text conversation with HO:RA: a request for two bunches of purple carrots from the Union Square Greenmarket, delivered to an office near Bryant Park by 1pm. HO:RA quotes $43, the request is confirmed, $43 is charged to a Visa, and a Supporter sets off."
       >
         <source src="/video/hora-imessage.webm" type="video/webm" />
         <source src="/video/hora-imessage.mp4" type="video/mp4" />
@@ -125,7 +125,7 @@ export default function HeroFilm({ variant = "framed" }) {
         loop
         playsInline
         disablePictureInPicture
-        aria-label="A text conversation with HO:RA: a request for two bunches of purple carrots to Bryant Park by 1pm, quoted at $43, confirmed with YES, then accepted by a Supporter who is on the way."
+        aria-label="A text conversation with HO:RA: a request for two bunches of purple carrots from the Union Square Greenmarket, delivered to an office near Bryant Park by 1pm. HO:RA quotes $43, the request is confirmed, $43 is charged to a Visa, and a Supporter sets off."
       >
         <source src="/video/hora-imessage.webm" type="video/webm" />
         <source src="/video/hora-imessage.mp4" type="video/mp4" />
