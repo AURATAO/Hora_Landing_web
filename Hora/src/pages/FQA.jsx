@@ -27,6 +27,14 @@ import { IMESSAGE_HREF, IMESSAGE_NUMBER, SUPPORTER_APPLY_URL, WEB_APP_URL } from
 //   "full refund" if a      The hold is released. Same correction.
 //    Supporter is late
 //
+// A fifth was added on 31 October, after the platform's own payout data was
+// read for the first time: "on a daily schedule" implied next-day money. The
+// schedule is daily; the ARRIVAL is not. Stripe holds each payout, measured at
+// seven days here, and longer for an account's first one. The answer below
+// says that in words rather than a number, because at the time of writing no
+// live payout had completed yet and the measured seven days came from test
+// mode. Replace the wording with the real figure once one has landed.
+//
 // The page is also where everything the three-section homepage no longer says
 // has to be findable. That is the deal that lets the homepage stay short, so
 // this list is allowed to be long.
@@ -123,7 +131,12 @@ const supporterFaqs = [
   {
     question: "When am I paid?",
     answer:
-      "Payouts go to your bank automatically through Stripe once a task settles, on a daily schedule. No invoicing, no waiting for a monthly run.",
+      "Every task pays out automatically through Stripe once it settles. There is no invoicing and nothing to chase. Stripe then holds each payout for a few days before it reaches your bank, and the first one after you join takes longer while the account is new. You can see exactly where a payment is, and when it is expected, in your Stripe dashboard.",
+  },
+  {
+    question: "What about taxes?",
+    answer:
+      "You work for yourself on HO:RA, so your taxes are yours to file. Stripe keeps a record of every payment made to you, and you can download it from your Stripe dashboard at any time, so you are never guessing what you earned over a year.",
   },
   {
     question: "Do Supporters use the app?",

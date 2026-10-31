@@ -17,23 +17,40 @@ import { SUPPORTER_APPLY_URL, APP_STORE_URL } from "../lib/config";
 // is the gate now, and an "Early Access · limited spots" page contradicts a
 // homepage that says HO:RA is live.
 //
-// The three figures below are the real terms, not marketing. They are the most
-// persuasive thing on the page precisely because they are checkable: 80% is
-// BillingConfig.PlatformFeeBps inverted, reimbursement really is untouched by
-// the fee, and payouts really are Stripe's daily automatic schedule.
+// OUTCOMES, NOT THE FEE SPLIT. This block used to lead with "80% / 100% /
+// Daily". Two of those three were liabilities and the third was wrong.
+//
+//   80%     A price, and prices move. Charging Supporters for identity
+//           verification is under consideration and the platform fee may
+//           change with it; a percentage published on a recruitment page is a
+//           promise made to the exact people who will have screenshots of it.
+//           The mechanism still gets a straight answer in the FAQ, which is
+//           where someone who asks will go. Omitting it from marketing is what
+//           Uber and Papa do; being evasive when asked is what they got sued
+//           over, and that is the line this split respects.
+//
+//   Daily   Not true. Payouts are initiated automatically, but Stripe holds
+//           each one before it reaches a bank — measured at seven days on this
+//           platform's own data, with the first payout on a new account taking
+//           longer. A Supporter reading "Daily" and seeing nothing on day two
+//           concludes they were not paid. Timing now lives in the FAQ, in
+//           words, until a live payout confirms the real number.
+//
+// What survives is the part that answers the only question an applicant has:
+// what do I actually get. None of these three go stale when a rate changes.
 
 const earnings = [
   {
-    figure: "80%",
-    desc: "of every task's service revenue. HO:RA keeps 20% to run the platform.",
+    title: "Paid for the minutes you work",
+    desc: "Not for the hour booked. Clock in, clock out, and that is the bill.",
   },
   {
-    figure: "100%",
-    desc: "of anything you buy for a requester comes back to you. We never take a cut of a receipt.",
+    title: "Receipts come back in full",
+    desc: "Anything you buy for a requester is reimbursed. We never take a cut of it.",
   },
   {
-    figure: "Daily",
-    desc: "payouts land in your bank automatically through Stripe. No invoicing, no chasing.",
+    title: "Straight to your bank",
+    desc: "Automatic through Stripe once a task settles. No invoicing, no chasing.",
   },
 ];
 
@@ -75,7 +92,7 @@ export default function Supporters() {
         <title>Work with HO:RA — Make open time count | New York City</title>
         <meta
           name="description"
-          content="Take the tasks that fit your day, clock in, and get paid for the minutes you actually work. Supporters keep 80% of service pay and every reimbursement in full."
+          content="Take the tasks that fit your day, clock in, and get paid for the minutes you actually work. Every reimbursement comes back to you in full."
         />
       </Helmet>
 
@@ -156,18 +173,23 @@ export default function Supporters() {
             </h2>
 
             <div className="grid gap-11 md:grid-cols-3" data-reveal="rise" data-reveal-step="1">
-              {earnings.map(({ figure, desc }) => (
-                <div key={figure}>
-                  <div className="mb-2.5 text-[2.5rem] font-bold tracking-[-0.03em] text-forest">{figure}</div>
+              {/* Title-and-body rather than the old giant figure: a sentence set at
+                  2.5rem would wrap to three lines and swallow the section. The rule
+                  above each one is the same treatment as the join steps below, so
+                  the two sections read as one system; the cream background and the
+                  numerals on the steps keep them from looking identical. */}
+              {earnings.map(({ title, desc }) => (
+                <div key={title} className="border-t-2 border-forest pt-5">
+                  <h3 className="mb-2.5 text-xl font-semibold tracking-[-0.016em]">{title}</h3>
                   <p className="font-secondary text-[16.5px] leading-relaxed text-ink/80">{desc}</p>
                 </div>
               ))}
             </div>
 
             <p className="mt-11 max-w-2xl font-secondary text-[15px] leading-relaxed text-ink/65" data-reveal="rise" data-reveal-step="2">
-              Example: a 30-minute dry cleaning pickup bills the requester $27.00. You receive
-              $21.60, plus any receipt in full. Evening and overnight tasks (9 PM – 8 AM) bill
-              at double the per-minute rate.
+              Example: a 30-minute dry cleaning pickup pays you $21.60, plus the receipt in
+              full. Evening and overnight tasks (9 PM – 8 AM) pay at double the per-minute
+              rate.
             </p>
           </div>
         </section>

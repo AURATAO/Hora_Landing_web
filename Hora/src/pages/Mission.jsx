@@ -53,7 +53,7 @@ const principles = [
   },
   {
     title: "Stay fair",
-    desc: "Fair pay, fair use — always balanced. Supporters keep 80% of service revenue, and every reimbursement in full.",
+    desc: "Fair pay, fair use, always balanced. Supporters are paid for the minutes they work, and every reimbursement comes back to them in full.",
   },
   {
     title: "Keep it clear",
@@ -83,8 +83,20 @@ const differences = [
     desc: "If your Supporter needs more time or a bigger budget, you approve it first. No answer within five minutes counts as a no, and they fall back to the option chosen up front.",
   },
   {
-    title: "Supporters keep 80%",
-    desc: "No registration fee, no verification fee, no charge to join. HO:RA takes 20% of service pay, and anything a Supporter buys for a Requester is reimbursed in full with no markup.",
+    // WAS "Supporters keep 80%", with "no registration fee, no verification
+    // fee, no charge to join". Both halves had to go, for different reasons.
+    //
+    // The percentage is a PRICE, and prices change. Published here it became a
+    // third copy of a number that also lives on /supporters and in the FAQ,
+    // and this page has already shipped three claims that went stale without
+    // anyone noticing. Policy belongs on a mission page; rates belong in one
+    // maintained place.
+    //
+    // The fee promise was worse: charging Supporters for identity verification
+    // is under consideration, so "no verification fee" is a promise that may
+    // be broken, and the people it was made to will have screenshots.
+    title: "Never a cut of a receipt",
+    desc: "Anything a Supporter buys for a Requester comes back to them in full, with no markup and no commission. The platform fee applies to service pay only.",
   },
 ];
 
