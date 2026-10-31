@@ -23,7 +23,7 @@ import Conversation from "./Conversation.jsx";
 // a phone over slow 4G that is the difference between a hero that appears and
 // one that arrives.
 
-export default function HeroFilm() {
+export default function HeroFilm({ variant = "framed" }) {
   const videoRef = useRef(null);
   const [reduced, setReduced] = useState(() =>
     typeof window !== "undefined" && window.matchMedia
@@ -65,6 +65,42 @@ export default function HeroFilm() {
     observer.observe(video);
     return () => observer.disconnect();
   }, [reduced]);
+
+  // FULL-BLEED (phones). The film fills the first screen and the writing starts
+  // below it. No bezel: the phone in your hand is the bezel.
+  //
+  // Reduced motion gets the poster rather than the Conversation markup — a
+  // threaded list cannot fill a screen edge to edge without becoming a different
+  // design. The explanation those visitors lose here is the section directly
+  // below, which carries it in text for everyone.
+  if (variant === "fill") {
+    if (reduced) {
+      return (
+        <img
+          src="/video/hora-imessage-poster.jpg"
+          alt="A text conversation with HO:RA: two bunches of purple carrots to Bryant Park by 1pm, quoted at $43, confirmed, and accepted by a Supporter who is on the way."
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      );
+    }
+    return (
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full bg-ink object-cover"
+        poster="/video/hora-imessage-poster.jpg"
+        preload="none"
+        autoPlay
+        muted
+        loop
+        playsInline
+        disablePictureInPicture
+        aria-label="A text conversation with HO:RA: a request for two bunches of purple carrots to Bryant Park by 1pm, quoted at $43, confirmed with YES, then accepted by a Supporter who is on the way."
+      >
+        <source src="/video/hora-imessage.webm" type="video/webm" />
+        <source src="/video/hora-imessage.mp4" type="video/mp4" />
+      </video>
+    );
+  }
 
   if (reduced) return <Conversation />;
 

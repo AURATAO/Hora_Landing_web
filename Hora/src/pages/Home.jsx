@@ -6,7 +6,7 @@ import Footer from './components/Footer.jsx';
 import HeroFilm from './components/HeroFilm.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
 import { IMESSAGE_HREF, IMESSAGE_NUMBER, WEB_APP_URL } from '../lib/config';
-import { MapPin } from 'lucide-react';
+import { MapPin, ChevronDown } from 'lucide-react';
 
 // THE 2026 REBUILD. Three sections, one audience, one call to action.
 //
@@ -88,39 +88,83 @@ export default function Home() {
       <main ref={mainRef} id="main-content" className="bg-white pt-18 text-ink">
 
         {/* ── 1. HERO ───────────────────────────────────────────────────── */}
-        {/* ONE VIEWPORT. The film and the whole pitch sit inside 100svh minus the
-            4.5rem header, so nothing about what HO:RA is costs a scroll. On a phone
-            that budget is tight, which is what sets the type sizes below — they are
-            smaller than the rest of the page's scale on purpose. svh, not vh: a
-            phone's vh counts the address bar and overflows when it retracts.
-            Desktop drops the constraint (lg:min-h-0) because side by side it fits
-            on its own. */}
-        <section className="bg-cream">
+        {/* ── HERO, PHONES ─────────────────────────────────────────────────
+            The film fills the first screen; the writing begins below it. Trying
+            to fit a 9:16 film AND the full pitch above the fold meant shrinking
+            both until neither worked — a 140px-tall conversation on an SE is not
+            a conversation. So the film gets the screen, and the only things laid
+            over it are the two a visitor cannot do without: what this is, and how
+            to start.
+
+            The scrim is not decoration. The film runs dark for fifteen seconds and
+            then cuts to a golden-hour street, so white text over the bare video
+            would vanish halfway through. */}
+        <section className="relative h-[calc(100svh-4.5rem)] overflow-hidden bg-ink lg:hidden">
+          <HeroFilm variant="fill" />
+
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 via-30% to-transparent to-62%" />
+
+          <div className="absolute inset-x-0 top-0 flex justify-center p-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-ink/40 px-3.5 py-1.5 text-[13px] font-medium text-white backdrop-blur-sm">
+              <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
+              Now live in New York City
+            </div>
+          </div>
+
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-8">
+            <p className="mb-2 font-secondary text-[15px] italic text-white/70">Time has value.</p>
+
+            <h1 className="mb-5 text-[2.1rem] font-bold leading-[1.08] tracking-[-0.032em] text-white">
+              Text us. A real person does the rest.
+            </h1>
+
+            <a href={IMESSAGE_HREF} className={`${btn} w-full bg-cream text-ink`}>
+              Text us to start <span aria-hidden="true">→</span>
+            </a>
+
+            <p className="mt-3.5 text-center text-sm text-white/65">
+              On Android?{" "}
+              <a href={WEB_APP_URL} className="text-white underline underline-offset-[3px]">
+                Open the web app
+              </a>
+            </p>
+
+            {/* Without this nobody knows the page continues: the film ends on a logo,
+                which reads as the bottom of something. */}
+            <p className="mt-6 flex items-center justify-center gap-1.5 text-[12.5px] uppercase tracking-[0.14em] text-white/45">
+              What we do
+              <ChevronDown aria-hidden="true" className="h-3.5 w-3.5" />
+            </p>
+          </div>
+        </section>
+
+        {/* ── HERO, DESKTOP ─────────────────────────────────────────────── */}
+        <section className="hidden bg-cream lg:block">
           <div
-            className={`${container} flex min-h-[calc(100svh-4.5rem)] flex-col gap-6 py-6 lg:grid lg:min-h-0 lg:grid-cols-[7fr_5fr] lg:items-center lg:gap-20 lg:py-24`}
+            className={`${container} grid grid-cols-[7fr_5fr] items-center gap-20 py-24`}
           >
 
-            <div className="shrink-0 lg:shrink">
+            <div>
               <div
-                className="hero-in mb-4 inline-flex items-center gap-2 rounded-full border border-forest/30 bg-white/60 px-3.5 py-1 text-[13px] font-medium text-forest lg:mb-7 lg:px-4 lg:py-1.5 lg:text-sm"
+                className="hero-in mb-7 inline-flex items-center gap-2 rounded-full border border-forest/30 bg-white/60 px-4 py-1.5 text-sm font-medium text-forest"
                 style={heroDelay(0, 400)}
               >
                 <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
                 Now live in New York City
               </div>
 
-              <p className="hero-in mb-2.5 font-secondary text-base italic text-ink/70 lg:mb-3.5 lg:text-lg" style={heroDelay(0, 400)}>
+              <p className="hero-in mb-3.5 font-secondary text-lg italic text-ink/70" style={heroDelay(0, 400)}>
                 Time has value.
               </p>
 
-              <h1 className="mb-4 text-[2.05rem] font-bold leading-[1.06] tracking-[-0.032em] sm:text-5xl lg:mb-7 lg:text-[3.3rem] lg:leading-[1.04] xl:text-[3.9rem]">
+              <h1 className="mb-7 text-[3.3rem] font-bold leading-[1.04] tracking-[-0.035em] xl:text-[3.9rem]">
                 <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Text us.</span>
                 <span className="hero-rise-blur block" style={heroDelay(240, 600)}>A real person</span>
                 <span className="hero-rise-blur block" style={heroDelay(360, 600)}>does the rest.</span>
               </h1>
 
               <p
-                className="hero-rise mb-6 max-w-xl font-secondary text-[15.5px] leading-relaxed text-ink/80 sm:text-base lg:mb-9 lg:text-[1.15rem]"
+                className="hero-rise mb-9 max-w-xl font-secondary text-[1.15rem] leading-relaxed text-ink/80"
                 style={heroDelay(480)}
               >
                 Errands, pickups, returns, waiting in line, company for an hour. Message us
@@ -135,7 +179,7 @@ export default function Home() {
                 <a href={IMESSAGE_HREF} className={btnPrimary}>
                   Text us to start <span aria-hidden="true">→</span>
                 </a>
-                <p className="mt-3.5 text-sm text-ink/60 lg:mt-5 lg:text-[15px]">
+                <p className="mt-5 text-[15px] text-ink/60">
                   On Android or desktop?{" "}
                   <a href={WEB_APP_URL} className="text-forest underline underline-offset-[3px]">
                     Open the web app
@@ -144,10 +188,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* flex-1 + min-h-0: the film takes whatever the text left over, so it
-                shrinks on a short phone instead of pushing the hero past the fold.
-                No fixed mobile cap to guess wrong. */}
-            <div className="hero-in flex min-h-0 flex-1 items-center justify-center lg:block lg:flex-none" style={heroDelay(120, 900)}>
+            <div className="hero-in" style={heroDelay(120, 900)}>
               <HeroFilm />
             </div>
 
