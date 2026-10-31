@@ -1,19 +1,16 @@
-// The hero visual: one task, start to receipt, as the thread a requester actually sees.
+// The hero visual for anyone who has asked their device for less motion.
 //
-// This replaces the photograph. It is here because the product IS text — a stock
-// photo of people smiling says nothing a hundred other landing pages do not, while
-// a real thread explains the mechanism, proves it works, demonstrates the tone and
-// discloses the price in one object.
+// The film (HeroFilm) is what most visitors see. This is the same story told in
+// markup: ask → quote → dispatch → receipt. It is NOT a decorative stand-in —
+// it is semantic HTML, so a screen reader gets the clearest explanation on the
+// page read out as a list of messages, which a <video> could never give it.
 //
-// It is also the FALLBACK for the looping film. When the 12-second silent loop
-// exists it replaces this component's inner panel; until then the page is complete
-// without it, because the same four beats (ask → quote → dispatch → receipt) are
-// already here. Nothing on the page depends on the film shipping.
+// Its example differs from the film's on purpose. Both are true and both end in
+// a price; pinning them to the same words would mean re-rendering the film every
+// time the copy moved.
 //
-// Decorative in the sense that no information here is unique to it — every figure
-// also appears as text in the pricing section — but it is NOT aria-hidden: the
-// thread reads perfectly as a list of messages, and hiding it would cost a
-// screen-reader user the clearest explanation on the page.
+// Light where the film is dark, because this sits on cream with the rest of the
+// page around it and nobody sees both.
 
 const thread = [
   { from: "them", text: "Hi — can someone pick up my dry cleaning on Lex before 6?" },

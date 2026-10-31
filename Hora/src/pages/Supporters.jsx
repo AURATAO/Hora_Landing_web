@@ -124,36 +124,21 @@ export default function Supporters() {
               </p>
             </div>
 
-            {/* The dashboard, drawn rather than screenshotted — a screenshot would date the
-                moment any label changes, and this only has to say "this is what you'll hold". */}
-            <div aria-hidden="true" className="mx-auto w-full max-w-[20rem] lg:max-w-none">
+            {/* The real Earnings screen, not a drawing of one. It carries the page's
+                central claim better than the prose does: every row says "after 20%
+                platform fee" in the app's own words, so a Supporter can check the
+                number against the thing they will actually hold. */}
+            <div className="mx-auto w-full max-w-[19rem] lg:max-w-none">
               <div className="rounded-[2.5rem] bg-ink p-2.5 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.5)]">
-                <div className="overflow-hidden rounded-[2rem] bg-[#FAFAF8]">
-                  <div className="px-4 pb-3.5 pt-6 text-[12px] font-semibold uppercase tracking-[0.06em] text-ink/45">
-                    Available tasks
-                  </div>
-                  <div className="flex flex-col gap-2.5 px-3.5 pb-5">
-                    <div className="rounded-2xl border border-ink/10 bg-white px-4 py-3.5">
-                      <div className="mb-1.5 flex items-baseline justify-between gap-2.5">
-                        <span className="text-[14.5px] font-semibold">Dry cleaning pickup</span>
-                        <span className="text-[14.5px] font-bold text-forest">$21.60</span>
-                      </div>
-                      <div className="text-[12.5px] text-ink/60">Upper East Side · ~30 min</div>
-                    </div>
-                    <div className="rounded-2xl border border-ink/10 bg-white px-4 py-3.5">
-                      <div className="mb-1.5 flex items-baseline justify-between gap-2.5">
-                        <span className="text-[14.5px] font-semibold">Wait for a delivery</span>
-                        <span className="text-[14.5px] font-bold text-forest">$33.60</span>
-                      </div>
-                      <div className="text-[12.5px] text-ink/60">Chelsea · ~1 hr</div>
-                    </div>
-                    <div className="rounded-2xl bg-forest px-4 py-4 text-white">
-                      <div className="mb-1.5 text-[12px] uppercase tracking-[0.05em] text-white/65">Working now</div>
-                      <div className="mb-1 text-[14.5px] font-semibold">Grocery run · Williamsburg</div>
-                      <div className="text-[1.6rem] font-bold tracking-[-0.02em]">18:24</div>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src="/img/supporters-earnings.png"
+                  alt="The Earnings screen in the HO:RA app: payouts set up, $222.40 earned all time, and recent tasks each paying $9.60 for service after the 20% platform fee."
+                  width="1179"
+                  height="2556"
+                  loading="lazy"
+                  decoding="async"
+                  className="block aspect-[1179/2556] w-full rounded-[2rem] object-cover object-top"
+                />
               </div>
             </div>
 

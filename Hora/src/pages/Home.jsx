@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import Conversation from './components/Conversation.jsx';
+import HeroFilm from './components/HeroFilm.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
 import { IMESSAGE_HREF, IMESSAGE_NUMBER, WEB_APP_URL } from '../lib/config';
 import { MapPin } from 'lucide-react';
@@ -133,7 +133,7 @@ export default function Home() {
             </div>
 
             <div className="hero-in mx-auto w-full max-w-[21rem] lg:max-w-none" style={heroDelay(120, 900)}>
-              <Conversation />
+              <HeroFilm />
             </div>
 
           </div>
