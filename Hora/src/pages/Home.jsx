@@ -102,30 +102,30 @@ export default function Home() {
         <section className="relative h-[calc(100svh-4.5rem)] overflow-hidden bg-ink lg:hidden">
           <HeroFilm variant="fill" />
 
-          {/* The scrim is held to the bottom two fifths, where the text sits, and is
-              gone entirely above that. An even wash over the whole frame darkened the
-              conversation the film opens on, so the thread and the headline competed
-              for the same pixels. Separating them by height rather than by opacity
-              keeps the bubbles clean AND the headline readable over the bright
-              golden-hour shot the film ends on. */}
+          {/* Hand-written stops rather than from/via/to, which allows only one via and
+              could not hold near-solid through the text and still fade out cleanly.
+              Nearly opaque to 24% — the whole text block sits inside that — then a long
+              fade that is gone by 70%, leaving the top third of the frame untouched so
+              the conversation the film opens on stays legible. */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/55 via-16% to-transparent to-42%"
+            className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,40,49,0.97)_0%,rgba(34,40,49,0.94)_24%,rgba(34,40,49,0.74)_42%,rgba(34,40,49,0.4)_56%,rgba(34,40,49,0.14)_64%,transparent_72%)]"
           />
 
-          {/* Solid gold, ink text. The frosted white-on-dark version relied on the
-              scrim that is no longer up here, and would have sat unreadable over the
-              film's bright closing shot. Gold against ink is the one pairing in the
-              palette that holds over anything the film can put behind it. */}
-          <div className="absolute inset-x-0 top-0 flex justify-center p-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-1.5 text-[13px] font-semibold text-ink shadow-[0_6px_20px_-6px_rgba(34,40,49,0.5)]">
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-8">
+            {/* The location tag belongs with the words, not floating at the top of the
+                screen. Up there it was the third interface layer in a row — site header,
+                tag, then the status bar of the phone inside the film — and all three were
+                saying "I am chrome" at once. Down here it reads as the first line of one
+                argument: where this works, what it does, how to start.
+
+                It replaces the "Time has value." eyebrow on phones. The pill is already an
+                eyebrow; two stacked is the clutter. That line still opens the desktop hero
+                and the Mission page. */}
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gold px-3.5 py-1.5 text-[12.5px] font-semibold text-ink">
               <MapPin aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2.5} />
               Now live in New York City
             </div>
-          </div>
-
-          <div className="absolute inset-x-0 bottom-0 px-5 pb-8">
-            <p className="mb-2 font-secondary text-[15px] italic text-white/70">Time has value.</p>
 
             <h1 className="mb-5 text-[2.1rem] font-bold leading-[1.08] tracking-[-0.032em] text-white">
               Text us. A real person does the rest.
