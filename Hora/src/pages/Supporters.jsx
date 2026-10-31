@@ -128,18 +128,21 @@ export default function Supporters() {
                 central claim better than the prose does: every row says "after 20%
                 platform fee" in the app's own words, so a Supporter can check the
                 number against the thing they will actually hold. */}
-            <div className="mx-auto w-full max-w-[19rem] lg:max-w-none">
-              <div className="rounded-[2.5rem] bg-ink p-2.5 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.5)]">
-                <img
-                  src="/img/supporters-earnings.png"
-                  alt="The Earnings screen in the HO:RA app: payouts set up, $222.40 earned all time, and recent tasks each paying $9.60 for service after the 20% platform fee."
-                  width="1179"
-                  height="2556"
-                  loading="lazy"
-                  decoding="async"
-                  className="block aspect-[1179/2556] w-full rounded-[2rem] object-cover object-top"
-                />
-              </div>
+            {/* Desktop only. On a phone this screen would push Apply and the App Store
+                badge below the fold to show someone a picture of a phone while they
+                are holding one — the three figures under "What you earn" make the same
+                argument in a fraction of the height. Sized by height like the hero
+                film, so a tall window cannot stretch it. */}
+            <div className="mx-auto hidden w-fit rounded-[2.2rem] bg-ink p-2.5 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.5)] lg:block">
+              <img
+                src="/img/supporters-earnings.png"
+                alt="The Earnings screen in the HO:RA app: payouts set up, $222.40 earned all time, and recent tasks each paying $9.60 for service after the 20% platform fee."
+                width="1179"
+                height="2556"
+                loading="lazy"
+                decoding="async"
+                className="block aspect-[1179/2556] h-[min(62svh,500px)] w-auto rounded-[1.8rem] object-cover object-top"
+              />
             </div>
 
           </div>
