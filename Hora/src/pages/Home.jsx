@@ -5,7 +5,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import HeroFilm from './components/HeroFilm.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
-import { IMESSAGE_HREF, IMESSAGE_NUMBER, WEB_APP_URL, imessageHrefFor } from '../lib/config';
+import { IMESSAGE_HREF, WEB_APP_URL, imessageHrefFor } from '../lib/config';
 import { MapPin, ChevronDown, MessageSquare, IdCard, ShieldCheck } from 'lucide-react';
 
 // THE 2026 HOME, second pass (Aura, 2026-11-10). Hero + two sections.
@@ -151,7 +151,7 @@ export default function Home() {
               </p>
               <div className="hero-rise" style={heroDelay(520)}>
                 <a href={IMESSAGE_HREF} className={btnPrimary}>
-                  Text {IMESSAGE_NUMBER} <span aria-hidden="true">→</span>
+                  Text us to start <span aria-hidden="true">→</span>
                 </a>
                 <p className="mt-5 text-[15px] text-ink/65">
                   On Android or desktop?{" "}

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { IMESSAGE_HREF, IMESSAGE_NUMBER, SUPPORTER_APPLY_URL, WEB_APP_URL } from "../lib/config";
+import { IMESSAGE_HREF, SUPPORTER_APPLY_URL, WEB_APP_URL } from "../lib/config";
 
 // REWRITTEN for the messaging model, and split by who is asking.
 //
@@ -253,7 +253,7 @@ export default function FQA() {
           <div className="mx-auto w-full max-w-4xl px-5 py-14 md:px-8 md:py-16">
             <h2 className="mb-3 text-[1.6rem] font-bold tracking-[-0.022em]">Still stuck?</h2>
             <p className="mb-7 max-w-xl font-secondary text-[17px] leading-relaxed text-ink/75">
-              Text {IMESSAGE_NUMBER} and a person will answer — the same conversation you&apos;d
+              <a href={IMESSAGE_HREF} className="text-forest underline underline-offset-[3px]">Text us</a> and a person will answer — the same conversation you&apos;d
               use to book anything. Or email{" "}
               <a href="mailto:info@my-hora.com" className="text-forest underline underline-offset-[3px]">
                 info@my-hora.com

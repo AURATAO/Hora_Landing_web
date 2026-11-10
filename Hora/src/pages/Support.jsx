@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { IMESSAGE_HREF, IMESSAGE_NUMBER, SUPPORTER_APPLY_URL } from "../lib/config";
+import { IMESSAGE_HREF, SUPPORTER_APPLY_URL } from "../lib/config";
 
 const SUPPORT_EMAIL = "info@my-hora.com";
 
@@ -51,7 +51,7 @@ export default function Support() {
             <div className="mb-12 border-t-2 border-forest pt-6">
               <h2 className="mb-3 text-2xl font-semibold tracking-[-0.018em]">Text us</h2>
               <p className="mb-5 font-secondary text-base leading-relaxed text-ink/78">
-                {IMESSAGE_NUMBER} — about anything, including a task that is already running.
+                About anything, including a task that is already running.
               </p>
               <a
                 href={IMESSAGE_HREF}

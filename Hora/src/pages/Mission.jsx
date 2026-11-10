@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import useScrollReveal from "../hooks/useScrollReveal";
-import { IMESSAGE_HREF, IMESSAGE_NUMBER } from "../lib/config";
+import { IMESSAGE_HREF } from "../lib/config";
 
 // MISSION, rebuilt. 853 lines to five sections.
 //
@@ -347,7 +347,7 @@ export default function Mission() {
             </div>
             <div className="flex flex-wrap items-center gap-3.5">
               <a href={IMESSAGE_HREF} className={`${btn} bg-forest text-white hover:bg-forest/90`}>
-                Text {IMESSAGE_NUMBER} <span aria-hidden="true">→</span>
+                Text us to start <span aria-hidden="true">→</span>
               </a>
               <Link
                 to="/supporters"
