@@ -74,7 +74,7 @@ const requesterFaqs = [
   {
     question: "What about shopping — who pays for what I asked for?",
     answer:
-      "Your Supporter pays at the till and you reimburse the receipt in full, with no markup and no commission. You set a budget up front; purchases up to $5 over it are reimbursed automatically, and anything more needs your approval first. A photo of the receipt is attached to your final bill.",
+      "Your Supporter pays at the till and you reimburse the receipt in full, with no markup and no commission. You set a budget up front, and anything over it needs your approval first. A photo of the receipt is attached to your final bill.",
   },
   {
     question: "Can I cancel?",
