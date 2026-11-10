@@ -1,4 +1,4 @@
-_Last updated: November 5, 2026_
+_Last updated: November 10, 2026_
 # 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
@@ -98,6 +98,7 @@ Requesters can book and manage Tasks by text message, without opening the App. T
 
 - **Your phone number.** After you confirm a code we email to you, your mobile number is linked to your Hora account and identifies your account: messages from that number are treated as coming from you. You cannot change or unlink the number in the App. If you lose or change your number, please tell us at info@my-hora.com.
 - **Your conversation.** Hora stores the full text of your conversation with HO:RA: the messages you send, the messages HO:RA sends you, and your Supporter's messages relayed to you. See Section 6 for how long we keep it.
+- **Photos you send.** If you text HO:RA a photo, for example a return label, an item you want bought, or where to leave something, Hora stores it privately and shares it only with the Supporter on your Task and Hora's operations staff. Photos you send during a Task are also delivered to your Supporter through our in-app chat provider, TalkJS. See Section 6 for how long we keep them.
 - **How messages are delivered.** Messages are delivered through our provider Sendblue and Apple's iMessage service. Where iMessage is not available, Sendblue may deliver a message by SMS or RCS instead; that choice is made by Sendblue, not by Hora. These providers see your phone number and the content of your messages, because they deliver them.
 - **An AI assistant writes the replies.** The replies you receive in this conversation are written by an AI assistant on Hora's behalf. It reads the conversation to understand your request, turn it into Task details, route messages between you and your Supporter, and draft replies. The conversation text, including your Supporter's messages relayed to you, is processed by AI models provided to Hora by Anthropic (Claude) and Baseten, which process it only for us. Your messages are not used to train models. The assistant can make mistakes, so please check the Task details before you confirm them. If you ask HO:RA to find a place, its suggestions come from Google Maps, and opening hours can change.
 - **Reviewing the assistant's work.** To find and fix the assistant's mistakes, we record each message the assistant reads, the decision it made, and the reply it drafted, together with the model and instruction version used. These records are kept in a monitoring system Hora runs on our own cloud hosting, and are reviewed only by Hora's team. We remove phone numbers from them before they are sent. We keep these records for 90 days, and delete them earlier if you delete your account. They are not used to train AI models.
@@ -186,6 +187,8 @@ We retain your Personal Information for as long as necessary to provide you with
 Users may also request to delete or access their personal information at any time. Please refer to Section 7, "Your Rights and Choices." Details of what is deleted, anonymised, and retained when you delete your account are in Section 7(d).
 
 **Text conversations.** Hora keeps the full text of your text conversation with HO:RA, and the link between your phone number and your account, until your account is deleted; there is no earlier automatic deletion today. Copies held by our messaging providers follow their own policies.
+
+**Photos sent by text.** Photos you text to HO:RA are kept with the Task they relate to until your account is deleted. Photos that are not used for a booking are deleted within 7 days.
 
 **AI monitoring records.** Records of the AI assistant's work described in Section 3.3 are kept for 90 days and then deleted automatically. If you delete your account, they are deleted sooner.
 
