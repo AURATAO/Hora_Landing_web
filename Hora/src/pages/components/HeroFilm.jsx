@@ -113,11 +113,17 @@ export default function HeroFilm({ variant = "framed" }) {
   // the text left over, on any screen, rather than a guessed cap that is wrong on
   // an SE and wasteful on a Pro Max. Desktop lays out side by side and uses svh
   // (not vh, which counts a phone's address bar and overflows when it retracts).
+  //
+  // The frame is a real iPhone's shape (1179:2556, the same as the screenshot
+  // on /supporters), not the film's 9:16. The film is letterboxed inside it
+  // (object-contain on black): cropping it to fill would cut the bubbles at both
+  // edges, and the dark iMessage thread makes the bars all but invisible.
+  // Re-export the film at 1179x2556 and the bars go away.
   return (
     <div className="mx-auto flex h-full w-fit max-w-full items-center rounded-[2.1rem] bg-ink p-2 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)] sm:rounded-[2.4rem] sm:p-2.5 lg:h-auto lg:rounded-[2.6rem] lg:p-3">
       <video
         ref={videoRef}
-        className="block aspect-[9/16] h-full max-h-[460px] min-h-[180px] w-auto rounded-[1.7rem] bg-ink object-cover sm:rounded-[2rem] lg:h-[min(68svh,560px)] lg:max-h-none lg:rounded-[2.1rem]"
+        className="block aspect-[1179/2556] h-full max-h-[460px] min-h-[180px] w-auto rounded-[1.7rem] bg-black object-contain sm:rounded-[2rem] lg:h-[min(68svh,560px)] lg:max-h-none lg:rounded-[2.1rem]"
         poster="/video/hora-imessage-poster.jpg"
         preload="none"
         autoPlay

@@ -150,7 +150,7 @@ export default function Supporters() {
                 are holding one — the three figures under "What you earn" make the same
                 argument in a fraction of the height. Sized by height like the hero
                 film, so a tall window cannot stretch it. */}
-            <div className="mx-auto hidden w-fit rounded-[2.2rem] bg-ink p-2.5 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.5)] lg:block">
+            <div className="mx-auto hidden w-fit rounded-[2.6rem] bg-ink p-3 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)] lg:block">
               <img
                 src="/img/supporters-earnings.png"
                 alt="The Earnings screen in the HO:RA app: payouts set up, total earned, and what each recent task paid for service after the platform fee."
@@ -158,7 +158,7 @@ export default function Supporters() {
                 height="2556"
                 loading="lazy"
                 decoding="async"
-                className="block aspect-[1179/2556] h-[min(62svh,500px)] w-auto rounded-[1.8rem] object-cover object-top"
+                className="block aspect-[1179/2556] h-[min(68svh,560px)] w-auto rounded-[2.1rem] object-cover object-top"
               />
             </div>
 
