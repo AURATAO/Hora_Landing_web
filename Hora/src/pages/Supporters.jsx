@@ -153,7 +153,7 @@ export default function Supporters() {
             <div className="mx-auto hidden w-fit rounded-[2.2rem] bg-ink p-2.5 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.5)] lg:block">
               <img
                 src="/img/supporters-earnings.png"
-                alt="The Earnings screen in the HO:RA app: payouts set up, $222.40 earned all time, and recent tasks each paying $9.60 for service after the 20% platform fee."
+                alt="The Earnings screen in the HO:RA app: payouts set up, total earned, and what each recent task paid for service after the platform fee."
                 width="1179"
                 height="2556"
                 loading="lazy"
@@ -187,9 +187,8 @@ export default function Supporters() {
             </div>
 
             <p className="mt-11 max-w-2xl font-secondary text-[15px] leading-relaxed text-ink/65" data-reveal="rise" data-reveal-step="2">
-              Example: a 30-minute dry cleaning pickup pays you $21.60, plus the receipt in
-              full. Evening and overnight tasks (9 PM – 8 AM) pay at double the per-minute
-              rate.
+              Every offer shows what the task pays you before you accept, plus the receipt in
+              full. Evening and overnight tasks (9 PM – 8 AM) pay a higher per-minute rate.
             </p>
           </div>
         </section>

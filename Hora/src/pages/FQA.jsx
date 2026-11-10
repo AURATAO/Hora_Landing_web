@@ -14,8 +14,9 @@ import { IMESSAGE_HREF, IMESSAGE_NUMBER, SUPPORTER_APPLY_URL, WEB_APP_URL } from
 // Four things that were simply wrong, kept out of the new set:
 //
 //   "$18 Flex tasks"        There is no $18 tier and there never was in the
-//                           server's billing config — $12 standard, $25
-//                           companionship.
+//                           server's billing config. (Since 2026-11-10 prices
+//                           are data — the Ops pricing page — so this page
+//                           states how billing works and never a figure.)
 //   "nights, holidays and   The evening rate is a clock window, 9 PM to 8 AM
 //    bad weather"           New York. Holidays and weather have never changed
 //                           a price.
@@ -53,7 +54,7 @@ const requesterFaqs = [
   {
     question: "What does it cost?",
     answer:
-      "$12 to start, which includes the first 15 minutes. After that it's $0.50 a minute. Companionship starts at $25 on the same terms. Tasks starting between 9 PM and 8 AM (New York time) bill at $1.00 a minute after the included 15 — the rate is fixed when you book and doesn't change if the work runs into or out of that window.",
+      "You're billed by the minute. A base fee covers the first 15 minutes, then you pay only for the time actually worked. Companionship has a higher base, and tasks starting between 9 PM and 8 AM (New York time) bill at a higher per-minute rate — fixed when you book, so it doesn't change if the work runs into or out of that window. You always get the full quote in the chat before anyone sets off, and nothing starts until you say yes.",
   },
   {
     question: "When do I actually pay?",
@@ -78,7 +79,7 @@ const requesterFaqs = [
   {
     question: "Can I cancel?",
     answer:
-      "Free any time before a Supporter accepts, and for three minutes after. After that you're charged the greater of the $12 base fee or the time already worked — the base fee is what your Supporter is guaranteed for committing and dropping what they were doing. The exact amount is shown before you confirm.",
+      "Free any time before a Supporter accepts, and for three minutes after. After that you're charged the greater of the base fee or the time already worked — the base fee is what your Supporter is guaranteed for committing and dropping what they were doing. The exact amount is shown before you confirm.",
   },
   {
     question: "What if my Supporter doesn't show up?",
@@ -126,7 +127,7 @@ const supporterFaqs = [
   {
     question: "What do I earn?",
     answer:
-      "80% of a task's service revenue — the base fee, the billable minutes, and any approved time extension. HO:RA keeps 20%. Anything you buy for a requester comes back to you in full: we never take a cut of a receipt.",
+      "A task's service revenue — the base fee, the billable minutes, and any approved time extension — less HO:RA's platform fee. Every offer shows what the task pays you before you accept it, and every payout shows the split. Anything you buy for a requester comes back to you in full: we never take a cut of a receipt.",
   },
   {
     question: "When am I paid?",
