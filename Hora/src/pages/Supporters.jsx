@@ -102,7 +102,7 @@ export default function Supporters() {
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
         <section className="bg-white">
-          <div className={`${container} grid items-center gap-14 py-16 lg:grid-cols-[7fr_5fr] lg:gap-20 lg:py-24`}>
+          <div className={`${container} py-16 lg:py-24`}>
 
             <div>
               <div className="mb-7 inline-flex items-center rounded-full border border-forest/30 bg-sage/20 px-4 py-1.5 text-sm font-medium text-forest">
@@ -141,27 +141,9 @@ export default function Supporters() {
               </p>
             </div>
 
-            {/* The real Earnings screen, not a drawing of one. It carries the page's
-                central claim better than the prose does: every row says "after 20%
-                platform fee" in the app's own words, so a Supporter can check the
-                number against the thing they will actually hold. */}
-            {/* Desktop only. On a phone this screen would push Apply and the App Store
-                badge below the fold to show someone a picture of a phone while they
-                are holding one — the three figures under "What you earn" make the same
-                argument in a fraction of the height. Sized by height like the hero
-                film, so a tall window cannot stretch it. */}
-            <div className="mx-auto hidden w-fit rounded-[2.6rem] bg-ink p-3 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)] lg:block">
-              <img
-                src="/img/supporters-earnings.png"
-                alt="The Earnings screen in the HO:RA app: payouts set up, total earned, and what each recent task paid for service after the platform fee."
-                width="1179"
-                height="2556"
-                loading="lazy"
-                decoding="async"
-                className="block aspect-[1179/2556] h-[min(68svh,560px)] w-auto rounded-[2.1rem] object-cover object-top"
-              />
-            </div>
-
+            {/* The Earnings screenshot that stood here was removed on 2026-11-10: it
+                showed the old 20% fee, and a real 30% one needs tasks paid at the new
+                schedule first. Put a fresh capture back here (lg:grid-cols-[7fr_5fr]). */}
           </div>
         </section>
 
