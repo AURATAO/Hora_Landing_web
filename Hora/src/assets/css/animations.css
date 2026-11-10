@@ -491,6 +491,27 @@ html {
   }
 }
 
+/* The same shimmer in gold, for the phone hero, where the words sit over the
+   dark film and forest would disappear. */
+.hero-gradient-gold {
+  color: var(--color-gold);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-gradient-gold {
+    background: linear-gradient(90deg, #E1B145 0%, #F6DC93 25%, #E1B145 50%, #F0CD72 75%, #E1B145 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s linear infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient-gold {
+    animation: none;
+  }
+}
+
 /* Scroll reveal — driven by hooks/useScrollReveal.js.
    Elements are visible by default; the hook adds .reveal-pending, then swaps it for .reveal-in. */
 .reveal-pending[data-reveal="rise"],

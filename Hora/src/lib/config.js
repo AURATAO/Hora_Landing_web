@@ -22,7 +22,7 @@ export const SUPPORTER_APPLY_URL = `${WEB_APP_URL}/become-supporter`;
 // While it equals the placeholder, IMESSAGE_LIVE is false — use that to gate
 // anything that must not ship pointing at a dead number.
 const IMESSAGE_PLACEHOLDER = "+1 (000) 000-0000";
-export const IMESSAGE_NUMBER = IMESSAGE_PLACEHOLDER;
+export const IMESSAGE_NUMBER = "+1 (917) 741-0961";
 export const IMESSAGE_LIVE = IMESSAGE_NUMBER !== IMESSAGE_PLACEHOLDER;
 
 // The draft we put in the composer. Deliberately unfinished: "I need help with"
@@ -34,4 +34,6 @@ export const IMESSAGE_DRAFT = "Hi — I need help with";
 // The `&body=` separator is correct after a bare number on iOS 8+; Android accepts
 // `?body=` only, so the hero keeps a visible web-app fallback rather than relying
 // on this link alone.
-export const IMESSAGE_HREF = `sms:${IMESSAGE_NUMBER.replace(/[^\d+]/g, "")}&body=${encodeURIComponent(IMESSAGE_DRAFT)}`;
+export const imessageHrefFor = (body) =>
+  `sms:${IMESSAGE_NUMBER.replace(/[^\d+]/g, "")}&body=${encodeURIComponent(body)}`;
+export const IMESSAGE_HREF = imessageHrefFor(IMESSAGE_DRAFT);

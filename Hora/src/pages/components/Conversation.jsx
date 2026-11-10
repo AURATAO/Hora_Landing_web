@@ -14,10 +14,10 @@
 
 const thread = [
   { from: "them", text: "Hi — can someone pick up my dry cleaning on Lex before 6?" },
-  { from: "hora", text: "Perry Cleaners, Lex & 68th? About 30 minutes — $27.00 total ($12 base + 30 min). Want me to send someone?" },
+  { from: "hora", text: "Perry Cleaners, Lex & 68th? About 30 minutes. Here's your quote. Want me to send someone?" },
   { from: "them", text: "Yes please" },
   { from: "hora", text: "Amara's on her way. I'll let you know when it's done." },
-  { from: "hora", text: "Done — picked up and left with your doorman. $24.50 charged to Visa ••6632. Receipt attached." },
+  { from: "hora", text: "Done — picked up and left with your doorman. Receipt attached." },
 ];
 
 export default function Conversation({ compact = false }) {
