@@ -102,7 +102,7 @@ export default function Supporters() {
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
         <section className="bg-white">
-          <div className={`${container} py-16 lg:py-24`}>
+          <div className={`${container} grid items-center gap-14 py-16 lg:grid-cols-[7fr_5fr] lg:gap-20 lg:py-24`}>
 
             <div>
               <div className="mb-7 inline-flex items-center rounded-full border border-forest/30 bg-sage/20 px-4 py-1.5 text-sm font-medium text-forest">
@@ -141,9 +141,22 @@ export default function Supporters() {
               </p>
             </div>
 
-            {/* The Earnings screenshot that stood here was removed on 2026-11-10: it
-                showed the old 20% fee, and a real 30% one needs tasks paid at the new
-                schedule first. Put a fresh capture back here (lg:grid-cols-[7fr_5fr]). */}
+            {/* The real Earnings screen, desktop only. Since 2026-11-10 the figures are
+                taken out of the capture (the fee line, the amounts, the all-time total):
+                they showed the old 20% fee. Replace it with a fresh capture once tasks
+                have been paid at the current schedule. */}
+            <div className="mx-auto hidden w-fit rounded-[2.6rem] bg-ink p-3 shadow-[0_30px_70px_-30px_rgba(34,40,49,0.55)] lg:block">
+              <img
+                src="/img/supporters-earnings.png"
+                alt="The Earnings screen in the HO:RA app: payouts set up, and a list of recent tasks."
+                width="1179"
+                height="2556"
+                loading="lazy"
+                decoding="async"
+                className="block aspect-[1179/2556] h-[min(68svh,560px)] w-auto rounded-[2.1rem] object-cover object-top"
+              />
+            </div>
+
           </div>
         </section>
 
