@@ -1,4 +1,4 @@
-_Last updated: November 10, 2026_
+_Last updated: November 11, 2026_
 # 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
@@ -188,7 +188,7 @@ Users may also request to delete or access their personal information at any tim
 
 **Text conversations.** Hora keeps the full text of your text conversation with HO:RA, and the link between your phone number and your account, until your account is deleted; there is no earlier automatic deletion today. Copies held by our messaging providers follow their own policies.
 
-**Photos sent by text.** Photos you text to HO:RA are kept with the Task they relate to until your account is deleted. Photos that are not used for a booking are deleted within 7 days.
+**Photos sent by text.** Photos you text to HO:RA are kept with the Task they relate to until your account is deleted. Photos that are not used for a booking are deleted within 7 days. Copies of photos delivered during a Task through our in-app chat provider, TalkJS, follow that provider's own policies.
 
 **AI monitoring records.** Records of the AI assistant's work described in Section 3.3 are kept for 90 days and then deleted automatically. If you delete your account, they are deleted sooner.
 
