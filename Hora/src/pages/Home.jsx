@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>HO:RA — What do you need today? A real human on the way. | New York City</title>
+        <title>HO:RA — Text us. A real human gets it done. | New York City</title>
         <meta
           name="description"
           content="Text HO:RA what you need. We sort out the details in Messages, then a verified person in New York goes and gets it done. Billed by the minute."
@@ -112,7 +112,7 @@ export default function Home() {
             </div>
             <h1 className="mb-5 text-[2.05rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-white">
               <span className="block">Text us.</span>
-              <span className="hero-gradient-gold block text-balance">A real human on the way.</span>
+              <span className="hero-gradient-gold block text-balance">A real human gets it done.</span>
             </h1>
             <a href={IMESSAGE_HREF} className={`${btn} w-full bg-cream text-ink`}>
               Text us to start <span aria-hidden="true">→</span>
@@ -142,14 +142,14 @@ export default function Home() {
                 Now live in New York City
               </div>
               <h1 className="mb-7 text-[3.1rem] font-extrabold leading-[1.05] tracking-[-0.025em] xl:text-[3.5rem]">
-                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>What do you need today?</span>
+                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Text us.</span>
                 <span className="hero-rise-blur block" style={heroDelay(240, 600)}>
-                  <span className="hero-gradient">A real human on the way.</span>
+                  <span className="hero-gradient">A real human gets it done.</span>
                 </span>
               </h1>
               <p className="hero-rise mb-9 max-w-xl text-[1.2rem] leading-relaxed text-ink/80" style={heroDelay(400)}>
                 We sort out the details with you in Messages. Then a verified person in New York
-                goes out and gets it done.
+                goes out and takes care of it.
               </p>
               <div className="hero-rise" style={heroDelay(520)}>
                 <AskBox />

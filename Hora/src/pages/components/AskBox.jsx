@@ -37,7 +37,7 @@ export default function AskBox() {
 
   return (
     <form onSubmit={send} className="w-full max-w-xl">
-      <label htmlFor="ask" className="sr-only">What do you need today?</label>
+      <label htmlFor="ask" className="sr-only">What do you need?</label>
       <div className="flex items-center gap-2 rounded-full border border-ink/15 bg-white py-2 pl-6 pr-2 shadow-[0_12px_30px_-18px_rgba(34,40,49,0.45)] focus-within:border-forest">
         <input
           id="ask"
