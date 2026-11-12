@@ -175,9 +175,10 @@ export default function Home() {
               <span className="whitespace-nowrap">Sorted in the chat.</span>{" "}
               <span className="whitespace-nowrap">Done in the city.</span>
             </h2>
-            <p className="mb-10 max-w-2xl text-[1.15rem] leading-relaxed text-ink/80" data-reveal="rise" data-reveal-step="1">
-              Our assistant handles the back-and-forth in Messages. A person you can see does the
-              part that needs hands.
+            {/* One sentence per line: the online half, then the offline half. */}
+            <p className="mb-10 text-pretty text-[1.15rem] leading-relaxed text-ink/80" data-reveal="rise" data-reveal-step="1">
+              <span className="block">Our assistant handles the <span className="whitespace-nowrap">back-and-forth</span> in Messages.</span>{" "}
+              <span className="mt-1 block md:mt-0">A person you can see does the part that needs hands.</span>
             </p>
 
             <div className="grid gap-6 lg:grid-cols-2" data-reveal="rise" data-reveal-step="2">
