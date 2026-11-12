@@ -56,7 +56,7 @@ const trust = [
   { Icon: MessageSquare, title: "Interviewed", desc: "We meet every supporter one-on-one before their first task." },
   { Icon: IdCard, title: "ID verified", desc: "Identity checked before they're activated.", checkr: true },
   { Icon: MapPin, title: "Visible the whole way", desc: "Follow them on the map. Receipt the moment it's done." },
-  { Icon: ShieldCheck, title: "Safe both ways", desc: "Company happens in public. Anyone can say no to what feels wrong." },
+  { Icon: ShieldCheck, title: "Safe both ways", desc: "Clear rules on every task. Anyone can say no to what feels wrong." },
 ];
 
 const container = "mx-auto w-full max-w-7xl px-5 md:px-8";

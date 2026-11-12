@@ -88,8 +88,8 @@ const differences = [
     desc: "Ask for anything — big or small — as long as it meets our community guidelines. Built to support exactly what you need, not a fixed menu of services.",
   },
   {
-    title: "Company, not care",
-    desc: "Companionship on HO:RA means a walk, a conversation, a shared meal or company at an event. It is non-medical, and that boundary is deliberate.",
+    title: "Errands, not care",
+    desc: "HO:RA is for errands, pickups and deliveries. It is non-medical: Supporters don't collect prescriptions or give personal care, and that boundary is deliberate.",
   },
   {
     title: "Billed by the minute, not by the hour",
@@ -97,7 +97,7 @@ const differences = [
   },
   {
     title: "Nothing is spent without your say-so",
-    desc: "If your Supporter needs more time or a bigger budget, you approve it first. No answer within five minutes counts as a no, and they fall back to the option chosen up front.",
+    desc: "If your Supporter needs more time, or more than $5 over your budget, you approve it first. No answer within five minutes counts as a no, and they fall back to the option chosen up front.",
   },
   {
     // WAS "Supporters keep 80%", with "no registration fee, no verification

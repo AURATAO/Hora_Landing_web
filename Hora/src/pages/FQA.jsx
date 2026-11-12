@@ -54,7 +54,7 @@ const requesterFaqs = [
   {
     question: "What does it cost?",
     answer:
-      "You're billed by the minute. A base fee covers the first 15 minutes, then you pay only for the time actually worked. Companionship has a higher base, and tasks starting between 9 PM and 8 AM (New York time) bill at a higher per-minute rate — fixed when you book, so it doesn't change if the work runs into or out of that window. You always get the full quote in the chat before anyone sets off, and nothing starts until you say yes.",
+      "You're billed by the minute. A base fee covers the first 15 minutes, then you pay only for the time actually worked. Tasks starting between 9 PM and 8 AM (New York time) bill at a higher per-minute rate — fixed when you book, so it doesn't change if the work runs into or out of that window. You always get the full quote in the chat before anyone sets off, and nothing starts until you say yes.",
   },
   {
     question: "When do I actually pay?",
@@ -74,7 +74,7 @@ const requesterFaqs = [
   {
     question: "What about shopping — who pays for what I asked for?",
     answer:
-      "Your Supporter pays at the till and you reimburse the receipt in full, with no markup and no commission. You set a budget up front, and anything over it needs your approval first. A photo of the receipt is attached to your final bill.",
+      "Your Supporter pays at the till and you reimburse the receipt in full, with no markup and no commission. You set a budget up front; purchases up to $5 over it are reimbursed automatically, and anything more needs your approval first. A photo of the receipt is attached to your final bill.",
   },
   {
     question: "Can I cancel?",
@@ -99,12 +99,7 @@ const requesterFaqs = [
   {
     question: "What can I ask for?",
     answer:
-      "Anything legal and within our community guidelines that one person can reasonably do in the time booked. Errands, deliveries, returns, laundry runs, groceries, holding a place in a queue, waiting in for a tradesperson, a walk or company at an event. Not medical or personal care, not anything requiring a licence we haven't checked.",
-  },
-  {
-    question: "Is companionship the same as care?",
-    answer:
-      "No, and the boundary is deliberate. Companionship means a walk, a conversation, a shared meal, company at an appointment or an event. It is non-medical, and Supporters are not carers or health workers.",
+      "Anything legal and within our community guidelines that one person can reasonably do in the time booked. Errands, deliveries, returns, laundry runs, groceries, holding a place in a queue, waiting in for a tradesperson. Not medical or personal care, not anything requiring a licence we haven't checked.",
   },
   {
     question: "Where does HO:RA work?",
