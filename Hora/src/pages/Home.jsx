@@ -185,7 +185,7 @@ export default function Home() {
               {/* ONLINE */}
               <div className="flex flex-col gap-6 rounded-[28px] border border-[#E6DBB8] bg-white p-7">
                 <div>
-                  <h3 className="text-[1.75rem] font-extrabold tracking-[-0.01em]">In your messages</h3>
+                  <h3 className="text-[1.75rem] font-extrabold tracking-[-0.01em]">On iMessage &amp; WhatsApp</h3>
                   <p className="mt-1 text-ink/60">Online. Before anyone sets off.</p>
                 </div>
                 <div className="flex flex-col gap-2 text-[15px] leading-snug">
