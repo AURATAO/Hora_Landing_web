@@ -61,7 +61,8 @@ const trust = [
 const container = "mx-auto w-full max-w-7xl px-5 md:px-8";
 const btn = "inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap transition active:scale-[0.98]";
 const btnPrimary = `${btn} bg-ink text-cream hover:bg-ink/90`;
-const h2 = "font-heading text-[2.15rem] font-medium leading-[1.05] md:text-5xl lg:text-[3.5rem]";
+// Headings are bold Inter, set tight (Aura, 2026-11-12: "bold, direct", not the serif).
+const h2 = "text-[2.15rem] font-extrabold leading-[1.05] tracking-[-0.02em] md:text-5xl lg:text-[3.5rem]";
 
 // Hero entrance order; each value is that element's start time. The last ends at ~1.1s.
 const heroDelay = (ms, duration) => ({ "--hero-delay": `${ms}ms`, ...(duration && { "--hero-duration": `${duration}ms` }) });
@@ -73,7 +74,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>HO:RA — Text us. A real human on the way. | New York City</title>
+        <title>HO:RA — Can't get there yourself? A real human on the way. | New York City</title>
         <meta
           name="description"
           content="Text HO:RA what you need. We sort out the details in Messages, then a verified person in New York goes and gets it done. Billed by the minute."
@@ -101,16 +102,16 @@ export default function Home() {
           <HeroFilm variant="fill" />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,40,49,0.97)_0%,rgba(34,40,49,0.94)_24%,rgba(34,40,49,0.74)_42%,rgba(34,40,49,0.4)_56%,rgba(34,40,49,0.14)_64%,transparent_72%)]"
+            className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,40,49,0.98)_0%,rgba(34,40,49,0.97)_40%,rgba(34,40,49,0.9)_50%,rgba(34,40,49,0.6)_62%,rgba(34,40,49,0.2)_72%,transparent_80%)]"
           />
           <div className="absolute inset-x-0 bottom-0 px-5 pb-8">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gold px-3.5 py-1.5 text-[12.5px] font-semibold text-ink">
               <MapPin aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2.5} />
               Now live in New York City
             </div>
-            <h1 className="mb-5 font-heading text-[2.6rem] font-medium leading-[1.05] text-white">
-              Text us.{" "}
-              <em className="hero-gradient-gold pr-[0.08em] italic">A real human on the way.</em>
+            <h1 className="mb-5 text-[2.05rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-white">
+              <span className="block text-balance">Can&apos;t get there yourself?</span>
+              <span className="hero-gradient-gold block text-balance">A real human on the way.</span>
             </h1>
             <a href={IMESSAGE_HREF} className={`${btn} w-full bg-cream text-ink`}>
               Text us to start <span aria-hidden="true">→</span>
@@ -130,7 +131,7 @@ export default function Home() {
 
         {/* ── 1. HERO, DESKTOP ─────────────────────────────────────────────── */}
         <section className="hidden lg:block">
-          <div className={`${container} grid grid-cols-[7fr_5fr] items-center gap-20 py-20`}>
+          <div className={`${container} grid grid-cols-[1fr_auto] items-center gap-16 py-20`}>
             <div>
               <div
                 className="hero-in mb-7 inline-flex items-center gap-2 rounded-full border border-forest/30 bg-white/60 px-4 py-1.5 text-sm font-medium text-forest"
@@ -139,10 +140,10 @@ export default function Home() {
                 <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
                 Now live in New York City
               </div>
-              <h1 className="mb-7 font-heading text-[3.4rem] font-medium leading-[1.05] xl:text-[3.9rem]">
-                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Text us.</span>
-                <span className="hero-rise-blur block xl:whitespace-nowrap" style={heroDelay(240, 600)}>
-                  <em className="hero-gradient pr-[0.08em] italic">A real human on the way.</em>
+              <h1 className="mb-7 text-[3.1rem] font-extrabold leading-[1.05] tracking-[-0.025em] xl:text-[3.5rem]">
+                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Can&apos;t get there yourself?</span>
+                <span className="hero-rise-blur block" style={heroDelay(240, 600)}>
+                  <span className="hero-gradient">A real human on the way.</span>
                 </span>
               </h1>
               <p className="hero-rise mb-9 max-w-xl text-[1.2rem] leading-relaxed text-ink/80" style={heroDelay(400)}>
@@ -184,7 +185,7 @@ export default function Home() {
               {/* ONLINE */}
               <div className="flex flex-col gap-6 rounded-[28px] border border-[#E6DBB8] bg-white p-7">
                 <div>
-                  <h3 className="font-heading text-[1.9rem] font-medium">In your messages</h3>
+                  <h3 className="text-[1.75rem] font-extrabold tracking-[-0.01em]">In your messages</h3>
                   <p className="mt-1 text-ink/60">Online. Before anyone sets off.</p>
                 </div>
                 <div className="flex flex-col gap-2 text-[15px] leading-snug">
@@ -208,7 +209,7 @@ export default function Home() {
               {/* OFFLINE */}
               <div className="flex flex-col gap-6 rounded-[28px] bg-ink p-7 text-cream">
                 <div>
-                  <h3 className="font-heading text-[1.9rem] font-medium">Out in the city</h3>
+                  <h3 className="text-[1.75rem] font-extrabold tracking-[-0.01em]">Out in the city</h3>
                   <p className="mt-1 text-[#D9CFAE]">Offline. A real person, on the way.</p>
                 </div>
                 <ol className="flex flex-col gap-3 text-[15px] leading-snug">
@@ -236,11 +237,11 @@ export default function Home() {
               data-reveal="rise"
             >
               <div className="bg-gold px-7 py-8">
-                <p className="font-heading text-[3.4rem] leading-none md:text-[4.2rem]">~20 min</p>
+                <p className="text-[3.2rem] font-extrabold leading-none tracking-[-0.03em] md:text-[4rem]">~20 min</p>
                 <p className="mt-2 text-[17px]">A typical task, from yes to done.</p>
               </div>
               <div className="border-b border-[#EFE6C9] px-7 py-8 md:border-b-0 md:border-r">
-                <p className="font-heading text-[3.4rem] leading-none md:text-[4.2rem]">2 in 3</p>
+                <p className="text-[3.2rem] font-extrabold leading-none tracking-[-0.03em] md:text-[4rem]">2 in 3</p>
                 <p className="mt-2 text-[17px] text-ink/80">are wrapped up in about half an hour.</p>
               </div>
               <div className="flex flex-col justify-center gap-2.5 px-7 py-8">
@@ -309,7 +310,7 @@ export default function Home() {
               data-reveal="rise"
             >
               <div>
-                <h3 className="font-heading text-[2.2rem] leading-[1.05] md:text-5xl">Get your time back.</h3>
+                <h3 className="text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.02em] md:text-5xl">Get your time back.</h3>
                 <p className="mt-1.5 text-[17px] text-ink/75">One message is all it takes.</p>
               </div>
               <a href={IMESSAGE_HREF} className={btnPrimary}>
