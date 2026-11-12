@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import HeroFilm from './components/HeroFilm.jsx';
+import AskBox from './components/AskBox.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
 import { IMESSAGE_HREF, WEB_APP_URL, imessageHrefFor } from '../lib/config';
 import { MapPin, ChevronDown, MessageSquare, IdCard, ShieldCheck } from 'lucide-react';
@@ -74,7 +75,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>HO:RA — Can't get there yourself? A real human on the way. | New York City</title>
+        <title>HO:RA — What do you need today? A real human on the way. | New York City</title>
         <meta
           name="description"
           content="Text HO:RA what you need. We sort out the details in Messages, then a verified person in New York goes and gets it done. Billed by the minute."
@@ -110,7 +111,7 @@ export default function Home() {
               Now live in New York City
             </div>
             <h1 className="mb-5 text-[2.05rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-white">
-              <span className="block text-balance">Can&apos;t get there yourself?</span>
+              <span className="block">Text us.</span>
               <span className="hero-gradient-gold block text-balance">A real human on the way.</span>
             </h1>
             <a href={IMESSAGE_HREF} className={`${btn} w-full bg-cream text-ink`}>
@@ -141,7 +142,7 @@ export default function Home() {
                 Now live in New York City
               </div>
               <h1 className="mb-7 text-[3.1rem] font-extrabold leading-[1.05] tracking-[-0.025em] xl:text-[3.5rem]">
-                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Can&apos;t get there yourself?</span>
+                <span className="hero-rise-blur block" style={heroDelay(120, 600)}>What do you need today?</span>
                 <span className="hero-rise-blur block" style={heroDelay(240, 600)}>
                   <span className="hero-gradient">A real human on the way.</span>
                 </span>
@@ -151,10 +152,8 @@ export default function Home() {
                 goes out and gets it done.
               </p>
               <div className="hero-rise" style={heroDelay(520)}>
-                <a href={IMESSAGE_HREF} className={btnPrimary}>
-                  Text us to start <span aria-hidden="true">→</span>
-                </a>
-                <p className="mt-5 text-[15px] text-ink/65">
+                <AskBox />
+                <p className="mt-6 text-[15px] text-ink/65">
                   On Android or desktop?{" "}
                   <a href={WEB_APP_URL} className="text-forest underline underline-offset-[3px]">
                     Open the web app
