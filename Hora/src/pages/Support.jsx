@@ -2,7 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { IMESSAGE_HREF, SUPPORTER_APPLY_URL } from "../lib/config";
+import { SUPPORTER_APPLY_URL } from "../lib/config";
+import { messageHrefFor } from "../lib/channel";
 
 const SUPPORT_EMAIL = "info@my-hora.com";
 
@@ -51,14 +52,23 @@ export default function Support() {
             <div className="mb-12 border-t-2 border-forest pt-6">
               <h2 className="mb-3 text-2xl font-semibold tracking-[-0.018em]">Text us</h2>
               <p className="mb-5 font-secondary text-base leading-relaxed text-ink/78">
-                About anything, including a task that is already running.
+                About anything, including a task that is already running. Use whichever you booked on.
               </p>
-              <a
-                href={IMESSAGE_HREF}
-                className="inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-forest px-7 py-3.5 text-base font-semibold text-white transition hover:bg-forest/90 active:scale-[0.98]"
-              >
-                Open Messages <span aria-hidden="true">→</span>
-              </a>
+              {/* Both channels reach the same assistant and the same people. */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={messageHrefFor("imessage")}
+                  className="inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-forest px-7 py-3.5 text-base font-semibold text-white transition hover:bg-forest/90 active:scale-[0.98]"
+                >
+                  iMessage <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href={messageHrefFor("whatsapp")}
+                  className="inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full border border-forest px-7 py-3.5 text-base font-semibold text-forest transition hover:bg-forest/5 active:scale-[0.98]"
+                >
+                  WhatsApp <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
 
             <div className="mb-12 border-t-2 border-forest pt-6">

@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import useScrollReveal from "../hooks/useScrollReveal";
-import { IMESSAGE_HREF } from "../lib/config";
+import { messageHrefFor, useChannel } from "../lib/channel";
 
 // MISSION, rebuilt. 853 lines to five sections.
 //
@@ -142,6 +142,7 @@ const container = "mx-auto w-full max-w-7xl px-5 md:px-8";
 const btn = "inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap transition active:scale-[0.98]";
 
 export default function Mission() {
+  const channel = useChannel();
   const mainRef = useRef(null);
   useScrollReveal(mainRef);
 
@@ -346,8 +347,8 @@ export default function Mission() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3.5">
-              <a href={IMESSAGE_HREF} className={`${btn} bg-forest text-white hover:bg-forest/90`}>
-                Text us to start <span aria-hidden="true">→</span>
+              <a href={messageHrefFor(channel)} className={`${btn} bg-forest text-white hover:bg-forest/90`}>
+                {channel === "imessage" ? "Text us to start" : "Message us on WhatsApp"} <span aria-hidden="true">→</span>
               </a>
               <Link
                 to="/supporters"

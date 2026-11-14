@@ -32,8 +32,16 @@ export const IMESSAGE_DRAFT = "Hi — I need help with";
 
 // sms: works on iOS and Android and is what Apple documents for prefilled bodies.
 // The `&body=` separator is correct after a bare number on iOS 8+; Android accepts
-// `?body=` only, so the hero keeps a visible web-app fallback rather than relying
-// on this link alone.
+// `?body=` only, which is why non-Apple devices are offered WhatsApp first
+// (lib/channel.js) and never this link on its own.
 export const imessageHrefFor = (body) =>
   `sms:${IMESSAGE_NUMBER.replace(/[^\d+]/g, "")}&body=${encodeURIComponent(body)}`;
 export const IMESSAGE_HREF = imessageHrefFor(IMESSAGE_DRAFT);
+
+// The WhatsApp channel (live 2026-11-14, Meta Cloud API). Works where iMessage
+// can't: Android phones, and Windows/Linux computers through WhatsApp Web or
+// Desktop. wa.me takes the digits with no "+" and pre-fills `text`.
+export const WHATSAPP_NUMBER = "+1 (332) 301-4299";
+export const whatsappHrefFor = (body) =>
+  `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(body)}`;
+export const WHATSAPP_HREF = whatsappHrefFor(IMESSAGE_DRAFT);

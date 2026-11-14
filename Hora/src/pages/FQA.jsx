@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { IMESSAGE_HREF, SUPPORTER_APPLY_URL, WEB_APP_URL } from "../lib/config";
+import { SUPPORTER_APPLY_URL, WEB_APP_URL } from "../lib/config";
+import { CHANNELS, messageHrefFor, otherChannel, useChannel } from "../lib/channel";
 
 // REWRITTEN for the messaging model, and split by who is asking.
 //
@@ -44,12 +45,17 @@ const requesterFaqs = [
   {
     question: "What is HO:RA?",
     answer:
-      "A way to hand off the small physical things that eat your day — errands, pickups, returns, waiting in for a delivery, queueing, company for an hour. You text us what you need, we tell you what it costs, and an approved local Supporter does it.",
+      "A way to hand off the small physical things that eat your day — errands, pickups, returns, waiting in for a delivery, queueing. You text us what you need, we tell you what it costs, and an approved local Supporter does it.",
   },
   {
     question: "How do I start? Do I need an app?",
     answer:
-      "No app. You send a text message, the way you would to a friend. We reply with a price and a time; you say yes; someone goes. On Android or a desktop, where iMessage isn't available, there's a web app instead.",
+      "No app. You send a message on iMessage or WhatsApp, the way you would to a friend. We reply with a price and a time; you say yes; someone goes.",
+  },
+  {
+    question: "Can I use WhatsApp, or book without messaging?",
+    answer:
+      "Yes to both. iMessage and WhatsApp reach the same assistant and the same Supporters, so use whichever you already have — WhatsApp works on Android and on a computer through WhatsApp Web. If you'd rather not message at all, you can book on the web app at mvp.horaapp.co.",
   },
   {
     question: "What does it cost?",
@@ -62,7 +68,7 @@ const requesterFaqs = [
       "The estimate is authorised on your card when you book — held, not taken. At the end you're charged for the time actually worked, and the rest of the hold is released. Nothing is refunded because nothing was collected in the first place.",
   },
   {
-    question: "Do I have to leave Messages?",
+    question: "Do I have to leave the chat?",
     answer:
       "Once. On your first booking we'll send you a secure page for your email and a card — about a minute. Everything after that happens in the conversation.",
   },
@@ -162,6 +168,7 @@ const groups = [
 ];
 
 export default function FQA() {
+  const channel = useChannel();
   const [openKey, setOpenKey] = useState(null);
   const toggle = (key) => setOpenKey(openKey === key ? null : key);
 
@@ -248,7 +255,7 @@ export default function FQA() {
           <div className="mx-auto w-full max-w-4xl px-5 py-14 md:px-8 md:py-16">
             <h2 className="mb-3 text-[1.6rem] font-bold tracking-[-0.022em]">Still stuck?</h2>
             <p className="mb-7 max-w-xl font-secondary text-[17px] leading-relaxed text-ink/75">
-              <a href={IMESSAGE_HREF} className="text-forest underline underline-offset-[3px]">Text us</a> and a person will answer — the same conversation you&apos;d
+              <a href={messageHrefFor(channel)} className="text-forest underline underline-offset-[3px]">Message us</a> on iMessage or WhatsApp and a person will answer — the same conversation you&apos;d
               use to book anything. Or email{" "}
               <a href="mailto:info@my-hora.com" className="text-forest underline underline-offset-[3px]">
                 info@my-hora.com
@@ -256,8 +263,11 @@ export default function FQA() {
               .
             </p>
             <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-base">
-              <a href={IMESSAGE_HREF} className="font-medium text-forest underline underline-offset-4">
-                Text us →
+              <a href={messageHrefFor(channel)} className="font-medium text-forest underline underline-offset-4">
+                {CHANNELS[channel].label} →
+              </a>
+              <a href={messageHrefFor(otherChannel(channel))} className="font-medium text-forest underline underline-offset-4">
+                {CHANNELS[otherChannel(channel)].label} →
               </a>
               <a href={WEB_APP_URL} className="font-medium text-forest underline underline-offset-4">
                 Open the web app →

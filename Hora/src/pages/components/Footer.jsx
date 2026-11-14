@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { WEB_APP_URL } from "../../lib/config";
 
 // The homepage is three sections now; an anchor list of them is longer than the
 // page it indexes. What belongs here is the rest of the site.
@@ -6,6 +7,8 @@ const sectionLinks = [
   { to: "/", label: "Need help?" },
   { to: "/supporters", label: "For Supporters" },
   { to: "/faq", label: "FAQ" },
+  // The way in for anyone who would rather not message: no iMessage, no WhatsApp.
+  { href: WEB_APP_URL, label: "Book on the web" },
 ];
 
 const companyLinks = [
@@ -31,11 +34,17 @@ export default function Footer() {
           <nav aria-label="Footer" className="grid grid-cols-2 gap-x-10 gap-y-8 sm:grid-cols-3 md:gap-x-16">
             {[sectionLinks, companyLinks, legalLinks].map((links) => (
               <ul key={links[0].label} className="flex flex-col gap-3">
-                {links.map(({ to, label }) => (
+                {links.map(({ to, href, label }) => (
                   <li key={label}>
-                    <Link to={to} className="text-sm text-ink/80 hover:text-forest transition-colors">
-                      {label}
-                    </Link>
+                    {href ? (
+                      <a href={href} className="text-sm text-ink/80 hover:text-forest transition-colors">
+                        {label}
+                      </a>
+                    ) : (
+                      <Link to={to} className="text-sm text-ink/80 hover:text-forest transition-colors">
+                        {label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

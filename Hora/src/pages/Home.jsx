@@ -6,8 +6,9 @@ import Footer from './components/Footer.jsx';
 import HeroFilm from './components/HeroFilm.jsx';
 import AskBox from './components/AskBox.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
-import { IMESSAGE_HREF, WEB_APP_URL, imessageHrefFor } from '../lib/config';
-import { MapPin, ChevronDown, MessageSquare, IdCard, ShieldCheck } from 'lucide-react';
+import { WEB_APP_URL } from '../lib/config';
+import { CHANNELS, messageHrefFor, useChannel } from '../lib/channel';
+import { MapPin, ChevronDown, MessageSquare, MessageCircle, IdCard, ShieldCheck } from 'lucide-react';
 
 // THE 2026 HOME, second pass (Aura, 2026-11-10). Hero + two sections.
 //
@@ -70,6 +71,8 @@ const heroDelay = (ms, duration) => ({ "--hero-delay": `${ms}ms`, ...(duration &
 
 export default function Home() {
   const mainRef = useRef(null);
+  // iMessage first on Apple devices, WhatsApp first everywhere else (lib/channel.js).
+  const channel = useChannel();
   useScrollReveal(mainRef);
 
   return (
@@ -114,14 +117,17 @@ export default function Home() {
               <span className="block">Text us.</span>
               <span className="hero-gradient-gold block text-balance">A real human gets it done.</span>
             </h1>
-            <a href={IMESSAGE_HREF} className={`${btn} w-full bg-cream text-ink`}>
-              Text us to start <span aria-hidden="true">→</span>
+            <a href={messageHrefFor(channel)} className={`${btn} w-full bg-cream text-ink`}>
+              {channel === 'whatsapp' && <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.2} />}
+              {CHANNELS[channel].cta} <span aria-hidden="true">→</span>
             </a>
+            {/* On an iPhone the second way in is WhatsApp; anywhere else iMessage
+                can't open, so it is the web app instead. */}
             <p className="mt-3.5 text-center text-sm text-white/70">
-              On Android?{" "}
-              <a href={WEB_APP_URL} className="text-white underline underline-offset-[3px]">
-                Open the web app
-              </a>
+              or{" "}
+              {channel === 'imessage'
+                ? <a href={messageHrefFor('whatsapp')} className="text-white underline underline-offset-[3px]">message us on WhatsApp</a>
+                : <a href={WEB_APP_URL} className="text-white underline underline-offset-[3px]">book on the web</a>}
             </p>
             <p className="mt-6 flex items-center justify-center gap-1.5 text-[13px] text-white/55">
               How it works
@@ -148,18 +154,12 @@ export default function Home() {
                 </span>
               </h1>
               <p className="hero-rise mb-9 max-w-xl text-[1.2rem] leading-relaxed text-ink/80" style={heroDelay(400)}>
-                We sort out the details with you in Messages. Then a verified person in New York
+                We sort out the details with you in iMessage or WhatsApp. Then a verified person in New York
                 goes out and takes care of it.
               </p>
               <div className="hero-rise" style={heroDelay(520)}>
-                <AskBox />
-                <p className="mt-6 text-[15px] text-ink/65">
-                  On Android or desktop?{" "}
-                  <a href={WEB_APP_URL} className="text-forest underline underline-offset-[3px]">
-                    Open the web app
-                  </a>
-                  <span className="mx-2 text-ink/30">·</span>No app to download.
-                </p>
+                <AskBox initialChannel={channel} />
+                <p className="mt-6 text-[15px] text-ink/65">No app to download.</p>
               </div>
             </div>
             <div className="hero-in" style={heroDelay(120, 900)}>
@@ -177,7 +177,7 @@ export default function Home() {
             </h2>
             {/* One sentence per line: the online half, then the offline half. */}
             <p className="mb-10 text-pretty text-[1.15rem] leading-relaxed text-ink/80" data-reveal="rise" data-reveal-step="1">
-              <span className="block">Our assistant handles the <span className="whitespace-nowrap">back-and-forth</span> in Messages.</span>{" "}
+              <span className="block">Our assistant handles the <span className="whitespace-nowrap">back-and-forth</span> in iMessage or WhatsApp.</span>{" "}
               <span className="mt-1 block md:mt-0">A person you can see does the part that needs hands.</span>
             </p>
 
@@ -261,7 +261,7 @@ export default function Home() {
               {tryOne.map(({ label, body }) =>
                 <a
                   key={label}
-                  href={imessageHrefFor(body)}
+                  href={messageHrefFor(channel, body)}
                   className="inline-flex min-h-11 items-center rounded-full border border-[#C9BB8E] bg-white px-[18px] text-[15px] text-ink transition hover:border-forest"
                 >
                   {label}
@@ -313,9 +313,15 @@ export default function Home() {
                 <h3 className="text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.02em] md:text-5xl">Get your time back.</h3>
                 <p className="mt-1.5 text-[17px] text-ink/75">One message is all it takes.</p>
               </div>
-              <a href={IMESSAGE_HREF} className={btnPrimary}>
-                Text us in iMessage <span aria-hidden="true">→</span>
-              </a>
+              <div className="flex flex-col items-start gap-2.5 md:items-end">
+                <a href={messageHrefFor(channel)} className={btnPrimary}>
+                  {channel === 'imessage' ? 'Text us in iMessage' : 'Message us on WhatsApp'} <span aria-hidden="true">→</span>
+                </a>
+                {/* Same rule as the phone hero: iMessage is never offered where it can't open. */}
+                <a href={channel === 'imessage' ? messageHrefFor('whatsapp') : WEB_APP_URL} className="pl-1 text-[15px] text-ink/70 underline underline-offset-[3px] md:pr-1">
+                  {channel === 'imessage' ? 'or use WhatsApp' : 'or book on the web'}
+                </a>
+              </div>
             </div>
 
             {/* Supporters are recruited one at a time, so this is a line, not a section. */}

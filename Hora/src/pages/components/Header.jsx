@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "hamburgers/dist/hamburgers.min.css";
-import { IMESSAGE_HREF } from "../../lib/config";
+import { messageHrefFor, useChannel } from "../../lib/channel";
 
 // Routes, not same-page anchors. The old nav indexed the homepage's own sections —
 // Services / How it works / Pricing / Trust — which was a reasonable table of
@@ -15,6 +15,8 @@ const navLinks = [
 ];
 
 export default function Header() {
+  // "Text us" opens iMessage on Apple devices and WhatsApp everywhere else.
+  const channel = useChannel();
   const [isActive, setIsActive] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
@@ -79,7 +81,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             {/* Was "Get the app", which sent a requester to the Supporter dashboard. */}
             <a
-              href={IMESSAGE_HREF}
+              href={messageHrefFor(channel)}
               className="hidden sm:inline-flex items-center justify-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white whitespace-nowrap hover:bg-forest/90 active:scale-[0.98] transition"
             >
               Text us
@@ -120,7 +122,7 @@ export default function Header() {
           </Link>
         ))}
         <a
-          href={IMESSAGE_HREF}
+          href={messageHrefFor(channel)}
           className="mt-2 px-10 py-4 bg-cream text-ink font-semibold rounded-full text-lg hover:bg-cream/90 transition"
         >
           Text us
