@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { WEB_APP_URL } from "../../lib/config";
+import { BOOKING_LIVE, IMESSAGE_NUMBER, IMESSAGE_URL, WEB_APP_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "../../lib/config";
 
 // The homepage is three sections now; an anchor list of them is longer than the
 // page it indexes. What belongs here is the rest of the site.
@@ -22,7 +22,10 @@ const legalLinks = [
   { to: "/privacy", label: "Privacy Policy" },
 ];
 
-export default function Footer() {
+// bookingNumbers: show the customer booking numbers. Supporter pages pass false.
+// Nothing shows while BOOKING_LIVE is false.
+export default function Footer({ bookingNumbers = true }) {
+  const showNumbers = BOOKING_LIVE && bookingNumbers;
   return (
     <footer className="w-full bg-cream text-ink">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8 py-14">
@@ -52,9 +55,27 @@ export default function Footer() {
           </nav>
         </div>
 
+        {showNumbers && (
+          <p className="mt-12 text-sm text-ink/80">
+            Book by text. iMessage:{" "}
+            <a href={IMESSAGE_URL} className="underline underline-offset-2 hover:text-forest">
+              {IMESSAGE_NUMBER}
+            </a>{" "}
+            · WhatsApp: {WHATSAPP_NUMBER}{" "}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-forest"
+            >
+              Open in WhatsApp
+            </a>
+          </p>
+        )}
+
         {/* The only App Store link on a requester-facing page, and it is labelled for
             whom: a requester who follows it would land in a Supporter's dashboard. */}
-        <div className="mt-12 flex flex-wrap items-center justify-between gap-6 border-t border-ink/15 pt-6">
+        <div className={`${showNumbers ? "mt-6" : "mt-12"} flex flex-wrap items-center justify-between gap-6 border-t border-ink/15 pt-6`}>
           <p className="text-sm text-ink/70">
             © {new Date().getFullYear()} Arcodiax LLC · Delaware, United States ·{" "}
             <a href="mailto:info@my-hora.com" className="underline underline-offset-2 hover:text-forest">

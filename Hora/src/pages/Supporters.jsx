@@ -244,7 +244,7 @@ export default function Supporters() {
 
       </main>
 
-      <Footer />
+      <Footer bookingNumbers={false} />
     </>
   );
 }

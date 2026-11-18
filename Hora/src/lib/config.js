@@ -15,11 +15,11 @@ export const WEB_APP_URL = "https://mvp.horaapp.co";
 // "Apply as a Supporter" links go.
 export const SUPPORTER_APPLY_URL = `${WEB_APP_URL}/become-supporter`;
 
-// Booking isn't open yet. While BOOKING_LIVE is false the site shows no iMessage or
+// Booking is live (backend gate live and tested, 2026-11-18). While BOOKING_LIVE is false the site shows no iMessage or
 // WhatsApp number or link anywhere; every booking CTA becomes LAUNCH_NOTE plus a
-// "Join the waitlist" link to WAITLIST_URL instead. Set it to true at launch and the
-// numbers and links below appear everywhere they're used.
-export const BOOKING_LIVE = false;
+// "Join the waitlist" link to WAITLIST_URL instead. Set it back to false to hide the
+// numbers again; the waitlist code stays in place for that.
+export const BOOKING_LIVE = true;
 export const LAUNCH_NOTE = "HO:RA launches in New York City in December.";
 export const WAITLIST_URL = "mailto:info@my-hora.com?subject=Waitlist";
 
