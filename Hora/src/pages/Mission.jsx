@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer.jsx";
 import { Link } from "react-router-dom";
 import { APP_STORE_URL, WEB_APP_URL } from "../lib/config";
+import BookByText from "./components/BookByText";
 import Logo_01 from './components/animated/Logo_01.jsx';
 import Logo_02 from './components/animated/Logo_02.jsx';
 import Logo_03 from './components/animated/Logo_03.jsx';
@@ -299,6 +300,13 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
                     </span>
                   </div>
 
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="550">
+                  <BookByText
+                    className="space-y-1 font-secondary text-base text-primary/80 text-center lg:text-left"
+                    linkClass="font-semibold text-secondary underline underline-offset-4 hover:text-secondary/80"
+                  />
                 </div>
 
                 {/* Trust Indicators */}
@@ -841,6 +849,12 @@ const earned = (secondsElapsed * (valueNow / 60)).toFixed(2);
               >
                 Open the web app
               </a>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="250">
+              <BookByText
+                className="mt-6 space-y-1 font-secondary text-base text-accent/90"
+                linkClass="font-semibold text-accent underline underline-offset-4 hover:text-white"
+              />
             </div>
             <Link to="/beta" className="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-4 hover:text-white" data-aos="zoom-in" data-aos-delay="300">
               Apply as a Supporter <span aria-hidden="true">→</span>

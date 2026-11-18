@@ -6,6 +6,7 @@ import NewsSection from './components/NewsSection.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
 import { Link } from 'react-router-dom';
 import { APP_STORE_URL, WEB_APP_URL, HERO_VARIANT } from '../lib/config';
+import BookByText from './components/BookByText';
 import {
   ShoppingBag,
   Bike,
@@ -306,6 +307,13 @@ export default function Home() {
                   Open the web app
                 </a>
               </div>
+
+              <div className="hero-rise mt-6" style={heroDelay(640)}>
+                <BookByText
+                  className="space-y-1 font-secondary text-base text-ink/80"
+                  linkClass="font-semibold text-forest underline underline-offset-4 hover:text-forest/80"
+                />
+              </div>
             </div>
 
             {/* TODO(prefill-form): replace this framed visual with the real task prefill form once the web app
@@ -591,7 +599,11 @@ export default function Home() {
                 Open the web app
               </a>
             </div>
-           
+
+            <BookByText
+              className="mt-8 space-y-1 font-secondary text-base text-white/90"
+              linkClass="font-semibold text-white underline underline-offset-4 hover:text-cream"
+            />
           </div>
         </section>
       </main>

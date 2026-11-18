@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import BookByText from "./components/BookByText";
+import { IMESSAGE_NUMBER, WHATSAPP_NUMBER, WEB_APP_URL } from "../lib/config";
+
+const faqLink = "text-accent underline underline-offset-2 hover:text-secondary";
 
 const faqs = [
   {
@@ -17,8 +21,15 @@ const faqs = [
     answer: 'A $12 base fee covers the first 15 minutes of an everyday task, then it\'s $0.50 per minute. Companionship has a $25 base fee with the same per-minute rate. For tasks starting between 9 PM and 8 AM, the rate is $1.00 per minute after the first 15 minutes. There is no booking fee and no subscription.',
   },
   {
-    question: 'How do I post a task?',
-    answer: <>Open the app or the web app, describe what you need, set the location and when you need it. You\'ll see the estimated cost before you post, and that exact amount is reserved on your card — never more.</>,
+    question: 'How do I book a task?',
+    answer: (
+      <BookByText
+        className="space-y-2"
+        linkClass={faqLink}
+        after={<>Or use the web app at <a href={WEB_APP_URL} className={faqLink}>{WEB_APP_URL.replace(/^https:\/\//, '')}</a>. Tell us what you need, and before anything is booked you'll get a summary with the price. Reply YES to confirm. The iPhone app is for Supporters only.</>}
+      />
+    ),
+    text: `On iPhone: text HO:RA on iMessage at ${IMESSAGE_NUMBER}. On WhatsApp: message HO:RA at ${WHATSAPP_NUMBER}. Or use the web app at ${WEB_APP_URL}. Tell us what you need, and before anything is booked you'll get a summary with the price. Reply YES to confirm. The iPhone app is for Supporters only.`,
   },
   {
     question: 'What kinds of tasks can I post?',
@@ -94,7 +105,7 @@ export default function FQA() {
       "name": typeof faq.question === "string" ? faq.question : "",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": typeof faq.answer === "string" ? faq.answer : "",
+        "text": faq.text ?? (typeof faq.answer === "string" ? faq.answer : ""),
       },
     })),
   };

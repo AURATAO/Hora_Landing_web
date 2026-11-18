@@ -14,3 +14,11 @@ export const WEB_APP_URL = "https://mvp.horaapp.co";
 // then on to the form. Linked from /beta (the Supporter page), which is where the site's own
 // "Apply as a Supporter" links go.
 export const SUPPORTER_APPLY_URL = `${WEB_APP_URL}/become-supporter`;
+
+// Customer booking numbers. Each link is built from its number, so a number changes in one place.
+// iMessage and WhatsApp are different numbers: never swap them.
+const digitsOnly = (n) => n.replace(/\D/g, "");
+export const IMESSAGE_NUMBER = "+1 (917) 741-0961";
+export const IMESSAGE_URL = `sms:+${digitsOnly(IMESSAGE_NUMBER)}`;
+export const WHATSAPP_NUMBER = "+1 (332) 301-4299";
+export const WHATSAPP_URL = `https://wa.me/${digitsOnly(WHATSAPP_NUMBER)}`;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { WEB_APP_URL, SUPPORTER_APPLY_URL } from "../lib/config";
+import { IMessageLine, WhatsAppLine } from "./components/BookByText";
 
 const SUPPORT_EMAIL = "info@my-hora.com";
 
@@ -74,7 +75,7 @@ export default function Support() {
         <title>Support | HO:RA</title>
         <meta
           name="description"
-          content="HO:RA support: contact us, how to book by text or in the web app, pricing, cancelling, text message commands, help for Supporters using the app, becoming a Supporter, and where HO:RA is available."
+          content="HO:RA support: contact us, how to book by iMessage, WhatsApp or the web app, pricing, cancelling, text message commands, help for Supporters using the app, becoming a Supporter, and where HO:RA is available."
         />
       </Helmet>
       <Header />
@@ -106,8 +107,14 @@ export default function Support() {
 
             <Section id="how-to-book" title="How to book">
               <p>
-                Text HO:RA on iMessage from the phone number linked to your HO:RA account. Where
-                iMessage isn't available, texts are sent as SMS or RCS. You can also book in the web
+                <IMessageLine linkClass={linkClass} /> Where iMessage isn't available, texts are sent
+                as SMS or RCS.
+              </p>
+              <p>
+                <WhatsAppLine linkClass={linkClass} />
+              </p>
+              <p>
+                Text from the phone number linked to your HO:RA account. Not texting? Book in the web
                 app at{" "}
                 <a href={WEB_APP_URL} className={linkClass}>
                   {WEB_APP_URL.replace(/^https:\/\//, "")}

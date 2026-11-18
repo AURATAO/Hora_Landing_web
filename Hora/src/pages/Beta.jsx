@@ -123,7 +123,7 @@ export default function Beta() {
         </div>
       </main>
 
-      <Footer />
+      <Footer bookingNumbers={false} />
     </>
   );
 }
