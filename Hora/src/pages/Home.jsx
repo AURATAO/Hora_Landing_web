@@ -6,7 +6,7 @@ import Footer from './components/Footer.jsx';
 import HeroFilm from './components/HeroFilm.jsx';
 import AskBox from './components/AskBox.jsx';
 import useScrollReveal from '../hooks/useScrollReveal';
-import { WEB_APP_URL } from '../lib/config';
+import { BOOKING_LIVE, LAUNCH_NOTE, WAITLIST_URL, WEB_APP_URL } from '../lib/config';
 import { CHANNELS, messageHrefFor, useChannel } from '../lib/channel';
 import { MapPin, ChevronDown, MessageSquare, MessageCircle, IdCard, ShieldCheck } from 'lucide-react';
 
@@ -117,18 +117,29 @@ export default function Home() {
               <span className="block">Text us.</span>
               <span className="hero-gradient-gold block text-balance">A real human gets it done.</span>
             </h1>
-            <a href={messageHrefFor(channel)} className={`${btn} w-full bg-cream text-ink`}>
-              {channel === 'whatsapp' && <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.2} />}
-              {CHANNELS[channel].cta} <span aria-hidden="true">→</span>
-            </a>
-            {/* On an iPhone the second way in is WhatsApp; anywhere else iMessage
-                can't open, so it is the web app instead. */}
-            <p className="mt-3.5 text-center text-sm text-white/70">
-              or{" "}
-              {channel === 'imessage'
-                ? <a href={messageHrefFor('whatsapp')} className="text-white underline underline-offset-[3px]">message us on WhatsApp</a>
-                : <a href={WEB_APP_URL} className="text-white underline underline-offset-[3px]">book on the web</a>}
-            </p>
+            {BOOKING_LIVE ? (
+              <>
+                <a href={messageHrefFor(channel)} className={`${btn} w-full bg-cream text-ink`}>
+                  {channel === 'whatsapp' && <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.2} />}
+                  {CHANNELS[channel].cta} <span aria-hidden="true">→</span>
+                </a>
+                {/* On an iPhone the second way in is WhatsApp; anywhere else iMessage
+                    can't open, so it is the web app instead. */}
+                <p className="mt-3.5 text-center text-sm text-white/70">
+                  or{" "}
+                  {channel === 'imessage'
+                    ? <a href={messageHrefFor('whatsapp')} className="text-white underline underline-offset-[3px]">message us on WhatsApp</a>
+                    : <a href={WEB_APP_URL} className="text-white underline underline-offset-[3px]">book on the web</a>}
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="mb-3.5 text-center text-[15px] text-white/80">{LAUNCH_NOTE}</p>
+                <a href={WAITLIST_URL} className={`${btn} w-full bg-cream text-ink`}>
+                  Join the waitlist <span aria-hidden="true">→</span>
+                </a>
+              </>
+            )}
             <p className="mt-6 flex items-center justify-center gap-1.5 text-[13px] text-white/55">
               How it works
               <ChevronDown aria-hidden="true" className="h-3.5 w-3.5" />
@@ -158,7 +169,16 @@ export default function Home() {
                 goes out and takes care of it.
               </p>
               <div className="hero-rise" style={heroDelay(520)}>
-                <AskBox initialChannel={channel} />
+                {BOOKING_LIVE ? (
+                  <AskBox initialChannel={channel} />
+                ) : (
+                  <div className="flex flex-col items-start gap-4">
+                    <p className="text-[1.1rem] text-ink/80">{LAUNCH_NOTE}</p>
+                    <a href={WAITLIST_URL} className={btnPrimary}>
+                      Join the waitlist <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                )}
                 <p className="mt-6 text-[15px] text-ink/65">No app to download.</p>
               </div>
             </div>
@@ -256,7 +276,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-2.5" data-reveal="rise">
+            {BOOKING_LIVE && <div className="mt-8 flex flex-wrap items-center gap-2.5" data-reveal="rise">
               <span className="mr-1.5 text-[15px] text-ink/60">Try one:</span>
               {tryOne.map(({ label, body }) =>
                 <a
@@ -267,7 +287,7 @@ export default function Home() {
                   {label}
                 </a>
               )}
-            </div>
+            </div>}
           </div>
         </section>
 
@@ -313,7 +333,7 @@ export default function Home() {
                 <h3 className="text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.02em] md:text-5xl">Get your time back.</h3>
                 <p className="mt-1.5 text-[17px] text-ink/75">One message is all it takes.</p>
               </div>
-              <div className="flex flex-col items-start gap-2.5 md:items-end">
+              {BOOKING_LIVE ? <div className="flex flex-col items-start gap-2.5 md:items-end">
                 <a href={messageHrefFor(channel)} className={btnPrimary}>
                   {channel === 'imessage' ? 'Text us in iMessage' : 'Message us on WhatsApp'} <span aria-hidden="true">→</span>
                 </a>
@@ -321,7 +341,12 @@ export default function Home() {
                 <a href={channel === 'imessage' ? messageHrefFor('whatsapp') : WEB_APP_URL} className="pl-1 text-[15px] text-ink/70 underline underline-offset-[3px] md:pr-1">
                   {channel === 'imessage' ? 'or use WhatsApp' : 'or book on the web'}
                 </a>
-              </div>
+              </div> : <div className="flex flex-col items-start gap-2.5 md:items-end">
+                <a href={WAITLIST_URL} className={btnPrimary}>
+                  Join the waitlist <span aria-hidden="true">→</span>
+                </a>
+                <p className="pl-1 text-[15px] text-ink/70 md:pr-1 md:text-right">{LAUNCH_NOTE}</p>
+              </div>}
             </div>
 
             {/* Supporters are recruited one at a time, so this is a line, not a section. */}

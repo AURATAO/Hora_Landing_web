@@ -118,6 +118,7 @@ export default function Terms() {
             </div>
             <div className='flex flex-col justify-center items-start mx-8 md:mx-20 lg:mx-30 text-accent'>
                 <ReactMarkdown
+                skipHtml
                 components={{
                     h1: ({ children, ...props }) => {
                     const getText = (children) => {

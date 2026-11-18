@@ -1,4 +1,4 @@
-_Last updated: October 26, 2026_
+_Last updated: November 18, 2026_
 # 1. Introduction
 
 This Privacy Policy explains how Hora ("we", "our", or "us") collects, uses, stores, discloses, and deletes personal information when users ("you") interact with the Hora Platform. It also outlines your legal rights regarding your data and how you may exercise them.
@@ -31,7 +31,7 @@ In this Privacy Policy:
 - Arcodiax LLC (operating under the name "Hora") is referred to as "Hora," "we," "our," or "us."
 - We refer to a user of the Hora platform as a "User," and depending on their role, as either a "Requester" (the person seeking services) or "Supporter" (the person providing services).
 - The website operated by Hora at my-hora.com is referred to as the "Site."
-- The mobile application (whether on iOS or Android) is referred to as the "App."
+- The Hora mobile application, which is available for iOS only, is referred to as the "App." There is no Android app; Android users can use the Hora web app.
 - The Site, App, and all related services, communications, and technologies are collectively referred to as the "Hora Platform."
 
 This Privacy Policy is part of, and governed by, the Hora Terms of Service.
@@ -45,7 +45,7 @@ Hora collects certain personally identifiable information about Users ("Personal
 - Contact Information: Full name, postal address, phone number, email address.
 - Account and Sign-In Information: You can create and access your account with an email one-time code, with Google, or with Sign in with Apple. When you use Google or Apple, we receive the name and email address you choose to share (for Apple, this may be a private relay address if you hide your email) and a provider account identifier. We never receive your Google or Apple password.
 - Payment Information: When you add a payment method, your card details (card number, expiration date, CVV) are collected directly by our payment processor, Stripe, and are not stored on Hora's systems. Hora receives and stores limited payment metadata, such as the card brand, the last four digits of the card number, payment and pre-authorization status, and transaction records (amounts, timestamps, and task associations).
-- Identity Information: Supporters are required to complete identity verification through our third-party provider, Checkr, before they can accept Tasks; other Users may be required to complete identity verification in the future. This may include your date of birth, national ID number, residential address, and verification documents (e.g., passport, national ID card), and may also include background check data where permitted by applicable law.
+- Identity Information: Supporters are required to complete identity verification through our third-party provider, Checkr, before they can accept Tasks; other Users may be required to complete identity verification in the future. This may include your date of birth, national ID number, residential address, and verification documents (e.g., passport, national ID card). Hora verifies identity only and does not conduct criminal background checks.
 - Financial Information (Supporters): Supporters who enroll for payouts provide tax information, banking details (e.g., account and routing number), and taxpayer identification directly to Stripe through Stripe Connect onboarding. Hora receives payout status and account-capability information from Stripe but does not store your full banking details or tax identification numbers on its own systems.
 - Task Details: When using the platform, you may be asked to provide specific task information, such as task description, estimated hours, preferred time and date, location, and any shopping budget.
 - Location Information: We collect location data to coordinate Tasks, verify service delivery, support billing accuracy, and promote user safety. Specifically:
@@ -58,13 +58,13 @@ Hora collects certain personally identifiable information about Users ("Personal
 - Employment and Qualifications (Supporters only): We may collect relevant experience, education, skills, certifications, and verification documents necessary for tasks.
 - Message Content: We collect content from messages you exchange within the platform, including chat between Requesters and Supporters, and inquiries submitted via email or support forms. If you book or talk to your Supporter by text message, see Section 3.3.
 - Safety Reports and Blocks: If you report or block another User, we record who filed it, who it concerns, the Task it relates to, the reason selected from a preset list, any optional details you provide (visible to Hora's team only and never shown to the reported User), the time, and how the report was resolved. We retain report and block records after account deletion so that a block continues to be enforced.
-- Push Notification Tokens: If you enable push notifications, we collect device push tokens in order to deliver notifications to your device through our notification delivery providers and the Apple and Google notification services.
+- Push Notification Tokens: If you enable push notifications, we collect device push tokens in order to deliver notifications to your device through our notification delivery provider and the Apple Push Notification service.
 - Device and Usage Data: We may automatically collect data about the devices you use to access the platform (including IP address, browser type, operating system) and usage behavior, such as access times, interactions, and navigation patterns. This information is used to improve security, performance, and user experience.
 
 ### b. Information Collected from Third Parties
 
 - Partner and Co-Branded Services: If you access Hora via a partner or co-branded version, they may provide us with your name, email, location, purchase history, or service usage data.
-- Verification & Fraud Detection Providers: We may receive demographic, fraud prevention, and background information about you from verification vendors and payment processors to comply with regulations, enhance platform security, and protect our users.
+- Verification & Fraud Detection Providers: We may receive identity verification results, demographic information, and fraud prevention information about you from verification vendors and payment processors to comply with regulations, enhance platform security, and protect our users.
 - Payment Processor: We receive payment, payout, and account-status information about you from Stripe (e.g., whether a charge succeeded, whether payout onboarding is complete) in order to operate billing and disbursement.
 
 Hora only processes this information for legitimate business interests, including safety, legal compliance, service operation, and account integrity. For more information on how your information is used, see Section 4, "Use of Information."
@@ -94,12 +94,14 @@ These data exchanges are limited to what is necessary to provide a seamless serv
 
 ## 3.3 Booking and Messaging by Text
 
-Requesters can book and manage Tasks by text message, without opening the App. Text conversations currently run over iMessage; WhatsApp is not yet available. If you use Hora by text:
+Requesters can book and manage Tasks by text message, without opening the App. Text conversations run over iMessage or WhatsApp. If you use Hora by text:
 
 - **Your phone number.** After you confirm a code we email to you, your mobile number is linked to your Hora account and identifies your account: messages from that number are treated as coming from you. You cannot change or unlink the number in the App. If you lose or change your number, please tell us at info@my-hora.com.
 - **Your conversation.** Hora stores the full text of your conversation with HO:RA: the messages you send, the messages HO:RA sends you, and your Supporter's messages relayed to you. See Section 6 for how long we keep it.
-- **How messages are delivered.** Messages are delivered through our provider Sendblue and Apple's iMessage service. Where iMessage is not available, Sendblue may deliver a message by SMS or RCS instead; that choice is made by Sendblue, not by Hora. These providers see your phone number and the content of your messages, because they deliver them.
-- **An AI assistant writes the replies.** The replies you receive in this conversation are written by an AI assistant on Hora's behalf. It reads the conversation to understand your request, turn it into Task details, route messages between you and your Supporter, and draft replies. The conversation text, including your Supporter's messages relayed to you, is processed by an AI model hosted for Hora by Baseten, which processes it only for us. Your messages are not used to train models. The assistant can make mistakes, so please check the Task details before you confirm them.
+- **Photos you send.** If you text HO:RA a photo, for example a return label, an item you want bought, or where to leave something, it reaches Hora through the same messaging providers as your texts (described below) and is not read by AI models. Hora stores it privately, and the only people who can see it are the Supporter on your Task and Hora's operations staff. Photos you send during a Task are also delivered to your Supporter through our in-app chat provider, TalkJS. See Section 6 for how long we keep them.
+- **How messages are delivered.** Messages are delivered through our provider Sendblue and Apple's iMessage service. Where iMessage is not available, Sendblue may deliver a message by SMS or RCS instead; that choice is made by Sendblue, not by Hora. These providers see your phone number and the content of your messages, because they deliver them. WhatsApp messages are delivered through Meta's WhatsApp Business Platform. Meta sees your phone number and the content of your messages, because it delivers them, and handles them under its own terms and privacy policy. Photos you send by WhatsApp reach Hora the same way.
+- **An AI assistant writes the replies.** The replies you receive in this conversation are written by an AI assistant on Hora's behalf. It reads the conversation to understand your request, turn it into Task details, route messages between you and your Supporter, and draft replies. The conversation text, including your Supporter's messages relayed to you, is processed by AI models provided to Hora by Anthropic (Claude) and Baseten, which process it only for us. Your messages are not used to train models. The assistant can make mistakes, so please check the Task details before you confirm them. If you ask HO:RA to find a place, its suggestions come from Google Maps, and opening hours can change.
+- **Reviewing the assistant's work.** To find and fix the assistant's mistakes, we record each message the assistant reads, the decision it made, and the reply it drafted, together with the model and instruction version used. These records are kept in a monitoring system Hora runs on our own cloud hosting, and are reviewed only by Hora's team. We remove phone numbers from them before they are sent. We keep these records for 90 days, and delete them earlier if you delete your account. They are not used to train AI models.
 - **Hora's team.** Hora's team can read text conversations in an internal tool. When a conversation is handed to a person, for example because you ask for one, a member of the team can reply to you as HO:RA, and you are told in the conversation when a teammate takes over and when the assistant comes back. When a conversation is handed to a person, we alert our operations staff by email (through Postmark) and by text message (through Sendblue); these alerts contain the recent messages in the conversation and the last four digits of your phone number. The internal tool shows only the last four digits of your phone number.
 
 **If you are a Supporter.** If the Requester on your Task uses text messaging, the messages you send in the App chat for that Task are relayed into their text conversation and are processed by the AI assistant and the providers described in this section. Completion and receipt photos you upload may be delivered to them the same way.
@@ -113,8 +115,8 @@ Hora uses your Personal Information for legitimate business and commercial purpo
 - To personalize and optimize your user experience, such as suggesting suitable Supporters or displaying relevant tasks based on your profile and activity.
 - To process payments, pre-authorizations, settlements, and Supporter payouts; to prevent fraud; and to maintain a secure environment, including identity verification and compliance with financial regulations.
 - To verify that logged Task time corresponds to actual work performed, including through the location data described in Section 3(a), for billing accuracy and dispute resolution.
-- To conduct identity and background checks, as permitted by applicable laws and necessary for the safety and trustworthiness of all users.
-- To promote physical and emotional safety, especially in cases involving in-person companionship or presence-based services.
+- To verify Supporters' identity, as permitted by applicable laws and necessary for the safety and trustworthiness of all users. Hora does not conduct criminal background checks.
+- To promote the physical safety of Users during in-person Tasks.
 - To ensure the integrity and quality of the Platform, including monitoring for prohibited conduct, investigating complaints, and enforcing platform policies.
 - To analyze trends and performance, so we can improve the quality, accessibility, and functionality of our services.
 - To communicate with you, including service-related notifications, task status updates, push notifications, and optional promotional offers.
@@ -137,7 +139,7 @@ We may share your information with our parent company, subsidiaries, and affilia
 
 We engage vetted third-party service providers to perform services on our behalf and under strict data processing agreements. These providers may access Personal Information only to the extent necessary to carry out services such as:
 
-- Identity verification (currently through Checkr) and, if and when launched, background checks
+- Identity verification (currently through Checkr)
 - Payment processing, payout disbursement, and financial compliance
 - Email communication and customer messaging tools
 - Push notification delivery
@@ -150,7 +152,7 @@ We engage vetted third-party service providers to perform services on our behalf
 - Security monitoring and fraud prevention
 - Legal and compliance consultation
 
-**Current Service Providers.** As of the date of this Policy, our principal service providers include: Stripe (payment processing — including card-on-file storage, pre-authorizations, charges, and refunds — and Supporter payout disbursement through Stripe Connect, including the identity, tax, and banking information Supporters provide during payout onboarding); Supabase (database hosting; authentication, including email one-time codes and verification of Google and Apple sign-in tokens; and file storage, including profile photos, task completion photos, and receipt photos); Google (sign-in authentication, address autocomplete, and mapping/travel-time estimation); Apple (Sign in with Apple authentication, App Store distribution, the Apple Push Notification service, and iMessage, which carries text conversations with HO:RA delivered as iMessage); Postmark (transactional email delivery, including the alerts to our operations staff described in Section 3.3); TalkJS (in-app messaging infrastructure — message content you exchange with other Users is processed and stored by TalkJS on our behalf); Baseten (AI-assisted processing — when you book or talk to your Supporter by text message, the conversation, including the messages your Supporter sends you, is processed by an AI model hosted for Hora by Baseten to understand your request, turn it into Task details, route messages between you and your Supporter, and draft HO:RA's replies, as described in Section 3.3; Baseten processes it only for us, and messages are not used to train models); Anthropic (AI-assisted processing — when you use the in-app AI task-creation feature, the task description you enter is processed by Anthropic’s Claude API); Sendblue (iMessage delivery, with SMS or RCS delivery where iMessage is not available — if you book by text, your phone number, the messages you exchange with HO:RA, and Task photos delivered into that conversation are transmitted and stored by Sendblue on our behalf; Sendblue also delivers the text-message alerts to our operations staff described in Section 3.3); Expo (push notification delivery, together with the Apple and Google notification services); and our cloud hosting providers (Render and Vercel). WhatsApp is not yet available; if we enable it, WhatsApp conversations will be delivered through Meta's WhatsApp Business Platform, and we will update this Policy to describe it. This list may change as the Platform evolves; material changes will be reflected in updates to this Policy.
+**Current Service Providers.** As of the date of this Policy, our principal service providers include: Stripe (payment processing — including card-on-file storage, pre-authorizations, charges, and refunds — and Supporter payout disbursement through Stripe Connect, including the identity, tax, and banking information Supporters provide during payout onboarding); Supabase (database hosting; authentication, including email one-time codes and verification of Google and Apple sign-in tokens; and file storage, including profile photos, task completion photos, and receipt photos); Google (sign-in authentication, address autocomplete, mapping/travel-time estimation, and place search — when you ask HO:RA by text to find a place, for example a laundromat or a pharmacy open now, the search request and the location you give are sent to Google (Google Places) to find places, and the names, addresses, ratings, and opening hours we send you come from Google Maps); Apple (Sign in with Apple authentication, App Store distribution, the Apple Push Notification service, and iMessage, which carries text conversations with HO:RA delivered as iMessage); Postmark (transactional email delivery, including the alerts to our operations staff described in Section 3.3); TalkJS (in-app messaging infrastructure — message content you exchange with other Users is processed and stored by TalkJS on our behalf); Baseten (AI-assisted processing — when you book or talk to your Supporter by text message, AI models hosted for Hora by Baseten turn your request into Task details, handle some smaller steps in the conversation, and process the conversation as a backup to Anthropic, as described in Section 3.3; Baseten processes it only for us, and messages are not used to train models); Anthropic (AI-assisted processing — when you book or talk to your Supporter by text message, the conversation, including the messages your Supporter sends you, is processed by Anthropic’s Claude API to understand your request, route messages between you and your Supporter, and draft HO:RA's replies, as described in Section 3.3; and when you use the in-app AI task-creation feature, the task description you enter is processed by Anthropic’s Claude API; Anthropic processes it only for us, and messages are not used to train models); Sendblue (iMessage delivery, with SMS or RCS delivery where iMessage is not available — if you book by text, your phone number, the messages you exchange with HO:RA, and Task photos delivered into that conversation are transmitted and stored by Sendblue on our behalf; Sendblue also delivers the text-message alerts to our operations staff described in Section 3.3); Expo (push notification delivery, together with the Apple Push Notification service); Meta Platforms (WhatsApp Business Platform: delivery of WhatsApp conversations with HO:RA, including your phone number, message content and photos); and our cloud hosting providers (Render and Vercel). This list may change as the Platform evolves; material changes will be reflected in updates to this Policy.
 
 ### c. Promotional Activities and Offers
 
@@ -158,7 +160,9 @@ If you participate in co-branded campaigns, contests, surveys, or offers, we may
 
 ### d. Advertising and Analytics
 
-We may share limited, non-identifiable Personal Information (such as cookies or device IDs) with advertising platforms or analytics providers to improve ad targeting, measure performance, and tailor content—only as permitted by applicable laws. You can manage these settings as described in Section 3.1 (Cookies and Similar Technologies).
+Hora advertises on third-party platforms such as Instagram. Hora does not share Personal Information with advertising platforms for ad targeting, and the Site does not use advertising pixels (such as the Meta Pixel).
+
+The Site uses Google Analytics to help us understand traffic, for example how many people visit, which pages they view, and how they arrived. Google Analytics uses cookies and receives information such as your IP address, device and browser type, and the pages you visit. You can manage cookies as described in Section 3.1 (Cookies and Similar Technologies).
 
 ### e. Other Hora Users
 
@@ -184,7 +188,11 @@ If Hora is involved in a merger, acquisition, restructuring, or sale of all or p
 We retain your Personal Information for as long as necessary to provide you with our products or services and fulfill the purposes described in this Privacy Policy. When we no longer need to use your information and there is no need for us to keep it to comply with our legal obligations or to the extent permitted under applicable laws, we'll either delete it from our systems or deidentify it so that we can't use it to reidentify you.
 Users may also request to delete or access their personal information at any time. Please refer to Section 7, "Your Rights and Choices." Details of what is deleted, anonymised, and retained when you delete your account are in Section 7(d).
 
-**Text conversations.** Hora keeps the full text of your text conversation with HO:RA, and the link between your phone number and your account, until your account is deleted; there is no earlier automatic deletion today. Copies held by our messaging providers follow their own policies.
+**Text conversations.** Hora keeps the full text of your text conversation with HO:RA, and the link between your phone number and your account, until your account is deleted; there is no earlier automatic deletion today. Copies held by our messaging providers (Sendblue and Apple for iMessage, SMS and RCS, and Meta for WhatsApp) follow their own policies.
+
+**Photos sent by text.** Photos you text to HO:RA are kept with the Task they relate to until your account is deleted. Photos that are not used for a booking are deleted within 7 days. Copies of photos delivered during a Task through our in-app chat provider, TalkJS, follow that provider's own policies.
+
+**AI monitoring records.** Records of the AI assistant's work described in Section 3.3 are kept for 90 days and then deleted automatically. If you delete your account, they are deleted sooner.
 
 ---
 
@@ -219,7 +227,7 @@ Users may update or correct inaccurate or incomplete information at any time by 
 
 ### d. Right to Delete
 
-You can delete your account at any time in the App (Profile, Delete account) or by contacting us at info@my-hora.com. Deletion is not available while you have a Task in progress, an outstanding balance, or a Supporter payout that has not yet reached your bank; the App tells you which applies and what clears it.
+You can delete your account at any time in the Web App or the App (Profile, Delete account) or by contacting us at info@my-hora.com. Deletion is not available while you have a Task in progress, an outstanding balance, or a Supporter payout that has not yet reached your bank; the App tells you which applies and what clears it.
 
 When your account is deleted:
 
@@ -229,6 +237,7 @@ When your account is deleted:
 - Task, payment, and payout records are retained in anonymised form, linked to the placeholder rather than to you, for as long as required for financial, tax, dispute, and legal obligations.
 - Reviews you wrote about other Users, and reviews written about you, are retained in anonymised form so that other Users' ratings remain accurate.
 - Safety records (reports and blocks) are retained so that blocks continue to be enforced and reports can be investigated.
+- Records of the AI assistant's work on your text conversations in our monitoring system are deleted.
 - If you enrolled for payouts, your Stripe Connect account and the identity, tax, and banking information you gave Stripe are retained by Stripe under its own privacy policy and legal obligations.
 
 We may also retain other information where required to comply with legal obligations, for security or fraud prevention, or to enforce our terms or protect other Users.
@@ -268,14 +277,11 @@ If you are a resident of a U.S. state such as New York, California, or others th
 
 #### Your Privacy Choices and Opt-Out Rights (U.S. Residents)
 
-Hora does not sell your Personal Information in the traditional sense. However, certain types of data sharing for advertising or analytics purposes may be considered a "sale" or "sharing" under applicable U.S. state privacy laws, including the California Consumer Privacy Act (CCPA) and similar laws in other jurisdictions.
+Hora does not sell your Personal Information, and does not share it with advertising platforms for targeted advertising. However, our use of Google Analytics on the Site (see Section 5(d)) may be considered a "sale" or "sharing" under some U.S. state privacy laws, including the California Consumer Privacy Act (CCPA) and similar laws in other jurisdictions.
 
 To the extent such practices are interpreted as a "sale" or "sharing," you have the right to opt out of the sale or sharing of your Personal Information at any time.
 
-You may exercise your opt-out rights by:
-
-- Contacting us directly at info@my-hora.com with your request, or
-- Using the "Do Not Sell or Share My Personal Information" link where available in the footer of our website.
+You may exercise your opt-out rights by contacting us directly at info@my-hora.com with your request.
 
 We will process valid requests in accordance with applicable state laws. Please note that we may request additional information to verify your identity and residency before processing certain requests.
 
@@ -329,7 +335,7 @@ You may withdraw your consent at any time. To do so, contact us at info@my-hora.
 We process Personal Information to meet our legal responsibilities. Depending on the situation, this may include:
 
 - Billing and fraud prevention
-- Background checks where permitted
+- Identity verification where required by law
 - Platform security and data integrity
 
 **Legitimate Interests**

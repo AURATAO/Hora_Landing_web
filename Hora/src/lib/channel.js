@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IMESSAGE_DRAFT, imessageHrefFor, whatsappHrefFor } from "./config";
+import { BOOKING_LIVE, IMESSAGE_DRAFT, WAITLIST_URL, imessageHrefFor, whatsappHrefFor } from "./config";
 
 // Which messaging channel to put first for this visitor (Aura, 2026-11-14).
 //
@@ -21,8 +21,11 @@ export const CHANNELS = {
 
 export const otherChannel = (c) => (c === "imessage" ? "whatsapp" : "imessage");
 
+// Backstop: until booking is live, no sms: or wa.me link can reach the page, even
+// from a call site that forgot to check BOOKING_LIVE. Callers still check it so
+// the label matches where the link goes.
 export const messageHrefFor = (channel, body = IMESSAGE_DRAFT) =>
-  CHANNELS[channel].hrefFor(body);
+  BOOKING_LIVE ? CHANNELS[channel].hrefFor(body) : WAITLIST_URL;
 
 // The visitor's first channel, decided once on first render.
 export function useChannel() {

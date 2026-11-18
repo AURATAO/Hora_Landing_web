@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { SUPPORTER_APPLY_URL, WEB_APP_URL } from "../lib/config";
+import { BOOKING_LIVE, SUPPORTER_APPLY_URL, WEB_APP_URL } from "../lib/config";
+import WaitlistLine from "./components/Waitlist";
 import { CHANNELS, messageHrefFor, otherChannel, useChannel } from "../lib/channel";
 
 // REWRITTEN for the messaging model, and split by who is asking.
@@ -254,21 +255,32 @@ export default function FQA() {
         <section className="bg-cream">
           <div className="mx-auto w-full max-w-4xl px-5 py-14 md:px-8 md:py-16">
             <h2 className="mb-3 text-[1.6rem] font-bold tracking-[-0.022em]">Still stuck?</h2>
-            <p className="mb-7 max-w-xl font-secondary text-[17px] leading-relaxed text-ink/75">
+            {BOOKING_LIVE ? <p className="mb-7 max-w-xl font-secondary text-[17px] leading-relaxed text-ink/75">
               <a href={messageHrefFor(channel)} className="text-forest underline underline-offset-[3px]">Message us</a> on iMessage or WhatsApp and a person will answer — the same conversation you&apos;d
               use to book anything. Or email{" "}
               <a href="mailto:info@my-hora.com" className="text-forest underline underline-offset-[3px]">
                 info@my-hora.com
               </a>
               .
-            </p>
+            </p> : <div className="mb-7 max-w-xl space-y-2 font-secondary text-[17px] leading-relaxed text-ink/75">
+              <WaitlistLine linkClass="text-forest underline underline-offset-[3px]" />
+              <p>
+                Email{" "}
+                <a href="mailto:info@my-hora.com" className="text-forest underline underline-offset-[3px]">
+                  info@my-hora.com
+                </a>{" "}
+                and a person will answer.
+              </p>
+            </div>}
             <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-base">
-              <a href={messageHrefFor(channel)} className="font-medium text-forest underline underline-offset-4">
-                {CHANNELS[channel].label} →
-              </a>
-              <a href={messageHrefFor(otherChannel(channel))} className="font-medium text-forest underline underline-offset-4">
-                {CHANNELS[otherChannel(channel)].label} →
-              </a>
+              {BOOKING_LIVE && <>
+                <a href={messageHrefFor(channel)} className="font-medium text-forest underline underline-offset-4">
+                  {CHANNELS[channel].label} →
+                </a>
+                <a href={messageHrefFor(otherChannel(channel))} className="font-medium text-forest underline underline-offset-4">
+                  {CHANNELS[otherChannel(channel)].label} →
+                </a>
+              </>}
               <a href={WEB_APP_URL} className="font-medium text-forest underline underline-offset-4">
                 Open the web app →
               </a>

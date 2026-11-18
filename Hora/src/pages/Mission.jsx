@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import useScrollReveal from "../hooks/useScrollReveal";
 import { messageHrefFor, useChannel } from "../lib/channel";
+import { BOOKING_LIVE, LAUNCH_NOTE, WAITLIST_URL } from "../lib/config";
 
 // MISSION, rebuilt. 853 lines to five sections.
 //
@@ -347,9 +348,18 @@ export default function Mission() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3.5">
-              <a href={messageHrefFor(channel)} className={`${btn} bg-forest text-white hover:bg-forest/90`}>
-                {channel === "imessage" ? "Text us to start" : "Message us on WhatsApp"} <span aria-hidden="true">→</span>
-              </a>
+              {BOOKING_LIVE ? (
+                <a href={messageHrefFor(channel)} className={`${btn} bg-forest text-white hover:bg-forest/90`}>
+                  {channel === "imessage" ? "Text us to start" : "Message us on WhatsApp"} <span aria-hidden="true">→</span>
+                </a>
+              ) : (
+                <>
+                  <p className="w-full font-secondary text-[17px] text-ink/72">{LAUNCH_NOTE}</p>
+                  <a href={WAITLIST_URL} className={`${btn} bg-forest text-white hover:bg-forest/90`}>
+                    Join the waitlist <span aria-hidden="true">→</span>
+                  </a>
+                </>
+              )}
               <Link
                 to="/supporters"
                 className="inline-flex min-h-11 items-center px-1 py-2.5 text-base font-medium text-forest underline underline-offset-4"

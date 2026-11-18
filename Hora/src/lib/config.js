@@ -15,6 +15,14 @@ export const WEB_APP_URL = "https://mvp.horaapp.co";
 // "Apply as a Supporter" links go.
 export const SUPPORTER_APPLY_URL = `${WEB_APP_URL}/become-supporter`;
 
+// Booking isn't open yet. While BOOKING_LIVE is false the site shows no iMessage or
+// WhatsApp number or link anywhere; every booking CTA becomes LAUNCH_NOTE plus a
+// "Join the waitlist" link to WAITLIST_URL instead. Set it to true at launch and the
+// numbers and links below appear everywhere they're used.
+export const BOOKING_LIVE = false;
+export const LAUNCH_NOTE = "HO:RA launches in New York City in December.";
+export const WAITLIST_URL = "mailto:info@my-hora.com?subject=Waitlist";
+
 // The iMessage channel — the one and only requester CTA on this site.
 //
 // TODO: replace IMESSAGE_NUMBER with the real Sendblue number. Two things read it:
@@ -45,3 +53,9 @@ export const WHATSAPP_NUMBER = "+1 (332) 301-4299";
 export const whatsappHrefFor = (body) =>
   `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(body)}`;
 export const WHATSAPP_HREF = whatsappHrefFor(IMESSAGE_DRAFT);
+
+// Plain links with no pre-filled text (from main). iMessage and WhatsApp are
+// different numbers: never swap them.
+const digitsOnly = (n) => n.replace(/\D/g, "");
+export const IMESSAGE_URL = `sms:+${digitsOnly(IMESSAGE_NUMBER)}`;
+export const WHATSAPP_URL = `https://wa.me/${digitsOnly(WHATSAPP_NUMBER)}`;
