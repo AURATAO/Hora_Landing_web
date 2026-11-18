@@ -204,7 +204,7 @@ export default function Support() {
             </Section>
 
             <Section id="service-area" title="Service area">
-              <p>HO:RA is currently available in New York City, across all five boroughs.</p>
+              <p>HO:RA opens in New York City in January 2027, across all five boroughs.</p>
             </Section>
           </div>
         </section>

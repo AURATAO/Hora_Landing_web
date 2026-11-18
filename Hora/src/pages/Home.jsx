@@ -111,7 +111,7 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 px-5 pb-8">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gold px-3.5 py-1.5 text-[12.5px] font-semibold text-ink">
               <MapPin aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2.5} />
-              Now live in New York City
+              Opening in New York City in January
             </div>
             <h1 className="mb-5 text-[2.05rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-white">
               <span className="block">Text us.</span>
@@ -156,7 +156,7 @@ export default function Home() {
                 style={heroDelay(0, 400)}
               >
                 <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
-                Now live in New York City
+                Opening in New York City in January
               </div>
               <h1 className="mb-7 text-[3.1rem] font-extrabold leading-[1.05] tracking-[-0.025em] xl:text-[3.5rem]">
                 <span className="hero-rise-blur block" style={heroDelay(120, 600)}>Text us.</span>

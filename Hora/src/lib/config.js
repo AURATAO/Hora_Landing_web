@@ -20,7 +20,7 @@ export const SUPPORTER_APPLY_URL = `${WEB_APP_URL}/become-supporter`;
 // "Join the waitlist" link to WAITLIST_URL instead. Set it back to false to hide the
 // numbers again; the waitlist code stays in place for that.
 export const BOOKING_LIVE = true;
-export const LAUNCH_NOTE = "HO:RA launches in New York City in December.";
+export const LAUNCH_NOTE = "HO:RA launches in New York City in January.";
 export const WAITLIST_URL = "mailto:info@my-hora.com?subject=Waitlist";
 
 // The iMessage channel — the one and only requester CTA on this site.

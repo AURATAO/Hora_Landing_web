@@ -111,7 +111,7 @@ const requesterFaqs = [
   {
     question: "Where does HO:RA work?",
     answer:
-      "New York City. That's the whole service area for now — a request from anywhere else can't be matched.",
+      "New York City, opening in January 2027. That's the whole service area to start — a request from anywhere else can't be matched.",
   },
   {
     question: "Is my data safe?",
