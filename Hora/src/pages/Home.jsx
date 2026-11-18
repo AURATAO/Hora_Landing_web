@@ -262,7 +262,7 @@ export default function Home() {
               </div>
               <div className="border-b border-[#EFE6C9] px-7 py-8 md:border-b-0 md:border-r">
                 <p className="text-[3.2rem] font-extrabold leading-none tracking-[-0.03em] md:text-[4rem]">2 in 3</p>
-                <p className="mt-2 text-[17px] text-ink/80">are wrapped up in about half an hour.</p>
+                <p className="mt-2 text-[17px] text-ink/80">Done in about half an hour.</p>
               </div>
               <div className="flex flex-col justify-center gap-2.5 px-7 py-8">
                 <p className="text-xl font-semibold">Billed by the minute.</p>
@@ -296,12 +296,12 @@ export default function Home() {
           <div className={`${container} py-16 md:py-24`}>
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <img
-                src="/img/hero-photo.jpg"
-                alt="A supporter handing keys back to a customer at his front door"
-                width="1122"
-                height="1402"
+                src="/img/trust-grocery-door.jpg"
+                alt="A supporter handing a bag of groceries to a smiling customer at her front door"
+                width="1254"
+                height="1254"
                 loading="lazy"
-                className="h-[380px] w-full rounded-[28px] object-cover object-[center_35%] md:h-[560px]"
+                className="h-[380px] w-full rounded-[28px] object-cover object-center md:h-[560px]"
                 data-reveal="fade"
               />
               <div data-reveal="rise">
@@ -316,9 +316,7 @@ export default function Home() {
                       <h3 className="text-xl font-bold text-gold">{title}</h3>
                       <p className="text-[15px] leading-relaxed text-[#E4DBBE]">{desc}</p>
                       {checkr &&
-                        <span className="inline-flex items-center gap-2 self-start rounded-full bg-white px-3.5 py-1.5 text-[13px] text-ink/80">
-                          with <img src="/img/checkr.png" alt="Checkr" width="1565" height="367" className="h-4 w-auto" />
-                        </span>}
+                        <img src="/img/checkr-cream.png" alt="Checkr" width="1565" height="367" className="mt-1 h-5 w-auto self-start" />}
                     </div>
                   )}
                 </div>
